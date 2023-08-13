@@ -9,5 +9,6 @@ public class HorizonsForge {
 
     public HorizonsForge() {
         ForgeModFactory.loadMod(Horizons.MOD_ID);
+
     }
 }
