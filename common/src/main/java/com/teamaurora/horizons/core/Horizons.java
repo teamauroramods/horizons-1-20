@@ -1,15 +1,15 @@
 package com.teamaurora.horizons.core;
 
-import com.teamaurora.borealib.api.base.v1.modloading.ModLoaderService;
+import com.teamaurora.borealib.api.datagen.v1.BorealibDataGenerator;
+import com.teamaurora.horizons.core.data.server.HorizonsBlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 
-public class Horizons implements ModLoaderService {
+public class Horizons {
 
     public static final String MOD_ID = "horizons";
 
-    @Override
-    public String id() {
-        return MOD_ID;
+    public static void dataInit(BorealibDataGenerator generator) {
+        generator.addProvider(generator.includeServer(), HorizonsBlockTagsProvider::new);
     }
 
     public static ResourceLocation location(String string) {

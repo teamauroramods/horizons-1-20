@@ -19,7 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.teamaurora.borealib.core.fabric.BorealibFabric"
+      "com.teamaurora.horizons.core.fabric.HorizonsFabric"
+    ],
+    "fabric-datagen": [
+      "com.teamaurora.horizons.core.fabric.HorizonsFabric"
     ]
   },
   "mixins": [

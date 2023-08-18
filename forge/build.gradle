@@ -7,6 +7,22 @@ architectury {
     forge()
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    'src/generated/resources'
+            ]
+        }
+    }
+    datagen {
+        compileClasspath += main.compileClasspath
+        runtimeClasspath += main.runtimeClasspath
+        compileClasspath += main.output
+        runtimeClasspath += main.output
+    }
+}
+
 configurations {
     common
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
@@ -21,6 +37,19 @@ dependencies {
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+}
+
+loom {
+    runs {
+        data {
+            data()
+            programArgs "--mod", "horizons"
+            programArgs "--all"
+            programArgs "--output", "${file("src/generated/resources")}"
+            programArgs "--existing", "${file("src/main/resources")}"
+            source = sourceSets.datagen
+        }
+    }
 }
 
 processResources {
