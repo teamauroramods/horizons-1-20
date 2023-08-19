@@ -43,10 +43,6 @@ loom {
     runs {
         data {
             data()
-            programArgs "--mod", "horizons"
-            programArgs "--all"
-            programArgs "--output", "${file("src/generated/resources")}"
-            programArgs "--existing", "${file("src/main/resources")}"
             source = sourceSets.datagen
         }
     }
