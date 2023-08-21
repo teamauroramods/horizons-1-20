@@ -30,9 +30,13 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
 
     @Override
     public void generateLanguage(TranslationRegistry registry) {
+        // Blocks
         HorizonsBlocks.PROVIDER.stream().filter(Predicate.not(DONT_AUTO_TRANSLATE::contains)).forEach(block -> registry.add(block.get(), autoTranslate(block.getId().getPath())));
-        // Filter out blockitems, those use block translations
+
+        // Non-block items
         HorizonsItems.PROVIDER.stream().filter(Predicate.not(item -> DONT_AUTO_TRANSLATE.contains(item) || item.get() instanceof BlockItem)).forEach(item -> registry.add(item.get(), autoTranslate(item.getId().getPath())));
+
+        // Manual translations
         registry.add(HorizonsItems.CYPRESS_BOATS.getSecond().get(), "Cypress Boat with Chest");
     }
 }

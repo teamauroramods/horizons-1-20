@@ -16,6 +16,5 @@ public class HorizonsBlockTagsProvider extends BorealibTagsProvider.BlockTagProv
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        this.tag(BlockTags.MINEABLE_WITH_AXE).add(Blocks.CALCITE, Blocks.STONE);
     }
 }
