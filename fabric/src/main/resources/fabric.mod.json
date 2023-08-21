@@ -22,7 +22,7 @@
       "com.teamaurora.horizons.core.fabric.HorizonsFabric"
     ],
     "fabric-datagen": [
-      "com.teamaurora.horizons.core.fabric.HorizonsFabric"
+      "com.teamaurora.horizons.core.fabric.HorizonsFabricData"
     ]
   },
   "mixins": [
