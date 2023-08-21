@@ -6,16 +6,22 @@ import com.teamaurora.borealib.api.datagen.v1.providers.BorealibLanguageProvider
 import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsItems;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 
 public class HorizonsLanguageProvider extends BorealibLanguageProvider {
 
     private static final Set<RegistryReference<?>> DONT_AUTO_TRANSLATE = ImmutableSet.of(
-      // Put stuff you want to manually translate here
+            HorizonsItems.CYPRESS_BOATS.getSecond(),
+
+            // Put wall (hanging) signs here, they use the standing sign translations
+            HorizonsBlocks.CYPRESS_SIGNS.getSecond(),
+            HorizonsBlocks.CYPRESS_HANGING_SIGNS.getSecond()
     );
 
     public HorizonsLanguageProvider(BorealibPackOutput output) {
@@ -24,18 +30,9 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
 
     @Override
     public void generateLanguage(TranslationRegistry registry) {
-        HorizonsBlocks.PROVIDER.stream().filter(Predicate.not(DONT_AUTO_TRANSLATE::contains)).forEach(ref -> generateTranslation(registry, ref));
-        HorizonsItems.PROVIDER.stream().filter(Predicate.not(DONT_AUTO_TRANSLATE::contains)).forEach(ref -> generateTranslation(registry, ref));
-    }
-
-    private static void generateTranslation(TranslationRegistry registry, RegistryReference<?> ref) {
-        String translationKey;
-        if (ref.get() instanceof Block block)
-            translationKey = block.getDescriptionId();
-        else if (ref.get() instanceof Item item)
-            translationKey = item.getDescriptionId();
-        else
-            throw new IllegalStateException("Couldn't get translation key for " + ref.getId());
-        registry.add(translationKey, autoTranslate(ref.getId().getPath()));
+        HorizonsBlocks.PROVIDER.stream().filter(Predicate.not(DONT_AUTO_TRANSLATE::contains)).forEach(block -> registry.add(block.get(), autoTranslate(block.getId().getPath())));
+        // Filter out blockitems, those use block translations
+        HorizonsItems.PROVIDER.stream().filter(Predicate.not(item -> DONT_AUTO_TRANSLATE.contains(item) || item.get() instanceof BlockItem)).forEach(item -> registry.add(item.get(), autoTranslate(item.getId().getPath())));
+        registry.add(HorizonsItems.CYPRESS_BOATS.getSecond().get(), "Cypress Boat with Chest");
     }
 }
