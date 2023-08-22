@@ -1,0 +1,6 @@
+{
+  "parent": "horizons:block/template_branch",
+  "textures": {
+    "branch": "horizons:block/cypress_branch_0"
+  }
+}

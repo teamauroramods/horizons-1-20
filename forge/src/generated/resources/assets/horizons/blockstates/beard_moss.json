@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "horizons:block/beard_moss_bottom"
+    },
+    "half=upper": {
+      "model": "horizons:block/beard_moss_top"
+    }
+  }
+}

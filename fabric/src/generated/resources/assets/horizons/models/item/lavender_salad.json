@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "horizons:item/cypress_branch"
+    "layer0": "horizons:item/lavender_salad"
   }
 }

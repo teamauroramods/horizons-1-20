@@ -6,8 +6,7 @@
       "y": 270
     },
     "facing=east,half=bottom,shape=inner_right": {
-      "model": "horizons:block/algae_thatch_stairs_inner",
-      "uvlock": true
+      "model": "horizons:block/algae_thatch_stairs_inner"
     },
     "facing=east,half=bottom,shape=outer_left": {
       "model": "horizons:block/algae_thatch_stairs_outer",
@@ -15,12 +14,10 @@
       "y": 270
     },
     "facing=east,half=bottom,shape=outer_right": {
-      "model": "horizons:block/algae_thatch_stairs_outer",
-      "uvlock": true
+      "model": "horizons:block/algae_thatch_stairs_outer"
     },
     "facing=east,half=bottom,shape=straight": {
-      "model": "horizons:block/algae_thatch_stairs",
-      "uvlock": true
+      "model": "horizons:block/algae_thatch_stairs"
     },
     "facing=east,half=top,shape=inner_left": {
       "model": "horizons:block/algae_thatch_stairs_inner_top",
@@ -95,8 +92,7 @@
       "y": 90
     },
     "facing=south,half=bottom,shape=inner_left": {
-      "model": "horizons:block/algae_thatch_stairs_inner",
-      "uvlock": true
+      "model": "horizons:block/algae_thatch_stairs_inner"
     },
     "facing=south,half=bottom,shape=inner_right": {
       "model": "horizons:block/algae_thatch_stairs_inner",
@@ -104,8 +100,7 @@
       "y": 90
     },
     "facing=south,half=bottom,shape=outer_left": {
-      "model": "horizons:block/algae_thatch_stairs_outer",
-      "uvlock": true
+      "model": "horizons:block/algae_thatch_stairs_outer"
     },
     "facing=south,half=bottom,shape=outer_right": {
       "model": "horizons:block/algae_thatch_stairs_outer",

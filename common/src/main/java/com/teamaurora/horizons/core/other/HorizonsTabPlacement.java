@@ -61,6 +61,7 @@ public class HorizonsTabPlacement {
             output.acceptAfter(Items.CHERRY_SAPLING, HorizonsBlocks.CYPRESS_SAPLING.get());
             output.acceptAfter(Items.LARGE_FERN, HorizonsBlocks.GIANT_FERN.get());
             output.acceptAfter(Items.CHERRY_LOG, HorizonsBlocks.CYPRESS_LOG.get());
+            output.acceptAfter(Items.FROGSPAWN, HorizonsBlocks.ALGAE.get());
         } else if (tabKey.equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {
             acceptAllAfter(output, Items.CHERRY_HANGING_SIGN, List.of(
                     HorizonsBlocks.CYPRESS_SIGNS.getFirst().get(),
@@ -71,8 +72,10 @@ public class HorizonsTabPlacement {
                 output.acceptAfter(Items.CHEST, HorizonsBlocks.CYPRESS_CHESTS.getFirst().get());
             }
         } else if (tabKey.equals(CreativeModeTabs.REDSTONE_BLOCKS)) {
-            output.acceptAfter(Items.CHEST, HorizonsBlocks.CYPRESS_CHESTS.getFirst().get());
-            output.acceptAfter(Items.TRAPPED_CHEST, HorizonsBlocks.CYPRESS_CHESTS.getSecond().get());
+            if (Platform.anyModsLoaded(Mods.QUARK, Mods.WOODWORKS, Mods.CARPENTER)) {
+                output.acceptAfter(Items.CHEST, HorizonsBlocks.CYPRESS_CHESTS.getFirst().get());
+                output.acceptAfter(Items.TRAPPED_CHEST, HorizonsBlocks.CYPRESS_CHESTS.getSecond().get());
+            }
         } else if (tabKey.equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
             acceptAllAfter(output, Items.CHERRY_CHEST_BOAT, List.of(
                     HorizonsItems.CYPRESS_BOATS.getFirst().get(),

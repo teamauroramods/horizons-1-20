@@ -1,3 +1,6 @@
 {
-  "parent": "horizons:block/beard_moss"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "horizons:block/beard_moss_bottom"
+  }
 }

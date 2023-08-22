@@ -1,0 +1,6 @@
+{
+  "parent": "horizons:block/water_cover",
+  "textures": {
+    "texture": "horizons:block/algae"
+  }
+}

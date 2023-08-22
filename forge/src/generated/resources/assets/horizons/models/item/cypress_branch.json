@@ -1,3 +1,6 @@
 {
-  "parent": "horizons:block/cypress_branch"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "horizons:item/cypress_branch"
+  }
 }
