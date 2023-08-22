@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "horizons:block/large_cypress_knee_bottom"
+    },
+    "half=upper": {
+      "model": "horizons:block/large_cypress_knee_top"
+    }
+  }
+}

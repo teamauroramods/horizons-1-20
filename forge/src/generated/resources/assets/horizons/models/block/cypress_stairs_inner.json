@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "horizons:block/cypress_planks",
+    "side": "horizons:block/cypress_planks",
+    "top": "horizons:block/cypress_planks"
+  }
+}

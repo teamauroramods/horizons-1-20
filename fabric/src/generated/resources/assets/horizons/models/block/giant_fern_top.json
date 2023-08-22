@@ -1,0 +1,7 @@
+{
+  "parent": "horizons:block/template_triple_plant_top",
+  "textures": {
+    "cross": "horizons:block/giant_fern_middle",
+    "top": "horizons:block/giant_fern_top"
+  }
+}

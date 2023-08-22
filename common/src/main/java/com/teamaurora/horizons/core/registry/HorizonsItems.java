@@ -40,17 +40,5 @@ public class HorizonsItems {
 
     // Misc //
 
-    public static final RegistryReference<Item> ALGAE = PROVIDER.register("algae", () -> new AlgaeBlockItem(HorizonsBlocks.ALGAE.get(), new Item.Properties()));
     public static final RegistryReference<Item> REDBUD_BLOSSOMS = PROVIDER.register("redbud_blossoms", () -> new Item(new Item.Properties()));
-
-    // Lily Items //
-
-    public static final RegistryReference<Item> BLUE_LILY = PROVIDER.register("blue_lily", () -> new LilyItem(HorizonsBlocks.BLUE_LILY.get(), new Item.Properties()));
-    public static final RegistryReference<Item> LIGHT_GRAY_LILY = PROVIDER.register("light_gray_lily", () -> new LilyItem(HorizonsBlocks.LIGHT_GRAY_LILY.get(), new Item.Properties()));
-    public static final RegistryReference<Item> CYAN_LILY = PROVIDER.register("cyan_lily", () -> new LilyItem(HorizonsBlocks.CYAN_LILY.get(), new Item.Properties()));
-    public static final RegistryReference<Item> LIGHT_BLUE_LILY = PROVIDER.register("light_blue_lily", () -> new LilyItem(HorizonsBlocks.LIGHT_BLUE_LILY.get(), new Item.Properties()));
-    public static final RegistryReference<Item> MAGENTA_LILY = PROVIDER.register("magenta_lily", () -> new LilyItem(HorizonsBlocks.MAGENTA_LILY.get(), new Item.Properties()));
-    public static final RegistryReference<Item> PINK_LILY = PROVIDER.register("pink_lily", () -> new LilyItem(HorizonsBlocks.PINK_LILY.get(), new Item.Properties()));
-    public static final RegistryReference<Item> PURPLE_LILY = PROVIDER.register("purple_lily", () -> new LilyItem(HorizonsBlocks.PURPLE_LILY.get(), new Item.Properties()));
-    public static final RegistryReference<Item> WHITE_LILY = PROVIDER.register("white_lily", () -> new LilyItem(HorizonsBlocks.WHITE_LILY.get(), new Item.Properties()));
 }

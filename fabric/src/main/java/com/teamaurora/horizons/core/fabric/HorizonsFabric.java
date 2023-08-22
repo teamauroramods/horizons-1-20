@@ -15,5 +15,6 @@ public class HorizonsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         Horizons.init();
+        Horizons.postInit(FabricHelper.getDispatcher());
     }
 }

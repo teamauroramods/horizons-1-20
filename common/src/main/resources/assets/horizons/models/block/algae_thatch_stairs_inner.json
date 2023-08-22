@@ -1,0 +1,7 @@
+{
+  "parent": "borealib:block/thatch/thatch_stairs_inner",
+  "textures": {
+    "extrudes": "horizons:block/algae_thatch_extrudes",
+    "thatch": "horizons:block/algae_thatch"
+  }
+}

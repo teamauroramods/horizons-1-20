@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "horizons:block/cypress_planks",
+    "side": "horizons:block/cypress_bookshelf"
+  }
+}

@@ -15,6 +15,8 @@ import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.borealib.api.registry.v1.RegistryWrapper;
 import com.teamaurora.borealib.api.registry.v1.util.PropertiesHelper;
 import com.teamaurora.horizons.common.block.*;
+import com.teamaurora.horizons.common.item.AlgaeBlockItem;
+import com.teamaurora.horizons.common.item.LilyItem;
 import com.teamaurora.horizons.core.other.HorizonsBlockSetTypes;
 import com.teamaurora.horizons.core.other.HorizonsProperties;
 import com.teamaurora.horizons.core.other.HorizonsWoodTypes;
@@ -81,7 +83,7 @@ public class HorizonsBlocks {
 
     // Algae //
 
-    public static final RegistryReference<Block> ALGAE = PROVIDER.register("algae", () -> new AlgaeBlock(HorizonsProperties.ALGAE));
+    public static final RegistryReference<Block> ALGAE = PROVIDER.registerWithItem("algae", () -> new AlgaeBlock(HorizonsProperties.ALGAE), block -> new AlgaeBlockItem(block, new Item.Properties()));
     public static final RegistryReference<Block> ALGAE_THATCH = PROVIDER.registerWithItem("algae_thatch", () -> new ThatchBlock(HorizonsProperties.ALGAE_THATCH), new Item.Properties());
     public static final RegistryReference<Block> ALGAE_THATCH_SLAB = PROVIDER.registerWithItem("algae_thatch_slab", () -> new ThatchSlabBlock(HorizonsProperties.ALGAE_THATCH), new Item.Properties());
     public static final RegistryReference<Block> ALGAE_THATCH_STAIRS = PROVIDER.registerWithItem("algae_thatch_stairs" ,() -> new ThatchStairBlock(ALGAE_THATCH.get().defaultBlockState(), HorizonsProperties.ALGAE_THATCH), new Item.Properties());
@@ -89,14 +91,14 @@ public class HorizonsBlocks {
 
     // Lily Flowers //
 
-    public static final RegistryReference<Block> BLUE_LILY = PROVIDER.register("blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
-    public static final RegistryReference<Block> LIGHT_GRAY_LILY = PROVIDER.register("light_gray_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
-    public static final RegistryReference<Block> CYAN_LILY = PROVIDER.register("cyan_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
-    public static final RegistryReference<Block> LIGHT_BLUE_LILY = PROVIDER.register("light_blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
-    public static final RegistryReference<Block> MAGENTA_LILY = PROVIDER.register("magenta_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
-    public static final RegistryReference<Block> PINK_LILY = PROVIDER.register("pink_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
-    public static final RegistryReference<Block> PURPLE_LILY = PROVIDER.register("purple_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
-    public static final RegistryReference<Block> WHITE_LILY = PROVIDER.register("white_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY));
+    public static final RegistryReference<Block> BLUE_LILY = PROVIDER.registerWithItem("blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> LIGHT_GRAY_LILY = PROVIDER.registerWithItem("light_gray_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> CYAN_LILY = PROVIDER.registerWithItem("cyan_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> LIGHT_BLUE_LILY = PROVIDER.registerWithItem("light_blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> MAGENTA_LILY = PROVIDER.registerWithItem("magenta_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> PINK_LILY = PROVIDER.registerWithItem("pink_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> PURPLE_LILY = PROVIDER.registerWithItem("purple_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> WHITE_LILY = PROVIDER.registerWithItem("white_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
 
     public static final RegistryReference<Block> POTTED_BLUE_LILY = PROVIDER.register("potted_blue_lily", () -> new FlowerPotBlock(BLUE_LILY.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_LIGHT_GRAY_LILY= PROVIDER.register("potted_light_gray_lily", () -> new FlowerPotBlock(LIGHT_GRAY_LILY.get(), PropertiesHelper.flowerPot()));
@@ -106,4 +108,11 @@ public class HorizonsBlocks {
     public static final RegistryReference<Block> POTTED_PINK_LILY = PROVIDER.register("potted_pink_lily", () -> new FlowerPotBlock(PINK_LILY.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_PURPLE_LILY = PROVIDER.register("potted_purple_lily", () -> new FlowerPotBlock(PURPLE_LILY.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_WHITE_LILY = PROVIDER.register("potted_white_lily", () -> new FlowerPotBlock(WHITE_LILY.get(), PropertiesHelper.flowerPot()));
+
+    // Fern //
+    public static final RegistryReference<Block> GIANT_FERN = PROVIDER.registerWithItem("giant_fern", () -> new DoublePlantBlock(HorizonsProperties.GIANT_FERN), new Item.Properties());
+
+    private static LilyItem createLilyItem(Block block) {
+        return new LilyItem(block, new Item.Properties());
+    }
 }

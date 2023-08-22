@@ -8,6 +8,7 @@ import net.minecraft.data.tags.TagsProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import java.lang.reflect.Field;
 
@@ -17,6 +18,7 @@ public class HorizonsForge {
     public HorizonsForge() {
         IEventBus bus = ForgeHelper.getEventBus(Horizons.MOD_ID);
         Horizons.init();
+        bus.<FMLCommonSetupEvent>addListener(e -> Horizons.postInit(ForgeHelper.createDispatcher(e)));
         bus.<GatherDataEvent>addListener(e -> {
             HorizonsData.init(ForgeHelper.createGenerator(e));
         });
