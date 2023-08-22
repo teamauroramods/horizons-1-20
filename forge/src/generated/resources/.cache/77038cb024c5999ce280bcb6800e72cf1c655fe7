@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-22T15:03:56.4560703	Model Definitions
+// 1.20.1	2023-08-22T16:26:10.0887008	Model Definitions
 cf544010d6247b93abf960896d4f9e18c9525dd5 assets/horizons/blockstates/algae.json
 6d18c748b4a54e1ab09ec4dd786783d687096a8e assets/horizons/blockstates/algae_thatch.json
 95d510a408d5d9a4084070e9550359f492740e8e assets/horizons/blockstates/algae_thatch_slab.json
@@ -51,6 +51,8 @@ a3d6e885a0f391ed6d209558913bf1e8a1d70d95 assets/horizons/blockstates/potted_ligh
 a23575b412a122a69ab6da8862a4d58d02e00eb3 assets/horizons/blockstates/stripped_cypress_log.json
 8b249661b417b32076f4e571879f702578cef3b5 assets/horizons/blockstates/stripped_cypress_wood.json
 b5c6328e0209537b53a2ca7d336eb103653416f4 assets/horizons/blockstates/stripped_large_cypress_knee.json
+319fa6a76850c9e69a243024b6c3b351ab1d720d assets/horizons/blockstates/tropical_fern.json
+d97868e42da32059d98e89d652bb204570d6dfb8 assets/horizons/blockstates/tropical_grass.json
 1f8063f33afa8ffe4c8ab9a2947fedc0d68ad879 assets/horizons/blockstates/white_lily.json
 57f5c6cc754efdc2eb7340f67c584fccd7d31058 assets/horizons/models/block/algae.json
 5ce24e58500c720030f949b2f75278005a0283af assets/horizons/models/block/algae_thatch.json
@@ -136,6 +138,8 @@ c17be58f63c7bdb6c8dcd307a52c062722bf2c43 assets/horizons/models/block/stripped_c
 ba16470131ad7e1845dbd229edf49e7d8d0da936 assets/horizons/models/block/stripped_cypress_wood.json
 6a87f372274a7e39519c41b81871cbaea3ba0293 assets/horizons/models/block/stripped_large_cypress_knee_bottom.json
 f541a887dc1fc1ec8f9b7f0028a46af54b9b71d5 assets/horizons/models/block/stripped_large_cypress_knee_top.json
+fe20e6692611d688631bb045d86b0074ca059526 assets/horizons/models/block/tropical_fern.json
+3a2567b63d7dd9e97654dd339ae3b99dff2cfe3f assets/horizons/models/block/tropical_grass.json
 c4894380084d3b1bc97dd4a160c5d3edcd55ccde assets/horizons/models/block/white_lily.json
 5d0b7d0f04caaacae4538a05d650a9c4b0e4c748 assets/horizons/models/item/algae.json
 dbf4e49a8f79c944cbf2b62b3ce495f5f9a61c20 assets/horizons/models/item/algae_thatch.json
@@ -190,4 +194,6 @@ deefca27560410f7db8ea4c8974906ba5e9a7a51 assets/horizons/models/item/stripped_cy
 11e9f8ca8a03a49bfb6207e7da4b687dc84ebaa3 assets/horizons/models/item/stripped_cypress_wood.json
 fe201ea303e976aa3d894e4f190b4ba68e7dc64f assets/horizons/models/item/stripped_large_cypress_knee.json
 15babe3ed5ff0eb65ff379ab683966e7349c151d assets/horizons/models/item/sunflower_seeds.json
+d7e7ba46ce10c86e8f0ed7c706334933e26642ea assets/horizons/models/item/tropical_fern.json
+e6d49217edbe5c2a4a94f26be628c8855a0b64e4 assets/horizons/models/item/tropical_grass.json
 df7f086a3fece7e27825a8d2f61c6714afff3227 assets/horizons/models/item/white_lily.json

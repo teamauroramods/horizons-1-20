@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "horizons:cypress_bookshelf",
+    "horizons:cypress_chest",
+    "horizons:cypress_trapped_chest",
+    "horizons:cypress_knee",
+    "horizons:large_cypress_knee",
+    "horizons:stripped_cypress_knee",
+    "horizons:stripped_large_cypress_knee",
+    "horizons:cypress_branch",
+    "horizons:cypress_cabinet"
+  ]
+}

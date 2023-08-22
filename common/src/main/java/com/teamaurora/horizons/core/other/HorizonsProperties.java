@@ -31,7 +31,6 @@ public class HorizonsProperties {
     public static final BlockBehaviour.Properties BEARD_MOSS_BLOCK = BlockBehaviour.Properties.of().strength(0.1F).sound(SoundType.MOSS).noOcclusion().isValidSpawn(PropertiesHelper::ocelotOrParrot).isSuffocating(PropertiesHelper::never).isViewBlocking(PropertiesHelper::never);
     public static final BlockBehaviour.Properties BEARD_MOSS = BlockBehaviour.Properties.of().instabreak().sound(SoundType.MOSS).noOcclusion().noCollission().randomTicks();
     public static final BlockBehaviour.Properties LILY = BlockBehaviour.Properties.of().instabreak().sound(SoundType.LILY_PAD).noOcclusion();
-    public static final BlockBehaviour.Properties GIANT_FERN = BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ);
     public static final BlockBehaviour.Properties BOULDER = BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
     public static final BlockBehaviour.Properties BOULDER_BRICKS = BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.NETHER_BRICKS).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
     public static final BlockBehaviour.Properties REDBUD_BLOSSOMS = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().strength(0.2F).sound(SoundType.FLOWERING_AZALEA);

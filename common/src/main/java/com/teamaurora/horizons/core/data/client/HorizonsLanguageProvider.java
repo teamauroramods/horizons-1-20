@@ -25,7 +25,7 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
     );
 
     public HorizonsLanguageProvider(BorealibPackOutput output) {
-        super(output, output.getModContainer());
+        super(output);
     }
 
     @Override

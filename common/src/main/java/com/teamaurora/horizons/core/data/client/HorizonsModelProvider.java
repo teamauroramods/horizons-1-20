@@ -87,6 +87,8 @@ public class HorizonsModelProvider extends BorealibModelProvider {
 
         // Giant Fern & Tropical Grass //
         createGiantFern(generator);
+        generator.createCrossBlockWithDefaultItem(TROPICAL_GRASS.get(), BlockModelGenerators.TintState.TINTED);
+        generator.createCrossBlockWithDefaultItem(TROPICAL_FERN.get(), BlockModelGenerators.TintState.TINTED);
 
         // Flowers //
         createLily(generator, BLUE_LILY, POTTED_BLUE_LILY);

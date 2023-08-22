@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "horizons:potted_cypress_sapling",
+    "horizons:potted_blue_lily",
+    "horizons:potted_light_gray_lily",
+    "horizons:potted_cyan_lily",
+    "horizons:potted_light_blue_lily",
+    "horizons:potted_magenta_lily",
+    "horizons:potted_pink_lily",
+    "horizons:potted_purple_lily",
+    "horizons:potted_white_lily"
+  ]
+}

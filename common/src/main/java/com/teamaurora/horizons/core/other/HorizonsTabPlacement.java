@@ -42,6 +42,10 @@ public class HorizonsTabPlacement {
                     HorizonsBlocks.ALGAE_THATCH_SLAB.get()
             ));
         } else if (tabKey.equals(CreativeModeTabs.NATURAL_BLOCKS)) {
+            acceptAllAfter(output, Items.FERN, List.of(
+                    HorizonsBlocks.TROPICAL_GRASS.get(),
+                    HorizonsBlocks.TROPICAL_FERN.get()
+            ));
             acceptAllAfter(output, Items.HANGING_ROOTS, List.of(
                     HorizonsBlocks.HANGING_CYPRESS_LEAVES.get(),
                     HorizonsBlocks.BEARD_MOSS_BLOCK.get(),
@@ -62,6 +66,12 @@ public class HorizonsTabPlacement {
             output.acceptAfter(Items.LARGE_FERN, HorizonsBlocks.GIANT_FERN.get());
             output.acceptAfter(Items.CHERRY_LOG, HorizonsBlocks.CYPRESS_LOG.get());
             output.acceptAfter(Items.FROGSPAWN, HorizonsBlocks.ALGAE.get());
+            acceptAllAfter(output, Items.CACTUS, List.of(
+                    HorizonsBlocks.CYPRESS_KNEE.get(),
+                    HorizonsBlocks.LARGE_CYPRESS_KNEE.get(),
+                    HorizonsBlocks.CYPRESS_BRANCH.get()
+            ));
+            output.acceptAfter(Items.PINK_PETALS, HorizonsItems.REDBUD_BLOSSOMS.get());
         } else if (tabKey.equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {
             acceptAllAfter(output, Items.CHERRY_HANGING_SIGN, List.of(
                     HorizonsBlocks.CYPRESS_SIGNS.getFirst().get(),
@@ -81,12 +91,27 @@ public class HorizonsTabPlacement {
                     HorizonsItems.CYPRESS_BOATS.getFirst().get(),
                     HorizonsItems.CYPRESS_BOATS.getSecond().get()
             ));
+        } else if (tabKey.equals(CreativeModeTabs.FOOD_AND_DRINKS)) {
+            acceptAllAfter(output, Items.GLOW_BERRIES, List.of(
+                    HorizonsItems.GOOSEBERRIES.get(),
+                    HorizonsItems.HONEY_GLAZED_GOOSEBERRIES.get()
+            ));
+            acceptAllAfter(output, Items.HONEY_BOTTLE, List.of(
+                    HorizonsItems.GOOSEBERRY_JUICE.get(),
+                    HorizonsItems.GOOSEBERRY_JAM.get(),
+                    HorizonsItems.LAVENDER_TEA.get()
+            ));
+            output.acceptAfter(Items.RABBIT_STEW, HorizonsItems.LAVENDER_SALAD.get());
+            output.acceptAfter(Items.COOKIE, HorizonsItems.GOOSEBERRY_JAM_COOKIE.get());
+            acceptAllAfter(output, Items.PUMPKIN_PIE, List.of(
+                    HorizonsItems.GOOSEBERRY_PIE.get(),
+                    HorizonsItems.SUNFLOWER_SEEDS.get()
+            ));
         }
     }
 
     private static void acceptAllAfter(CreativeTabEvents.Output output, ItemLike after, List<ItemLike> items) {
         Preconditions.checkArgument(items.size() > 1, "At least 2 items needed to add in bulk");
-
         // Reversed for proper ordering
         List<ItemLike> reversed = Lists.reverse(items);
         output.acceptAllAfter(after, reversed.stream().map(ItemStack::new).toList());
