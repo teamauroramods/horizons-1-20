@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "type": "borealib:replace_features_nonlinear",
+    "originals": "#horizons:tropical_grass_replaceable",
+    "replacements": "horizons:patch_tropical_grass",
+    "step": "vegetal_decoration"
+  },
+  "selector": {
+    "type": "borealib:has_existing_features",
+    "features": "#horizons:tropical_grass_replaceable",
+    "step": "vegetal_decoration"
+  }
+}

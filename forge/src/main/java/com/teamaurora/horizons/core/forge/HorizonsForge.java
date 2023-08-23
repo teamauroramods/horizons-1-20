@@ -27,6 +27,7 @@ public class HorizonsForge {
         bus.<FMLCommonSetupEvent>addListener(e -> Horizons.postInit(ForgeHelper.createDispatcher(e)));
         bus.<GatherDataEvent>addListener(e -> {
             HorizonsData.init(ForgeHelper.createGenerator(e));
+            ForgeHelper.buildRegistries(e, HorizonsData::initRegistries);
         });
     }
 }
