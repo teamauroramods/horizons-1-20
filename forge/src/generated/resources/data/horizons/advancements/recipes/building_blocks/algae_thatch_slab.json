@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_algae_thatch": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "horizons:algae_thatch"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "horizons:algae_thatch_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_algae_thatch",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "horizons:algae_thatch_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

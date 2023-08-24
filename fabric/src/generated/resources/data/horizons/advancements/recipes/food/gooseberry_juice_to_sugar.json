@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gooseberry_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "horizons:gooseberry_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "horizons:gooseberry_juice_to_sugar"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gooseberry_juice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "horizons:gooseberry_juice_to_sugar"
+    ]
+  },
+  "sends_telemetry_event": false
+}

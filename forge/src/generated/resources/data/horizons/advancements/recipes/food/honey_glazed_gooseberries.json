@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gooseberries": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "horizons:gooseberries"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "horizons:honey_glazed_gooseberries"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gooseberries",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "horizons:honey_glazed_gooseberries"
+    ]
+  },
+  "sends_telemetry_event": false
+}

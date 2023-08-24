@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "carpenter"
+        },
+        {
+          "type": "borealib:quark_flag",
+          "flag": "variant_bookshelves"
+        },
+        {
+          "type": "borealib:woodworks_flag",
+          "value": "wooden_bookshelves"
+        }
+      ]
+    }
+  ],
+  "criteria": {
+    "has_cypress_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "horizons:cypress_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "horizons:cypress_bookshelf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cypress_planks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "horizons:cypress_bookshelf"
+    ]
+  },
+  "sends_telemetry_event": false
+}

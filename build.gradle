@@ -57,7 +57,7 @@ allprojects {
             name = "Fuzs Mod Resources"
             url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
         }
-        maven { url "https://maven.stevenplayzz.studio/borealib-repo" }
+        maven { url "https://maven.stevenplayzz.studio/borealib-version-releases" }
     }
 
     tasks.withType(JavaCompile) {

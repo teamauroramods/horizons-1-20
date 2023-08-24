@@ -21,6 +21,7 @@ public class HorizonsData {
         generator.addProvider(generator.includeServer(), HorizonsPlacedFeatureTagsProvider::new);
         generator.addProvider(generator.includeServer(), HorizonsBiomeTagsProvider::new);
         generator.addProvider(generator.includeServer(), HorizonsBlockLootProvider::new);
+        generator.addProvider(generator.includeServer(), HorizonsRecipeProvider::new);
     }
 
     public static void initRegistries(RegistrySetWrapper builder) {

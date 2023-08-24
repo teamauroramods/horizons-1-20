@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "carpenter"
+        },
+        {
+          "type": "borealib:quark_flag",
+          "flag": "variant_chests"
+        },
+        {
+          "type": "borealib:woodworks_flag",
+          "value": "wooden_chests"
+        }
+      ]
+    }
+  ],
+  "group": "wooden_chests",
+  "key": {
+    "#": {
+      "item": "horizons:cypress_planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "result": {
+    "item": "horizons:cypress_chest"
+  },
+  "show_notification": true
+}

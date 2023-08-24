@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gooseberry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "horizons:gooseberry_jam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "horizons:gooseberry_jam_cookie"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_gooseberry_jam",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "horizons:gooseberry_jam_cookie"
+    ]
+  },
+  "sends_telemetry_event": false
+}

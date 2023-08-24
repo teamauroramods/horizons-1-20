@@ -1,5 +1,6 @@
 package com.teamaurora.horizons.common.block;
 
+import com.teamaurora.borealib.api.block.v1.FancyRenderBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -18,7 +19,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
  * @author ebo2022
  * @author rose_
  */
-public class BeardMossBlockBlock extends Block {
+public class BeardMossBlockBlock extends Block implements FancyRenderBlock {
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
 
     public BeardMossBlockBlock(Properties properties) {

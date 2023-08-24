@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "borealib:quark_flag",
+          "flag": "wood_to_chest_recipes"
+        },
+        {
+          "type": "borealib:quark_flag",
+          "flag": "variant_chests"
+        }
+      ]
+    }
+  ],
+  "group": "wooden_chests",
+  "key": {
+    "#": {
+      "tag": "horizons:cypress_logs"
+    }
+  },
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "horizons:cypress_chest"
+  },
+  "show_notification": true
+}
