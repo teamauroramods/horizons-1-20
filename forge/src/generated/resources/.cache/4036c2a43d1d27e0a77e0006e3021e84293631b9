@@ -1,0 +1,21 @@
+// 1.20.1	2023-08-23T10:26:41.6317198	Tags for minecraft:worldgen/biome mod id horizons
+c3d4e55bd4ed5d178abb10df76626eccdab7c209 data/horizons/tags/worldgen/biome/has_feature/amaranthus.json
+2ea2f6b4e52c4ebdcb58dd12967cff289aefa815 data/horizons/tags/worldgen/biome/has_feature/blue_daisy.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/blue_lily.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/cyan_lily.json
+c3d4e55bd4ed5d178abb10df76626eccdab7c209 data/horizons/tags/worldgen/biome/has_feature/fiddleneck.json
+1d142b02680112841a86da4e0df06ce4431eb683 data/horizons/tags/worldgen/biome/has_feature/giant_fern.json
+c3d4e55bd4ed5d178abb10df76626eccdab7c209 data/horizons/tags/worldgen/biome/has_feature/heliconia.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/light_blue_lily.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/light_gray_lily.json
+4301fee991060a44225e5c74bedfd95e386538e1 data/horizons/tags/worldgen/biome/has_feature/magenta_daisy.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/magenta_lily.json
+c8d95066c07b8e56b8b3ad7ffe2ee62e18ddef18 data/horizons/tags/worldgen/biome/has_feature/myosotis.json
+aadd98a3080b6b7bb3578de4de0176f4f66edd90 data/horizons/tags/worldgen/biome/has_feature/orange_daisy.json
+4301fee991060a44225e5c74bedfd95e386538e1 data/horizons/tags/worldgen/biome/has_feature/pink_daisy.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/pink_lily.json
+4301fee991060a44225e5c74bedfd95e386538e1 data/horizons/tags/worldgen/biome/has_feature/purple_daisy.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/purple_lily.json
+aadd98a3080b6b7bb3578de4de0176f4f66edd90 data/horizons/tags/worldgen/biome/has_feature/red_daisy.json
+2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/white_lily.json
+aadd98a3080b6b7bb3578de4de0176f4f66edd90 data/horizons/tags/worldgen/biome/has_feature/yellow_daisy.json
