@@ -35,9 +35,7 @@ public class AxeItemMixin {
         if (state.getBlock() == HorizonsBlocks.LARGE_CYPRESS_KNEE.get()) {
             boolean lower = state.getValue(DoubleCypressKneeBlock.HALF) == DoubleBlockHalf.LOWER;
             level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
-            if (Platform.isFabric()) {
-                BlockUtil.prepForDoubleBlockPlacement(level, pos, lower);
-            }
+            if (Platform.isFabric()) BlockUtil.prepForDoubleBlockPlacement(level, pos, lower);
             DoubleCypressKneeBlock.placeAt(HorizonsBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(), level, lower ? pos : pos.below(), 3);
             if (player instanceof ServerPlayer) {
                 CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, pos, useOnContext.getItemInHand());

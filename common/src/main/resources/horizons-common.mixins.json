@@ -6,7 +6,8 @@
   ],
   "mixins": [
     "AxeItemMixin",
-    "DoublePlantBlockMixin"
+    "DoublePlantBlockMixin",
+    "WaterlilyBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

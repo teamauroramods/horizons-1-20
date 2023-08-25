@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "type": "borealib:add_features",
+    "features": "horizons:purple_lily",
+    "step": "vegetal_decoration"
+  },
+  "selector": {
+    "type": "borealib:is_biome",
+    "biomes": "#horizons:has_feature/purple_lily"
+  }
+}

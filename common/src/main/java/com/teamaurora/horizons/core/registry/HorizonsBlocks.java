@@ -15,6 +15,7 @@ import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.borealib.api.registry.v1.RegistryWrapper;
 import com.teamaurora.borealib.api.registry.v1.util.PropertiesHelper;
 import com.teamaurora.horizons.common.block.*;
+import com.teamaurora.horizons.common.block.grower.CypressTreeGrower;
 import com.teamaurora.horizons.common.item.AlgaeBlockItem;
 import com.teamaurora.horizons.common.item.LilyItem;
 import com.teamaurora.horizons.core.other.HorizonsBlockSetTypes;
@@ -47,7 +48,7 @@ public class HorizonsBlocks {
     public static final RegistryReference<Block> CYPRESS_BUTTON = PROVIDER.registerWithItem("cypress_button", () -> new ButtonBlock(HorizonsProperties.CYPRESS.button(), HorizonsBlockSetTypes.CYPRESS, 30, true), new Item.Properties());
     public static final Pair<RegistryReference<BorealibStandingSignBlock>, RegistryReference<BorealibWallSignBlock>> CYPRESS_SIGNS = PROVIDER.registerSign("cypress", HorizonsWoodTypes.CYPRESS, HorizonsProperties.CYPRESS_SIGN, new Item.Properties().stacksTo(16));
     public static final Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> CYPRESS_HANGING_SIGNS = PROVIDER.registerHangingSign("cypress", HorizonsWoodTypes.CYPRESS, HorizonsProperties.CYPRESS_SIGN, new Item.Properties().stacksTo(16));
-    public static final RegistryReference<Block> CYPRESS_SAPLING = PROVIDER.registerWithItem("cypress_sapling", () -> new SaplingBlock(new OakTreeGrower(), PropertiesHelper.sapling()), new Item.Properties());
+    public static final RegistryReference<Block> CYPRESS_SAPLING = PROVIDER.registerWithItem("cypress_sapling", () -> new SaplingBlock(new CypressTreeGrower(), PropertiesHelper.sapling().sound(SoundType.CHERRY_SAPLING)), new Item.Properties());
     public static final RegistryReference<Block> POTTED_CYPRESS_SAPLING = PROVIDER.register("potted_cypress_sapling", () -> new FlowerPotBlock(CYPRESS_SAPLING.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> CYPRESS_LEAVES = PROVIDER.registerWithItem("cypress_leaves", () -> new LeavesBlock(HorizonsProperties.CYPRESS.leaves()), new Item.Properties());
 

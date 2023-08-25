@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "type": "borealib:add_features",
+    "features": "horizons:white_lily",
+    "step": "vegetal_decoration"
+  },
+  "selector": {
+    "type": "borealib:is_biome",
+    "biomes": "#horizons:has_feature/white_lily"
+  }
+}
