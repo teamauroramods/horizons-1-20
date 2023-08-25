@@ -5,6 +5,8 @@
   "client": [
   ],
   "mixins": [
+    "AxeItemMixin",
+    "DoublePlantBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

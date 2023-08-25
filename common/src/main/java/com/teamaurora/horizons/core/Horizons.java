@@ -4,6 +4,7 @@ import com.teamaurora.borealib.api.base.v1.util.ParallelDispatcher;
 import com.teamaurora.borealib.api.datagen.v1.BorealibDataGenerator;
 import com.teamaurora.borealib.api.event.creativetabs.v1.CreativeTabEvents;
 import com.teamaurora.horizons.core.data.server.HorizonsBlockTagsProvider;
+import com.teamaurora.horizons.core.other.HorizonsCompat;
 import com.teamaurora.horizons.core.other.HorizonsTabPlacement;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsItems;
@@ -19,6 +20,7 @@ public class Horizons {
     }
 
     public static void postInit(ParallelDispatcher dispatcher) {
+        dispatcher.enqueueWork(HorizonsCompat::init);
         CreativeTabEvents.MODIFY_ENTRIES_ALL.register(HorizonsTabPlacement::register);
     }
 
