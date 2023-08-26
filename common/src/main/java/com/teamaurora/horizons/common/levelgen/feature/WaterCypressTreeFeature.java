@@ -1,18 +1,17 @@
 package com.teamaurora.horizons.common.levelgen.feature;
 
+import com.teamaurora.horizons.common.util.FeatureHelper;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-/**
- * @author exoplanetary
- * @author ebo2022
- */
-public class CypressTreeFeature extends AbstractHorizonsTreeFeature {
+public class WaterCypressTreeFeature extends AbstractHorizonsTreeFeature {
 
     @Override
     public BlockState getSapling() {
@@ -22,14 +21,45 @@ public class CypressTreeFeature extends AbstractHorizonsTreeFeature {
     @Override
     public boolean doPlace(FeaturePlaceContext<TreeConfiguration> context) {
         RandomSource random = context.random();
+        WorldGenLevel level = context.level();
         BlockPos origin = context.origin();
         TreeConfiguration config = context.config();
-        int height = random.nextInt(5) + 9;
+        int height = random.nextInt(5) + 12;
         boolean isBald = random.nextInt(15) == 0;
 
-        // Trunk
-        for (int i = 0; i <= height; i++) {
-            this.addLog(origin.above(i));
+        int surfaceY = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, origin).getY();
+        int waterY = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, origin).getY();
+        if (waterY <= surfaceY) return false;
+
+        BlockPos position = new BlockPos(origin.getX(), waterY, origin.getZ());
+        BlockPos bottom = new BlockPos(origin.getX(), surfaceY, origin.getZ());
+        if (!FeatureHelper.isAirOrWaterOrLeaves(level.getBlockState(bottom))) return false;
+
+        // Underwater part of trunk
+        for (int i = 0; i <= waterY - surfaceY; i++) {
+            for (int x = -1; x <= 1; x++) {
+                for (int z = -1; z <= 1; z++) {
+                    if (i == 0 && level.isWaterAt(bottom.offset(x, -1, z))) {
+                        return false;
+                    }
+                    this.addLog(bottom.offset(x, i, z));
+                }
+            }
+        }
+
+        // Above-water part of trunk
+        for (int i = 1; i <= height; i++) {
+            if (i <= 2) {
+                for (int x = -1; x <= 1; x++) {
+                    for (int z = -1; z <= 1; z++) {
+                        if (x == 0 || z == 0) {
+                            this.addLog(position.offset(x, i, z));
+                        }
+                    }
+                }
+            } else {
+                this.addLog(position.above(i));
+            }
         }
 
         // Branches
@@ -38,18 +68,18 @@ public class CypressTreeFeature extends AbstractHorizonsTreeFeature {
 
         for (int i = 0; i < branches; i++) {
             Direction dir = Direction.from2DDataValue(random.nextInt(4));
-            int x = isBald ? random.nextInt(height - 3) + 3 : random.nextInt(height - 5) + 3;
-            this.addAxisLog(origin.above(x).relative(dir), dir, config, random);
-            this.addAxisLog(origin.above(x).relative(dir, 2), dir, config, random);
-            this.disc2H(origin.above(x).relative(dir, 2), random);
-            this.disc1(origin.above(x + 1).relative(dir, 2));
+            int x = isBald ? random.nextInt(height - 3) + 6 : random.nextInt(height - 5) + 6;
+            this.addAxisLog(position.above(x).relative(dir), dir, config, random);
+            this.addAxisLog(position.above(x).relative(dir, 2), dir, config, random);
+            this.disc2H(position.above(x).relative(dir, 2), random);
+            this.disc1(position.above(x + 1).relative(dir, 2));
         }
 
         // Canopy
-        if (!isBald) {
-            this.disc1(origin.above(height - 1));
-            this.disc3H(origin.above(height), random);
-            this.disc2(origin.above(height + 1));
+        if (isBald) {
+            this.disc1(position.above(height - 1));
+            this.disc3H(position.above(height), random);
+            this.disc2(position.above(height + 1));
         }
         return true;
     }

@@ -1,18 +1,17 @@
 package com.teamaurora.horizons.common.levelgen.feature;
 
+import com.teamaurora.horizons.common.util.FeatureHelper;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-/**
- * @author exoplanetary
- * @author ebo2022
- */
-public class MegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
+public class WaterMegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
 
     @Override
     public BlockState getSapling() {
@@ -22,37 +21,71 @@ public class MegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
     @Override
     public boolean doPlace(FeaturePlaceContext<TreeConfiguration> context) {
         RandomSource random = context.random();
+        WorldGenLevel level = context.level();
         BlockPos origin = context.origin();
         TreeConfiguration config = context.config();
-        int height = random.nextInt(7) + 15;
+        int height = random.nextInt(7) + 18;
         boolean isBald = random.nextInt(15) == 0;
 
-        // Trunk
-        for (int i = 0; i <= height; i++) {
-            this.addLog(origin.above(i));
-            this.addLog(origin.offset(1, i, 0));
-            this.addLog(origin.offset(0, i, 1));
-            this.addLog(origin.offset(1, i, 1));
+        int surfaceY = level.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, origin).getY();
+        int waterY = level.getHeightmapPos(Heightmap.Types.WORLD_SURFACE, origin).getY();
+        if (waterY <= surfaceY) return false;
+
+        BlockPos position = new BlockPos(origin.getX(), waterY, origin.getZ());
+        BlockPos bottom = new BlockPos(origin.getX(), surfaceY, origin.getZ());
+        for (BlockPos pos2 : BlockPos.betweenClosed(bottom, bottom.offset(1, 0, 1))) {
+            if (!FeatureHelper.isAirOrWaterOrLeaves(level.getBlockState(pos2)))
+                return false;
+        }
+
+        // Underwater part of trunk
+        for (int i = 0; i <= waterY - surfaceY; i++) {
+            for (int x = -1; x <= 2; x++) {
+                for (int z = -1; z <= 2; z++) {
+                    if (i == 0 && level.isWaterAt(bottom.offset(x, -1, z))) {
+                        return false;
+                    }
+                    this.addLog(bottom.offset(z, i, z));
+                }
+            }
+        }
+
+        // Above-water part of trunk
+        for (int i = 1; i <= height; i++) {
+            if (i <= 2) {
+                for (int x = -1; x <= 2; x++) {
+                    for (int z = -1; z <= 2; z++) {
+                        if (!((x == -1 || x == 2) && (z == -1 || z == 2))) {
+                            this.addLog(position.offset(x, i, z));
+                        }
+                    }
+                }
+            } else {
+                this.addLog(position.above(i));
+                this.addLog(position.offset(1, i, 0));
+                this.addLog(position.offset(0, i, 1));
+                this.addLog(position.offset(1, i, 1));
+            }
         }
 
         // Branches
         int branches = random.nextInt(5) + 4;
 
         for (int i = 0; i < branches; i++) {
-            int x = isBald ? random.nextInt(height - 5) + 4 : random.nextInt(height - 7) + 4;
+            int x = isBald ? random.nextInt(height - 5) + 7 : random.nextInt(height - 7) + 7;
             Direction dir = Direction.from2DDataValue(random.nextInt(4));
             if (dir == Direction.NORTH) {
                 // min z, x varies
-                this.addBranch(origin.offset(random.nextInt(2), x, 0), dir, config, random);
+                this.addBranch(position.offset(random.nextInt(2), x, 0), dir, config, random);
             } else if (dir == Direction.EAST) {
                 // max z, x varies
-                this.addBranch(origin.offset(1, x, random.nextInt(2)), dir, config, random);
+                this.addBranch(position.offset(1, x, random.nextInt(2)), dir, config, random);
             } else if (dir == Direction.SOUTH) {
                 // max z, x varies
-                this.addBranch(origin.offset(random.nextInt(2), x, 1), dir, config, random);
+                this.addBranch(position.offset(random.nextInt(2), x, 1), dir, config, random);
             } else if (dir == Direction.WEST) {
                 // min z, x varies
-                this.addBranch(origin.offset(0, x, random.nextInt(2)), dir, config, random);
+                this.addBranch(position.offset(0, x, random.nextInt(2)), dir, config, random);
             }
         }
 
@@ -60,17 +93,17 @@ public class MegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
             // Decorate the top of the trunk if bald
             int variant = random.nextInt(4);
             switch (variant) {
-                case 0 -> this.addLog(origin.above(height + 1));
-                case 1 -> this.addLog(origin.offset(1, height + 1, 0));
-                case 2 -> this.addLog(origin.offset(0, height + 1, 1));
-                case 3 -> this.addLog(origin.offset(1, height + 1, 1));
+                case 0 -> this.addLog(position.above(height + 1));
+                case 1 -> this.addLog(position.offset(1, height + 1, 0));
+                case 2 -> this.addLog(position.offset(0, height + 1, 1));
+                case 3 -> this.addLog(position.offset(1, height + 1, 1));
             }
         } else {
             // Canopy
-            this.canopyDisc1(origin.above(height - 2));
-            this.canopyDisc3Bottom(origin.above(height - 1), random);
-            this.canopyDisc3Top(origin.above(height));
-            this.canopyDisc1(origin.above(height + 1));
+            this.canopyDisc1(position.above(height - 2));
+            this.canopyDisc3Bottom(position.above(height - 1), random);
+            this.canopyDisc3Top(position.above(height));
+            this.canopyDisc1(position.above(height + 1));
         }
         return true;
     }

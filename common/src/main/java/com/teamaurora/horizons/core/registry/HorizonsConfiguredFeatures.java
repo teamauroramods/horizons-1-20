@@ -1,6 +1,6 @@
 package com.teamaurora.horizons.core.registry;
 
-import com.teamaurora.horizons.common.levelgen.treedecorators.CypressBranchTreeDecorator;
+import com.teamaurora.horizons.common.levelgen.treedecorators.*;
 import com.teamaurora.horizons.core.Horizons;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +10,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.InclusiveRange;
 import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,10 +22,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.DualNoiseProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLeavesDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
@@ -47,11 +50,13 @@ public class HorizonsConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_LILY = key("purple_lily");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_LILY = key("white_lily");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_GROWN = key("cypress_grown");
-
-
-    private static ResourceKey<ConfiguredFeature<?, ?>> key(String path) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Horizons.location(path));
-    }
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_CYPRESS_GROWN = key("mega_cypress_grown");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS = key("cypress");
+    public static final ResourceKey<ConfiguredFeature<? ,?>> MEGA_CYPRESS = key("mega_cypress");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_CYPRESS_KNEES = key("mega_cypress_knees");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_CYPRESS = key("water_cypress");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_MEGA_CYPRESS = key("water_mega_cypress");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_BUSH = key("cypress_bush");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         FeatureUtils.register(
@@ -147,29 +152,59 @@ public class HorizonsConfiguredFeatures {
                 context,
                 CYPRESS_GROWN,
                 HorizonsFeatures.CYPRESS_TREE.get(),
-                createCypress(false).build()
+                createGrownCypress().build()
+        );
+        FeatureUtils.register(
+                context,
+                MEGA_CYPRESS_GROWN,
+                HorizonsFeatures.MEGA_CYPRESS_TREE.get(),
+                createGrownCypress().build()
+        );
+        FeatureUtils.register(
+                context,
+                CYPRESS,
+                HorizonsFeatures.CYPRESS_TREE.get(),
+                createNaturalCypress(true).build()
+        );
+        FeatureUtils.register(
+                context,
+                MEGA_CYPRESS,
+                HorizonsFeatures.MEGA_CYPRESS_TREE.get(),
+                createNaturalCypress(true).build()
+        );
+        FeatureUtils.register(
+                context,
+                MEGA_CYPRESS_KNEES,
+                HorizonsFeatures.MEGA_CYPRESS_TREE.get(),
+                createNaturalCypress(false).build()
+        );
+        FeatureUtils.register(
+                context,
+                WATER_CYPRESS,
+                HorizonsFeatures.WATER_CYPRESS_TREE.get(),
+                createNaturalCypress(true).build()
+        );
+        FeatureUtils.register(
+                context,
+                WATER_MEGA_CYPRESS,
+                HorizonsFeatures.WATER_MEGA_CYPRESS_TREE.get(),
+                createNaturalCypress(false).build()
+        );
+        FeatureUtils.register(
+                context,
+                CYPRESS_BUSH,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(HorizonsBlocks.CYPRESS_LOG.get().defaultBlockState()),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(HorizonsBlocks.CYPRESS_LEAVES.get()),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                ).build()
         );
     }
 
-    private static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
-        return new RandomPatchConfiguration(
-                tries,
-                6,
-                2,
-                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
-                        new DualNoiseProvider(
-                                new InclusiveRange<>(1, 3),
-                                new NormalNoise.NoiseParameters(-10, 1d),
-                                1f,
-                                2345L,
-                                new NormalNoise.NoiseParameters(-3, 1d), 1f,
-                                List.of(state)
-                        )
-                ))
-        );
-    }
-
-    private static TreeConfiguration.TreeConfigurationBuilder createCypress(boolean natural) {
+    private static TreeConfiguration.TreeConfigurationBuilder createGrownCypress() {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(HorizonsBlocks.CYPRESS_LOG.get().defaultBlockState()),
                 new StraightTrunkPlacer(0, 0, 0),
@@ -179,15 +214,32 @@ public class HorizonsConfiguredFeatures {
         )
                 .ignoreVines()
                 .decorators(List.of(
-                        new AttachedToLeavesDecorator(
-                                0.14F,
-                                1,
-                                0,
-                                BlockStateProvider.simple(HorizonsBlocks.HANGING_CYPRESS_LEAVES.get().defaultBlockState()),
-                                2,
-                                List.of(Direction.DOWN)
-                        ),
+                        HangingCypressLeavesTreeDecorator.INSTANCE,
                         CypressBranchTreeDecorator.INSTANCE
                 ));
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createNaturalCypress(boolean sparseKnees) {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(HorizonsBlocks.CYPRESS_LOG.get().defaultBlockState()),
+                new StraightTrunkPlacer(0, 0, 0),
+                BlockStateProvider.simple(HorizonsBlocks.CYPRESS_LEAVES.get().defaultBlockState()),
+                new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
+                new TwoLayersFeatureSize(0, 0, 0)
+        )
+                .ignoreVines()
+                .decorators(List.of(
+                        HangingCypressLeavesTreeDecorator.INSTANCE,
+                        CypressBranchTreeDecorator.INSTANCE,
+                        new LeaveVineDecorator(0.0625F),
+                        sparseKnees ? SparseCypressKneesTreeDecorator.INSTANCE : CypressKneesTreeDecorator.INSTANCE,
+                        BeardMossTreeDecorator.INSTANCE
+                ));
+    }
+
+
+
+    private static ResourceKey<ConfiguredFeature<?, ?>> key(String path) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Horizons.location(path));
     }
 }

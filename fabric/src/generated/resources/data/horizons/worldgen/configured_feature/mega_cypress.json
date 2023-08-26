@@ -1,5 +1,5 @@
 {
-  "type": "horizons:cypress_tree",
+  "type": "horizons:mega_cypress_tree",
   "config": {
     "decorators": [
       {
@@ -7,6 +7,16 @@
       },
       {
         "type": "horizons:cypress_branch"
+      },
+      {
+        "type": "minecraft:leave_vine",
+        "probability": 0.0625
+      },
+      {
+        "type": "horizons:cypress_knees_sparse"
+      },
+      {
+        "type": "horizons:beard_moss"
       }
     ],
     "dirt_provider": {

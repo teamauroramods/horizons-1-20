@@ -3,6 +3,7 @@ package com.teamaurora.horizons.common.levelgen.feature;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.teamaurora.borealib.api.base.v1.util.MutableBoolean;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -34,11 +35,8 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
     protected Map<BlockPos, BlockState> specialLogPositions;
     protected Map<BlockPos, BlockState> specialFoliagePositions;
 
-    protected boolean placeDirt;
-
-    protected AbstractHorizonsTreeFeature(boolean placeDirt) {
+    public AbstractHorizonsTreeFeature() {
         super(TreeConfiguration.CODEC);
-        this.placeDirt = placeDirt;
     }
 
     @Override
@@ -54,7 +52,7 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
         this.specialFoliagePositions = new HashMap<>();
 
         if (this.canSurvive(level, origin)) {
-            this.doPlace(context);
+            if (!this.doPlace(context)) return false;
 
             for (BlockPos logPos : this.logPositions) {
                 if (!TreeFeature.validTreePos(level, logPos) || logPos.getY() > level.getMaxBuildHeight())
@@ -66,11 +64,9 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
                     return false;
             }
 
-            this.doMidPlace(context);
-
             this.logPositions.forEach(logPos -> {
                 level.setBlock(logPos, this.specialLogPositions.getOrDefault(logPos, config.trunkProvider.getState(random, logPos)), 19);
-                if (logPos.getY() == origin.getY() && this.placeDirt) {
+                if (logPos.getY() == origin.getY()) {
                     setDirtAt(level, random, logPos.below(), config);
                 }
             });
@@ -98,8 +94,6 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
                 TreeDecorator.Context decoratorContext = new TreeDecorator.Context(level, decorationSetter, random, this.logPositions, this.foliagePositions, new HashSet<>());
                 config.decorators.forEach((decorator) -> decorator.place(decoratorContext));
             }
-
-            this.doPostPlace(context);
 
             return BoundingBox.encapsulatingPositions(Iterables.concat(this.logPositions, this.foliagePositions, decorationPositions)).map((boundingBox) -> {
                 DiscreteVoxelShape shape = updateLeaves(level, boundingBox, this.logPositions, decorationPositions, Set.of());
@@ -131,11 +125,11 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
         list.get(0).addAll(set);
 
         while(true) {
-            while(k >= 7 || !((Set)list.get(k)).isEmpty()) {
+            while(k >= 7 || !(list.get(k)).isEmpty()) {
                 if (k >= 7) {
                     return discreteVoxelShape;
                 }
-                Iterator<BlockPos> iterator = ((Set)list.get(k)).iterator();
+                Iterator<BlockPos> iterator = (list.get(k)).iterator();
                 BlockPos blockPos2 = iterator.next();
                 iterator.remove();
                 if (boundingBox.isInside(blockPos2)) {
@@ -155,7 +149,7 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
                             if (!discreteVoxelShape.isFull(l, m, n)) {
                                 BlockState blockState2 = levelAccessor.getBlockState(mutableBlockPos);
                                 OptionalInt optionalInt = LeavesBlock.getOptionalDistanceAt(blockState2);
-                                if (!optionalInt.isEmpty()) {
+                                if (optionalInt.isPresent()) {
                                     int o = Math.min(optionalInt.getAsInt(), k + 1);
                                     if (o < 7) {
                                         list.get(o).add(mutableBlockPos.immutable());
@@ -167,7 +161,6 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
                     }
                 }
             }
-
             ++k;
         }
     }
@@ -182,13 +175,7 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
         return this.getSapling().canSurvive(level, pos);
     }
 
-    public abstract void doPlace(FeaturePlaceContext<TreeConfiguration> context);
-
-    public void doMidPlace(FeaturePlaceContext<TreeConfiguration> context) {
-    }
-
-    public void doPostPlace(FeaturePlaceContext<TreeConfiguration> context) {
-    }
+    public abstract boolean doPlace(FeaturePlaceContext<TreeConfiguration> context);
 
     public void addLog(BlockPos pos) {
         this.logPositions.add(pos.immutable());
