@@ -1,6 +1,5 @@
 package com.teamaurora.horizons.common.levelgen.feature;
 
-import com.mojang.serialization.Codec;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -9,10 +8,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
+/**
+ * @author exoplanetary
+ * @author ebo2022
+ */
 public class CypressTreeFeature extends AbstractHorizonsTreeFeature {
 
     public CypressTreeFeature() {
-        super(true, TreeConfiguration.CODEC);
+        super(true);
     }
 
     @Override
@@ -33,10 +36,10 @@ public class CypressTreeFeature extends AbstractHorizonsTreeFeature {
             this.addLog(origin.above(i));
         }
 
+        // Branches
         int branches = random.nextInt(4) + 1;
         if (branches == 4) branches = 2;
 
-        // Place branches
         for (int i = 0; i < branches; i++) {
             Direction dir = Direction.from2DDataValue(random.nextInt(4));
             int x = isBald ? random.nextInt(height - 3) + 3 : random.nextInt(height - 5) + 3;
@@ -74,14 +77,14 @@ public class CypressTreeFeature extends AbstractHorizonsTreeFeature {
         }
     }
 
-    private void disc2H(BlockPos origin, RandomSource rand) {
+    private void disc2H(BlockPos origin, RandomSource random) {
         for (int x = -2; x <= 2; x++) {
             for (int z = -2; z <= 2; z++) {
                 if (Math.abs(x) != 2 || Math.abs(z) != 2) {
                     this.addFoliage(origin.offset(x, 0, z));
-                    if (rand.nextInt(3) == 0) {
+                    if (random.nextInt(3) == 0) {
                         this.addFoliage(origin.offset(x, -1, z));
-                        if (rand.nextInt(3) == 0) {
+                        if (random.nextInt(3) == 0) {
                             this.addFoliage(origin.offset(x, -2, z));
                         }
                     }
@@ -90,14 +93,14 @@ public class CypressTreeFeature extends AbstractHorizonsTreeFeature {
         }
     }
 
-    private void disc3H(BlockPos origin, RandomSource rand) {
+    private void disc3H(BlockPos origin, RandomSource random) {
         for (int x = -3; x <= 3; x++) {
             for (int z = -3; z <= 3; z++) {
                 if (Math.abs(x) != 3 || Math.abs(z) != 3) {
                     this.addFoliage(origin.offset(x, 0, z));
-                    if (rand.nextInt(3) == 0) {
+                    if (random.nextInt(3) == 0) {
                         this.addFoliage(origin.offset(x, -1, z));
-                        if (rand.nextBoolean()) {
+                        if (random.nextBoolean()) {
                             this.addFoliage(origin.offset(x, -2, z));
                         }
                     }

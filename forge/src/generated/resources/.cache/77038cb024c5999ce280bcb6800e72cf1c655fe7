@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-22T16:26:10.0887008	Model Definitions
+// 1.20.1	2023-08-25T22:08:22.1765214	Model Definitions
 cf544010d6247b93abf960896d4f9e18c9525dd5 assets/horizons/blockstates/algae.json
 6d18c748b4a54e1ab09ec4dd786783d687096a8e assets/horizons/blockstates/algae_thatch.json
 95d510a408d5d9a4084070e9550359f492740e8e assets/horizons/blockstates/algae_thatch_slab.json
@@ -8,7 +8,7 @@ de1c46c9da31c85fe249cded8573c6dcbd01e8b5 assets/horizons/blockstates/beard_moss_
 5d687db781a48c8e33e3c89ea4b39c6adf46668e assets/horizons/blockstates/blue_lily.json
 6f20773e037592039ffdb12141dbb24c3375cf66 assets/horizons/blockstates/cyan_lily.json
 4e3154e4c932a26ccf3f4246913d3f784eabbff1 assets/horizons/blockstates/cypress_bookshelf.json
-0c9738cd8ab499bf4fd8db20d835c0e76dffc1c6 assets/horizons/blockstates/cypress_branch.json
+d381e21cdce00203533c5bff4d76aaa2f1145672 assets/horizons/blockstates/cypress_branch.json
 8c27a8ce6d9f8f3813b055acf06b6a07a9ca84e6 assets/horizons/blockstates/cypress_button.json
 de018417dd9af5d85f82cff0c5aaa2f445b7a12c assets/horizons/blockstates/cypress_cabinet.json
 5c1939af1205610c012b6986afee5004d0d88710 assets/horizons/blockstates/cypress_chest.json

@@ -3,7 +3,6 @@ package com.teamaurora.horizons.common.levelgen.feature;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -37,8 +36,8 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
 
     protected boolean placeDirt;
 
-    protected AbstractHorizonsTreeFeature(boolean placeDirt, Codec<TreeConfiguration> config) {
-        super(config);
+    protected AbstractHorizonsTreeFeature(boolean placeDirt) {
+        super(TreeConfiguration.CODEC);
         this.placeDirt = placeDirt;
     }
 

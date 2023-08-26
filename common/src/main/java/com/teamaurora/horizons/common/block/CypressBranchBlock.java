@@ -38,10 +38,10 @@ import org.jetbrains.annotations.Nullable;
 public class CypressBranchBlock extends Block implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    private static final VoxelShape SHAPE_NORTH = Block.box(4.0D, 4.0D, 0.0D, 12.0D, 12.0D, 13.0D);
-    private static final VoxelShape SHAPE_SOUTH = Block.box(4.0D, 4.0D, 3.0D, 12.0D, 12.0D, 16.0D);
-    private static final VoxelShape SHAPE_EAST = Block.box(3.0D, 4.0D, 4.0D, 16.0D, 12.0D, 12.0D);
-    private static final VoxelShape SHAPE_WEST = Block.box(0.0D, 4.0D, 4.0D, 13.0D, 12.0D, 12.0D);
+    private static final VoxelShape SHAPE_NORTH = Block.box(4.0D, 4.0D, 3.0D, 12.0D, 12.0D, 16.0D);
+    private static final VoxelShape SHAPE_SOUTH = Block.box(4.0D, 4.0D, 0.0D, 12.0D, 12.0D, 13.0D);
+    private static final VoxelShape SHAPE_EAST = Block.box(0.0D, 4.0D, 4.0D, 13.0D, 12.0D, 12.0D);
+    private static final VoxelShape SHAPE_WEST = Block.box(3.0D, 4.0D, 4.0D, 16.0D, 12.0D, 12.0D);
 
     public CypressBranchBlock(Properties properties) {
         super(properties);
@@ -107,7 +107,7 @@ public class CypressBranchBlock extends Block implements BonemealableBlock {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Block block = level.getBlockState(pos.offset(state.getValue(FACING).getNormal())).getBlock();
+        Block block = level.getBlockState(pos.relative(state.getValue(FACING), -1)).getBlock();
         return block == HorizonsBlocks.CYPRESS_LOG.get() || block == HorizonsBlocks.CYPRESS_WOOD.get();
     }
 
@@ -120,7 +120,7 @@ public class CypressBranchBlock extends Block implements BonemealableBlock {
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         if (!context.replacingClickedOnBlock()) {
-            BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().offset(context.getClickedFace().getNormal()));
+            BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().relative(context.getClickedFace().getOpposite()));
             if (blockstate.is(this) && blockstate.getValue(FACING) == context.getClickedFace())
                 return null;
         }
@@ -129,7 +129,7 @@ public class CypressBranchBlock extends Block implements BonemealableBlock {
         LevelReader levelReader = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
 
-        for(Direction direction : context.getNearestLookingDirections())
+        for (Direction direction : context.getNearestLookingDirections())
             if (direction.getAxis().isHorizontal()) {
                 blockstate1 = blockstate1.setValue(FACING, direction.getOpposite());
                 if (blockstate1.canSurvive(levelReader, blockpos))
@@ -154,5 +154,4 @@ public class CypressBranchBlock extends Block implements BonemealableBlock {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder.add(FACING, AGE));
     }
-
 }

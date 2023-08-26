@@ -1,5 +1,7 @@
 package com.teamaurora.horizons.core.mixin;
 
+import com.teamaurora.borealib.api.base.v1.platform.Platform;
+import com.teamaurora.horizons.common.util.BlockHelper;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -31,6 +33,8 @@ public class DoublePlantBlockMixin implements BonemealableBlock {
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
-        DoublePlantBlock.placeAt(level, HorizonsBlocks.GIANT_FERN.get().defaultBlockState(), state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER ? pos : pos.below(), 2);
+        boolean below = state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER;
+        if (Platform.isFabric()) BlockHelper.prepForDoubleBlockPlacement(level, pos, below);
+        DoublePlantBlock.placeAt(level, HorizonsBlocks.GIANT_FERN.get().defaultBlockState(), below ? pos : pos.below(), 3);
     }
 }

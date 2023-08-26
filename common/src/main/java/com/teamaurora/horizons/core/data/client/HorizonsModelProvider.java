@@ -241,18 +241,18 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         ResourceLocation age1 = generator.createSuffixedVariant(branch, "_1", TEMPLATE_BRANCH, HorizonsModelProvider::branchMapping);
         ResourceLocation age2 = generator.createSuffixedVariant(branch, "_2", TEMPLATE_BRANCH, HorizonsModelProvider::branchMapping);
         generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(branch).with(PropertyDispatch.properties(BlockStateProperties.AGE_2, BlockStateProperties.HORIZONTAL_FACING)
-                .select(0, Direction.EAST, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
-                .select(0, Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
-                .select(0, Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true))
-                .select(0, Direction.WEST, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
-                .select(1, Direction.EAST, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
-                .select(1, Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
-                .select(1, Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true))
-                .select(1, Direction.WEST, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
-                .select(2, Direction.EAST, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
-                .select(2, Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
-                .select(2, Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true))
-                .select(2, Direction.WEST, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .select(0, Direction.EAST, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .select(0, Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true))
+                .select(0, Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .select(0, Direction.WEST, Variant.variant().with(VariantProperties.MODEL, age0).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
+                .select(1, Direction.EAST, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .select(1, Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true))
+                .select(1, Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .select(1, Direction.WEST, Variant.variant().with(VariantProperties.MODEL, age1).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
+                .select(2, Direction.EAST, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .select(2, Direction.NORTH, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true))
+                .select(2, Direction.SOUTH, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .select(2, Direction.WEST, Variant.variant().with(VariantProperties.MODEL, age2).with(VariantProperties.UV_LOCK, true).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
         ));
     }
 
