@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "horizons:bayou",
+      "required": false
+    },
+    {
+      "id": "horizons:redwood_forest",
+      "required": false
+    }
+  ]
+}

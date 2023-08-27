@@ -29,6 +29,7 @@ public class HorizonsTreePlacements {
         Holder<ConfiguredFeature<?, ?>> waterCypress = configuredFeatures.getOrThrow(HorizonsTreeFeatures.WATER_CYPRESS);
         Holder<ConfiguredFeature<?, ?>> waterMegaCypress = configuredFeatures.getOrThrow(HorizonsTreeFeatures.WATER_MEGA_CYPRESS);
         Holder<ConfiguredFeature<?, ?>> cypressBush = configuredFeatures.getOrThrow(HorizonsTreeFeatures.CYPRESS_BUSH);
+
         PlacementUtils.register(context, CYPRESS_CHECKED, cypress, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));
         PlacementUtils.register(context, MEGA_CYPRESS_CHECKED, megaCypress, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));
         PlacementUtils.register(context, MEGA_CYPRESS_KNEES_CHECKED, megaCypressKnees, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));

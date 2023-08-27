@@ -3,6 +3,8 @@ package com.teamaurora.horizons.core.other.region;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
 import com.teamaurora.borealib.api.config.v1.ConfigValue;
+import com.teamaurora.horizons.core.Horizons;
+import com.teamaurora.horizons.core.registry.HorizonsBiomes;
 import net.minecraft.SharedConstants;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
@@ -18,9 +20,11 @@ import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseRouterData;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 public final class HorizonsOverworldBiomeBuilder {
@@ -89,15 +93,15 @@ public final class HorizonsOverworldBiomeBuilder {
 			//-----------ARID, DRY, NEUTRAL, WET, HUMID
 			/*ICY*/     {Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.TAIGA},
 			/*COOL*/    {Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA},
-			/*NEUTRAL*/ {Biomes.FLOWER_FOREST, Biomes.PLAINS, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.DARK_FOREST},
-			/*WARM*/    {Biomes.SAVANNA, Biomes.SAVANNA, Biomes.FOREST, Biomes.JUNGLE, Biomes.JUNGLE},
+			/*NEUTRAL*/ {Biomes.FLOWER_FOREST, Biomes.PLAINS, Biomes.FOREST, Biomes.BIRCH_FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.DARK_FOREST)},
+			/*WARM*/    {Biomes.SAVANNA, Biomes.SAVANNA, Biomes.FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.JUNGLE), Biomes.JUNGLE},
 			/*HOT*/     {Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT}
 	};
 	private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
 			//-----------ARID, DRY, NEUTRAL, WET, HUMID
 			/*ICY*/     {Biomes.ICE_SPIKES, null, Biomes.SNOWY_TAIGA, null, null},
 			/*COOL*/    {null, null, null, null, Biomes.OLD_GROWTH_PINE_TAIGA},
-			/*NEUTRAL*/ {Biomes.SUNFLOWER_PLAINS, null, null, Biomes.OLD_GROWTH_BIRCH_FOREST, null},
+			/*NEUTRAL*/ {Biomes.SUNFLOWER_PLAINS, null, null, Biomes.OLD_GROWTH_BIRCH_FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, null)},
 			/*WARM*/    {null, null, Biomes.PLAINS, Biomes.SPARSE_JUNGLE, Biomes.BAMBOO_JUNGLE},
 			/*HOT*/     {null, null, null, null, null}
 	};
@@ -105,16 +109,16 @@ public final class HorizonsOverworldBiomeBuilder {
 			//-----------ARID, DRY, NEUTRAL, WET, HUMID
 			/*ICY*/     {Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA},
 			/*COOL*/    {Biomes.MEADOW, Biomes.MEADOW, Biomes.FOREST, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA},
-			/*NEUTRAL*/ {Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, Biomes.DARK_FOREST},
-			/*WARM*/    {Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, Biomes.FOREST, Biomes.FOREST, Biomes.JUNGLE},
-			/*HPT*/     {Biomes.BADLANDS, Biomes.BADLANDS, Biomes.BADLANDS, Biomes.WOODED_BADLANDS, Biomes.WOODED_BADLANDS}
+			/*NEUTRAL*/ {Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.DARK_FOREST)},
+			/*WARM*/    {Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, Biomes.FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.FOREST), Biomes.JUNGLE},
+			/*HOT*/     {Biomes.BADLANDS, Biomes.BADLANDS, Biomes.BADLANDS, Biomes.WOODED_BADLANDS, Biomes.WOODED_BADLANDS}
 	};
 	private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
 			//-----------ARID, DRY, NEUTRAL, WET, HUMID
 			/*ICY*/     {Biomes.ICE_SPIKES, null, null, null, null},
 			/*COOL*/    {Biomes.CHERRY_GROVE, null, Biomes.MEADOW, Biomes.MEADOW, Biomes.OLD_GROWTH_PINE_TAIGA},
 			/*NEUTRAL*/ {Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.FOREST, Biomes.BIRCH_FOREST, null},
-			/*WARM*/    {null, null, null, null, null},
+			/*WARM*/    {null, null, null, null, pick(HorizonsBiomes.REDWOOD_FOREST, null)},
 			/*HOT*/     {Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, null, null, null}
 	};
 
@@ -122,12 +126,22 @@ public final class HorizonsOverworldBiomeBuilder {
 			//-----------ARID, DRY, NEUTRAL, WET, HUMID
 			/*ICY*/     {Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_FOREST},
 			/*COOL*/    {Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_FOREST},
-			/*NEUTRAL*/ {Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_FOREST},
-			/*WARM*/    {null, null, null, null, null},
-			/*ICY*/     {null, null, null, null, null}
+			/*NEUTRAL*/ {Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, null)},
+			/*WARM*/    {null, null, null, pick(HorizonsBiomes.REDWOOD_FOREST, null), null},
+			/*HOT*/     {null, null, null, null, null}
 	};
 
-	private static final Map<ResourceKey<Biome>, ConfigValue<Boolean>> BIOME_CONFIGS = ImmutableMap.<ResourceKey<Biome>, ConfigValue<Boolean>>builder().build();
+	private static final Map<ResourceKey<Biome>, ConfigValue<Boolean>> BIOME_CONFIGS = ImmutableMap.<ResourceKey<Biome>, ConfigValue<Boolean>>builder()
+			.put(HorizonsBiomes.ATACAMA_DESERT, Horizons.CONFIG.atacamaDesert)
+			.put(HorizonsBiomes.BAYOU, Horizons.CONFIG.bayou)
+			.put(HorizonsBiomes.LAVENDER_FIELD, Horizons.CONFIG.lavenderField)
+			.put(HorizonsBiomes.LAVENDER_FOREST, Horizons.CONFIG.lavenderForest)
+			.put(HorizonsBiomes.REDWOOD_FOREST, Horizons.CONFIG.redwoodForest)
+			.build();
+
+	private static ResourceKey<Biome> pick(ResourceKey<Biome> biome, @Nullable ResourceKey<Biome> other) {
+		return BIOME_CONFIGS.get(biome).get() ? biome : other;
+	}
 
 	protected void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
 		if (SharedConstants.debugGenerateSquareTerrainWithoutNoise) {
@@ -464,7 +478,7 @@ public final class HorizonsOverworldBiomeBuilder {
 			this.erosions[6],
 			parameter,
 			0.0F,
-			Biomes.MANGROVE_SWAMP
+			pick(HorizonsBiomes.BAYOU, Biomes.MANGROVE_SWAMP)
 		);
 
 		for(int i = 0; i < this.temperatures.length; ++i) {
@@ -615,7 +629,7 @@ public final class HorizonsOverworldBiomeBuilder {
 			this.erosions[6],
 			parameter,
 			0.0F,
-			Biomes.MANGROVE_SWAMP
+			pick(HorizonsBiomes.BAYOU, Biomes.MANGROVE_SWAMP)
 		);
 
 		for(int i = 0; i < this.temperatures.length; ++i) {
@@ -792,7 +806,7 @@ public final class HorizonsOverworldBiomeBuilder {
 			this.erosions[6],
 			parameter,
 			0.0F,
-			Biomes.MANGROVE_SWAMP
+			pick(HorizonsBiomes.BAYOU, Biomes.MANGROVE_SWAMP)
 		);
 		this.addSurfaceBiome(
 			consumer,

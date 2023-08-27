@@ -26,6 +26,9 @@
     "main": [
       "com.teamaurora.horizons.core.fabric.HorizonsFabric"
     ],
+    "terrablender": [
+      "com.teamaurora.horizons.core.fabric.HorizonsFabric"
+    ],
     "client": [
       "com.teamaurora.horizons.core.fabric.HorizonsFabricClient"
     ],

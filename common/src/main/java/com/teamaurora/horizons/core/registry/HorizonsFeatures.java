@@ -2,10 +2,7 @@ package com.teamaurora.horizons.core.registry;
 
 import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.borealib.api.registry.v1.RegistryWrapper;
-import com.teamaurora.horizons.common.levelgen.feature.CypressTreeFeature;
-import com.teamaurora.horizons.common.levelgen.feature.MegaCypressTreeFeature;
-import com.teamaurora.horizons.common.levelgen.feature.WaterCypressTreeFeature;
-import com.teamaurora.horizons.common.levelgen.feature.WaterMegaCypressTreeFeature;
+import com.teamaurora.horizons.common.levelgen.feature.*;
 import com.teamaurora.horizons.common.levelgen.treedecorators.*;
 import com.teamaurora.horizons.core.Horizons;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
@@ -18,6 +15,7 @@ public class HorizonsFeatures {
     public static final RegistryReference<MegaCypressTreeFeature> MEGA_CYPRESS_TREE = PROVIDER.register("mega_cypress_tree", MegaCypressTreeFeature::new);
     public static final RegistryReference<WaterCypressTreeFeature> WATER_CYPRESS_TREE = PROVIDER.register("water_cypress_tree", WaterCypressTreeFeature::new);
     public static final RegistryReference<WaterMegaCypressTreeFeature> WATER_MEGA_CYPRESS_TREE = PROVIDER.register("water_mega_cypress_tree", WaterMegaCypressTreeFeature::new);
+    public static final RegistryReference<AlgaePatchFeature> ALGAE_PATCH = PROVIDER.register("algae_patch", AlgaePatchFeature::new);
     public static final RegistryReference<TreeDecoratorType<CypressBranchTreeDecorator>> CYPRESS_BRANCH = PROVIDER.registerTreeDecoratorType("cypress_branch", CypressBranchTreeDecorator.CODEC);
     public static final RegistryReference<TreeDecoratorType<HangingCypressLeavesTreeDecorator>> HANGING_CYPRESS_LEAVES = PROVIDER.registerTreeDecoratorType("hanging_cypress_leaves", HangingCypressLeavesTreeDecorator.CODEC);
     public static final RegistryReference<TreeDecoratorType<BeardMossTreeDecorator>> BEARD_MOSS = PROVIDER.registerTreeDecoratorType("beard_moss", BeardMossTreeDecorator.CODEC);

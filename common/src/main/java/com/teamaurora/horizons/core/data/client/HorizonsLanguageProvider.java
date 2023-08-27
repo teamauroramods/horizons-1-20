@@ -37,6 +37,12 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
         HorizonsItems.PROVIDER.stream().filter(Predicate.not(item -> DONT_AUTO_TRANSLATE.contains(item) || item.get() instanceof BlockItem)).forEach(item -> registry.add(item.get(), autoTranslate(item.getId().getPath())));
 
         // Manual translations
+        registry.add("biome.horizons.atacama_desert", "Atacama Desert");
+        registry.add("biome.horizons.bayou", "Bayou");
+        registry.add("biome.horizons.lavender_field", "Lavender Field");
+        registry.add("biome.horizons.lavender_forest", "Lavender Forest");
+        registry.add("biome.horizons.redwood_forest", "Redwood Forest");
+
         registry.add(HorizonsItems.CYPRESS_BOATS.getSecond().get(), "Cypress Boat with Chest");
     }
 }

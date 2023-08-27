@@ -7,6 +7,7 @@ import com.teamaurora.horizons.core.data.client.HorizonsLanguageProvider;
 import com.teamaurora.horizons.core.data.client.HorizonsModelProvider;
 import com.teamaurora.horizons.core.data.server.*;
 import com.teamaurora.horizons.core.registry.HorizonsBiomeModifiers;
+import com.teamaurora.horizons.core.registry.HorizonsBiomes;
 import com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures;
 import com.teamaurora.horizons.core.registry.HorizonsPlacedFeatures;
 import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationFeatures;
@@ -29,6 +30,7 @@ public class HorizonsData {
     public static void initRegistries(RegistrySetWrapper builder) {
         builder.add(Registries.CONFIGURED_FEATURE, HorizonsConfiguredFeatures::bootstrap)
                 .add(Registries.PLACED_FEATURE, HorizonsPlacedFeatures::bootstrap)
+                .add(Registries.BIOME, HorizonsBiomes::bootstrap)
                 .add(BorealibRegistries.BIOME_MODIFIERS, HorizonsBiomeModifiers::bootstrap);
     }
 }

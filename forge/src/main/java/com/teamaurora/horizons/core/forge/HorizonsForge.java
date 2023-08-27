@@ -24,7 +24,10 @@ public class HorizonsForge {
         Horizons.init();
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> HorizonsClient::init);
         bus.<FMLClientSetupEvent>addListener(e -> HorizonsClient.postInit(ForgeHelper.createDispatcher(e)));
-        bus.<FMLCommonSetupEvent>addListener(e -> Horizons.postInit(ForgeHelper.createDispatcher(e)));
+        bus.<FMLCommonSetupEvent>addListener(e -> {
+            Horizons.postInit(ForgeHelper.createDispatcher(e));
+            e.enqueueWork(Horizons::initTerrablender);
+        });
         bus.<GatherDataEvent>addListener(e -> {
             HorizonsData.init(ForgeHelper.createGenerator(e));
             ForgeHelper.buildRegistries(e, HorizonsData::initRegistries);

@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-27T15:02:00.6821611	Horizons/Block Loot
+// 1.20.1	2023-08-27T18:13:30.2795226	Horizons/Block Loot
 ebb37384117e3fe36080f1a2136217d6f63a4fa5 data\horizons\loot_tables\blocks\beard_moss_block.json
 659294ba54b1cbc3e6cbd7785f19313261858e2e data\horizons\loot_tables\blocks\stripped_cypress_wood.json
 d614d17f029d1088dbda816ab1447e07fd88084d data\horizons\loot_tables\blocks\cypress_fence_gate.json
@@ -11,8 +11,8 @@ d9618436bfb7a568550b7eaa06cf3bc25a32c433 data\horizons\loot_tables\blocks\cypres
 7ef9f0bb58d7992d1ab14ff1592551cdc689d369 data\horizons\loot_tables\blocks\potted_light_gray_lily.json
 be5a78e850689822d6326569669fd387562308cb data\horizons\loot_tables\blocks\algae_thatch_slab.json
 85349cb59abf1715028b86d599d202051374fdfb data\horizons\loot_tables\blocks\cypress_knee.json
-da48d8626d7bf23e658a6401e49880fd8c4e8712 data\horizons\loot_tables\blocks\algae_thatch_stairs.json
 4151141eb29cd817d36cb5d62acd5ef3dba162c8 data\horizons\loot_tables\blocks\cypress_fence.json
+da48d8626d7bf23e658a6401e49880fd8c4e8712 data\horizons\loot_tables\blocks\algae_thatch_stairs.json
 4ebf6c4398d952ba933eab132743acb91f923257 data\horizons\loot_tables\blocks\beard_moss.json
 a329097a8db558537c6df749fe8168abb43d0950 data\horizons\loot_tables\blocks\potted_magenta_lily.json
 6c31d96ae5ffdb2350b84996450172254dc12f16 data\horizons\loot_tables\blocks\hanging_cypress_leaves.json

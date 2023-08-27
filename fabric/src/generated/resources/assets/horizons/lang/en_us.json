@@ -1,4 +1,9 @@
 {
+  "biome.horizons.atacama_desert": "Atacama Desert",
+  "biome.horizons.bayou": "Bayou",
+  "biome.horizons.lavender_field": "Lavender Field",
+  "biome.horizons.lavender_forest": "Lavender Forest",
+  "biome.horizons.redwood_forest": "Redwood Forest",
   "block.horizons.algae": "Algae",
   "block.horizons.algae_thatch": "Algae Thatch",
   "block.horizons.algae_thatch_slab": "Algae Thatch Slab",

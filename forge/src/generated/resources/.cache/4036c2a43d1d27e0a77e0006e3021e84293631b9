@@ -1,6 +1,11 @@
-// 1.20.1	2023-08-23T10:26:41.6317198	Tags for minecraft:worldgen/biome mod id horizons
+// 1.20.1	2023-08-27T18:12:59.83835	Tags for minecraft:worldgen/biome mod id horizons
+33fae7cbe661d78c83bfa9346f93e3e9ad8905d3 data/environmental/tags/worldgen/biome/has_feature/cattails.json
+340cb51e74029a411219533ef2f7b7278779536c data/forge/tags/worldgen/biome/is_coniferous.json
+93ae8b7b22b87aaa209b699be16e3b7d6d8daf4b data/forge/tags/worldgen/biome/is_dense/overworld.json
+33fae7cbe661d78c83bfa9346f93e3e9ad8905d3 data/forge/tags/worldgen/biome/is_swamp.json
+33fae7cbe661d78c83bfa9346f93e3e9ad8905d3 data/horizons/tags/worldgen/biome/has_feature/algae.json
 c3d4e55bd4ed5d178abb10df76626eccdab7c209 data/horizons/tags/worldgen/biome/has_feature/amaranthus.json
-2ea2f6b4e52c4ebdcb58dd12967cff289aefa815 data/horizons/tags/worldgen/biome/has_feature/blue_daisy.json
+83326b8a11b083815fad718c282aa158b46f5cb6 data/horizons/tags/worldgen/biome/has_feature/blue_daisy.json
 2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/blue_lily.json
 2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/cyan_lily.json
 c3d4e55bd4ed5d178abb10df76626eccdab7c209 data/horizons/tags/worldgen/biome/has_feature/fiddleneck.json
@@ -19,3 +24,11 @@ aadd98a3080b6b7bb3578de4de0176f4f66edd90 data/horizons/tags/worldgen/biome/has_f
 aadd98a3080b6b7bb3578de4de0176f4f66edd90 data/horizons/tags/worldgen/biome/has_feature/red_daisy.json
 2baf25447b6e6be292fa28c96583cdcde3854de8 data/horizons/tags/worldgen/biome/has_feature/white_lily.json
 aadd98a3080b6b7bb3578de4de0176f4f66edd90 data/horizons/tags/worldgen/biome/has_feature/yellow_daisy.json
+93ae8b7b22b87aaa209b699be16e3b7d6d8daf4b data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
+33fae7cbe661d78c83bfa9346f93e3e9ad8905d3 data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_swamp.json
+33fae7cbe661d78c83bfa9346f93e3e9ad8905d3 data/minecraft/tags/worldgen/biome/has_structure/swamp_hut.json
+93ae8b7b22b87aaa209b699be16e3b7d6d8daf4b data/minecraft/tags/worldgen/biome/is_forest.json
+33fae7cbe661d78c83bfa9346f93e3e9ad8905d3 data/minecraft/tags/worldgen/biome/spawns_warm_variant_frogs.json
+340cb51e74029a411219533ef2f7b7278779536c data/minecraft/tags/worldgen/biome/stronghold_biased_to.json
+33fae7cbe661d78c83bfa9346f93e3e9ad8905d3 data/upgrade_aquatic/tags/worldgen/biome/has_animal/perch.json
+340cb51e74029a411219533ef2f7b7278779536c data/windswept/tags/worldgen/biome/has_feature/rare_chestnut_trees.json

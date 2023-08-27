@@ -2,8 +2,10 @@ package com.teamaurora.horizons.core.data.server.fabric;
 
 import com.teamaurora.horizons.core.data.server.HorizonsBiomeTagsProvider;
 import com.teamaurora.horizons.core.other.tags.HorizonsBiomeTags;
+import com.teamaurora.horizons.core.registry.HorizonsBiomes;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 
 public class HorizonsBiomeTagsProviderImpl {
@@ -34,14 +36,18 @@ public class HorizonsBiomeTagsProviderImpl {
         provider.tag(HorizonsBiomeTags.HAS_FIDDLENECK).addOptionalTag(ConventionalBiomeTags.JUNGLE.location());
         provider.tag(HorizonsBiomeTags.HAS_HELICONIA).addOptionalTag(ConventionalBiomeTags.JUNGLE.location());
 
-        //provider.tag(ConventionalBiomeTags.SWAMP).add(HorizonsBiomes.BAYOU.getKey());
-        //provider.tag(Tags.Biomes.IS_DENSE).add(HorizonsBiomes.BAYOU.getKey(), HorizonsBiomes.REDWOOD_FOREST.getKey());
-        //provider.tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(HorizonsBiomes.BAYOU.getKey(), HorizonsBiomes.REDWOOD_FOREST.getKey());
-        //provider.tag(Tags.Biomes.IS_CONIFEROUS).add(HorizonsBiomes.REDWOOD_FOREST.getKey());
-        //provider.tag(HorizonsBiomeTags.HAS_PERCH).add(HorizonsBiomes.BAYOU.getKey());
-        //provider.tag(HorizonsBiomeTags.HAS_CATTAILS).add(HorizonsBiomes.BAYOU.getKey());
-        //provider.tag(HorizonsBiomeTags.HAS_SPOTTED_RED_MAPLE_TREES).add(HorizonsBiomes.REDWOOD_FOREST.getKey());
-        //provider.tag(HorizonsBiomeTags.HAS_HOLLY_TREES).add(HorizonsBiomes.REDWOOD_FOREST.getKey());
-        //provider.tag(HorizonsBiomeTags.HAS_RARE_CHESTNUT_TREES).add(HorizonsBiomes.REDWOOD_FOREST.getKey(), HorizonsBiomes.REDBUD_GROVE.getKey());
+        provider.tag(ConventionalBiomeTags.SWAMP).add(HorizonsBiomes.BAYOU);
+        provider.tag(ConventionalBiomeTags.VEGETATION_DENSE).add(HorizonsBiomes.BAYOU, HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(ConventionalBiomeTags.TREE_CONIFEROUS).add(HorizonsBiomes.REDWOOD_FOREST);
+
+        provider.tag(HorizonsBiomeTags.HAS_BLUE_DAISY).add(Biomes.MEADOW);
+        provider.tag(HorizonsBiomeTags.HAS_ALGAE).add(HorizonsBiomes.BAYOU);
+
+        provider.tag(BiomeTags.IS_FOREST).add(HorizonsBiomes.BAYOU, HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.HAS_MINESHAFT).add(HorizonsBiomes.BAYOU, HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.HAS_SWAMP_HUT).add(HorizonsBiomes.BAYOU);
+        provider.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).add(HorizonsBiomes.BAYOU);
+        provider.tag(BiomeTags.HAS_RUINED_PORTAL_SWAMP).add(HorizonsBiomes.BAYOU);
+        provider.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(HorizonsBiomes.REDWOOD_FOREST);
     }
 }

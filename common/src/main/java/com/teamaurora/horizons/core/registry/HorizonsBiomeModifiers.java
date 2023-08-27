@@ -23,6 +23,7 @@ public class HorizonsBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_TROPICAL_GRASS = key("add_tropical_grass");
     public static final ResourceKey<BiomeModifier> ADD_GIANT_FERNS = key("add_giant_ferns");
+    public static final ResourceKey<BiomeModifier> ADD_ALGAE = key("add_algae");
     public static final ResourceKey<BiomeModifier> ADD_BLUE_LILY = key("add_blue_lily");
     public static final ResourceKey<BiomeModifier> ADD_LIGHT_GRAY_LILY = key("add_light_gray_lily");
     public static final ResourceKey<BiomeModifier> ADD_CYAN_LILY = key("add_cyan_lily");
@@ -48,6 +49,13 @@ public class HorizonsBiomeModifiers {
                 ADD_GIANT_FERNS,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_GIANT_FERN),
                 placedFeatures.getOrThrow(HorizonsVegetationPlacements.GIANT_FERN),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        );
+        tagBasedFeatureAdder(
+                context,
+                ADD_ALGAE,
+                biomes.getOrThrow(HorizonsBiomeTags.HAS_ALGAE),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.ALGAE),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(

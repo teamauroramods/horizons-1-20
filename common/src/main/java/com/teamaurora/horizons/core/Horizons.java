@@ -5,11 +5,15 @@ import com.teamaurora.borealib.api.config.v1.ConfigRegistry;
 import com.teamaurora.borealib.api.config.v1.ModConfig;
 import com.teamaurora.borealib.api.event.creativetabs.v1.CreativeTabEvents;
 import com.teamaurora.horizons.core.other.HorizonsCompat;
+import com.teamaurora.horizons.core.other.HorizonsSurfaceRuleData;
 import com.teamaurora.horizons.core.other.HorizonsTabPlacement;
+import com.teamaurora.horizons.core.other.region.HorizonsOverworldRegion;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import com.teamaurora.horizons.core.registry.HorizonsItems;
 import net.minecraft.resources.ResourceLocation;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 public class Horizons {
 
@@ -25,6 +29,11 @@ public class Horizons {
     public static void postInit(ParallelDispatcher dispatcher) {
         dispatcher.enqueueWork(HorizonsCompat::init);
         CreativeTabEvents.MODIFY_ENTRIES_ALL.register(HorizonsTabPlacement::register);
+    }
+
+    public static void initTerrablender() {
+        Regions.register(new HorizonsOverworldRegion());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, HorizonsSurfaceRuleData.overworld());
     }
 
     public static ResourceLocation location(String string) {

@@ -1,36 +1,25 @@
 package com.teamaurora.horizons.core.registry.feature;
 
-import com.teamaurora.horizons.common.levelgen.treedecorators.*;
-import com.teamaurora.horizons.core.Horizons;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
-import com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
-import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
-import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
-import java.util.List;
+import static com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures.key;
 
 /**
  * @author rose_
@@ -38,16 +27,19 @@ import java.util.List;
  */
 public class HorizonsVegetationFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TROPICAL_GRASS = HorizonsConfiguredFeatures.key("patch_tropical_grass");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_FERN = HorizonsConfiguredFeatures.key("giant_fern");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_LILY = HorizonsConfiguredFeatures.key("blue_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LIGHT_GRAY_LILY = HorizonsConfiguredFeatures.key("light_gray_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CYAN_LILY = HorizonsConfiguredFeatures.key("cyan_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LIGHT_BLUE_LILY = HorizonsConfiguredFeatures.key("light_blue_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> MAGENTA_LILY = HorizonsConfiguredFeatures.key("magenta_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_LILY = HorizonsConfiguredFeatures.key("pink_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_LILY = HorizonsConfiguredFeatures.key("purple_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_LILY = HorizonsConfiguredFeatures.key("white_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TROPICAL_GRASS = key("patch_tropical_grass");
+    public static final ResourceKey<ConfiguredFeature<? ,?>> ALGAE = key("algae");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_FERN = key("giant_fern");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_LILY = key("blue_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LIGHT_GRAY_LILY = key("light_gray_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CYAN_LILY = key("cyan_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LIGHT_BLUE_LILY = key("light_blue_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MAGENTA_LILY = key("magenta_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_LILY = key("pink_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_LILY = key("purple_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_LILY = key("white_lily");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_CYPRESS = key("trees_cypress");
+    public static final ResourceKey<ConfiguredFeature<? ,?>> TREES_WATER_CYPRESS = key("trees_water_cypress");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         FeatureUtils.register(
@@ -68,6 +60,12 @@ public class HorizonsVegetationFeatures {
                                 BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.PODZOL)))
                         )
                 )
+        );
+        FeatureUtils.register(
+                context,
+                ALGAE,
+                HorizonsFeatures.ALGAE_PATCH.get(),
+                NoneFeatureConfiguration.INSTANCE
         );
         FeatureUtils.register(
                 context,

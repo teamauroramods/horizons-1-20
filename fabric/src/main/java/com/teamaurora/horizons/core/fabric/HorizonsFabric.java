@@ -9,12 +9,18 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
+import terrablender.api.TerraBlenderApi;
 
-public class HorizonsFabric implements ModInitializer {
+public class HorizonsFabric implements ModInitializer, TerraBlenderApi {
 
     @Override
     public void onInitialize() {
         Horizons.init();
         Horizons.postInit(FabricHelper.getDispatcher());
+    }
+
+    @Override
+    public void onTerraBlenderInitialized() {
+        Horizons.initTerrablender();
     }
 }

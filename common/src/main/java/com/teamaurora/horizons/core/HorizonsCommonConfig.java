@@ -15,7 +15,7 @@ public class HorizonsCommonConfig {
 
     HorizonsCommonConfig(ConfigBuilder builder) {
         builder.push("General");
-        this.regionWeight = builder.comment("The relative weight to use for the Horizons TerraBlender region.", "This determines how often Horizons' biomes will appear compared to those added by other mods.").define("Region Weight", 4);
+        this.regionWeight = builder.comment("The relative weight to use for the Horizons TerraBlender region.", "This determines how often Horizons' biomes will appear compared to those added by other mods.").define("Region Weight", 10);
         this.cypressBranchOdds = builder.comment("The odds out of 1 for a cypress branch to generate if the randomly selected adjacent block is available.").defineInRange("Cypress Branch Odds", 0.1F, 0F, 1F, Float.class);
         builder.pop();
 

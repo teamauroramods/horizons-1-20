@@ -17,6 +17,7 @@ import static com.teamaurora.horizons.core.registry.HorizonsPlacedFeatures.key;
 public class HorizonsVegetationPlacements {
 
     public static final ResourceKey<PlacedFeature> PATCH_TROPICAL_GRASS = key("patch_tropical_grass");
+    public static final ResourceKey<PlacedFeature> ALGAE = key("algae");
     public static final ResourceKey<PlacedFeature> GIANT_FERN = key("giant_fern");
     public static final ResourceKey<PlacedFeature> BLUE_LILY = key("blue_lily");
     public static final ResourceKey<PlacedFeature> LIGHT_GRAY_LILY = key("light_gray_lily");
@@ -29,21 +30,29 @@ public class HorizonsVegetationPlacements {
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-        Holder<ConfiguredFeature<? ,?>> patchTropicalGrass = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PATCH_TROPICAL_GRASS);
-        Holder<ConfiguredFeature<? ,?>> giantFern = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.GIANT_FERN);
-        Holder<ConfiguredFeature<? ,?>> blueLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.BLUE_LILY);
-        Holder<ConfiguredFeature<? ,?>> lightGrayLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.LIGHT_GRAY_LILY);
-        Holder<ConfiguredFeature<? ,?>> cyanLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.CYAN_LILY);
-        Holder<ConfiguredFeature<? ,?>> lightBlueLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.LIGHT_BLUE_LILY);
-        Holder<ConfiguredFeature<? ,?>> magentaLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.MAGENTA_LILY);
-        Holder<ConfiguredFeature<? ,?>> pinkLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PINK_LILY);
-        Holder<ConfiguredFeature<? ,?>> purpleLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PURPLE_LILY);
-        Holder<ConfiguredFeature<? ,?>> whiteLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.WHITE_LILY);
+        Holder<ConfiguredFeature<?, ?>> patchTropicalGrass = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PATCH_TROPICAL_GRASS);
+        Holder<ConfiguredFeature<?, ?>> algae = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.ALGAE);
+        Holder<ConfiguredFeature<?, ?>> giantFern = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.GIANT_FERN);
+        Holder<ConfiguredFeature<?, ?>> blueLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.BLUE_LILY);
+        Holder<ConfiguredFeature<?, ?>> lightGrayLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.LIGHT_GRAY_LILY);
+        Holder<ConfiguredFeature<?, ?>> cyanLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.CYAN_LILY);
+        Holder<ConfiguredFeature<?, ?>> lightBlueLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.LIGHT_BLUE_LILY);
+        Holder<ConfiguredFeature<?, ?>> magentaLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.MAGENTA_LILY);
+        Holder<ConfiguredFeature<?, ?>> pinkLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PINK_LILY);
+        Holder<ConfiguredFeature<?, ?>> purpleLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PURPLE_LILY);
+        Holder<ConfiguredFeature<?, ?>> whiteLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.WHITE_LILY);
+
         PlacementUtils.register(
                 context,
                 PATCH_TROPICAL_GRASS,
                 patchTropicalGrass,
                 VegetationPlacements.worldSurfaceSquaredWithCount(25)
+        );
+        PlacementUtils.register(
+                context,
+                ALGAE,
+                algae,
+                createPatch(3)
         );
         PlacementUtils.register(
                 context,

@@ -1,9 +1,9 @@
-// 1.20.1	2023-08-27T15:02:00.6831611	Horizons/Tags for minecraft:block
+// 1.20.1	2023-08-27T18:13:30.2805236	Horizons/Tags for minecraft:block
 d0a03e037c52ae5a8158ac335a0b00a80a4563d3 data\minecraft\tags\blocks\mineable\hoe.json
 82f0762f1307d26a0c22b496637f3479c7f36a2f data\minecraft\tags\blocks\mineable\axe.json
 8c0ce917f1486045abe48aea067f40ff007acb11 data\minecraft\tags\blocks\wooden_buttons.json
-4f0f3ffbe12699090a18f5e20e84879e379e048d data\minecraft\tags\blocks\standing_signs.json
 77c5c4944a43a62522bded58e6befef3de8bffb3 data\minecraft\tags\blocks\planks.json
+4f0f3ffbe12699090a18f5e20e84879e379e048d data\minecraft\tags\blocks\standing_signs.json
 56e2a9b814e98a98a46c49393c60dd9f8a1a0e07 data\c\tags\blocks\chests.json
 ad18741a4a5b3cdd88d714682570b9789606af95 data\minecraft\tags\blocks\logs_that_burn.json
 94dd4d6a81d417cce014cc74c4d7f305b8d0cd94 data\minecraft\tags\blocks\wall_hanging_signs.json
