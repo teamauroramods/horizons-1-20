@@ -6,14 +6,13 @@ import com.teamaurora.borealib.api.biome.v1.modifier.BiomeSelector;
 import com.teamaurora.borealib.core.registry.BorealibRegistries;
 import com.teamaurora.horizons.core.Horizons;
 import com.teamaurora.horizons.core.other.tags.HorizonsBiomeTags;
-import com.teamaurora.horizons.core.other.tags.HorizonsPlacedFeatureTags;
+import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationPlacements;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -41,70 +40,70 @@ public class HorizonsBiomeModifiers {
                 .withAction(BiomeModifierAction.replaceFeaturesNonlinear(
                         GenerationStep.Decoration.VEGETAL_DECORATION,
                         placedFeatures.getOrThrow(TROPICAL_GRASS_REPLACEABLE),
-                        HolderSet.direct(placedFeatures.getOrThrow(HorizonsPlacedFeatures.PATCH_TROPICAL_GRASS))))
+                        HolderSet.direct(placedFeatures.getOrThrow(HorizonsVegetationPlacements.PATCH_TROPICAL_GRASS))))
                 .build();
         context.register(ADD_TROPICAL_GRASS, addTropicalGrass);
         tagBasedFeatureAdder(
                 context,
                 ADD_GIANT_FERNS,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_GIANT_FERN),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.GIANT_FERN),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.GIANT_FERN),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_BLUE_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_BLUE_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.BLUE_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.BLUE_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_LIGHT_GRAY_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_LIGHT_GRAY_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.LIGHT_GRAY_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.LIGHT_GRAY_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_CYAN_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_CYAN_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.CYAN_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.CYAN_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_LIGHT_BLUE_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_LIGHT_BLUE_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.LIGHT_BLUE_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.LIGHT_BLUE_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_MAGENTA_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_MAGENTA_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.MAGENTA_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.MAGENTA_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_PINK_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_PINK_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.PINK_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.PINK_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_PURPLE_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_PURPLE_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.PURPLE_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.PURPLE_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         tagBasedFeatureAdder(
                 context,
                 ADD_WHITE_LILY,
                 biomes.getOrThrow(HorizonsBiomeTags.HAS_WHITE_LILY),
-                placedFeatures.getOrThrow(HorizonsPlacedFeatures.WHITE_LILY),
+                placedFeatures.getOrThrow(HorizonsVegetationPlacements.WHITE_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
     }

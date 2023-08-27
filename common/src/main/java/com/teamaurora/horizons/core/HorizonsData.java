@@ -9,6 +9,8 @@ import com.teamaurora.horizons.core.data.server.*;
 import com.teamaurora.horizons.core.registry.HorizonsBiomeModifiers;
 import com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures;
 import com.teamaurora.horizons.core.registry.HorizonsPlacedFeatures;
+import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationFeatures;
+import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationPlacements;
 import net.minecraft.core.registries.Registries;
 
 public class HorizonsData {
