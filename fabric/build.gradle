@@ -35,6 +35,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}+${rootProject.minecraft_version}"
     modApi "com.teamaurora:borealib-fabric:${rootProject.borealib_version}"
+    modImplementation "com.github.glitchfiend:TerraBlender-fabric:${rootProject.minecraft_version}-${rootProject.terrablender_version}"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }
@@ -60,9 +62,8 @@ processResources {
     inputs.property "mod_description", project.mod_description
     inputs.property "archives_base_name", project.archives_base_name
     inputs.property "borealib_version", project.borealib_version
-
-
     inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "terrablender_version", project.terrablender_version
 
     filesMatching(["fabric.mod.json"]) {
         expand "mod_id": project.mod_id,
@@ -71,7 +72,8 @@ processResources {
                 "mod_description": project.mod_description,
                 "archives_base_name": project.archives_base_name,
                 "minecraft_version": project.minecraft_version,
-                "borealib_version": project.borealib_version
+                "borealib_version": project.borealib_version,
+                "terrablender_version": project.terrablender_version
     }
 }
 

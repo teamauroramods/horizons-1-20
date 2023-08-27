@@ -10,7 +10,7 @@ displayName = "${mod_name}"
 description = "${mod_description}"
 logoFile = "${mod_id}.logo.png"
 authors = "Team Aurora"
-credits = "ebo2022"
+credits = "ebo2022, Exoplanetary, rose_, StevenPlayzz, JustinPlayzz, Sarinsa"
 displayURL= "https://discord.gg/VzXSCFp"
 
 [modproperties.${mod_id}]
@@ -35,4 +35,11 @@ modId = "borealib"
 mandatory = true
 versionRange = "[${borealib_version},)"
 ordering = "BEFORE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "terrablender"
+mandatory = true
+versionRange = "[${terrablender_version},)"
+ordering = "NONE"
 side = "BOTH"

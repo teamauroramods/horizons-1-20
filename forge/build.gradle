@@ -34,6 +34,7 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_major_version}.${rootProject.forge_minor_version}.${rootProject.forge_build_version}"
     modApi "com.teamaurora:borealib-forge:${rootProject.borealib_version}"
+    modImplementation "com.github.glitchfiend:TerraBlender-forge:${rootProject.minecraft_version}-${rootProject.terrablender_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -54,10 +55,10 @@ processResources {
     inputs.property "mod_name", project.mod_name
     inputs.property "mod_description", project.mod_description
     inputs.property "archives_base_name", project.archives_base_name
-
     inputs.property "minecraft_version", project.minecraft_version
     inputs.property "forge_major_version", project.forge_major_version
     inputs.property "borealib_version", project.borealib_version
+    inputs.property "terrablender_version", project.terrablender_version
 
     filesMatching(["META-INF/mods.toml", "pack.mcmeta"]) {
         expand "mod_id": project.mod_id,
@@ -67,7 +68,8 @@ processResources {
                 "archives_base_name": project.archives_base_name,
                 "minecraft_version": project.minecraft_version,
                 "forge_major_version": project.forge_major_version,
-                "borealib_version": project.borealib_version
+                "borealib_version": project.borealib_version,
+                "terrablender_version": project.terrablender_version
     }
 }
 
