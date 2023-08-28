@@ -1,5 +1,6 @@
 package com.teamaurora.horizons.core.other;
 
+import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationPlacements;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.biome.OverworldBiomes;
@@ -70,8 +71,13 @@ public class HorizonsOverworldBiomes {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_TAIGA_2);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
+
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TREES_CYPRESS);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TREES_WATER_CYPRESS);
 
         BiomeDefaultFeatures.addDefaultMushrooms(gen);
         BiomeDefaultFeatures.addSwampExtraVegetation(gen);
@@ -106,17 +112,6 @@ public class HorizonsOverworldBiomes {
         BiomeDefaultFeatures.farmAnimals(spawns);
         spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 2, 1, 1));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 3, 2, 4));
-
-        return spawns;
-    }
-
-    private static MobSpawnSettings.Builder baseRedbudGroveSpawns() {
-        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-
-        BiomeDefaultFeatures.commonSpawns(spawns);
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 2));
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6));
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
 
         return spawns;
     }

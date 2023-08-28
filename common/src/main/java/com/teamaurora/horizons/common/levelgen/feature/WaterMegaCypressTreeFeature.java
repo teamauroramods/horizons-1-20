@@ -45,7 +45,7 @@ public class WaterMegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
                     if (i == 0 && level.isWaterAt(bottom.offset(x, -1, z))) {
                         return false;
                     }
-                    this.addLog(bottom.offset(z, i, z));
+                    this.addLog(bottom.offset(x, i, z));
                 }
             }
         }

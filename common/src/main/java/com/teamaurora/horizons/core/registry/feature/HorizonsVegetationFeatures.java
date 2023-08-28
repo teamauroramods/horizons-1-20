@@ -3,6 +3,9 @@ package com.teamaurora.horizons.core.registry.feature;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -13,11 +16,16 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+
+import java.util.List;
 
 import static com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures.key;
 
@@ -42,6 +50,13 @@ public class HorizonsVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<? ,?>> TREES_WATER_CYPRESS = key("trees_water_cypress");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
+        Holder<PlacedFeature> cypress = placedFeatures.getOrThrow(HorizonsTreePlacements.CYPRESS_CHECKED);
+        Holder<PlacedFeature> megaCypress = placedFeatures.getOrThrow(HorizonsTreePlacements.MEGA_CYPRESS_CHECKED);
+        Holder<PlacedFeature> waterCypress = placedFeatures.getOrThrow(HorizonsTreePlacements.WATER_CYPRESS_CHECKED);
+        Holder<PlacedFeature> waterMegaCypress = placedFeatures.getOrThrow(HorizonsTreePlacements.WATER_MEGA_CYPRESS_CHECKED);
+        Holder<PlacedFeature> cypressBush = placedFeatures.getOrThrow(HorizonsTreePlacements.CYPRESS_BUSH);
+
         FeatureUtils.register(
                 context,
                 PATCH_TROPICAL_GRASS,
@@ -135,6 +150,24 @@ public class HorizonsVegetationFeatures {
                 Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(
                         10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.WHITE_LILY.get().defaultBlockState())))
+                )
+        );
+        FeatureUtils.register(
+                context,
+                TREES_CYPRESS,
+                Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfiguration(
+                        List.of(new WeightedPlacedFeature(cypressBush, 0.35f), new WeightedPlacedFeature(megaCypress, 0.333333334F)),
+                        cypress
+                )
+        );
+        FeatureUtils.register(
+                context,
+                TREES_WATER_CYPRESS,
+                Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfiguration(
+                        List.of(new WeightedPlacedFeature(waterMegaCypress, 0.333333334F)),
+                        waterCypress
                 )
         );
     }

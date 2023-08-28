@@ -1,5 +1,7 @@
 package com.teamaurora.horizons.core.registry.feature;
 
+import com.teamaurora.horizons.core.registry.HorizonsBlocks;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -7,6 +9,8 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -27,6 +31,8 @@ public class HorizonsVegetationPlacements {
     public static final ResourceKey<PlacedFeature> PINK_LILY = key("pink_lily");
     public static final ResourceKey<PlacedFeature> PURPLE_LILY = key("purple_lily");
     public static final ResourceKey<PlacedFeature> WHITE_LILY = key("white_lily");
+    public static final ResourceKey<PlacedFeature> TREES_CYPRESS = key("trees_cypress");
+    public static final ResourceKey<PlacedFeature> TREES_WATER_CYPRESS = key("trees_water_cypress");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -41,6 +47,8 @@ public class HorizonsVegetationPlacements {
         Holder<ConfiguredFeature<?, ?>> pinkLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PINK_LILY);
         Holder<ConfiguredFeature<?, ?>> purpleLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.PURPLE_LILY);
         Holder<ConfiguredFeature<?, ?>> whiteLily = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.WHITE_LILY);
+        Holder<ConfiguredFeature<?, ?>> treesCypress = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.TREES_CYPRESS);
+        Holder<ConfiguredFeature<?, ?>> treesWaterCypress = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.TREES_WATER_CYPRESS);
 
         PlacementUtils.register(
                 context,
@@ -107,6 +115,23 @@ public class HorizonsVegetationPlacements {
                 WHITE_LILY,
                 whiteLily,
                 createPatch(12)
+        );
+        PlacementUtils.register(
+                context,
+                TREES_CYPRESS,
+                treesCypress,
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(20, 0.1F, 1))
+        );
+        PlacementUtils.register(
+                context,
+                TREES_WATER_CYPRESS,
+                treesWaterCypress,
+                PlacementUtils.countExtra(9, 0.1F, 1),
+                InSquarePlacement.spread(),
+                SurfaceWaterDepthFilter.forMaxDepth(3),
+                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                BiomeFilter.biome(),
+                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(HorizonsBlocks.CYPRESS_SAPLING.get().defaultBlockState(), BlockPos.ZERO))
         );
     }
 

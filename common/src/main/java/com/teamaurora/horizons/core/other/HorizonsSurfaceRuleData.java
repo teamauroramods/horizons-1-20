@@ -30,23 +30,29 @@ public class HorizonsSurfaceRuleData {
                         )
                 ),
                 SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(HorizonsBiomes.BAYOU), SurfaceRules.ifTrue(
-                                SurfaceRules.ON_FLOOR, SurfaceRules.sequence(
-                                        SurfaceRules.ifTrue(
-                                                y62, SurfaceRules.ifTrue(
-                                                        SurfaceRules.not(y63), SurfaceRules.ifTrue(
-                                                                SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D),
-                                                                WATER
-                                                        )
+                        SurfaceRules.isBiome(HorizonsBiomes.BAYOU), SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(
+                                        y62, SurfaceRules.ifTrue(
+                                                SurfaceRules.not(y63), SurfaceRules.ifTrue(
+                                                        SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D),
+                                                        WATER
                                                 )
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition(Noises.SURFACE, -0.0575, 0.0575),
-                                                MUD
                                         )
+                                ),
+                                SurfaceRules.ifTrue(
+                                        SurfaceRules.noiseCondition(Noises.SURFACE, -0.065, 0.065),
+                                        MUD
+                                ),
+                                SurfaceRules.ifTrue(
+                                        SurfaceRules.noiseCondition(Noises.SURFACE, 0.6, 0.9),
+                                        PODZOL
+                                ),
+                                SurfaceRules.ifTrue(
+                                        SurfaceRules.noiseCondition(Noises.SURFACE, -0.9, -0.6),
+                                        PODZOL
                                 )
                         )
-                )
-        ));
+                ))
+        );
     }
 }

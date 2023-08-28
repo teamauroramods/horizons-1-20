@@ -13,7 +13,7 @@
         "probability": 0.0625
       },
       {
-        "type": "horizons:cypress_knees_sparse"
+        "type": "horizons:cypress_knees"
       },
       {
         "type": "horizons:beard_moss"

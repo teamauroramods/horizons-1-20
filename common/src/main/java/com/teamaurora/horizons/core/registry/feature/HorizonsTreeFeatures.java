@@ -28,8 +28,7 @@ public class HorizonsTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_GROWN = key("cypress_grown");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_CYPRESS_GROWN = key("mega_cypress_grown");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS = key("cypress");
-    public static final ResourceKey<ConfiguredFeature<? ,?>> MEGA_CYPRESS = key("mega_cypress");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_CYPRESS_KNEES = key("mega_cypress_knees");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_CYPRESS = key("mega_cypress");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_CYPRESS = key("water_cypress");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_MEGA_CYPRESS = key("water_mega_cypress");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_BUSH = key("cypress_bush");
@@ -56,12 +55,6 @@ public class HorizonsTreeFeatures {
         FeatureUtils.register(
                 context,
                 MEGA_CYPRESS,
-                HorizonsFeatures.MEGA_CYPRESS_TREE.get(),
-                createNaturalCypress(true).build()
-        );
-        FeatureUtils.register(
-                context,
-                MEGA_CYPRESS_KNEES,
                 HorizonsFeatures.MEGA_CYPRESS_TREE.get(),
                 createNaturalCypress(false).build()
         );
