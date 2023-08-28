@@ -130,8 +130,7 @@ public class HorizonsVegetationPlacements {
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(3),
                 PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
-                BiomeFilter.biome(),
-                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(HorizonsBlocks.CYPRESS_SAPLING.get().defaultBlockState(), BlockPos.ZERO))
+                BiomeFilter.biome()
         );
     }
 
