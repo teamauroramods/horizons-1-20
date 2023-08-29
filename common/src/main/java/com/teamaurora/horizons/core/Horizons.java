@@ -5,6 +5,7 @@ import com.teamaurora.borealib.api.config.v1.ConfigRegistry;
 import com.teamaurora.borealib.api.config.v1.ModConfig;
 import com.teamaurora.borealib.api.event.creativetabs.v1.CreativeTabEvents;
 import com.teamaurora.horizons.core.other.HorizonsCompat;
+import com.teamaurora.horizons.core.other.HorizonsFoods;
 import com.teamaurora.horizons.core.other.HorizonsSurfaceRuleData;
 import com.teamaurora.horizons.core.other.HorizonsTabPlacement;
 import com.teamaurora.horizons.core.other.region.HorizonsOverworldRegion;
@@ -15,8 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 
-public class Horizons {
-
+public final class Horizons {
     public static final String MOD_ID = "horizons";
     public static final HorizonsCommonConfig CONFIG = ConfigRegistry.register(MOD_ID, ModConfig.Type.COMMON, HorizonsCommonConfig::new);
 

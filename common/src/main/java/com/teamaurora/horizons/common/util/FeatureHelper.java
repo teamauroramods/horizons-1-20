@@ -12,7 +12,6 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.material.Fluids;
 
 public class FeatureHelper {
-
     public static boolean isAirOrLeaves(BlockState state) {
         return state.isAir() || state.is(BlockTags.LEAVES);
     }

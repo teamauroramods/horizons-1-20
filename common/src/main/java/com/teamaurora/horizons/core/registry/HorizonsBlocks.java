@@ -23,11 +23,9 @@ import com.teamaurora.horizons.core.other.HorizonsProperties;
 import com.teamaurora.horizons.core.other.HorizonsWoodTypes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-public class HorizonsBlocks {
-
+public final class HorizonsBlocks {
     public static final RegistryWrapper.BlockProvider PROVIDER = RegistryWrapper.blockProvider(HorizonsItems.PROVIDER);
 
     // BAYOU CONTENT //

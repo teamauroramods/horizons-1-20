@@ -5,8 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
-public class HorizonsBlockTags {
-
+public final class HorizonsBlockTags {
     public static final TagKey<Block> CYPRESS_LOGS = blockTag("cypress_logs");
 
     private static TagKey<Block> blockTag(String path) {

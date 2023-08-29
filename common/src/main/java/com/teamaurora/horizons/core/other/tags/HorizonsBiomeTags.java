@@ -5,8 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
-public class HorizonsBiomeTags {
-
+public final class HorizonsBiomeTags {
     public static final TagKey<Biome> HAS_PERCH = biomeTag("upgrade_aquatic:has_animal/perch");
     public static final TagKey<Biome> HAS_CATTAILS = biomeTag("environmental:has_feature/cattails");
     public static final TagKey<Biome> HAS_MUD_DISK = biomeTag("environmental:has_feature/mud_disk");

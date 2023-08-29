@@ -8,7 +8,6 @@ import net.minecraft.world.food.FoodProperties;
 import java.util.function.Supplier;
 
 public class FoodPropertiesHelper {
-
     @ExpectPlatform
     public static FoodProperties.Builder effect(FoodProperties.Builder properties, Supplier<MobEffectInstance> instance, float chance) {
         return Platform.expect();

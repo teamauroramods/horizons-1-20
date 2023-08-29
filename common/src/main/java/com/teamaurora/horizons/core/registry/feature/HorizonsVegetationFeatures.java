@@ -33,8 +33,7 @@ import static com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures.k
  * @author rose_
  * @author ebo2022
  */
-public class HorizonsVegetationFeatures {
-
+public final class HorizonsVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TROPICAL_GRASS = key("patch_tropical_grass");
     public static final ResourceKey<ConfiguredFeature<? ,?>> ALGAE = key("algae");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_FERN = key("giant_fern");

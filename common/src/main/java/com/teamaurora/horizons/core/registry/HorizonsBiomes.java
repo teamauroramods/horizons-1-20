@@ -10,8 +10,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
-public class HorizonsBiomes {
-
+public final class HorizonsBiomes {
     public static final ResourceKey<Biome> ATACAMA_DESERT = biome("atacama_desert");
     public static final ResourceKey<Biome> BAYOU = biome("bayou");
     public static final ResourceKey<Biome> LAVENDER_FIELD = biome("lavender_field");

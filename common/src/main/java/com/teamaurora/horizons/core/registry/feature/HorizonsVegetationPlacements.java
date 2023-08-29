@@ -1,7 +1,5 @@
 package com.teamaurora.horizons.core.registry.feature;
 
-import com.teamaurora.horizons.core.registry.HorizonsBlocks;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -9,8 +7,6 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -18,8 +14,7 @@ import java.util.List;
 
 import static com.teamaurora.horizons.core.registry.HorizonsPlacedFeatures.key;
 
-public class HorizonsVegetationPlacements {
-
+public final class HorizonsVegetationPlacements {
     public static final ResourceKey<PlacedFeature> PATCH_TROPICAL_GRASS = key("patch_tropical_grass");
     public static final ResourceKey<PlacedFeature> ALGAE = key("algae");
     public static final ResourceKey<PlacedFeature> GIANT_FERN = key("giant_fern");

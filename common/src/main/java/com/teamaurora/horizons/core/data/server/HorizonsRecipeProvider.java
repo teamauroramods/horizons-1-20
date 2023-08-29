@@ -30,7 +30,6 @@ import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
 import static com.teamaurora.horizons.core.registry.HorizonsItems.*;
 
 public class HorizonsRecipeProvider extends BorealibRecipeProvider {
-
     private static final ResourceConditionProvider FARMERS_DELIGHT_LOADED = DefaultResourceConditions.allModsLoaded(Mods.FARMERS_DELIGHT);
 
     public HorizonsRecipeProvider(BorealibPackOutput output) {

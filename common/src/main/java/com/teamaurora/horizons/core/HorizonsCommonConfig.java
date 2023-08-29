@@ -4,7 +4,6 @@ import com.teamaurora.borealib.api.config.v1.ConfigBuilder;
 import com.teamaurora.borealib.api.config.v1.ConfigValue;
 
 public class HorizonsCommonConfig {
-
     public final ConfigValue<Integer> regionWeight;
     public final ConfigValue<Float> cypressBranchOdds;
     public final ConfigValue<Boolean> atacamaDesert;

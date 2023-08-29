@@ -39,7 +39,6 @@ import static com.teamaurora.horizons.core.other.HorizonsBlockFamilies.*;
  * @author rose_
  */
 public class HorizonsModelProvider extends BorealibModelProvider {
-
     private static final ModelTemplate TRIPLE_PLANT_TOP = ModelGeneratorHelper.template(Horizons.location("block/template_triple_plant_top"), TextureSlot.CROSS, TextureSlot.TOP);
     private static final TextureSlot FLOWER_SLOT = ModelGeneratorHelper.slot("flower");
     private static final ModelTemplate TEMPLATE_LILY = ModelGeneratorHelper.template(Horizons.location("block/template_lily"), FLOWER_SLOT);
@@ -112,7 +111,6 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.generateFlatItem(GOOSEBERRY_JAM_COOKIE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(LAVENDER_TEA.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRY_JUICE.get(), ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(REDBUD_BLOSSOMS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRIES.get(), ModelTemplates.FLAT_ITEM);
     }
 

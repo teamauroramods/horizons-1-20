@@ -8,8 +8,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
-public class HorizonsConfiguredFeatures {
-
+public final class HorizonsConfiguredFeatures {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HorizonsTreeFeatures.bootstrap(context);
         HorizonsVegetationFeatures.bootstrap(context);

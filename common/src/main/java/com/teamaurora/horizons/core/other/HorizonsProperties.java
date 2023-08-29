@@ -18,7 +18,6 @@ public class HorizonsProperties {
     // Wood Sets //
     public static final WoodProperties CYPRESS = WoodProperties.builder(MapColor.COLOR_GREEN, MapColor.COLOR_BROWN).build();
     public static final WoodProperties JACARANDA = WoodProperties.builder(MapColor.COLOR_PURPLE, MapColor.COLOR_BROWN).leavesColor(MapColor.COLOR_PURPLE).build();
-    public static final WoodProperties REDBUD = WoodProperties.builder(MapColor.COLOR_RED, MapColor.COLOR_BROWN).build();
     public static final WoodProperties REDWOOD = WoodProperties.builder(MapColor.COLOR_ORANGE, MapColor.COLOR_BROWN).build();
     public static final BlockBehaviour.Properties CYPRESS_SIGN = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).ignitedByLava().noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD);
 

@@ -11,8 +11,7 @@ import net.minecraft.world.level.ItemLike;
 import static com.teamaurora.horizons.core.registry.HorizonsItems.*;
 import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
 
-public class HorizonsCompat {
-
+public final class HorizonsCompat {
     public static void init() {
         registerCompostables();
         registerFlammables();

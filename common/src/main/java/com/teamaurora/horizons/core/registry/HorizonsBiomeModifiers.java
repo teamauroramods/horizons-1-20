@@ -19,8 +19,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import static com.teamaurora.horizons.core.other.tags.HorizonsPlacedFeatureTags.*;
 
-public class HorizonsBiomeModifiers {
-
+public final class HorizonsBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TROPICAL_GRASS = key("add_tropical_grass");
     public static final ResourceKey<BiomeModifier> ADD_GIANT_FERNS = key("add_giant_ferns");
     public static final ResourceKey<BiomeModifier> ADD_ALGAE = key("add_algae");

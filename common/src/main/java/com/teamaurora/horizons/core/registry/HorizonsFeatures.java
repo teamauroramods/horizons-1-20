@@ -7,8 +7,7 @@ import com.teamaurora.horizons.common.levelgen.treedecorators.*;
 import com.teamaurora.horizons.core.Horizons;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
-public class HorizonsFeatures {
-
+public final class HorizonsFeatures {
     public static final RegistryWrapper.FeatureProvider PROVIDER = RegistryWrapper.featureProvider(Horizons.MOD_ID);
 
     public static final RegistryReference<CypressTreeFeature> CYPRESS_TREE = PROVIDER.register("cypress_tree", CypressTreeFeature::new);

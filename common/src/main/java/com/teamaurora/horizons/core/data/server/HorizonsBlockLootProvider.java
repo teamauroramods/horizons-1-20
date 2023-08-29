@@ -41,7 +41,6 @@ import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
  * @author ebo2022
  */
 public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
-
     public HorizonsBlockLootProvider(BorealibPackOutput output) {
         super(output);
     }

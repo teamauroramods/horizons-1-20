@@ -19,7 +19,6 @@ import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
 import static com.teamaurora.horizons.core.registry.HorizonsItems.*;
 
 public class HorizonsItemTagsProvider extends BorealibTagsProvider.ItemTagProvider {
-
     public HorizonsItemTagsProvider(BorealibPackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable BlockTagProvider blockTagProvider) {
         super(output, completableFuture, blockTagProvider);
     }

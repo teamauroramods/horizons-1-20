@@ -12,8 +12,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import static com.teamaurora.horizons.core.registry.HorizonsPlacedFeatures.key;
 
-public class HorizonsTreePlacements {
-
+public final class HorizonsTreePlacements {
     public static final ResourceKey<PlacedFeature> CYPRESS_CHECKED = key("cypress_checked");
     public static final ResourceKey<PlacedFeature> MEGA_CYPRESS_CHECKED = key("mega_cypress_checked");
     public static final ResourceKey<PlacedFeature> WATER_CYPRESS_CHECKED = key("water_cypress_checked");

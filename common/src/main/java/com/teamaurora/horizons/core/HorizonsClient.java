@@ -8,10 +8,8 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
-import net.minecraft.world.level.block.Block;
 
-public class HorizonsClient {
-
+public final class HorizonsClient {
     public static void init() {
         ColorRegistry.register((state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor(), HorizonsBlocks.CYPRESS_LEAVES, HorizonsBlocks.HANGING_CYPRESS_LEAVES);
         ColorRegistry.register((stack, tintIndex) -> FoliageColor.getDefaultColor(), HorizonsBlocks.CYPRESS_LEAVES, HorizonsBlocks.HANGING_CYPRESS_LEAVES);

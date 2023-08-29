@@ -14,9 +14,9 @@ logs/
 .classpath
 .project
 .idea/
+.cache/
 classes/
 .metadata
 .vscode
 .settings
 *.launch
-fabric/src/generated/resources/pollen.accesswidener

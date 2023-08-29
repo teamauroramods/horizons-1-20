@@ -12,7 +12,6 @@ import terrablender.api.RegionType;
 import java.util.function.Consumer;
 
 public class HorizonsOverworldRegion extends Region {
-
     public HorizonsOverworldRegion() {
         super(Horizons.location("overworld"), RegionType.OVERWORLD, Horizons.CONFIG.regionWeight.get());
     }

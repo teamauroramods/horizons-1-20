@@ -15,7 +15,6 @@ import java.util.Set;
 import java.util.function.Predicate;
 
 public class HorizonsLanguageProvider extends BorealibLanguageProvider {
-
     private static final Set<RegistryReference<?>> DONT_AUTO_TRANSLATE = ImmutableSet.of(
             HorizonsItems.CYPRESS_BOATS.getSecond(),
 

@@ -2,7 +2,6 @@ package com.teamaurora.horizons.core.registry.feature;
 
 import com.teamaurora.horizons.common.levelgen.treedecorators.*;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
-import com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -23,8 +22,7 @@ import java.util.List;
 
 import static com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures.key;
 
-public class HorizonsTreeFeatures {
-
+public final class HorizonsTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_GROWN = key("cypress_grown");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_CYPRESS_GROWN = key("mega_cypress_grown");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS = key("cypress");

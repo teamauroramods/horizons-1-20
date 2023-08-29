@@ -8,8 +8,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
-public class HorizonsPlacedFeatures {
-
+public final class HorizonsPlacedFeatures {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HorizonsTreePlacements.bootstrap(context);
         HorizonsVegetationPlacements.bootstrap(context);

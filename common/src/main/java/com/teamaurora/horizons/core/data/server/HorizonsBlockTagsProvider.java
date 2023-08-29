@@ -8,8 +8,6 @@ import com.teamaurora.horizons.core.other.tags.HorizonsBlockTags;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.level.block.Block;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,7 +15,6 @@ import static com.teamaurora.horizons.core.other.tags.HorizonsBlockTags.CYPRESS_
 import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
 
 public class HorizonsBlockTagsProvider extends BorealibTagsProvider.BlockTagProvider {
-
     public HorizonsBlockTagsProvider(BorealibPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }

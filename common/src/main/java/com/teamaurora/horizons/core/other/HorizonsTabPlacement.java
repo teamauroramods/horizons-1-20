@@ -17,7 +17,7 @@ import net.minecraft.world.level.ItemLike;
 
 import java.util.List;
 
-public class HorizonsTabPlacement {
+public final class HorizonsTabPlacement {
 
     public static void register(ResourceKey<CreativeModeTab> tabKey, CreativeModeTab tab, FeatureFlagSet flags, CreativeModeTab.ItemDisplayParameters parameters, CreativeTabEvents.Output output, boolean canUseGameMasterBlocks) {
         if (tabKey.equals(CreativeModeTabs.BUILDING_BLOCKS)) {
@@ -69,9 +69,10 @@ public class HorizonsTabPlacement {
             acceptAllAfter(output, Items.CACTUS, List.of(
                     HorizonsBlocks.CYPRESS_KNEE.get(),
                     HorizonsBlocks.LARGE_CYPRESS_KNEE.get(),
+                    HorizonsBlocks.STRIPPED_CYPRESS_KNEE.get(),
+                    HorizonsBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(),
                     HorizonsBlocks.CYPRESS_BRANCH.get()
             ));
-            output.acceptAfter(Items.PINK_PETALS, HorizonsItems.REDBUD_BLOSSOMS.get());
         } else if (tabKey.equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {
             acceptAllAfter(output, Items.CHERRY_HANGING_SIGN, List.of(
                     HorizonsBlocks.CYPRESS_SIGNS.getFirst().get(),

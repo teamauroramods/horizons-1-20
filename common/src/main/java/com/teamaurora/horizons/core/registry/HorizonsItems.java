@@ -6,9 +6,7 @@ import com.teamaurora.borealib.api.base.v1.util.Mods;
 import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.borealib.api.registry.v1.RegistryWrapper;
 import com.teamaurora.borealib.api.registry.v1.util.PropertiesHelper;
-import com.teamaurora.horizons.common.item.AlgaeBlockItem;
 import com.teamaurora.horizons.common.item.DrinkableBottleItem;
-import com.teamaurora.horizons.common.item.LilyItem;
 import com.teamaurora.horizons.core.Horizons;
 import com.teamaurora.horizons.core.other.HorizonsFoods;
 import net.minecraft.sounds.SoundEvents;
@@ -16,8 +14,7 @@ import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
-public class HorizonsItems {
-
+public final class HorizonsItems {
     public static final RegistryWrapper.ItemProvider PROVIDER = RegistryWrapper.itemProvider(Horizons.MOD_ID);
 
     // Foods //
@@ -38,7 +35,4 @@ public class HorizonsItems {
 
     public static final Pair<RegistryReference<Item>, RegistryReference<Item>> CYPRESS_BOATS = PROVIDER.registerBoats("cypress", HorizonsBlocks.CYPRESS_PLANKS);
 
-    // Misc //
-
-    public static final RegistryReference<Item> REDBUD_BLOSSOMS = PROVIDER.register("redbud_blossoms", () -> new Item(new Item.Properties()));
 }
