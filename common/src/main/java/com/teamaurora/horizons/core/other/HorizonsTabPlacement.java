@@ -52,6 +52,10 @@ public final class HorizonsTabPlacement {
                     HorizonsBlocks.BEARD_MOSS.get()
             ));
             acceptAllAfter(output, Items.WITHER_ROSE, List.of(
+                    HorizonsBlocks.FIDDLENECK.get(),
+                    HorizonsBlocks.AMARANTHUS.get(),
+                    HorizonsBlocks.MYOSOTIS.get(),
+                    HorizonsBlocks.BEGONIA.get(),
                     HorizonsBlocks.BLUE_LILY.get(),
                     HorizonsBlocks.LIGHT_GRAY_LILY.get(),
                     HorizonsBlocks.CYAN_LILY.get(),

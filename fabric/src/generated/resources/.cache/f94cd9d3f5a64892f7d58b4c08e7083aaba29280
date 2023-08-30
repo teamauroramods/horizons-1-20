@@ -1,11 +1,11 @@
-// 1.20.1	2023-08-30T18:12:33.7874608	Horizons/Tags for minecraft:item
+// 1.20.1	2023-08-30T19:21:57.8665007	Horizons/Tags for minecraft:item
 1d754d2886f087870b0f39f4465c7f2719f0abd6 data\minecraft\tags\items\wooden_fences.json
 ad18741a4a5b3cdd88d714682570b9789606af95 data\minecraft\tags\items\logs_that_burn.json
 208ecead2c3d7c3ef1092022ee7f25e1bf6e3331 data\minecraft\tags\items\leaves.json
 50471b2cc60c68fbba723169f7e689824ad5f637 data\minecraft\tags\items\wooden_slabs.json
 e6ba05bc18cfe85758420f72deb48dc3387d9d37 data\carpenter\tags\items\chests.json
-77c5c4944a43a62522bded58e6befef3de8bffb3 data\minecraft\tags\items\planks.json
 ed25e65b58103bca379c68cfea1a07ea0e374648 data\minecraft\tags\items\chest_boats.json
+77c5c4944a43a62522bded58e6befef3de8bffb3 data\minecraft\tags\items\planks.json
 fd018f9034fba3fa62463064ba6175c0576b8395 data\minecraft\tags\items\wooden_doors.json
 726fece18bb651a1d7c0fd6b318f6c2511b5e30b data\minecraft\tags\items\wooden_pressure_plates.json
 5f5d37a2e2538c31b6314dece80e1a8f3bfe527f data\carpenter\tags\items\trapped_chests.json
@@ -16,8 +16,8 @@ eabe225795962e265079d866b03e1bd77a3aa3e1 data\c\tags\items\bookshelves.json
 8c0ce917f1486045abe48aea067f40ff007acb11 data\minecraft\tags\items\wooden_buttons.json
 b350076677d656940c68f30588e8944bf3d2f118 data\minecraft\tags\items\saplings.json
 4f0f3ffbe12699090a18f5e20e84879e379e048d data\minecraft\tags\items\signs.json
+80af75fd445e55001840512e3eeb5c04469a3d07 data\minecraft\tags\items\boats.json
 05050eebcd8a927002f5f40b83f29f258d911871 data\horizons\tags\items\cypress_logs.json
 bf3a7f6398c613889f29a625cadd390ef49e0aa2 data\minecraft\tags\items\wooden_stairs.json
-80af75fd445e55001840512e3eeb5c04469a3d07 data\minecraft\tags\items\boats.json
 328be223ceb13414ecd645f42ad015c01af49cbb data\farmersdelight\tags\items\cabinets\wooden.json
 ce07bebe9a9dba8d222454b547dfbeed7b528f9e data\minecraft\tags\items\wooden_trapdoors.json

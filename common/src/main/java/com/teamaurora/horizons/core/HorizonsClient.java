@@ -9,6 +9,10 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 
+/**
+ * @author rose_
+ * @author ebo2022
+ */
 public final class HorizonsClient {
     public static void init() {
         ColorRegistry.register((state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor(), HorizonsBlocks.CYPRESS_LEAVES, HorizonsBlocks.HANGING_CYPRESS_LEAVES);
@@ -51,7 +55,15 @@ public final class HorizonsClient {
                 HorizonsBlocks.GIANT_FERN.get(),
                 HorizonsBlocks.TROPICAL_GRASS.get(),
                 HorizonsBlocks.TROPICAL_FERN.get(),
-                HorizonsBlocks.CYPRESS_BRANCH.get()
+                HorizonsBlocks.CYPRESS_BRANCH.get(),
+                HorizonsBlocks.FIDDLENECK.get(),
+                HorizonsBlocks.AMARANTHUS.get(),
+                HorizonsBlocks.MYOSOTIS.get(),
+                HorizonsBlocks.BEGONIA.get(),
+                HorizonsBlocks.POTTED_FIDDLENECK.get(),
+                HorizonsBlocks.POTTED_AMARANTHUS.get(),
+                HorizonsBlocks.POTTED_MYOSOTIS.get(),
+                HorizonsBlocks.POTTED_BEGONIA.get()
         );
     }
 }

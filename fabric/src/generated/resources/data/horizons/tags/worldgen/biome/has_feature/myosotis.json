@@ -2,9 +2,8 @@
   "replace": false,
   "values": [
     {
-      "id": "#c:jungle",
+      "id": "#c:taiga",
       "required": false
-    },
-    "minecraft:meadow"
+    }
   ]
 }

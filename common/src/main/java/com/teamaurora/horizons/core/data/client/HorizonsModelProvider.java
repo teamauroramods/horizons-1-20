@@ -11,8 +11,6 @@ import com.teamaurora.borealib.api.datagen.v1.util.BorealibModelTemplates;
 import com.teamaurora.borealib.api.datagen.v1.util.ModelGeneratorHelper;
 import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.horizons.core.Horizons;
-import com.teamaurora.horizons.core.other.HorizonsBlockFamilies;
-import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.BlockModelGenerators;
@@ -22,11 +20,9 @@ import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.StairsShape;
-import org.lwjgl.openal.AL;
 
 import java.util.Objects;
 
@@ -89,7 +85,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.createCrossBlockWithDefaultItem(TROPICAL_GRASS.get(), BlockModelGenerators.TintState.TINTED);
         generator.createCrossBlockWithDefaultItem(TROPICAL_FERN.get(), BlockModelGenerators.TintState.TINTED);
 
-        // Flowers //
+        // Lily Flowers //
         createLily(generator, BLUE_LILY, POTTED_BLUE_LILY);
         createLily(generator, LIGHT_GRAY_LILY, POTTED_LIGHT_GRAY_LILY);
         createLily(generator, CYAN_LILY, POTTED_CYAN_LILY);
@@ -98,6 +94,13 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         createLily(generator, PINK_LILY, POTTED_PINK_LILY);
         createLily(generator, PURPLE_LILY, POTTED_PURPLE_LILY);
         createLily(generator, WHITE_LILY, POTTED_WHITE_LILY);
+
+        // FLowers //
+        createFLower(generator, FIDDLENECK, POTTED_FIDDLENECK);
+        createFLower(generator, AMARANTHUS, POTTED_AMARANTHUS);
+        createFLower(generator, MYOSOTIS, POTTED_MYOSOTIS);
+        createFLower(generator, BEGONIA, POTTED_BEGONIA);
+
     }
 
     @Override
@@ -160,6 +163,14 @@ public class HorizonsModelProvider extends BorealibModelProvider {
     private static void createLily(BlockModelGenerators generator, RegistryReference<Block> block, RegistryReference<Block> potted) {
         generator.createSimpleFlatItemModel(block.get());
         ResourceLocation model = TEMPLATE_LILY.create(block.get(), new TextureMapping().put(FLOWER_SLOT, TextureMapping.getBlockTexture(block.get())), generator.modelOutput);
+        ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(potted.get(), TextureMapping.plant(block.get()), generator.modelOutput);
+        generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block.get(), model));
+        generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));
+    }
+
+    private static void createFLower(BlockModelGenerators generator, RegistryReference<Block> block, RegistryReference<Block> potted) {
+        generator.createSimpleFlatItemModel(block.get());
+        ResourceLocation model = BlockModelGenerators.TintState.NOT_TINTED.getCross().create(block.get(), TextureMapping.cross(block.get()), generator.modelOutput);
         ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(potted.get(), TextureMapping.plant(block.get()), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block.get(), model));
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));

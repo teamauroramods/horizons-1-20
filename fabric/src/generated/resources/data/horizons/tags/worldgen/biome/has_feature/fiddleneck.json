@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "#c:jungle",
-      "required": false
-    }
+    "horizons:redwood_forest"
   ]
 }

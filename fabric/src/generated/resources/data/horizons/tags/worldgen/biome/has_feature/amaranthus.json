@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id": "#c:jungle",
+      "id": "minecraft:cherry_grove",
       "required": false
     }
   ]

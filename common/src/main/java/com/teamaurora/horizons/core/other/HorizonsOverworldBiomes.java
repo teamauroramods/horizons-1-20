@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @author rose_
  */
-public class HorizonsOverworldBiomes {
+public final class HorizonsOverworldBiomes {
 
     @Nullable
     private static final Music NORMAL_MUSIC = null;

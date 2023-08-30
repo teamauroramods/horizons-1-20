@@ -6,12 +6,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
 public final class HorizonsBiomeTags {
-    public static final TagKey<Biome> HAS_PERCH = biomeTag("upgrade_aquatic:has_animal/perch");
-    public static final TagKey<Biome> HAS_CATTAILS = biomeTag("environmental:has_feature/cattails");
-    public static final TagKey<Biome> HAS_MUD_DISK = biomeTag("environmental:has_feature/mud_disk");
-    public static final TagKey<Biome> HAS_SPOTTED_RED_MAPLE_TREES = biomeTag("autumnity:has_feature/spotted_maple_tree/red");
-    public static final TagKey<Biome> HAS_HOLLY_TREES = biomeTag("windswept:has_feature/holly_trees");
-    public static final TagKey<Biome> HAS_RARE_CHESTNUT_TREES = biomeTag("windswept:has_feature/rare_chestnut_trees");
 
     public static final TagKey<Biome> HAS_ALGAE = biomeTag("has_feature/algae");
     public static final TagKey<Biome> HAS_GIANT_FERN = biomeTag("has_feature/giant_fern");
@@ -27,6 +21,7 @@ public final class HorizonsBiomeTags {
     public static final TagKey<Biome> HAS_AMARANTHUS = biomeTag("has_feature/amaranthus");
     public static final TagKey<Biome> HAS_MYOSOTIS = biomeTag("has_feature/myosotis");
     public static final TagKey<Biome> HAS_FIDDLENECK = biomeTag("has_feature/fiddleneck");
+    public static final TagKey<Biome> HAS_BEGONIA = biomeTag("has_feature/begonia");
 
     private static TagKey<Biome> biomeTag(String path) {
         return TagKey.create(Registries.BIOME, Horizons.location(path));

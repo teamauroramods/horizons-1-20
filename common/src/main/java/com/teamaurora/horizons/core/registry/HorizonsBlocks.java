@@ -21,6 +21,7 @@ import com.teamaurora.horizons.common.item.LilyItem;
 import com.teamaurora.horizons.core.other.HorizonsBlockSetTypes;
 import com.teamaurora.horizons.core.other.HorizonsProperties;
 import com.teamaurora.horizons.core.other.HorizonsWoodTypes;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -113,5 +114,16 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> GIANT_FERN = PROVIDER.registerWithItem("giant_fern", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.LARGE_FERN)), new Item.Properties());
     public static final RegistryReference<Block> TROPICAL_GRASS = PROVIDER.registerWithItem("tropical_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).dropsLike(Blocks.GRASS)), new Item.Properties());
     public static final RegistryReference<Block> TROPICAL_FERN = PROVIDER.registerWithItem("tropical_fern", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.FERN).dropsLike(Blocks.FERN)), new Item.Properties());
+
+    // Flowers //
+    public static final RegistryReference<Block> FIDDLENECK = PROVIDER.registerWithItem("fiddleneck", () -> new FlowerBlock(MobEffects.INVISIBILITY, 12, PropertiesHelper.flower()), new Item.Properties());
+    public static final RegistryReference<Block> AMARANTHUS = PROVIDER.registerWithItem("amaranthus", () -> new FlowerBlock(MobEffects.DAMAGE_BOOST, 12, PropertiesHelper.flower()), new Item.Properties());
+    public static final RegistryReference<Block> MYOSOTIS = PROVIDER.registerWithItem("myosotis", () -> new FlowerBlock(MobEffects.JUMP, 12, PropertiesHelper.flower()), new Item.Properties());
+    public static final RegistryReference<Block> BEGONIA = PROVIDER.registerWithItem("begonia", () -> new FlowerBlock(MobEffects.DIG_SPEED, 12, PropertiesHelper.flower()), new Item.Properties());
+
+    public static final RegistryReference<Block> POTTED_FIDDLENECK = PROVIDER.register("potted_fiddleneck", () -> new FlowerPotBlock(FIDDLENECK.get(), PropertiesHelper.flowerPot()));
+    public static final RegistryReference<Block> POTTED_AMARANTHUS = PROVIDER.register("potted_amaranthus", () -> new FlowerPotBlock(AMARANTHUS.get(), PropertiesHelper.flowerPot()));
+    public static final RegistryReference<Block> POTTED_MYOSOTIS = PROVIDER.register("potted_myosotis", () -> new FlowerPotBlock(MYOSOTIS.get(), PropertiesHelper.flowerPot()));
+    public static final RegistryReference<Block> POTTED_BEGONIA = PROVIDER.register("potted_begonia", () -> new FlowerPotBlock(BEGONIA.get(), PropertiesHelper.flowerPot()));
 
 }

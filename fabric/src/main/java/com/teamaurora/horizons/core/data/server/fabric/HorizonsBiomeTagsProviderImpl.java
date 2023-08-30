@@ -20,10 +20,10 @@ public class HorizonsBiomeTagsProviderImpl {
         provider.tag(HorizonsBiomeTags.HAS_PURPLE_LILY).addOptionalTag(ConventionalBiomeTags.SWAMP.location());
         provider.tag(HorizonsBiomeTags.HAS_WHITE_LILY).addOptionalTag(ConventionalBiomeTags.SWAMP.location());
 
-        provider.tag(HorizonsBiomeTags.HAS_AMARANTHUS).addOptionalTag(ConventionalBiomeTags.JUNGLE.location());
-        provider.tag(HorizonsBiomeTags.HAS_MYOSOTIS).addOptionalTag(ConventionalBiomeTags.JUNGLE.location()).add(Biomes.MEADOW);
-        provider.tag(HorizonsBiomeTags.HAS_FIDDLENECK).addOptionalTag(ConventionalBiomeTags.JUNGLE.location());
-        provider.tag(HorizonsBiomeTags.HAS_HELICONIA).addOptionalTag(ConventionalBiomeTags.JUNGLE.location());
+        provider.tag(HorizonsBiomeTags.HAS_AMARANTHUS).addOptional(Biomes.CHERRY_GROVE.location());
+        provider.tag(HorizonsBiomeTags.HAS_MYOSOTIS).addOptionalTag(ConventionalBiomeTags.TAIGA.location());
+        provider.tag(HorizonsBiomeTags.HAS_FIDDLENECK).add(HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(HorizonsBiomeTags.HAS_HELICONIA).add(HorizonsBiomes.REDWOOD_FOREST);
 
         provider.tag(ConventionalBiomeTags.SWAMP).add(HorizonsBiomes.BAYOU);
         provider.tag(ConventionalBiomeTags.VEGETATION_DENSE).add(HorizonsBiomes.BAYOU, HorizonsBiomes.REDWOOD_FOREST);
