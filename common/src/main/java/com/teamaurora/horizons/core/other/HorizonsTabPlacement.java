@@ -115,7 +115,7 @@ public final class HorizonsTabPlacement {
                     HorizonsItems.GOOSEBERRY_PIE.get(),
                     HorizonsItems.SUNFLOWER_SEEDS.get()
             ));
-            
+
         }
     }
 

@@ -71,8 +71,8 @@ public final class HorizonsVegetationPlacements {
         PlacementUtils.register(context, PURPLE_LILY, purpleLily, createPatch(12));
         PlacementUtils.register(context, WHITE_LILY, whiteLily, createPatch(12));
 
-        PlacementUtils.register(context, FIDDLENECK, fiddleneck, createPatch(3));
-        PlacementUtils.register(context, AMARANTHUS, amaranthus, createPatch(3));
+        PlacementUtils.register(context, FIDDLENECK, fiddleneck, createPatch(2));
+        PlacementUtils.register(context, AMARANTHUS, amaranthus, createPatch(2));
         PlacementUtils.register(context, MYOSOTIS, myosotis, createPatch(12));
 
         PlacementUtils.register(context, TREES_CYPRESS, treesCypress, VegetationPlacements.treePlacement(PlacementUtils.countExtra(20, 0.1F, 1)));
