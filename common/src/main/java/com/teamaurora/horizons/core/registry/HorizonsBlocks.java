@@ -119,11 +119,9 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> FIDDLENECK = PROVIDER.registerWithItem("fiddleneck", () -> new FlowerBlock(MobEffects.INVISIBILITY, 12, PropertiesHelper.flower()), new Item.Properties());
     public static final RegistryReference<Block> AMARANTHUS = PROVIDER.registerWithItem("amaranthus", () -> new FlowerBlock(MobEffects.DAMAGE_BOOST, 12, PropertiesHelper.flower()), new Item.Properties());
     public static final RegistryReference<Block> MYOSOTIS = PROVIDER.registerWithItem("myosotis", () -> new FlowerBlock(MobEffects.JUMP, 12, PropertiesHelper.flower()), new Item.Properties());
-    public static final RegistryReference<Block> BEGONIA = PROVIDER.registerWithItem("begonia", () -> new FlowerBlock(MobEffects.DIG_SPEED, 12, PropertiesHelper.flower()), new Item.Properties());
 
     public static final RegistryReference<Block> POTTED_FIDDLENECK = PROVIDER.register("potted_fiddleneck", () -> new FlowerPotBlock(FIDDLENECK.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_AMARANTHUS = PROVIDER.register("potted_amaranthus", () -> new FlowerPotBlock(AMARANTHUS.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_MYOSOTIS = PROVIDER.register("potted_myosotis", () -> new FlowerPotBlock(MYOSOTIS.get(), PropertiesHelper.flowerPot()));
-    public static final RegistryReference<Block> POTTED_BEGONIA = PROVIDER.register("potted_begonia", () -> new FlowerPotBlock(BEGONIA.get(), PropertiesHelper.flowerPot()));
 
 }

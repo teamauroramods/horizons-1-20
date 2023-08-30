@@ -133,7 +133,13 @@
         "type": "minecraft:frog",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 3
+        "weight": 5
+      },
+      {
+        "type": "minecraft:bee",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 2
       }
     ],
     "misc": [],
@@ -190,7 +196,7 @@
         "type": "minecraft:slime",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 2
+        "weight": 3
       }
     ],
     "underground_water_creature": [

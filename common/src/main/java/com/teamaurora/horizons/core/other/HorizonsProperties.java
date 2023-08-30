@@ -19,6 +19,7 @@ public class HorizonsProperties {
     public static final WoodProperties CYPRESS = WoodProperties.builder(MapColor.COLOR_GREEN, MapColor.COLOR_BROWN).build();
     public static final WoodProperties JACARANDA = WoodProperties.builder(MapColor.COLOR_PURPLE, MapColor.COLOR_BROWN).leavesColor(MapColor.COLOR_PURPLE).build();
     public static final WoodProperties REDWOOD = WoodProperties.builder(MapColor.COLOR_ORANGE, MapColor.COLOR_BROWN).build();
+
     public static final BlockBehaviour.Properties CYPRESS_SIGN = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).ignitedByLava().noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD);
 
     // Blocks //
@@ -30,9 +31,6 @@ public class HorizonsProperties {
     public static final BlockBehaviour.Properties BEARD_MOSS_BLOCK = BlockBehaviour.Properties.of().strength(0.1F).sound(SoundType.MOSS).noOcclusion().isValidSpawn(PropertiesHelper::ocelotOrParrot).isSuffocating(PropertiesHelper::never).isViewBlocking(PropertiesHelper::never);
     public static final BlockBehaviour.Properties BEARD_MOSS = BlockBehaviour.Properties.of().instabreak().sound(SoundType.MOSS).noOcclusion().noCollission().randomTicks();
     public static final BlockBehaviour.Properties LILY = BlockBehaviour.Properties.of().instabreak().sound(SoundType.LILY_PAD).noOcclusion();
-    public static final BlockBehaviour.Properties BOULDER = BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
-    public static final BlockBehaviour.Properties BOULDER_BRICKS = BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.NETHER_BRICKS).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
-    public static final BlockBehaviour.Properties REDBUD_BLOSSOMS = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().strength(0.2F).sound(SoundType.FLOWERING_AZALEA);
     public static final BlockBehaviour.Properties SUNFLOWER_SEED_SACK = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(0.5F).sound(SoundType.WOOL);
     public static final BlockBehaviour.Properties LAVENDER_BASKET = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(0.5F).sound(SoundType.WOOD);
     public static final BlockBehaviour.Properties LAVENDER = BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.AZALEA).offsetType(Block.OffsetType.XZ);

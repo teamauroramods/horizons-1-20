@@ -32,6 +32,10 @@ public final class HorizonsBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_PURPLE_LILY = key("add_purple_lily");
     public static final ResourceKey<BiomeModifier> ADD_WHITE_LILY = key("add_white_lily");
 
+    public static final ResourceKey<BiomeModifier> ADD_FIDDLENECK = key("add_fiddleneck");
+    public static final ResourceKey<BiomeModifier> ADD_AMARANTHUS = key("add_amaranthus");
+    public static final ResourceKey<BiomeModifier> ADD_MYOSOTIS = key("add_myosotis");
+
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -113,6 +117,10 @@ public final class HorizonsBiomeModifiers {
                 placedFeatures.getOrThrow(HorizonsVegetationPlacements.WHITE_LILY),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
+
+        tagBasedFeatureAdder(context, ADD_FIDDLENECK, biomes.getOrThrow(HorizonsBiomeTags.HAS_FIDDLENECK), placedFeatures.getOrThrow(HorizonsVegetationPlacements.FIDDLENECK), GenerationStep.Decoration.VEGETAL_DECORATION);
+        tagBasedFeatureAdder(context, ADD_AMARANTHUS, biomes.getOrThrow(HorizonsBiomeTags.HAS_AMARANTHUS), placedFeatures.getOrThrow(HorizonsVegetationPlacements.AMARANTHUS), GenerationStep.Decoration.VEGETAL_DECORATION);
+        tagBasedFeatureAdder(context, ADD_MYOSOTIS, biomes.getOrThrow(HorizonsBiomeTags.HAS_MYOSOTIS), placedFeatures.getOrThrow(HorizonsVegetationPlacements.MYOSOTIS), GenerationStep.Decoration.VEGETAL_DECORATION);
     }
 
     private static void tagBasedFeatureAdder(BootstapContext<BiomeModifier> context, ResourceKey<BiomeModifier> key, HolderSet<Biome> biomes, Holder<PlacedFeature> feature, GenerationStep.Decoration step) {

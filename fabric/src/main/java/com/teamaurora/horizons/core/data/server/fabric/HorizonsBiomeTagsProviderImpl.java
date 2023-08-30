@@ -20,9 +20,9 @@ public class HorizonsBiomeTagsProviderImpl {
         provider.tag(HorizonsBiomeTags.HAS_PURPLE_LILY).addOptionalTag(ConventionalBiomeTags.SWAMP.location());
         provider.tag(HorizonsBiomeTags.HAS_WHITE_LILY).addOptionalTag(ConventionalBiomeTags.SWAMP.location());
 
-        provider.tag(HorizonsBiomeTags.HAS_AMARANTHUS).addOptional(Biomes.CHERRY_GROVE.location());
+        provider.tag(HorizonsBiomeTags.HAS_AMARANTHUS).add(Biomes.CHERRY_GROVE);
         provider.tag(HorizonsBiomeTags.HAS_MYOSOTIS).addOptionalTag(ConventionalBiomeTags.TAIGA.location());
-        provider.tag(HorizonsBiomeTags.HAS_FIDDLENECK).add(HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(HorizonsBiomeTags.HAS_FIDDLENECK).add(HorizonsBiomes.REDWOOD_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA);
         provider.tag(HorizonsBiomeTags.HAS_HELICONIA).add(HorizonsBiomes.REDWOOD_FOREST);
 
         provider.tag(ConventionalBiomeTags.SWAMP).add(HorizonsBiomes.BAYOU);

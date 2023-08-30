@@ -1,0 +1,11 @@
+{
+  "actions": {
+    "type": "borealib:add_features",
+    "features": "horizons:myosotis",
+    "step": "vegetal_decoration"
+  },
+  "selector": {
+    "type": "borealib:is_biome",
+    "biomes": "#horizons:has_feature/myosotis"
+  }
+}

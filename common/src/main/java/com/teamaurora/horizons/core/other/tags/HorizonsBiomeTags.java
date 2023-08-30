@@ -21,7 +21,6 @@ public final class HorizonsBiomeTags {
     public static final TagKey<Biome> HAS_AMARANTHUS = biomeTag("has_feature/amaranthus");
     public static final TagKey<Biome> HAS_MYOSOTIS = biomeTag("has_feature/myosotis");
     public static final TagKey<Biome> HAS_FIDDLENECK = biomeTag("has_feature/fiddleneck");
-    public static final TagKey<Biome> HAS_BEGONIA = biomeTag("has_feature/begonia");
 
     private static TagKey<Biome> biomeTag(String path) {
         return TagKey.create(Registries.BIOME, Horizons.location(path));

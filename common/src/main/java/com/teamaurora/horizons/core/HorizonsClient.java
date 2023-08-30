@@ -59,11 +59,9 @@ public final class HorizonsClient {
                 HorizonsBlocks.FIDDLENECK.get(),
                 HorizonsBlocks.AMARANTHUS.get(),
                 HorizonsBlocks.MYOSOTIS.get(),
-                HorizonsBlocks.BEGONIA.get(),
                 HorizonsBlocks.POTTED_FIDDLENECK.get(),
                 HorizonsBlocks.POTTED_AMARANTHUS.get(),
-                HorizonsBlocks.POTTED_MYOSOTIS.get(),
-                HorizonsBlocks.POTTED_BEGONIA.get()
+                HorizonsBlocks.POTTED_MYOSOTIS.get()
         );
     }
 }

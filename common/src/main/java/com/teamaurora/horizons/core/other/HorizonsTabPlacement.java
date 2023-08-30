@@ -17,6 +17,10 @@ import net.minecraft.world.level.ItemLike;
 
 import java.util.List;
 
+/**
+ * @author ebo2022
+ * @author rose_
+ */
 public final class HorizonsTabPlacement {
 
     public static void register(ResourceKey<CreativeModeTab> tabKey, CreativeModeTab tab, FeatureFlagSet flags, CreativeModeTab.ItemDisplayParameters parameters, CreativeTabEvents.Output output, boolean canUseGameMasterBlocks) {
@@ -55,7 +59,6 @@ public final class HorizonsTabPlacement {
                     HorizonsBlocks.FIDDLENECK.get(),
                     HorizonsBlocks.AMARANTHUS.get(),
                     HorizonsBlocks.MYOSOTIS.get(),
-                    HorizonsBlocks.BEGONIA.get(),
                     HorizonsBlocks.BLUE_LILY.get(),
                     HorizonsBlocks.LIGHT_GRAY_LILY.get(),
                     HorizonsBlocks.CYAN_LILY.get(),

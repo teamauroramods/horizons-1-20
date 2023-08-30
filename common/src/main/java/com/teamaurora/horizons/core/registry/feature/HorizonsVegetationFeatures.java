@@ -45,6 +45,11 @@ public final class HorizonsVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_LILY = key("pink_lily");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_LILY = key("purple_lily");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_LILY = key("white_lily");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FIDDLENECK = key("fiddleneck");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> AMARANTHUS = key("amaranthus");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MYOSOTIS = key("myosotis");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_CYPRESS = key("trees_cypress");
     public static final ResourceKey<ConfiguredFeature<? ,?>> TREES_WATER_CYPRESS = key("trees_water_cypress");
 
@@ -75,99 +80,24 @@ public final class HorizonsVegetationFeatures {
                         )
                 )
         );
-        FeatureUtils.register(
-                context,
-                ALGAE,
-                HorizonsFeatures.ALGAE_PATCH.get(),
-                NoneFeatureConfiguration.INSTANCE
-        );
-        FeatureUtils.register(
-                context,
-                GIANT_FERN,
-                Feature.RANDOM_PATCH,
-                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.GIANT_FERN.get().defaultBlockState())))
-        );
-        FeatureUtils.register(
-                context,
-                BLUE_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.BLUE_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                LIGHT_GRAY_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.LIGHT_GRAY_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                CYAN_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.CYAN_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                LIGHT_BLUE_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.LIGHT_BLUE_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                MAGENTA_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.MAGENTA_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                PINK_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.PINK_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                PURPLE_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.PURPLE_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                WHITE_LILY,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.WHITE_LILY.get().defaultBlockState())))
-                )
-        );
-        FeatureUtils.register(
-                context,
-                TREES_CYPRESS,
-                Feature.RANDOM_SELECTOR,
-                new RandomFeatureConfiguration(
-                        List.of(new WeightedPlacedFeature(cypressBush, 0.35f), new WeightedPlacedFeature(megaCypress, 0.333333334F)),
-                        cypress
-                )
-        );
-        FeatureUtils.register(
-                context,
-                TREES_WATER_CYPRESS,
-                Feature.RANDOM_SELECTOR,
-                new RandomFeatureConfiguration(
-                        List.of(new WeightedPlacedFeature(waterMegaCypress, 0.333333334F)),
-                        waterCypress
-                )
-        );
+
+        FeatureUtils.register(context, ALGAE, HorizonsFeatures.ALGAE_PATCH.get(), NoneFeatureConfiguration.INSTANCE);
+        FeatureUtils.register(context, GIANT_FERN, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.GIANT_FERN.get().defaultBlockState()))));
+        FeatureUtils.register(context, BLUE_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.BLUE_LILY.get().defaultBlockState())))));
+
+        FeatureUtils.register(context, LIGHT_GRAY_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.LIGHT_GRAY_LILY.get().defaultBlockState())))));
+        FeatureUtils.register(context, CYAN_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.CYAN_LILY.get().defaultBlockState())))));
+        FeatureUtils.register(context, LIGHT_BLUE_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.LIGHT_BLUE_LILY.get().defaultBlockState())))));
+        FeatureUtils.register(context, MAGENTA_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.MAGENTA_LILY.get().defaultBlockState())))));
+        FeatureUtils.register(context, PINK_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.PINK_LILY.get().defaultBlockState())))));
+        FeatureUtils.register(context, PURPLE_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.PURPLE_LILY.get().defaultBlockState())))));
+        FeatureUtils.register(context, WHITE_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.WHITE_LILY.get().defaultBlockState())))));
+
+        FeatureUtils.register(context, FIDDLENECK, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.FIDDLENECK.get().defaultBlockState())))));
+        FeatureUtils.register(context, AMARANTHUS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.AMARANTHUS.get().defaultBlockState())))));
+        FeatureUtils.register(context, MYOSOTIS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.MYOSOTIS.get().defaultBlockState())))));
+
+        FeatureUtils.register(context, TREES_CYPRESS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(cypressBush, 0.35f), new WeightedPlacedFeature(megaCypress, 0.333333334F)), cypress));
+        FeatureUtils.register(context, TREES_WATER_CYPRESS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(waterMegaCypress, 0.333333334F)), waterCypress));
     }
 }

@@ -15,19 +15,15 @@ import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * @author rose_
  */
 public final class HorizonsOverworldBiomes {
 
-    @Nullable
-    private static final Music NORMAL_MUSIC = null;
-
     // Util //
 
-    private static Biome biome(boolean hasPrecipitation, float temperature, float downfall, int waterColor, int waterFogColor, int fogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music) {
+    private static Biome biome(boolean hasPrecipitation, float temperature, float downfall, int waterColor, int waterFogColor, int fogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, Music music) {
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(hasPrecipitation)
                 .temperature(temperature)
@@ -74,7 +70,6 @@ public final class HorizonsOverworldBiomes {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
-
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TREES_CYPRESS);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TREES_WATER_CYPRESS);
 
@@ -83,7 +78,7 @@ public final class HorizonsOverworldBiomes {
 
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
 
-        return biome(true, 0.75F, 1.0F, 0x87C0C6, 0x3D5156, 0xA0E2E5, spawns, gen, NORMAL_MUSIC);
+        return biome(true, 0.75F, 1.0F, 0x87C0C6, 0x3D5156, 0xA0E2E5, spawns, gen, null);
     }
 
     public static Biome redwoodForest(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {

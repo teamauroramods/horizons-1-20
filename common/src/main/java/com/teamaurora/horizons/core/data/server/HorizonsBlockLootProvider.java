@@ -89,6 +89,13 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.dropPottedContents(POTTED_PURPLE_LILY.get());
         this.dropPottedContents(POTTED_WHITE_LILY.get());
 
+        this.dropSelf(FIDDLENECK.get());
+        this.dropSelf(AMARANTHUS.get());
+        this.dropSelf(MYOSOTIS.get());
+        this.dropPottedContents(POTTED_FIDDLENECK.get());
+        this.dropPottedContents(POTTED_AMARANTHUS.get());
+        this.dropPottedContents(POTTED_MYOSOTIS.get());
+
         this.add(GIANT_FERN.get(), block -> createTriplePlantWithSeedDrops(block, Items.FERN));
     }
 

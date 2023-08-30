@@ -99,7 +99,6 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         createFLower(generator, FIDDLENECK, POTTED_FIDDLENECK);
         createFLower(generator, AMARANTHUS, POTTED_AMARANTHUS);
         createFLower(generator, MYOSOTIS, POTTED_MYOSOTIS);
-        createFLower(generator, BEGONIA, POTTED_BEGONIA);
 
     }
 
