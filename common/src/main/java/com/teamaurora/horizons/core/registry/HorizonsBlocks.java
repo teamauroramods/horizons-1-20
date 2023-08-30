@@ -91,14 +91,14 @@ public final class HorizonsBlocks {
 
     // Lily Flowers //
 
-    public static final RegistryReference<Block> BLUE_LILY = PROVIDER.registerWithItem("blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
-    public static final RegistryReference<Block> LIGHT_GRAY_LILY = PROVIDER.registerWithItem("light_gray_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
-    public static final RegistryReference<Block> CYAN_LILY = PROVIDER.registerWithItem("cyan_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
-    public static final RegistryReference<Block> LIGHT_BLUE_LILY = PROVIDER.registerWithItem("light_blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
-    public static final RegistryReference<Block> MAGENTA_LILY = PROVIDER.registerWithItem("magenta_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
-    public static final RegistryReference<Block> PINK_LILY = PROVIDER.registerWithItem("pink_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
-    public static final RegistryReference<Block> PURPLE_LILY = PROVIDER.registerWithItem("purple_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
-    public static final RegistryReference<Block> WHITE_LILY = PROVIDER.registerWithItem("white_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), HorizonsBlocks::createLilyItem);
+    public static final RegistryReference<Block> BLUE_LILY = PROVIDER.registerWithItem("blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
+    public static final RegistryReference<Block> LIGHT_GRAY_LILY = PROVIDER.registerWithItem("light_gray_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
+    public static final RegistryReference<Block> CYAN_LILY = PROVIDER.registerWithItem("cyan_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
+    public static final RegistryReference<Block> LIGHT_BLUE_LILY = PROVIDER.registerWithItem("light_blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
+    public static final RegistryReference<Block> MAGENTA_LILY = PROVIDER.registerWithItem("magenta_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
+    public static final RegistryReference<Block> PINK_LILY = PROVIDER.registerWithItem("pink_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
+    public static final RegistryReference<Block> PURPLE_LILY = PROVIDER.registerWithItem("purple_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
+    public static final RegistryReference<Block> WHITE_LILY = PROVIDER.registerWithItem("white_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
 
     public static final RegistryReference<Block> POTTED_BLUE_LILY = PROVIDER.register("potted_blue_lily", () -> new FlowerPotBlock(BLUE_LILY.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_LIGHT_GRAY_LILY= PROVIDER.register("potted_light_gray_lily", () -> new FlowerPotBlock(LIGHT_GRAY_LILY.get(), PropertiesHelper.flowerPot()));
@@ -114,7 +114,4 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> TROPICAL_GRASS = PROVIDER.registerWithItem("tropical_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).dropsLike(Blocks.GRASS)), new Item.Properties());
     public static final RegistryReference<Block> TROPICAL_FERN = PROVIDER.registerWithItem("tropical_fern", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.FERN).dropsLike(Blocks.FERN)), new Item.Properties());
 
-    private static LilyItem createLilyItem(Block block) {
-        return new LilyItem(block, new Item.Properties());
-    }
 }

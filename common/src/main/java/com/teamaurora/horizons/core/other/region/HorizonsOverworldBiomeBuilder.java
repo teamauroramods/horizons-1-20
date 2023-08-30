@@ -22,12 +22,10 @@ import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseRouterData;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Consumer;
 
-public final class HorizonsOverworldBiomeBuilder {
+public class HorizonsOverworldBiomeBuilder {
 	private static final float VALLEY_SIZE = 0.05F;
 	private static final float LOW_START = 0.26666668F;
 	public static final float HIGH_START = 0.4F;

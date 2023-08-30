@@ -23,13 +23,6 @@ public final class HorizonsBiomeTags {
     public static final TagKey<Biome> HAS_PINK_LILY = biomeTag("has_feature/pink_lily");
     public static final TagKey<Biome> HAS_PURPLE_LILY = biomeTag("has_feature/purple_lily");
     public static final TagKey<Biome> HAS_WHITE_LILY = biomeTag("has_feature/white_lily");
-    public static final TagKey<Biome> HAS_YELLOW_DAISY = biomeTag("has_feature/yellow_daisy");
-    public static final TagKey<Biome> HAS_RED_DAISY = biomeTag("has_feature/red_daisy");
-    public static final TagKey<Biome> HAS_PURPLE_DAISY = biomeTag("has_feature/purple_daisy");
-    public static final TagKey<Biome> HAS_PINK_DAISY = biomeTag("has_feature/pink_daisy");
-    public static final TagKey<Biome> HAS_ORANGE_DAISY = biomeTag("has_feature/orange_daisy");
-    public static final TagKey<Biome> HAS_MAGENTA_DAISY = biomeTag("has_feature/magenta_daisy");
-    public static final TagKey<Biome> HAS_BLUE_DAISY = biomeTag("has_feature/blue_daisy");
     public static final TagKey<Biome> HAS_HELICONIA = biomeTag("has_feature/heliconia");
     public static final TagKey<Biome> HAS_AMARANTHUS = biomeTag("has_feature/amaranthus");
     public static final TagKey<Biome> HAS_MYOSOTIS = biomeTag("has_feature/myosotis");
