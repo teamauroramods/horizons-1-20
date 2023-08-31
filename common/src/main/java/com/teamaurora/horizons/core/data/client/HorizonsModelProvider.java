@@ -99,7 +99,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         createFLower(generator, FIDDLENECK, POTTED_FIDDLENECK);
         createFLower(generator, AMARANTHUS, POTTED_AMARANTHUS);
         createFLower(generator, MYOSOTIS, POTTED_MYOSOTIS);
-        createTallFlower(generator, HELICONIA);
+        generator.createDoublePlant(HELICONIA.get(), BlockModelGenerators.TintState.NOT_TINTED);
 
         // Redwood //
         createWoodFamily(generator, REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_CHESTS, REDWOOD_BOOKSHELF, REDWOOD_CABINET, REDWOOD_HANGING_SIGNS);
@@ -109,8 +109,6 @@ public class HorizonsModelProvider extends BorealibModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators generator) {
-        createWoodItems(generator, CYPRESS_BOATS);
-        createWoodItems(generator, REDWOOD_BOATS);
         generator.generateFlatItem(GOOSEBERRY_JAM.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(SUNFLOWER_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRY_PIE.get(), ModelTemplates.FLAT_ITEM);
@@ -120,6 +118,10 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.generateFlatItem(LAVENDER_TEA.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRY_JUICE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRIES.get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(CYPRESS_BOATS.getFirst().get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(CYPRESS_BOATS.getSecond().get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(REDWOOD_BOATS.getFirst().get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(REDWOOD_BOATS.getSecond().get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void createWoodFamily(BlockModelGenerators generator, BlockFamily planksFamily,
@@ -152,11 +154,6 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(cabinet).with(BlockModelGenerators.createBooleanModelDispatch(BlockStateProperties.OPEN, resourceLocation3, resourceLocation)).with(BlockModelGenerators.createHorizontalFacingDispatch()));
     }
 
-    private static void createWoodItems(ItemModelGenerators generator, Pair<RegistryReference<Item>, RegistryReference<Item>> boats) {
-        generator.generateFlatItem(boats.getFirst().get(), ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(boats.getSecond().get(), ModelTemplates.FLAT_ITEM);
-    }
-
     private static void createGiantFern(BlockModelGenerators generator) {
         RegistryReference<Block> block = GIANT_FERN;
         generator.createSimpleFlatItemModel(block.get(), "_top");
@@ -179,14 +176,6 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(potted.get(), TextureMapping.plant(block.get()), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block.get(), model));
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));
-    }
-
-    private static void createTallFlower(BlockModelGenerators generator, RegistryReference<Block> block) {
-        generator.createSimpleFlatItemModel(block.get(), "_top");
-
-        ResourceLocation top = generator.createSuffixedVariant(block.get(), "_top", ModelTemplates.TINTED_CROSS, TextureMapping::cross);
-        ResourceLocation bottom = generator.createSuffixedVariant(block.get(), "_bottom", ModelTemplates.TINTED_CROSS, TextureMapping::cross);
-        generator.createDoubleBlock(block.get(), top, bottom);
     }
 
     private static void createThatchFamily(BlockModelGenerators generator, BlockFamily family) {
