@@ -95,11 +95,11 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         createLily(generator, PURPLE_LILY, POTTED_PURPLE_LILY);
         createLily(generator, WHITE_LILY, POTTED_WHITE_LILY);
 
-        // FLowers //
+        // Flowers //
         createFLower(generator, FIDDLENECK, POTTED_FIDDLENECK);
         createFLower(generator, AMARANTHUS, POTTED_AMARANTHUS);
         createFLower(generator, MYOSOTIS, POTTED_MYOSOTIS);
-
+        createTallFlower(generator, HELICONIA);
     }
 
     @Override
@@ -173,6 +173,14 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(potted.get(), TextureMapping.plant(block.get()), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block.get(), model));
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));
+    }
+
+    private static void createTallFlower(BlockModelGenerators generator, RegistryReference<Block> block) {
+        generator.createSimpleFlatItemModel(block.get(), "_top");
+
+        ResourceLocation top = generator.createSuffixedVariant(block.get(), "_top", ModelTemplates.TINTED_CROSS, TextureMapping::cross);
+        ResourceLocation bottom = generator.createSuffixedVariant(block.get(), "_bottom", ModelTemplates.TINTED_CROSS, TextureMapping::cross);
+        generator.createDoubleBlock(block.get(), top, bottom);
     }
 
     private static void createThatchFamily(BlockModelGenerators generator, BlockFamily family) {

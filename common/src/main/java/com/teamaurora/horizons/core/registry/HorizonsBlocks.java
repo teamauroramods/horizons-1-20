@@ -29,7 +29,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 public final class HorizonsBlocks {
     public static final RegistryWrapper.BlockProvider PROVIDER = RegistryWrapper.blockProvider(HorizonsItems.PROVIDER);
 
-    // BAYOU CONTENT //
     // Cypress //
 
     public static final RegistryReference<Block> STRIPPED_CYPRESS_LOG = PROVIDER.registerWithItem("stripped_cypress_log", () -> new RotatedPillarBlock(HorizonsProperties.CYPRESS.strippedLogOrWood()), new Item.Properties());
@@ -124,4 +123,6 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> POTTED_AMARANTHUS = PROVIDER.register("potted_amaranthus", () -> new FlowerPotBlock(AMARANTHUS.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_MYOSOTIS = PROVIDER.register("potted_myosotis", () -> new FlowerPotBlock(MYOSOTIS.get(), PropertiesHelper.flowerPot()));
 
+    // Tall Flowers //
+    public static final RegistryReference<Block> HELICONIA = PROVIDER.registerWithItem("heliconia", () -> new TallFlowerBlock(PropertiesHelper.flower()), new Item.Properties());
 }

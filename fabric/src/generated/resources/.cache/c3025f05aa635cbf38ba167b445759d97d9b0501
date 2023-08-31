@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-31T00:41:38.0819197	Horizons/Block Loot
+// 1.20.1	2023-08-31T01:26:43.1312376	Horizons/Block Loot
 11a6ab6faf58a8559ab3e4e32c11816d841c97ab data\horizons\loot_tables\blocks\pink_lily.json
 8edcdc16591c12bd6e708bd70dc57302caefba40 data\horizons\loot_tables\blocks\cypress_cabinet.json
 db65a1c22997d036b5eca7973399f0081ad7127b data\horizons\loot_tables\blocks\light_gray_lily.json
@@ -35,6 +35,7 @@ a3f519cba9d3e65f5bb8c0bbfdcfa4fd30f3c593 data\horizons\loot_tables\blocks\potted
 a4d27e6c2b0846a829361af47d999ef48ba94fb5 data\horizons\loot_tables\blocks\fiddleneck.json
 e81401f712ac4abfa632c75932e92d918adcb697 data\horizons\loot_tables\blocks\large_cypress_knee.json
 4bf3f6049f09dec684d0ea1334134cd089b6be38 data\horizons\loot_tables\blocks\cypress_slab.json
+e818bd2f5396ee894748ab6ed5f7bc8f6beed766 data\horizons\loot_tables\blocks\heliconia.json
 898455c390467d80f1688c49212e372c3e8cafb6 data\horizons\loot_tables\blocks\potted_pink_lily.json
 d614d17f029d1088dbda816ab1447e07fd88084d data\horizons\loot_tables\blocks\cypress_fence_gate.json
 7301d4afb9c6e7bd51898f416cdfec5fe9fbe21d data\horizons\loot_tables\blocks\potted_fiddleneck.json

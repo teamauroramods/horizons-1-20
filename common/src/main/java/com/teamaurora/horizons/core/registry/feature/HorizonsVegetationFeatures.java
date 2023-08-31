@@ -49,6 +49,7 @@ public final class HorizonsVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FIDDLENECK = key("fiddleneck");
     public static final ResourceKey<ConfiguredFeature<?, ?>> AMARANTHUS = key("amaranthus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYOSOTIS = key("myosotis");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HELICONIA = key("heliconia");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_CYPRESS = key("trees_cypress");
     public static final ResourceKey<ConfiguredFeature<? ,?>> TREES_WATER_CYPRESS = key("trees_water_cypress");
@@ -96,6 +97,7 @@ public final class HorizonsVegetationFeatures {
         FeatureUtils.register(context, FIDDLENECK, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.FIDDLENECK.get().defaultBlockState())))));
         FeatureUtils.register(context, AMARANTHUS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.AMARANTHUS.get().defaultBlockState())))));
         FeatureUtils.register(context, MYOSOTIS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.MYOSOTIS.get().defaultBlockState())))));
+        FeatureUtils.register(context, HELICONIA, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.HELICONIA.get().defaultBlockState())))));
 
         FeatureUtils.register(context, TREES_CYPRESS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(cypressBush, 0.35f), new WeightedPlacedFeature(megaCypress, 0.333333334F)), cypress));
         FeatureUtils.register(context, TREES_WATER_CYPRESS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(waterMegaCypress, 0.333333334F)), waterCypress));

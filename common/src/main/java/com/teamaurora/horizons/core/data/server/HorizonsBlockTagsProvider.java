@@ -63,7 +63,7 @@ public class HorizonsBlockTagsProvider extends BorealibTagsProvider.BlockTagProv
         this.tag(BlockTags.SAPLINGS).add(CYPRESS_SAPLING.get());
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(CYPRESS_LOG.get());
         this.tag(BlockTags.GUARDED_BY_PIGLINS).add(CYPRESS_CHESTS.getFirst().get(), CYPRESS_CHESTS.getSecond().get());
-        //this.tag(BlockTags.TALL_FLOWERS).add(HELICONIA.get());
+        this.tag(BlockTags.TALL_FLOWERS).add(HELICONIA.get());
         this.tag(BlockTags.FLOWER_POTS).add(POTTED_CYPRESS_SAPLING.get(), POTTED_BLUE_LILY.get(), POTTED_LIGHT_GRAY_LILY.get(), POTTED_CYAN_LILY.get(), POTTED_LIGHT_BLUE_LILY.get(), POTTED_MAGENTA_LILY.get(), POTTED_PINK_LILY.get(), POTTED_PURPLE_LILY.get(), POTTED_WHITE_LILY.get(), POTTED_FIDDLENECK.get(), POTTED_AMARANTHUS.get(), POTTED_MYOSOTIS.get());
         this.tag(BlockTags.SMALL_FLOWERS).add(BLUE_LILY.get(), LIGHT_GRAY_LILY.get(), CYAN_LILY.get(), LIGHT_BLUE_LILY.get(), MAGENTA_LILY.get(), PINK_LILY.get(), PURPLE_LILY.get(), WHITE_LILY.get(), FIDDLENECK.get(), AMARANTHUS.get(), MYOSOTIS.get());
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(ALGAE.get(), ALGAE_THATCH.get(), ALGAE_THATCH_SLAB.get(), ALGAE_THATCH_STAIRS.get(), CYPRESS_LEAVES.get(), HANGING_CYPRESS_LEAVES.get(), BEARD_MOSS_BLOCK.get(), BEARD_MOSS.get());

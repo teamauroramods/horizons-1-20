@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-31T00:41:38.0839258	Horizons/Tags for minecraft:block
+// 1.20.1	2023-08-31T01:26:43.1333022	Horizons/Tags for minecraft:block
 b4f4fc51067053aba4392a378c1cf10539728190 data\minecraft\tags\blocks\slabs.json
 89b76b7c4040ffe562a3ac210fadd0123f7559fc data\minecraft\tags\blocks\climbable.json
 5f5d37a2e2538c31b6314dece80e1a8f3bfe527f data\carpenter\tags\blocks\trapped_chests.json
@@ -11,12 +11,13 @@ e4557642673854005843828b1f8c1e4bb8604fc8 data\minecraft\tags\blocks\overworld_na
 eabe225795962e265079d866b03e1bd77a3aa3e1 data\c\tags\blocks\bookshelves.json
 bf3a7f6398c613889f29a625cadd390ef49e0aa2 data\minecraft\tags\blocks\wooden_stairs.json
 ad18741a4a5b3cdd88d714682570b9789606af95 data\minecraft\tags\blocks\logs_that_burn.json
+7fec766dd79cd421a59017a9a7247a59347e0fa0 data\minecraft\tags\blocks\tall_flowers.json
 6bb666c8be69b8bdba32ebb55fde09ab509f490e data\minecraft\tags\blocks\stairs.json
 e6ba05bc18cfe85758420f72deb48dc3387d9d37 data\carpenter\tags\blocks\chests.json
 82f0762f1307d26a0c22b496637f3479c7f36a2f data\minecraft\tags\blocks\mineable\axe.json
 1d754d2886f087870b0f39f4465c7f2719f0abd6 data\minecraft\tags\blocks\wooden_fences.json
-fd018f9034fba3fa62463064ba6175c0576b8395 data\minecraft\tags\blocks\wooden_doors.json
 50471b2cc60c68fbba723169f7e689824ad5f637 data\minecraft\tags\blocks\wooden_slabs.json
+fd018f9034fba3fa62463064ba6175c0576b8395 data\minecraft\tags\blocks\wooden_doors.json
 ce07bebe9a9dba8d222454b547dfbeed7b528f9e data\minecraft\tags\blocks\wooden_trapdoors.json
 ec23c9c4744382e6b30e90c1a784eb57a1c36c02 data\minecraft\tags\blocks\small_flowers.json
 c76b3f5239a314d2293e7f96f7b8350d44da8bbf data\minecraft\tags\blocks\ceiling_hanging_signs.json

@@ -68,6 +68,7 @@ public final class HorizonsTabPlacement {
                     HorizonsBlocks.PURPLE_LILY.get(),
                     HorizonsBlocks.WHITE_LILY.get()
             ));
+            output.acceptAfter(Items.PEONY, HorizonsBlocks.HELICONIA.get());
             output.acceptAfter(Items.CHERRY_LEAVES, HorizonsBlocks.CYPRESS_LEAVES.get());
             output.acceptAfter(Items.CHERRY_SAPLING, HorizonsBlocks.CYPRESS_SAPLING.get());
             output.acceptAfter(Items.LARGE_FERN, HorizonsBlocks.GIANT_FERN.get());

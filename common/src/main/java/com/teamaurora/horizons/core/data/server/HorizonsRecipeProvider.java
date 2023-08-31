@@ -60,6 +60,8 @@ public class HorizonsRecipeProvider extends BorealibRecipeProvider {
         oneToOneConversionRecipe(exporter, Items.YELLOW_DYE, FIDDLENECK.get(), "yellow_dye");
         oneToOneConversionRecipe(exporter, Items.CYAN_DYE, MYOSOTIS.get(), "cyan_dye");
         oneToOneConversionRecipe(exporter, Items.RED_DYE, AMARANTHUS.get(), "red_dye");
+        oneToOneConversionRecipe(exporter, Items.RED_DYE, HELICONIA.get(), "red_dye", 2);
+
     }
 
     private void woodSet(TagKey<Item> logs, BlockFamily family, RegistryReference<Block> log, RegistryReference<Block> strippedLog,

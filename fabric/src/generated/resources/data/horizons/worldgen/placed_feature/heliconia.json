@@ -1,9 +1,9 @@
 {
-  "feature": "horizons:fiddleneck",
+  "feature": "horizons:heliconia",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 2
+      "chance": 3
     },
     {
       "type": "minecraft:in_square"

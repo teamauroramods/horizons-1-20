@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-31T00:41:38.0761445	Horizons/Recipes
+// 1.20.1	2023-08-31T01:26:43.127061	Horizons/Recipes
 7440c1f644ce38bba8e006976c4ed2a0ef15dd32 data\minecraft\recipes\cyan_dye_from_myosotis.json
 a787c1ebfe4c3d5f6354e9a9fff2fd20104bad9b data\horizons\recipes\honey_glazed_gooseberries.json
 b13a2c1bbfb7c2c132a8d77ffe3dc84ecab680e2 data\horizons\recipes\cypress_sign.json
@@ -37,6 +37,7 @@ b0d26cba7941c831c194c289822982e49643bece data\minecraft\advancements\recipes\mis
 cd72e115e9f60548068b7cba87ebc48f68823452 data\minecraft\recipes\purple_dye_from_purple_lily.json
 785e06bcd951716cf79209be54a79f4660b9c3dd data\horizons\recipes\sunflower_seeds.json
 03eae43ef34c1a5d5a7e52404a56b8b4fb7660d1 data\horizons\recipes\gooseberry_juice.json
+4b1939a58365c6d76f0ce4017d5a8eb7e4c802be data\minecraft\advancements\recipes\misc\red_dye_from_heliconia.json
 b3ad3c89ac49f6af015b92e4f0b3bcad66844933 data\horizons\recipes\cypress_wood.json
 4f4f14628dc29c17d5fb4c5c991fbbc6f16ffd2b data\horizons\advancements\recipes\food\sunflower_seeds.json
 63689dacd009293d5e64b258736d26a0da15e732 data\horizons\recipes\stripped_cypress_wood.json
@@ -44,6 +45,7 @@ b3ad3c89ac49f6af015b92e4f0b3bcad66844933 data\horizons\recipes\cypress_wood.json
 17da5fa9ad3e4d18c3dcefac2d05e361c88513d6 data\horizons\advancements\recipes\decorations\cypress_fence.json
 aa5da682ef311a50ac1d00e71d2442fc107a4501 data\horizons\advancements\recipes\misc\cypress_cabinet.json
 8e83fa79fa1c805f86840e89f8ab43e879c9c638 data\horizons\recipes\cypress_button.json
+61485b5264ea94cc718850a8e6fd6607dd735b3b data\minecraft\recipes\red_dye_from_heliconia.json
 d768ee08c02d0d4a8e3b2c9dcfd18ed800feeab9 data\minecraft\advancements\recipes\misc\blue_dye_from_blue_lily.json
 74e30249d4da7ac9508a41cc2185b0011aed7936 data\horizons\advancements\recipes\building_blocks\algae_thatch.json
 389307246731d9c2e80865a3957a55d156d4cfe2 data\horizons\recipes\cypress_boat.json

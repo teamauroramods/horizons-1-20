@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "horizons:block/heliconia_bottom"
+    },
+    "half=upper": {
+      "model": "horizons:block/heliconia_top"
+    }
+  }
+}

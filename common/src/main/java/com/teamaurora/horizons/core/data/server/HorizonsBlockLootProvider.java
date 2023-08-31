@@ -96,7 +96,9 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.dropPottedContents(POTTED_AMARANTHUS.get());
         this.dropPottedContents(POTTED_MYOSOTIS.get());
 
-        this.add(GIANT_FERN.get(), block -> createTriplePlantWithSeedDrops(block, Items.FERN));
+        this.tallFlower(HELICONIA.get());
+
+        this.add(GIANT_FERN.get(), block -> this.createTriplePlantWithSeedDrops(block, Items.FERN));
     }
 
     private void woodDrops(RegistryReference<Block> strippedLog, RegistryReference<Block> strippedWood,
@@ -130,6 +132,10 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.add(chests.getSecond().get(), this::createNameableBlockEntityTable);
     }
 
+    private void tallFlower(Block flower) {
+        this.add(flower, b -> createSinglePropConditionTable(b, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+    }
+
     private void normalLeaves(Block leaves, Block sapling) {
         this.add(leaves, b -> createLeavesDrops(b, sapling, 0.05F, 0.0625F, 0.083333336F, 0.1F));
     }
@@ -158,7 +164,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
 
     private LootTable.Builder createTriplePlantWithSeedDrops(Block block, ItemLike drop) {
         LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F)))
-                .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))).otherwise(applyExplosionCondition(block, LootItem.lootTableItem(Items.WHEAT_SEEDS)).when(LootItemRandomChanceCondition.randomChance(0.125F)));
+                .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))).otherwise(this.applyExplosionCondition(block, LootItem.lootTableItem(Items.WHEAT_SEEDS)).when(LootItemRandomChanceCondition.randomChance(0.125F)));
 
         return LootTable.lootTable()
                 .withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)

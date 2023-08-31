@@ -35,6 +35,7 @@ public final class HorizonsBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_FIDDLENECK = key("add_fiddleneck");
     public static final ResourceKey<BiomeModifier> ADD_AMARANTHUS = key("add_amaranthus");
     public static final ResourceKey<BiomeModifier> ADD_MYOSOTIS = key("add_myosotis");
+    public static final ResourceKey<BiomeModifier> ADD_HELICONIA = key("add_heliconia");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -121,6 +122,7 @@ public final class HorizonsBiomeModifiers {
         tagBasedFeatureAdder(context, ADD_FIDDLENECK, biomes.getOrThrow(HorizonsBiomeTags.HAS_FIDDLENECK), placedFeatures.getOrThrow(HorizonsVegetationPlacements.FIDDLENECK), GenerationStep.Decoration.VEGETAL_DECORATION);
         tagBasedFeatureAdder(context, ADD_AMARANTHUS, biomes.getOrThrow(HorizonsBiomeTags.HAS_AMARANTHUS), placedFeatures.getOrThrow(HorizonsVegetationPlacements.AMARANTHUS), GenerationStep.Decoration.VEGETAL_DECORATION);
         tagBasedFeatureAdder(context, ADD_MYOSOTIS, biomes.getOrThrow(HorizonsBiomeTags.HAS_MYOSOTIS), placedFeatures.getOrThrow(HorizonsVegetationPlacements.MYOSOTIS), GenerationStep.Decoration.VEGETAL_DECORATION);
+        tagBasedFeatureAdder(context, ADD_HELICONIA, biomes.getOrThrow(HorizonsBiomeTags.HAS_HELICONIA), placedFeatures.getOrThrow(HorizonsVegetationPlacements.HELICONIA), GenerationStep.Decoration.VEGETAL_DECORATION);
     }
 
     private static void tagBasedFeatureAdder(BootstapContext<BiomeModifier> context, ResourceKey<BiomeModifier> key, HolderSet<Biome> biomes, Holder<PlacedFeature> feature, GenerationStep.Decoration step) {
