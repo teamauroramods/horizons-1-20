@@ -49,7 +49,6 @@ public class HorizonsRecipeProvider extends BorealibRecipeProvider {
         this.woodSet(HorizonsItemTags.REDWOOD_LOGS, HorizonsBlockFamilies.REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, STRIPPED_REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD, REDWOOD_CABINET, REDWOOD_BOOKSHELF, REDWOOD_HANGING_SIGNS, REDWOOD_BOATS, exporter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ALGAE_THATCH.get(), 4).define('#', ALGAE.get()).pattern("##").pattern("##").unlockedBy(getHasName(ALGAE.get()), has(ALGAE.get())).save(exporter);
         generateRecipes(exporter, HorizonsBlockFamilies.ALGAE_THATCH_FAMILY);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, SUNFLOWER_SEEDS.get(), 2).requires(Items.SUNFLOWER).unlockedBy(getHasName(Items.SUNFLOWER), has(Items.SUNFLOWER)).save(exporter);
         oneToOneConversionRecipe(exporter, Items.BLUE_DYE, BLUE_LILY.get(), "blue_dye");
         oneToOneConversionRecipe(exporter, Items.LIGHT_GRAY_DYE, LIGHT_GRAY_LILY.get(), "light_gray_dye");
         oneToOneConversionRecipe(exporter, Items.CYAN_DYE, CYAN_LILY.get(), "cyan_dye");
@@ -62,7 +61,6 @@ public class HorizonsRecipeProvider extends BorealibRecipeProvider {
         oneToOneConversionRecipe(exporter, Items.CYAN_DYE, MYOSOTIS.get(), "cyan_dye");
         oneToOneConversionRecipe(exporter, Items.RED_DYE, AMARANTHUS.get(), "red_dye");
         oneToOneConversionRecipe(exporter, Items.RED_DYE, HELICONIA.get(), "red_dye", 2);
-
     }
 
     private void woodSet(TagKey<Item> logs, BlockFamily family, RegistryReference<Block> log, RegistryReference<Block> strippedLog,

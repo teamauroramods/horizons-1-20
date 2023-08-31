@@ -23,7 +23,6 @@ public final class HorizonsCompat {
         addCompostable(HONEY_GLAZED_GOOSEBERRIES.get(), .3f);
         addCompostable(GOOSEBERRY_JAM_COOKIE.get(), .85f);
         addCompostable(GOOSEBERRY_PIE.get(), 1f);
-        addCompostable(SUNFLOWER_SEEDS.get(), .3f);
         addCompostable(CYPRESS_LEAVES.get(), .3f);
         addCompostable(CYPRESS_SAPLING.get(), .3f);
         addCompostable(BEARD_MOSS_BLOCK.get(), .3f);

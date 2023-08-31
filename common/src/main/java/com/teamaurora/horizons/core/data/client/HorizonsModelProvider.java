@@ -108,7 +108,6 @@ public class HorizonsModelProvider extends BorealibModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators generator) {
         generator.generateFlatItem(GOOSEBERRY_JAM.get(), ModelTemplates.FLAT_ITEM);
-        generator.generateFlatItem(SUNFLOWER_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRY_PIE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(HONEY_GLAZED_GOOSEBERRIES.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(LAVENDER_SALAD.get(), ModelTemplates.FLAT_ITEM);

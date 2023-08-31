@@ -26,7 +26,6 @@ public final class HorizonsItems {
     public static final RegistryReference<Item> GOOSEBERRY_JAM = PROVIDER.register("gooseberry_jam", () -> new DrinkableBottleItem(() -> SoundEvents.HONEY_DRINK, HorizonsFoods.GOOSEBERRY_JAM));
     public static final RegistryReference<Item> GOOSEBERRY_JAM_COOKIE = PROVIDER.register("gooseberry_jam_cookie", () -> new Item(PropertiesHelper.food(Platform.isModLoaded(Mods.FARMERS_DELIGHT) ? HorizonsFoods.GOOSEBERRY_JAM_COOKIE_FAST : HorizonsFoods.GOOSEBERRY_JAM_COOKIE)));
 
-    public static final RegistryReference<Item> SUNFLOWER_SEEDS = PROVIDER.register("sunflower_seeds", () -> new Item(PropertiesHelper.food(HorizonsFoods.SUNFLOWER_SEEDS)));
     public static final RegistryReference<Item> LAVENDER_SALAD = PROVIDER.register("lavender_salad", () -> new BowlFoodItem(PropertiesHelper.food(HorizonsFoods.LAVENDER_SALAD).stacksTo(1).craftRemainder(Items.BOWL)));
     public static final RegistryReference<Item> LAVENDER_TEA = PROVIDER.register("lavender_tea", () -> new DrinkableBottleItem(HorizonsFoods.LAVENDER_TEA));
 

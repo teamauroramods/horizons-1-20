@@ -135,11 +135,7 @@ public final class HorizonsTabPlacement {
             ));
             output.acceptAfter(Items.RABBIT_STEW, HorizonsItems.LAVENDER_SALAD.get());
             output.acceptAfter(Items.COOKIE, HorizonsItems.GOOSEBERRY_JAM_COOKIE.get());
-            acceptAllAfter(output, Items.PUMPKIN_PIE, List.of(
-                    HorizonsItems.GOOSEBERRY_PIE.get(),
-                    HorizonsItems.SUNFLOWER_SEEDS.get()
-            ));
-
+            output.acceptAfter(Items.PUMPKIN_PIE, HorizonsItems.GOOSEBERRY_PIE.get());
         }
     }
 
