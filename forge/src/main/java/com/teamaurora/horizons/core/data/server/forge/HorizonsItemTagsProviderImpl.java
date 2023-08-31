@@ -12,9 +12,6 @@ import static com.teamaurora.horizons.core.registry.HorizonsItems.GOOSEBERRIES;
 public class HorizonsItemTagsProviderImpl {
     public static void handlePlatformTags(HorizonsItemTagsProvider provider, HolderLookup.Provider lookup) {
 
-        //environmental
-        provider.tag(HorizonsItemTags.DUCK_FOOD).add(ALGAE.get().asItem());
-
         //quark
         provider.tag(CompatItemTags.BOATABLE_CHESTS).add(CYPRESS_CHESTS.getFirst().get().asItem());
         provider.tag(CompatItemTags.REVERTABLE_CHESTS).add(CYPRESS_CHESTS.getFirst().get().asItem());

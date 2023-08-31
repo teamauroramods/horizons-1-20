@@ -30,7 +30,6 @@ public final class HorizonsBlocks {
     public static final RegistryWrapper.BlockProvider PROVIDER = RegistryWrapper.blockProvider(HorizonsItems.PROVIDER);
 
     // Cypress //
-
     public static final RegistryReference<Block> STRIPPED_CYPRESS_LOG = PROVIDER.registerWithItem("stripped_cypress_log", () -> new RotatedPillarBlock(HorizonsProperties.CYPRESS.strippedLogOrWood()), new Item.Properties());
     public static final RegistryReference<Block> STRIPPED_CYPRESS_WOOD = PROVIDER.registerWithItem("stripped_cypress_wood", () -> new RotatedPillarBlock(HorizonsProperties.CYPRESS.strippedLogOrWood()), new Item.Properties());
     public static final RegistryReference<Block> CYPRESS_LOG = PROVIDER.registerWithItem("cypress_log", () -> new RotatedPillarBlock(HorizonsProperties.CYPRESS.log()), new Item.Properties());
@@ -72,17 +71,14 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> STRIPPED_LARGE_CYPRESS_KNEE = PROVIDER.registerWithItem("stripped_large_cypress_knee", () -> new DoubleCypressKneeBlock(HorizonsProperties.CYPRESS_KNEE), new Item.Properties());
 
     // Beard Moss //
-
     public static final RegistryReference<Block> BEARD_MOSS_BLOCK = PROVIDER.registerWithItem("beard_moss_block", () -> new BeardMossBlockBlock(HorizonsProperties.BEARD_MOSS_BLOCK), new Item.Properties());
     public static final RegistryReference<Block> BEARD_MOSS = PROVIDER.registerWithItem("beard_moss", () -> new BeardMossBlock(HorizonsProperties.BEARD_MOSS), new Item.Properties());
 
     // Gooseberry //
-
     public static final RegistryReference<Block> CYPRESS_BRANCH = PROVIDER.registerWithItem("cypress_branch", () -> new CypressBranchBlock(HorizonsProperties.CYPRESS_BRANCH), new Item.Properties());
     //public static final RegistryReference<Block> GOOSEBERRY_SACK = PROVIDER.registerWithItem(HorizonsConstants.QUARK, "gooseberry_sack", () -> new Block(HorizonsProperties.GOOSEBERRY_SACK), 300, CreativeModeTab.TAB_DECORATIONS);
 
     // Algae //
-
     public static final RegistryReference<Block> ALGAE = PROVIDER.registerWithItem("algae", () -> new AlgaeBlock(HorizonsProperties.ALGAE), block -> new AlgaeBlockItem(block, new Item.Properties()));
     public static final RegistryReference<Block> ALGAE_THATCH = PROVIDER.registerWithItem("algae_thatch", () -> new ThatchBlock(HorizonsProperties.ALGAE_THATCH), new Item.Properties());
     public static final RegistryReference<Block> ALGAE_THATCH_SLAB = PROVIDER.registerWithItem("algae_thatch_slab", () -> new ThatchSlabBlock(HorizonsProperties.ALGAE_THATCH), new Item.Properties());
@@ -90,7 +86,6 @@ public final class HorizonsBlocks {
     //public static final RegistryReference<Block> ALGAE_THATCH_VERTICAL_SLAB = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "algae_thatch_vertical_slab", () -> new ThatchVerticalSlabBlock(HorizonsProperties.ALGAE_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Lily Flowers //
-
     public static final RegistryReference<Block> BLUE_LILY = PROVIDER.registerWithItem("blue_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
     public static final RegistryReference<Block> LIGHT_GRAY_LILY = PROVIDER.registerWithItem("light_gray_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
     public static final RegistryReference<Block> CYAN_LILY = PROVIDER.registerWithItem("cyan_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
@@ -125,4 +120,38 @@ public final class HorizonsBlocks {
 
     // Tall Flowers //
     public static final RegistryReference<Block> HELICONIA = PROVIDER.registerWithItem("heliconia", () -> new TallFlowerBlock(PropertiesHelper.flower()), new Item.Properties());
+    
+    // Redwood //
+    public static final RegistryReference<Block> STRIPPED_REDWOOD_LOG = PROVIDER.registerWithItem("stripped_redwood_log", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.strippedLogOrWood()), new Item.Properties());
+    public static final RegistryReference<Block> STRIPPED_REDWOOD = PROVIDER.registerWithItem("stripped_redwood", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.strippedLogOrWood()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_LOG = PROVIDER.registerWithItem("redwood_log", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.log()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD = PROVIDER.registerWithItem("redwood", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.wood()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_PLANKS = PROVIDER.registerWithItem("redwood_planks", () -> new Block(HorizonsProperties.REDWOOD.planks()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_SLAB = PROVIDER.registerWithItem("redwood_slab", () -> new SlabBlock(HorizonsProperties.REDWOOD.planks()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_STAIRS = PROVIDER.registerWithItem("redwood_stairs", () -> new StairBlock(REDWOOD_PLANKS.get().defaultBlockState(), HorizonsProperties.REDWOOD.planks()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_FENCE = PROVIDER.registerWithItem("redwood_fence", () -> new FenceBlock(HorizonsProperties.REDWOOD.planks()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_FENCE_GATE = PROVIDER.registerWithItem("redwood_fence_gate", () -> new FenceGateBlock(HorizonsProperties.REDWOOD.planks(), HorizonsWoodTypes.REDWOOD), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_PRESSURE_PLATE = PROVIDER.registerWithItem("redwood_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, HorizonsProperties.REDWOOD.pressurePlate(), HorizonsBlockSetTypes.REDWOOD), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_DOOR = PROVIDER.registerWithItem("redwood_door", () -> new DoorBlock(HorizonsProperties.REDWOOD.door(), HorizonsBlockSetTypes.REDWOOD), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_TRAPDOOR = PROVIDER.registerWithItem("redwood_trapdoor", () -> new TrapDoorBlock(HorizonsProperties.REDWOOD.trapdoor(), HorizonsBlockSetTypes.REDWOOD), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_BUTTON = PROVIDER.registerWithItem("redwood_button", () -> new ButtonBlock(HorizonsProperties.REDWOOD.button(), HorizonsBlockSetTypes.REDWOOD, 30, true), new Item.Properties());
+    public static final Pair<RegistryReference<BorealibStandingSignBlock>, RegistryReference<BorealibWallSignBlock>> REDWOOD_SIGNS = PROVIDER.registerSign("redwood", HorizonsWoodTypes.REDWOOD, HorizonsProperties.REDWOOD_SIGN, new Item.Properties().stacksTo(16));
+    public static final Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> REDWOOD_HANGING_SIGNS = PROVIDER.registerHangingSign("redwood", HorizonsWoodTypes.REDWOOD, HorizonsProperties.REDWOOD_SIGN, new Item.Properties().stacksTo(16));
+    public static final RegistryReference<Block> REDWOOD_SAPLING = PROVIDER.registerWithItem("redwood_sapling", () -> new SaplingBlock(new CypressTreeGrower(), PropertiesHelper.sapling().sound(SoundType.CHERRY_SAPLING)), new Item.Properties());
+    public static final RegistryReference<Block> POTTED_REDWOOD_SAPLING = PROVIDER.register("potted_redwood_sapling", () -> new FlowerPotBlock(REDWOOD_SAPLING.get(), PropertiesHelper.flowerPot()));
+    public static final RegistryReference<Block> REDWOOD_LEAVES = PROVIDER.registerWithItem("redwood_leaves", () -> new LeavesBlock(HorizonsProperties.REDWOOD.leaves()), new Item.Properties());
+
+    //public static final RegistryReference<Block> VERTICAL_REDWOOD_PLANKS = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "vertical_redwood_planks", () -> new Block(HorizonsProperties.REDWOOD.planks()), new Item.Properties());
+    //public static final RegistryReference<Block> REDWOOD_BEEHIVE = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "redwood_beehive", () -> new BlueprintBeehiveBlock(HorizonsProperties.REDWOOD.beehive()), CreativeModeTab.TAB_DECORATIONS);
+    //public static final RegistryReference<Block> REDWOOD_LADDER = PROVIDER.createFuelBlock("redwood_ladder", () -> new BlueprintLadderBlock(HorizonsProperties.REDWOOD.ladder()), 300, ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryReference<Block> REDWOOD_BOOKSHELF = PROVIDER.registerWithItem("redwood_bookshelf", () -> new Block(HorizonsProperties.REDWOOD.bookshelf()), new Item.Properties());
+    //public static final RegistryReference<Block> REDWOOD_BOARDS = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "redwood_boards", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.planks()), new Item.Properties());
+    //public static final RegistryReference<Block> REDWOOD_VERTICAL_SLAB = PROVIDER.createCompatFuelBlock(HorizonsConstants.QUARK, "redwood_vertical_slab", () -> new VerticalSlabBlock(HorizonsProperties.REDWOOD.planks()), 150, new Item.Properties());
+    //public static final RegistryReference<Block> STRIPPED_REDWOOD_POST = PROVIDER.createCompatFuelBlock(HorizonsConstants.QUARK, "stripped_redwood_post", () -> new WoodPostBlock(HorizonsProperties.REDWOOD.post()), 300, CreativeModeTab.TAB_DECORATIONS);
+    //public static final RegistryReference<Block> REDWOOD_POST = PROVIDER.createCompatFuelBlock(HorizonsConstants.QUARK, "redwood_post", () -> new WoodPostBlock(STRIPPED_REDWOOD_POST, HorizonsProperties.REDWOOD.post()), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static final Pair<RegistryReference<BorealibChestBlock>, RegistryReference<BorealibTrappedChestBlock>> REDWOOD_CHESTS = PROVIDER.registerChest("redwood", HorizonsProperties.REDWOOD.chest());
+    public static final RegistryReference<Block> REDWOOD_CABINET = PROVIDER.registerWithItem("redwood_cabinet", () -> new CabinetBlock(HorizonsProperties.REDWOOD.cabinet()), new Item.Properties());
+    //public static final RegistryReference<Block> REDWOOD_HEDGE = PROVIDER.createCompatFuelBlock(HorizonsConstants.QUARK, "redwood_hedge", () -> new HedgeBlock(HorizonsProperties.REDWOOD.planks()), 300, CreativeModeTab.TAB_DECORATIONS);
+    //public static final RegistryReference<Block> REDWOOD_LEAF_CARPET = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "redwood_leaf_carpet", () -> new LeafCarpetBlock(HorizonsProperties.REDWOOD.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
+    //public static final RegistryReference<Block> REDWOOD_LEAF_PILE = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "redwood_leaf_pile", () -> new LeafPileBlock(HorizonsProperties.REDWOOD.leafPile()), CreativeModeTab.TAB_DECORATIONS);
 }

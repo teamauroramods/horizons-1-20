@@ -17,10 +17,13 @@ import java.util.function.Predicate;
 public class HorizonsLanguageProvider extends BorealibLanguageProvider {
     private static final Set<RegistryReference<?>> DONT_AUTO_TRANSLATE = ImmutableSet.of(
             HorizonsItems.CYPRESS_BOATS.getSecond(),
+            HorizonsItems.REDWOOD_BOATS.getSecond(),
 
             // Put wall (hanging) signs here, they use the standing sign translations
             HorizonsBlocks.CYPRESS_SIGNS.getSecond(),
-            HorizonsBlocks.CYPRESS_HANGING_SIGNS.getSecond()
+            HorizonsBlocks.CYPRESS_HANGING_SIGNS.getSecond(),
+            HorizonsBlocks.REDWOOD_SIGNS.getSecond(),
+            HorizonsBlocks.REDWOOD_HANGING_SIGNS.getSecond()
     );
 
     public HorizonsLanguageProvider(BorealibPackOutput output) {
@@ -36,12 +39,12 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
         HorizonsItems.PROVIDER.stream().filter(Predicate.not(item -> DONT_AUTO_TRANSLATE.contains(item) || item.get() instanceof BlockItem)).forEach(item -> registry.add(item.get(), autoTranslate(item.getId().getPath())));
 
         // Manual translations
-        registry.add("biome.horizons.atacama_desert", "Atacama Desert");
         registry.add("biome.horizons.bayou", "Bayou");
         registry.add("biome.horizons.lavender_field", "Lavender Field");
         registry.add("biome.horizons.lavender_forest", "Lavender Forest");
         registry.add("biome.horizons.redwood_forest", "Redwood Forest");
 
         registry.add(HorizonsItems.CYPRESS_BOATS.getSecond().get(), "Cypress Boat with Chest");
+        registry.add(HorizonsItems.REDWOOD_BOATS.getSecond().get(), "Redwood Boat with Chest");
     }
 }

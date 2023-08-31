@@ -29,6 +29,7 @@ public class HorizonsItemTagsProvider extends BorealibTagsProvider.ItemTagProvid
 
         //horizons
         this.copy(HorizonsBlockTags.CYPRESS_LOGS, HorizonsItemTags.CYPRESS_LOGS);
+        this.copy(HorizonsBlockTags.REDWOOD_LOGS, HorizonsItemTags.REDWOOD_LOGS);
 
         //farmerdelight
         this.tag(CompatItemTags.CABINETS_WOODEN).add(CYPRESS_CABINET.get().asItem());

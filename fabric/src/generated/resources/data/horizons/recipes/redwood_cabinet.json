@@ -1,0 +1,29 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "farmersdelight"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "horizons:redwood_slab"
+    },
+    "T": {
+      "item": "horizons:redwood_trapdoor"
+    }
+  },
+  "pattern": [
+    "###",
+    "T T",
+    "###"
+  ],
+  "result": {
+    "item": "horizons:redwood_cabinet"
+  },
+  "show_notification": true
+}

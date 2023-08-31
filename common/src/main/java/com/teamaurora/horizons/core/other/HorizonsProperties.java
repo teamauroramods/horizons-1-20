@@ -21,6 +21,7 @@ public class HorizonsProperties {
     public static final WoodProperties REDWOOD = WoodProperties.builder(MapColor.COLOR_ORANGE, MapColor.COLOR_BROWN).build();
 
     public static final BlockBehaviour.Properties CYPRESS_SIGN = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).forceSolidOn().instrument(NoteBlockInstrument.BASS).ignitedByLava().noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD);
+    public static final BlockBehaviour.Properties REDWOOD_SIGN = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).forceSolidOn().instrument(NoteBlockInstrument.BASS).ignitedByLava().noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD);
 
     // Blocks //
     public static final BlockBehaviour.Properties GOOSEBERRY_SACK = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F).sound(SoundType.WOOL);

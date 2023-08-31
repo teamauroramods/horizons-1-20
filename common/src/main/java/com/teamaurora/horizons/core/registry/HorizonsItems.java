@@ -34,5 +34,6 @@ public final class HorizonsItems {
     // Boats //
 
     public static final Pair<RegistryReference<Item>, RegistryReference<Item>> CYPRESS_BOATS = PROVIDER.registerBoats("cypress", HorizonsBlocks.CYPRESS_PLANKS);
+    public static final Pair<RegistryReference<Item>, RegistryReference<Item>> REDWOOD_BOATS = PROVIDER.registerBoats("redwood", HorizonsBlocks.REDWOOD_PLANKS);
 
 }

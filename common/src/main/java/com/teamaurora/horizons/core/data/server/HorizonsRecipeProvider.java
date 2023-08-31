@@ -46,6 +46,7 @@ public class HorizonsRecipeProvider extends BorealibRecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GOOSEBERRY_JAM.get(), 3).requires(HONEY_GLAZED_GOOSEBERRIES.get()).requires(Items.GLASS_BOTTLE, 3).unlockedBy(getHasName(HONEY_GLAZED_GOOSEBERRIES.get()), has(HONEY_GLAZED_GOOSEBERRIES.get())).save(exporter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SUGAR, 3).requires(GOOSEBERRY_JAM.get()).unlockedBy(getHasName(GOOSEBERRY_JAM.get()), has(GOOSEBERRY_JAM.get())).save(exporter, Horizons.location("gooseberry_jam_to_sugar"));
         this.woodSet(HorizonsItemTags.CYPRESS_LOGS, HorizonsBlockFamilies.CYPRESS_PLANKS_FAMILY, CYPRESS_LOG, STRIPPED_CYPRESS_LOG, CYPRESS_WOOD, STRIPPED_CYPRESS_WOOD, CYPRESS_CABINET, CYPRESS_BOOKSHELF, CYPRESS_HANGING_SIGNS, CYPRESS_BOATS, exporter);
+        this.woodSet(HorizonsItemTags.REDWOOD_LOGS, HorizonsBlockFamilies.REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, STRIPPED_REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD, REDWOOD_CABINET, REDWOOD_BOOKSHELF, REDWOOD_HANGING_SIGNS, REDWOOD_BOATS, exporter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ALGAE_THATCH.get(), 4).define('#', ALGAE.get()).pattern("##").pattern("##").unlockedBy(getHasName(ALGAE.get()), has(ALGAE.get())).save(exporter);
         generateRecipes(exporter, HorizonsBlockFamilies.ALGAE_THATCH_FAMILY);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, SUNFLOWER_SEEDS.get(), 2).requires(Items.SUNFLOWER).unlockedBy(getHasName(Items.SUNFLOWER), has(Items.SUNFLOWER)).save(exporter);

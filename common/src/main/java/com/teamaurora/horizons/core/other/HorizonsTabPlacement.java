@@ -22,7 +22,6 @@ import java.util.List;
  * @author rose_
  */
 public final class HorizonsTabPlacement {
-
     public static void register(ResourceKey<CreativeModeTab> tabKey, CreativeModeTab tab, FeatureFlagSet flags, CreativeModeTab.ItemDisplayParameters parameters, CreativeTabEvents.Output output, boolean canUseGameMasterBlocks) {
         if (tabKey.equals(CreativeModeTabs.BUILDING_BLOCKS)) {
             acceptAllAfter(output, Items.CHERRY_BUTTON, List.of(
@@ -38,7 +37,20 @@ public final class HorizonsTabPlacement {
                     HorizonsBlocks.CYPRESS_DOOR.get(),
                     HorizonsBlocks.CYPRESS_TRAPDOOR.get(),
                     HorizonsBlocks.CYPRESS_PRESSURE_PLATE.get(),
-                    HorizonsBlocks.CYPRESS_BUTTON.get()
+                    HorizonsBlocks.CYPRESS_BUTTON.get(),
+                    HorizonsBlocks.REDWOOD_LOG.get(),
+                    HorizonsBlocks.REDWOOD.get(),
+                    HorizonsBlocks.STRIPPED_REDWOOD_LOG.get(),
+                    HorizonsBlocks.STRIPPED_REDWOOD.get(),
+                    HorizonsBlocks.REDWOOD_PLANKS.get(),
+                    HorizonsBlocks.REDWOOD_STAIRS.get(),
+                    HorizonsBlocks.REDWOOD_SLAB.get(),
+                    HorizonsBlocks.REDWOOD_FENCE.get(),
+                    HorizonsBlocks.REDWOOD_FENCE_GATE.get(),
+                    HorizonsBlocks.REDWOOD_DOOR.get(),
+                    HorizonsBlocks.REDWOOD_TRAPDOOR.get(),
+                    HorizonsBlocks.REDWOOD_PRESSURE_PLATE.get(),
+                    HorizonsBlocks.REDWOOD_BUTTON.get()
             ));
             acceptAllAfter(output, Items.MUD_BRICK_WALL, List.of(
                     HorizonsBlocks.ALGAE_THATCH.get(),
@@ -69,10 +81,19 @@ public final class HorizonsTabPlacement {
                     HorizonsBlocks.WHITE_LILY.get()
             ));
             output.acceptAfter(Items.PEONY, HorizonsBlocks.HELICONIA.get());
-            output.acceptAfter(Items.CHERRY_LEAVES, HorizonsBlocks.CYPRESS_LEAVES.get());
-            output.acceptAfter(Items.CHERRY_SAPLING, HorizonsBlocks.CYPRESS_SAPLING.get());
+            acceptAllAfter(output, Items.CHERRY_LEAVES, List.of(
+                    HorizonsBlocks.CYPRESS_LEAVES.get(),
+                    HorizonsBlocks.REDWOOD_LEAVES.get()
+            ));
+            acceptAllAfter(output, Items.CHERRY_SAPLING, List.of(
+                    HorizonsBlocks.CYPRESS_SAPLING.get(),
+                    HorizonsBlocks.REDWOOD_SAPLING.get()
+            ));
             output.acceptAfter(Items.LARGE_FERN, HorizonsBlocks.GIANT_FERN.get());
-            output.acceptAfter(Items.CHERRY_LOG, HorizonsBlocks.CYPRESS_LOG.get());
+            acceptAllAfter(output, Items.CHERRY_LOG, List.of(
+                    HorizonsBlocks.CYPRESS_LOG.get(),
+                    HorizonsBlocks.REDWOOD_LOG.get()
+            ));
             output.acceptAfter(Items.FROGSPAWN, HorizonsBlocks.ALGAE.get());
             acceptAllAfter(output, Items.CACTUS, List.of(
                     HorizonsBlocks.CYPRESS_KNEE.get(),
@@ -84,11 +105,13 @@ public final class HorizonsTabPlacement {
         } else if (tabKey.equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {
             acceptAllAfter(output, Items.CHERRY_HANGING_SIGN, List.of(
                     HorizonsBlocks.CYPRESS_SIGNS.getFirst().get(),
-                    HorizonsBlocks.CYPRESS_HANGING_SIGNS.getFirst().get()
+                    HorizonsBlocks.CYPRESS_HANGING_SIGNS.getFirst().get(),
+                    HorizonsBlocks.REDWOOD_SIGNS.getFirst().get(),
+                    HorizonsBlocks.REDWOOD_HANGING_SIGNS.getFirst().get()
             ));
             if (Platform.anyModsLoaded(Mods.QUARK, Mods.WOODWORKS, Mods.CARPENTER)) {
-                output.acceptAfter(Items.BOOKSHELF, HorizonsBlocks.CYPRESS_BOOKSHELF.get());
-                output.acceptAfter(Items.CHEST, HorizonsBlocks.CYPRESS_CHESTS.getFirst().get());
+                //output.acceptAfter(Items.BOOKSHELF, HorizonsBlocks.CYPRESS_BOOKSHELF.get());
+                //output.acceptAfter(Items.CHEST, HorizonsBlocks.CYPRESS_CHESTS.getFirst().get());
             }
         } else if (tabKey.equals(CreativeModeTabs.REDSTONE_BLOCKS)) {
             if (Platform.anyModsLoaded(Mods.QUARK, Mods.WOODWORKS, Mods.CARPENTER)) {
@@ -98,7 +121,9 @@ public final class HorizonsTabPlacement {
         } else if (tabKey.equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
             acceptAllAfter(output, Items.CHERRY_CHEST_BOAT, List.of(
                     HorizonsItems.CYPRESS_BOATS.getFirst().get(),
-                    HorizonsItems.CYPRESS_BOATS.getSecond().get()
+                    HorizonsItems.CYPRESS_BOATS.getSecond().get(),
+                    HorizonsItems.REDWOOD_BOATS.getFirst().get(),
+                    HorizonsItems.REDWOOD_BOATS.getSecond().get()
             ));
         } else if (tabKey.equals(CreativeModeTabs.FOOD_AND_DRINKS)) {
             acceptAllAfter(output, Items.GLOW_BERRIES, List.of(

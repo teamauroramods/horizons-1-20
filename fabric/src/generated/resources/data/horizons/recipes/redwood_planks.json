@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "horizons:redwood_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "horizons:redwood_planks"
+  }
+}

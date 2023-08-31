@@ -1,7 +1,6 @@
 package com.teamaurora.horizons.common.block.grower;
 
 import com.teamaurora.horizons.core.registry.feature.HorizonsTreeFeatures;
-import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;

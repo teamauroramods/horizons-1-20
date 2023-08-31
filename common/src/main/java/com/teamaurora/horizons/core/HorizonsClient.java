@@ -62,7 +62,11 @@ public final class HorizonsClient {
                 HorizonsBlocks.POTTED_FIDDLENECK.get(),
                 HorizonsBlocks.POTTED_AMARANTHUS.get(),
                 HorizonsBlocks.POTTED_MYOSOTIS.get(),
-                HorizonsBlocks.HELICONIA.get()
+                HorizonsBlocks.HELICONIA.get(),
+                HorizonsBlocks.REDWOOD_SAPLING.get(),
+                HorizonsBlocks.POTTED_REDWOOD_SAPLING.get(),
+                HorizonsBlocks.REDWOOD_DOOR.get(),
+                HorizonsBlocks.REDWOOD_TRAPDOOR.get()
         );
     }
 }

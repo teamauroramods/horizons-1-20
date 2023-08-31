@@ -25,6 +25,7 @@ public class HorizonsBlockTagsProvider extends BorealibTagsProvider.BlockTagProv
 
         //horizons
         this.tag(HorizonsBlockTags.CYPRESS_LOGS).add(CYPRESS_LOG.get(), CYPRESS_WOOD.get(), STRIPPED_CYPRESS_LOG.get(), STRIPPED_CYPRESS_WOOD.get());
+        this.tag(HorizonsBlockTags.REDWOOD_LOGS).add(REDWOOD_LOG.get(), REDWOOD.get(), STRIPPED_REDWOOD_LOG.get(), STRIPPED_REDWOOD.get());
 
         //quark
         //this.tag(BlueprintBlockTags.VERTICAL_SLABS).add(ALGAE_THATCH_VERTICAL_SLAB.get(), LIGHT_BOULDER_VERTICAL_SLAB.get(), DARK_BOULDER_VERTICAL_SLAB.get(), MOSSY_LIGHT_BOULDER_VERTICAL_SLAB.get(), MOSSY_DARK_BOULDER_VERTICAL_SLAB.get(), BOULDER_BRICK_VERTICAL_SLAB.get());

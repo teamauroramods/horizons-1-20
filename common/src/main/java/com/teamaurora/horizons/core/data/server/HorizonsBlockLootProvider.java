@@ -48,7 +48,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
     @Override
     public void generate() {
 
-        // Wood Sets //
+        // Cypress //
         this.woodDrops(STRIPPED_CYPRESS_LOG, STRIPPED_CYPRESS_WOOD, CYPRESS_LOG, CYPRESS_WOOD,
                 CYPRESS_PLANKS, CYPRESS_SLAB, CYPRESS_STAIRS, CYPRESS_FENCE, CYPRESS_FENCE_GATE,
                 CYPRESS_PRESSURE_PLATE, CYPRESS_DOOR, CYPRESS_TRAPDOOR, CYPRESS_BUTTON, CYPRESS_SIGNS,
@@ -99,6 +99,15 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.tallFlower(HELICONIA.get());
 
         this.add(GIANT_FERN.get(), block -> this.createTriplePlantWithSeedDrops(block, Items.FERN));
+        
+        // Redwood //
+        this.woodDrops(STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_LOG, REDWOOD,
+                REDWOOD_PLANKS, REDWOOD_SLAB, REDWOOD_STAIRS, REDWOOD_FENCE, REDWOOD_FENCE_GATE,
+                REDWOOD_PRESSURE_PLATE, REDWOOD_DOOR, REDWOOD_TRAPDOOR, REDWOOD_BUTTON, REDWOOD_SIGNS,
+                REDWOOD_HANGING_SIGNS, REDWOOD_CABINET, REDWOOD_BOOKSHELF, REDWOOD_CHESTS);
+        this.dropSelf(REDWOOD_SAPLING.get());
+        this.dropPottedContents(POTTED_REDWOOD_SAPLING.get());
+        this.normalLeaves(REDWOOD_LEAVES.get(), REDWOOD_SAPLING.get());
     }
 
     private void woodDrops(RegistryReference<Block> strippedLog, RegistryReference<Block> strippedWood,

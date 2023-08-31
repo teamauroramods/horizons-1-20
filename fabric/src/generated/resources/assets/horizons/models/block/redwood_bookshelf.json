@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "horizons:block/redwood_planks",
+    "side": "horizons:block/redwood_bookshelf"
+  }
+}

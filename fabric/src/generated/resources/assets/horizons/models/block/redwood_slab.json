@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "horizons:block/redwood_planks",
+    "side": "horizons:block/redwood_planks",
+    "top": "horizons:block/redwood_planks"
+  }
+}

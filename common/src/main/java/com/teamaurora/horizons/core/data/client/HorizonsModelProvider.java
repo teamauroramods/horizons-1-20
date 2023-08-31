@@ -61,7 +61,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
     @Override
     public void generateBlockModels(BlockModelGenerators generator) {
 
-        // Wood Sets //
+        // Cypress //
         createWoodFamily(generator, CYPRESS_PLANKS_FAMILY, CYPRESS_LOG, CYPRESS_WOOD, STRIPPED_CYPRESS_LOG, STRIPPED_CYPRESS_WOOD, CYPRESS_CHESTS, CYPRESS_BOOKSHELF, CYPRESS_CABINET, CYPRESS_HANGING_SIGNS);
         generator.createTrivialBlock(CYPRESS_LEAVES.get(), TexturedModel.LEAVES);
         generator.createCrossBlockWithDefaultItem(HANGING_CYPRESS_LEAVES.get(), BlockModelGenerators.TintState.TINTED);
@@ -100,11 +100,17 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         createFLower(generator, AMARANTHUS, POTTED_AMARANTHUS);
         createFLower(generator, MYOSOTIS, POTTED_MYOSOTIS);
         createTallFlower(generator, HELICONIA);
+
+        // Redwood //
+        createWoodFamily(generator, REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_CHESTS, REDWOOD_BOOKSHELF, REDWOOD_CABINET, REDWOOD_HANGING_SIGNS);
+        generator.createTrivialBlock(REDWOOD_LEAVES.get(), TexturedModel.LEAVES);
+        generator.createPlant(REDWOOD_SAPLING.get(), POTTED_REDWOOD_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators generator) {
         createWoodItems(generator, CYPRESS_BOATS);
+        createWoodItems(generator, REDWOOD_BOATS);
         generator.generateFlatItem(GOOSEBERRY_JAM.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(SUNFLOWER_SEEDS.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRY_PIE.get(), ModelTemplates.FLAT_ITEM);

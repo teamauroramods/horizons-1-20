@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "horizons:redwood_log",
+    "horizons:redwood",
+    "horizons:stripped_redwood_log",
+    "horizons:stripped_redwood"
+  ]
+}
