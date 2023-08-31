@@ -98,8 +98,6 @@ public final class HorizonsTabPlacement {
             acceptAllAfter(output, Items.CACTUS, List.of(
                     HorizonsBlocks.CYPRESS_KNEE.get(),
                     HorizonsBlocks.LARGE_CYPRESS_KNEE.get(),
-                    HorizonsBlocks.STRIPPED_CYPRESS_KNEE.get(),
-                    HorizonsBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(),
                     HorizonsBlocks.CYPRESS_BRANCH.get()
             ));
         } else if (tabKey.equals(CreativeModeTabs.FUNCTIONAL_BLOCKS)) {

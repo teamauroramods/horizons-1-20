@@ -67,8 +67,6 @@ public final class HorizonsBlocks {
 
     public static final RegistryReference<Block> CYPRESS_KNEE = PROVIDER.registerWithItem("cypress_knee", () -> new CypressKneeBlock(HorizonsProperties.CYPRESS_KNEE), new Item.Properties());
     public static final RegistryReference<Block> LARGE_CYPRESS_KNEE = PROVIDER.registerWithItem("large_cypress_knee", () -> new DoubleCypressKneeBlock(HorizonsProperties.CYPRESS_KNEE), new Item.Properties());
-    public static final RegistryReference<Block> STRIPPED_CYPRESS_KNEE = PROVIDER.registerWithItem("stripped_cypress_knee", () -> new CypressKneeBlock(HorizonsProperties.CYPRESS_KNEE), new Item.Properties());
-    public static final RegistryReference<Block> STRIPPED_LARGE_CYPRESS_KNEE = PROVIDER.registerWithItem("stripped_large_cypress_knee", () -> new DoubleCypressKneeBlock(HorizonsProperties.CYPRESS_KNEE), new Item.Properties());
 
     // Beard Moss //
     public static final RegistryReference<Block> BEARD_MOSS_BLOCK = PROVIDER.registerWithItem("beard_moss_block", () -> new BeardMossBlockBlock(HorizonsProperties.BEARD_MOSS_BLOCK), new Item.Properties());

@@ -58,9 +58,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.normalLeaves(CYPRESS_LEAVES.get(), CYPRESS_SAPLING.get());
         this.add(HANGING_CYPRESS_LEAVES.get(), HorizonsBlockLootProvider::createShearsOnlyDrop);
         this.cypressKnee(CYPRESS_KNEE.get(), CYPRESS_LOG.get());
-        this.cypressKnee(STRIPPED_CYPRESS_KNEE.get(), STRIPPED_CYPRESS_LOG.get());
         this.largeCypressKnee(LARGE_CYPRESS_KNEE.get(), CYPRESS_LOG.get());
-        this.largeCypressKnee(STRIPPED_LARGE_CYPRESS_KNEE.get(), STRIPPED_CYPRESS_LOG.get());
 
         // Plants n stuff //
         this.add(BEARD_MOSS_BLOCK.get(), HorizonsBlockLootProvider::createShearsOnlyDrop);

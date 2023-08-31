@@ -46,7 +46,7 @@ public final class HorizonsCompat {
 
     public static void registerFlammables() {
         FlammabilityRegistry.register(5, 20, CYPRESS_PLANKS.get(), CYPRESS_SLAB.get(), CYPRESS_STAIRS.get(), CYPRESS_FENCE.get(), CYPRESS_FENCE_GATE.get());
-        FlammabilityRegistry.register(5, 5, STRIPPED_CYPRESS_WOOD.get(), STRIPPED_CYPRESS_LOG.get(), CYPRESS_LOG.get(), CYPRESS_WOOD.get(), CYPRESS_KNEE.get(), STRIPPED_CYPRESS_KNEE.get(), LARGE_CYPRESS_KNEE.get(), STRIPPED_LARGE_CYPRESS_KNEE.get());
+        FlammabilityRegistry.register(5, 5, STRIPPED_CYPRESS_WOOD.get(), STRIPPED_CYPRESS_LOG.get(), CYPRESS_LOG.get(), CYPRESS_WOOD.get(), CYPRESS_KNEE.get(), LARGE_CYPRESS_KNEE.get());
         FlammabilityRegistry.register(30, 20, CYPRESS_BOOKSHELF.get());
         FlammabilityRegistry.register(30, 60, BEARD_MOSS_BLOCK.get(), BEARD_MOSS.get(), CYPRESS_LEAVES.get(), HANGING_CYPRESS_LEAVES.get());
         FlammabilityRegistry.register(60, 100, BLUE_LILY.get(), LIGHT_GRAY_LILY.get(), CYAN_LILY.get(), LIGHT_BLUE_LILY.get(), MAGENTA_LILY.get(), PINK_LILY.get(), PURPLE_LILY.get(), WHITE_LILY.get());
@@ -55,7 +55,6 @@ public final class HorizonsCompat {
     public static void registerStrippables() {
         StrippingRegistry.register(CYPRESS_LOG.get(), STRIPPED_CYPRESS_LOG.get());
         StrippingRegistry.register(CYPRESS_WOOD.get(), STRIPPED_CYPRESS_WOOD.get());
-        StrippingRegistry.register(CYPRESS_KNEE.get(), STRIPPED_CYPRESS_KNEE.get());
     }
 
     public static void registerFuel() {

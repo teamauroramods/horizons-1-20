@@ -33,8 +33,6 @@ public final class HorizonsClient {
                 HorizonsBlocks.ALGAE_THATCH_STAIRS.get(),
                 HorizonsBlocks.CYPRESS_KNEE.get(),
                 HorizonsBlocks.LARGE_CYPRESS_KNEE.get(),
-                HorizonsBlocks.STRIPPED_CYPRESS_KNEE.get(),
-                HorizonsBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(),
                 HorizonsBlocks.BLUE_LILY.get(),
                 HorizonsBlocks.POTTED_BLUE_LILY.get(),
                 HorizonsBlocks.LIGHT_GRAY_LILY.get(),

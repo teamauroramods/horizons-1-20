@@ -67,9 +67,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.createCrossBlockWithDefaultItem(HANGING_CYPRESS_LEAVES.get(), BlockModelGenerators.TintState.TINTED);
         generator.createPlant(CYPRESS_SAPLING.get(), POTTED_CYPRESS_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
         generator.createCrossBlockWithDefaultItem(CYPRESS_KNEE.get(), BlockModelGenerators.TintState.NOT_TINTED);
-        generator.createCrossBlockWithDefaultItem(STRIPPED_CYPRESS_KNEE.get(), BlockModelGenerators.TintState.NOT_TINTED);
         generator.createDoublePlant(LARGE_CYPRESS_KNEE.get(), BlockModelGenerators.TintState.NOT_TINTED);
-        generator.createDoublePlant(STRIPPED_LARGE_CYPRESS_KNEE.get(), BlockModelGenerators.TintState.NOT_TINTED);
         createCypressBranch(generator);
 
         // Algae + Thatch //

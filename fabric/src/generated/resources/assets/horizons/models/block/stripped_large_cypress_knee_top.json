@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "horizons:block/stripped_large_cypress_knee_top"
-  }
-}
