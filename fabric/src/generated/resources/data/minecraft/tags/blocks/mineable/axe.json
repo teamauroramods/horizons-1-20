@@ -9,6 +9,10 @@
     "horizons:stripped_cypress_knee",
     "horizons:stripped_large_cypress_knee",
     "horizons:cypress_branch",
-    "horizons:cypress_cabinet"
+    "horizons:cypress_cabinet",
+    "horizons:redwood_bookshelf",
+    "horizons:redwood_chest",
+    "horizons:redwood_trapped_chest",
+    "horizons:redwood_cabinet"
   ]
 }

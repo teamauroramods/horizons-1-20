@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_sign"
+    "horizons:cypress_hanging_sign",
+    "horizons:redwood_hanging_sign"
   ]
 }

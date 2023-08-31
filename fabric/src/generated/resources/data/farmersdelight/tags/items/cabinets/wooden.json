@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_cabinet"
+    "horizons:cypress_cabinet",
+    "horizons:redwood_cabinet"
   ]
 }

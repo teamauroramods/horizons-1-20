@@ -93,6 +93,7 @@ public final class HorizonsOverworldBiomes {
         BiomeDefaultFeatures.addGiantTaigaVegetation(gen);
         BiomeDefaultFeatures.addDefaultMushrooms(gen);
         BiomeDefaultFeatures.addDefaultExtraVegetation(gen);
+        BiomeDefaultFeatures.addMossyStoneBlock(gen);
 
         return biome(true, 0.75F, 0.9F, 4159204, 329011, 12638463, spawns, gen, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
     }

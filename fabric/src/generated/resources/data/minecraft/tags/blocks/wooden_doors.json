@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_door"
+    "horizons:cypress_door",
+    "horizons:redwood_door"
   ]
 }

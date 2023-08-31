@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_fence_gate"
+    "horizons:cypress_fence_gate",
+    "horizons:redwood_fence_gate"
   ]
 }

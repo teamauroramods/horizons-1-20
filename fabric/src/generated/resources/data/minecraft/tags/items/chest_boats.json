@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_chest_boat"
+    "horizons:cypress_chest_boat",
+    "horizons:redwood_chest_boat"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_planks"
+    "horizons:cypress_planks",
+    "horizons:redwood_planks"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_sapling"
+    "horizons:cypress_sapling",
+    "horizons:redwood_sapling"
   ]
 }

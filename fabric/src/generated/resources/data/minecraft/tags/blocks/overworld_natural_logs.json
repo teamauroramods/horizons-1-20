@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_log"
+    "horizons:cypress_log",
+    "horizons:redwood_log"
   ]
 }
