@@ -7,10 +7,7 @@ import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsItems;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
-import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 
@@ -18,6 +15,8 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
     private static final Set<RegistryReference<?>> DONT_AUTO_TRANSLATE = ImmutableSet.of(
             HorizonsItems.CYPRESS_BOATS.getSecond(),
             HorizonsItems.REDWOOD_BOATS.getSecond(),
+            HorizonsBlocks.BEARD_MOSS_BLOCK,
+            HorizonsBlocks.BEARD_MOSS,
 
             // Put wall (hanging) signs here, they use the standing sign translations
             HorizonsBlocks.CYPRESS_SIGNS.getSecond(),
@@ -43,6 +42,9 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
         registry.add("biome.horizons.lavender_field", "Lavender Field");
         registry.add("biome.horizons.lavender_forest", "Lavender Forest");
         registry.add("biome.horizons.redwood_forest", "Redwood Forest");
+
+        registry.add(HorizonsBlocks.BEARD_MOSS_BLOCK.get(), "Beard Moss");
+        registry.add(HorizonsBlocks.BEARD_MOSS.get(), "Hanging Beard Moss");
 
         registry.add(HorizonsItems.CYPRESS_BOATS.getSecond().get(), "Cypress Boat with Chest");
         registry.add(HorizonsItems.REDWOOD_BOATS.getSecond().get(), "Redwood Boat with Chest");
