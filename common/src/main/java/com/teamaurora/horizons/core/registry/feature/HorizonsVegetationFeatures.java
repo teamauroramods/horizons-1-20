@@ -62,25 +62,7 @@ public final class HorizonsVegetationFeatures {
         Holder<PlacedFeature> waterMegaCypress = placedFeatures.getOrThrow(HorizonsTreePlacements.WATER_MEGA_CYPRESS_CHECKED);
         Holder<PlacedFeature> cypressBush = placedFeatures.getOrThrow(HorizonsTreePlacements.CYPRESS_BUSH);
 
-        FeatureUtils.register(
-                context,
-                PATCH_TROPICAL_GRASS,
-                Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(
-                        32,
-                        7,
-                        3,
-                        PlacementUtils.filtered(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(
-                                        new WeightedStateProvider(
-                                                SimpleWeightedRandomList.<BlockState>builder().add(HorizonsBlocks.TROPICAL_GRASS.get().defaultBlockState(), 3).add(HorizonsBlocks.TROPICAL_FERN.get().defaultBlockState(), 1)
-                                        )
-                                ),
-                                BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.PODZOL)))
-                        )
-                )
-        );
+        FeatureUtils.register(context, PATCH_TROPICAL_GRASS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 7, 3, PlacementUtils.filtered(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(HorizonsBlocks.TROPICAL_GRASS.get().defaultBlockState(), 3).add(HorizonsBlocks.TROPICAL_FERN.get().defaultBlockState(), 1))), BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.PODZOL))))));
 
         FeatureUtils.register(context, ALGAE, HorizonsFeatures.ALGAE_PATCH.get(), NoneFeatureConfiguration.INSTANCE);
         FeatureUtils.register(context, GIANT_FERN, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.GIANT_FERN.get().defaultBlockState()))));
