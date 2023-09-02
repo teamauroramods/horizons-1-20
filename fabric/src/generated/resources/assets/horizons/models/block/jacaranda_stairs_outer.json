@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "horizons:block/jacaranda_planks",
+    "side": "horizons:block/jacaranda_planks",
+    "top": "horizons:block/jacaranda_planks"
+  }
+}

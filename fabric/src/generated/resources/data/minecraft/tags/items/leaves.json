@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "horizons:cypress_leaves",
-    "horizons:redwood_leaves"
+    "horizons:redwood_leaves",
+    "horizons:jacaranda_leaves",
+    "horizons:flowering_jacaranda_leaves"
   ]
 }

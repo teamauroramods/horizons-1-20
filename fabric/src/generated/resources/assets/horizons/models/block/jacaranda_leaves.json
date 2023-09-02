@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "horizons:block/jacaranda_leaves"
+  }
+}

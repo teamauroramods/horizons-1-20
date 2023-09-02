@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "horizons:block/jacaranda_planks",
+    "side": "horizons:block/jacaranda_bookshelf"
+  }
+}

@@ -94,15 +94,22 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         createLily(generator, WHITE_LILY, POTTED_WHITE_LILY);
 
         // Flowers //
-        createFLower(generator, FIDDLENECK, POTTED_FIDDLENECK);
-        createFLower(generator, AMARANTHUS, POTTED_AMARANTHUS);
-        createFLower(generator, MYOSOTIS, POTTED_MYOSOTIS);
+        generator.createPlant(FIDDLENECK.get(), POTTED_FIDDLENECK.get(), BlockModelGenerators.TintState.NOT_TINTED);
+        generator.createPlant(AMARANTHUS.get(), POTTED_AMARANTHUS.get(), BlockModelGenerators.TintState.NOT_TINTED);
+        generator.createPlant(MYOSOTIS.get(), POTTED_MYOSOTIS.get(), BlockModelGenerators.TintState.NOT_TINTED);
         generator.createDoublePlant(HELICONIA.get(), BlockModelGenerators.TintState.NOT_TINTED);
 
         // Redwood //
         createWoodFamily(generator, REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_CHESTS, REDWOOD_BOOKSHELF, REDWOOD_CABINET, REDWOOD_HANGING_SIGNS);
         generator.createTrivialBlock(REDWOOD_LEAVES.get(), TexturedModel.LEAVES);
         generator.createPlant(REDWOOD_SAPLING.get(), POTTED_REDWOOD_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
+
+        // Jacaranda //
+        createWoodFamily(generator, JACARANDA_PLANKS_FAMILY, JACARANDA_LOG, JACARANDA_WOOD, STRIPPED_JACARANDA_LOG, STRIPPED_JACARANDA_WOOD, JACARANDA_CHESTS, JACARANDA_BOOKSHELF, JACARANDA_CABINET, JACARANDA_HANGING_SIGNS);
+        generator.createTrivialBlock(JACARANDA_LEAVES.get(), TexturedModel.LEAVES);
+        generator.createTrivialBlock(FLOWERING_JACARANDA_LEAVES.get(), TexturedModel.LEAVES);
+        generator.createPlant(JACARANDA_SAPLING.get(), POTTED_JACARANDA_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
+        generator.createPlant(FLOWERING_JACARANDA_SAPLING.get(), POTTED_FLOWERING_JACARANDA_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
     }
 
     @Override
@@ -117,6 +124,8 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.generateFlatItem(GOOSEBERRIES.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(CYPRESS_BOATS.getFirst().get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(CYPRESS_BOATS.getSecond().get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(JACARANDA_BOATS.getFirst().get(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(JACARANDA_BOATS.getSecond().get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(REDWOOD_BOATS.getFirst().get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(REDWOOD_BOATS.getSecond().get(), ModelTemplates.FLAT_ITEM);
     }
@@ -162,14 +171,6 @@ public class HorizonsModelProvider extends BorealibModelProvider {
     private static void createLily(BlockModelGenerators generator, RegistryReference<Block> block, RegistryReference<Block> potted) {
         generator.createSimpleFlatItemModel(block.get());
         ResourceLocation model = TEMPLATE_LILY.create(block.get(), new TextureMapping().put(FLOWER_SLOT, TextureMapping.getBlockTexture(block.get())), generator.modelOutput);
-        ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(potted.get(), TextureMapping.plant(block.get()), generator.modelOutput);
-        generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block.get(), model));
-        generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));
-    }
-
-    private static void createFLower(BlockModelGenerators generator, RegistryReference<Block> block, RegistryReference<Block> potted) {
-        generator.createSimpleFlatItemModel(block.get());
-        ResourceLocation model = BlockModelGenerators.TintState.NOT_TINTED.getCross().create(block.get(), TextureMapping.cross(block.get()), generator.modelOutput);
         ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(potted.get(), TextureMapping.plant(block.get()), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block.get(), model));
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));

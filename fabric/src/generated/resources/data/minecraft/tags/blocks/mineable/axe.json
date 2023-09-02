@@ -11,6 +11,10 @@
     "horizons:redwood_bookshelf",
     "horizons:redwood_chest",
     "horizons:redwood_trapped_chest",
-    "horizons:redwood_cabinet"
+    "horizons:redwood_cabinet",
+    "horizons:jacaranda_bookshelf",
+    "horizons:jacaranda_chest",
+    "horizons:jacaranda_trapped_chest",
+    "horizons:jacaranda_cabinet"
   ]
 }

@@ -15,6 +15,7 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
     private static final Set<RegistryReference<?>> DONT_AUTO_TRANSLATE = ImmutableSet.of(
             HorizonsItems.CYPRESS_BOATS.getSecond(),
             HorizonsItems.REDWOOD_BOATS.getSecond(),
+            HorizonsItems.JACARANDA_BOATS.getSecond(),
             HorizonsBlocks.BEARD_MOSS_BLOCK,
             HorizonsBlocks.BEARD_MOSS,
 
@@ -22,7 +23,9 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
             HorizonsBlocks.CYPRESS_SIGNS.getSecond(),
             HorizonsBlocks.CYPRESS_HANGING_SIGNS.getSecond(),
             HorizonsBlocks.REDWOOD_SIGNS.getSecond(),
-            HorizonsBlocks.REDWOOD_HANGING_SIGNS.getSecond()
+            HorizonsBlocks.REDWOOD_HANGING_SIGNS.getSecond(),
+            HorizonsBlocks.JACARANDA_SIGNS.getSecond(),
+            HorizonsBlocks.JACARANDA_HANGING_SIGNS.getSecond()
     );
 
     public HorizonsLanguageProvider(BorealibPackOutput output) {
@@ -48,5 +51,6 @@ public class HorizonsLanguageProvider extends BorealibLanguageProvider {
 
         registry.add(HorizonsItems.CYPRESS_BOATS.getSecond().get(), "Cypress Boat with Chest");
         registry.add(HorizonsItems.REDWOOD_BOATS.getSecond().get(), "Redwood Boat with Chest");
+        registry.add(HorizonsItems.JACARANDA_BOATS.getSecond().get(), "Jacaranda Boat with Chest");
     }
 }

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "horizons:cypress_pressure_plate",
-    "horizons:redwood_pressure_plate"
+    "horizons:redwood_pressure_plate",
+    "horizons:jacaranda_pressure_plate"
   ]
 }

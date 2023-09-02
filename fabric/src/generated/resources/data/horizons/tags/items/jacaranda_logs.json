@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "horizons:jacaranda_log",
+    "horizons:jacaranda_wood",
+    "horizons:stripped_jacaranda_log",
+    "horizons:stripped_jacaranda_wood"
+  ]
+}

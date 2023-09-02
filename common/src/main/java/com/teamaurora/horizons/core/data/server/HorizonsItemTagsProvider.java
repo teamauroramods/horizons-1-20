@@ -30,24 +30,24 @@ public class HorizonsItemTagsProvider extends BorealibTagsProvider.ItemTagProvid
         //horizons
         this.copy(HorizonsBlockTags.CYPRESS_LOGS, HorizonsItemTags.CYPRESS_LOGS);
         this.copy(HorizonsBlockTags.REDWOOD_LOGS, HorizonsItemTags.REDWOOD_LOGS);
+        this.copy(HorizonsBlockTags.JACARANDA_LOGS, HorizonsItemTags.JACARANDA_LOGS);
 
         //farmerdelight
-        this.tag(CompatItemTags.CABINETS_WOODEN).add(CYPRESS_CABINET.get().asItem(), REDWOOD_CABINET.get().asItem());
+        this.tag(CompatItemTags.CABINETS_WOODEN).add(CYPRESS_CABINET.get().asItem(), REDWOOD_CABINET.get().asItem(), JACARANDA_CABINET.get().asItem());
 
         //minecraft
         //this.tag(ItemTags.NON_FLAMMABLE_WOOD).add(CYPRESS_BOARDS.get().asItem(), REDWOOD_BOARDS.get().asItem(), REDBUD_BOARDS.get().asItem(), JACARANDA_BOARDS.get().asItem());
-        this.tag(ItemTags.BOATS).add(CYPRESS_BOATS.getFirst().get(), REDWOOD_BOATS.getFirst().get());
-        this.tag(ItemTags.CHEST_BOATS).add(CYPRESS_BOATS.getSecond().get(), REDWOOD_BOATS.getSecond().get());
-        this.tag(ItemTags.SIGNS).add(CYPRESS_SIGNS.getFirst().get().asItem(), REDWOOD_SIGNS.getFirst().get().asItem());
-        this.tag(ItemTags.HANGING_SIGNS).add(CYPRESS_HANGING_SIGNS.getFirst().get().asItem(), REDWOOD_HANGING_SIGNS.getFirst().get().asItem());
-        //this.copy(BlockTags.BUTTONS, ItemTags.BUTTONS);
+        this.tag(ItemTags.BOATS).add(CYPRESS_BOATS.getFirst().get(), REDWOOD_BOATS.getFirst().get(), JACARANDA_BOATS.getFirst().get());
+        this.tag(ItemTags.CHEST_BOATS).add(CYPRESS_BOATS.getSecond().get(), REDWOOD_BOATS.getSecond().get(), JACARANDA_BOATS.getSecond().get());
+        this.tag(ItemTags.SIGNS).add(CYPRESS_SIGNS.getFirst().get().asItem(), REDWOOD_SIGNS.getFirst().get().asItem(), JACARANDA_SIGNS.getFirst().get().asItem());
+        this.tag(ItemTags.HANGING_SIGNS).add(CYPRESS_HANGING_SIGNS.getFirst().get().asItem(), REDWOOD_HANGING_SIGNS.getFirst().get().asItem(), JACARANDA_HANGING_SIGNS.getFirst().get().asItem());
         this.copy(BlockTags.LEAVES, ItemTags.LEAVES);
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
         this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
         this.copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
-        //this.copy(BlockTags.SLABS, ItemTags.SLABS);
-        //this.copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
-        //this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
+        this.copy(BlockTags.SLABS, ItemTags.SLABS);
+        this.copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS);
+        this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
         //this.copy(BlockTags.WALLS, ItemTags.WALLS);
         this.copy(BlockTags.WOODEN_BUTTONS, ItemTags.WOODEN_BUTTONS);
         this.copy(BlockTags.WOODEN_DOORS, ItemTags.WOODEN_DOORS);

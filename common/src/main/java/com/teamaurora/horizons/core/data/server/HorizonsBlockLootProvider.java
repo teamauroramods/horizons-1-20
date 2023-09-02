@@ -106,6 +106,18 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.dropSelf(REDWOOD_SAPLING.get());
         this.dropPottedContents(POTTED_REDWOOD_SAPLING.get());
         this.normalLeaves(REDWOOD_LEAVES.get(), REDWOOD_SAPLING.get());
+
+        // Jacaranda //
+        this.woodDrops(STRIPPED_JACARANDA_LOG, STRIPPED_JACARANDA_WOOD, JACARANDA_LOG, JACARANDA_WOOD,
+                JACARANDA_PLANKS, JACARANDA_SLAB, JACARANDA_STAIRS, JACARANDA_FENCE, JACARANDA_FENCE_GATE,
+                JACARANDA_PRESSURE_PLATE, JACARANDA_DOOR, JACARANDA_TRAPDOOR, JACARANDA_BUTTON, JACARANDA_SIGNS,
+                JACARANDA_HANGING_SIGNS, JACARANDA_CABINET, JACARANDA_BOOKSHELF, JACARANDA_CHESTS);
+        this.dropSelf(JACARANDA_SAPLING.get());
+        this.dropSelf(FLOWERING_JACARANDA_SAPLING.get());
+        this.dropPottedContents(POTTED_JACARANDA_SAPLING.get());
+        this.dropPottedContents(POTTED_FLOWERING_JACARANDA_SAPLING.get());
+        this.normalLeaves(JACARANDA_LEAVES.get(), JACARANDA_SAPLING.get());
+        this.normalLeaves(FLOWERING_JACARANDA_LEAVES.get(), FLOWERING_JACARANDA_SAPLING.get());
     }
 
     private void woodDrops(RegistryReference<Block> strippedLog, RegistryReference<Block> strippedWood,

@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_bookshelf"
+    "horizons:cypress_bookshelf",
+    "horizons:redwood_bookshelf",
+    "horizons:jacaranda_bookshelf"
   ]
 }

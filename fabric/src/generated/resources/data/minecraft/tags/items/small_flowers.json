@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "horizons:blue_lily",
+    "horizons:light_gray_lily",
+    "horizons:cyan_lily",
+    "horizons:light_blue_lily",
+    "horizons:magenta_lily",
+    "horizons:pink_lily",
+    "horizons:purple_lily",
+    "horizons:white_lily",
+    "horizons:fiddleneck",
+    "horizons:amaranthus",
+    "horizons:myosotis"
+  ]
+}

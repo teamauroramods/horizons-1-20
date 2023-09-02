@@ -23,8 +23,16 @@ public final class HorizonsCompat {
         addCompostable(HONEY_GLAZED_GOOSEBERRIES.get(), .3f);
         addCompostable(GOOSEBERRY_JAM_COOKIE.get(), .85f);
         addCompostable(GOOSEBERRY_PIE.get(), 1f);
+
         addCompostable(CYPRESS_LEAVES.get(), .3f);
         addCompostable(CYPRESS_SAPLING.get(), .3f);
+        addCompostable(REDWOOD_LEAVES.get(), .3f);
+        addCompostable(REDWOOD_SAPLING.get(), .3f);
+        addCompostable(JACARANDA_LEAVES.get(), .3f);
+        addCompostable(JACARANDA_SAPLING.get(), .3f);
+        addCompostable(FLOWERING_JACARANDA_LEAVES.get(), .3f);
+        addCompostable(FLOWERING_JACARANDA_SAPLING.get(), .3f);
+
         addCompostable(BEARD_MOSS_BLOCK.get(), .3f);
         addCompostable(BEARD_MOSS.get(), .3f);
         addCompostable(BLUE_LILY.get(), .65f);
@@ -47,10 +55,10 @@ public final class HorizonsCompat {
     }
 
     public static void registerFlammables() {
-        FlammabilityRegistry.register(5, 20, CYPRESS_PLANKS.get(), CYPRESS_SLAB.get(), CYPRESS_STAIRS.get(), CYPRESS_FENCE.get(), CYPRESS_FENCE_GATE.get(), REDWOOD_PLANKS.get(), REDWOOD_SLAB.get(), REDWOOD_STAIRS.get(), REDWOOD_FENCE.get(), REDWOOD_FENCE_GATE.get());
-        FlammabilityRegistry.register(5, 5, STRIPPED_CYPRESS_WOOD.get(), STRIPPED_CYPRESS_LOG.get(), CYPRESS_LOG.get(), CYPRESS_WOOD.get(), CYPRESS_KNEE.get(), LARGE_CYPRESS_KNEE.get(), STRIPPED_REDWOOD.get(), STRIPPED_REDWOOD_LOG.get(), REDWOOD_LOG.get(), REDWOOD.get());
-        FlammabilityRegistry.register(30, 20, CYPRESS_BOOKSHELF.get(), REDWOOD_BOOKSHELF.get());
-        FlammabilityRegistry.register(30, 60, BEARD_MOSS_BLOCK.get(), BEARD_MOSS.get(), CYPRESS_LEAVES.get(), HANGING_CYPRESS_LEAVES.get(), REDWOOD_LEAVES.get());
+        FlammabilityRegistry.register(5, 20, CYPRESS_PLANKS.get(), CYPRESS_SLAB.get(), CYPRESS_STAIRS.get(), CYPRESS_FENCE.get(), CYPRESS_FENCE_GATE.get(), REDWOOD_PLANKS.get(), REDWOOD_SLAB.get(), REDWOOD_STAIRS.get(), REDWOOD_FENCE.get(), REDWOOD_FENCE_GATE.get(), JACARANDA_PLANKS.get(), JACARANDA_SLAB.get(), JACARANDA_STAIRS.get(), JACARANDA_FENCE.get(), JACARANDA_FENCE_GATE.get());
+        FlammabilityRegistry.register(5, 5, STRIPPED_CYPRESS_WOOD.get(), STRIPPED_CYPRESS_LOG.get(), CYPRESS_LOG.get(), CYPRESS_WOOD.get(), CYPRESS_KNEE.get(), LARGE_CYPRESS_KNEE.get(), STRIPPED_REDWOOD.get(), STRIPPED_REDWOOD_LOG.get(), REDWOOD_LOG.get(), REDWOOD.get(), STRIPPED_JACARANDA_LOG.get(), STRIPPED_JACARANDA_WOOD.get(), JACARANDA_LOG.get(), STRIPPED_JACARANDA_LOG.get());
+        FlammabilityRegistry.register(30, 20, CYPRESS_BOOKSHELF.get(), REDWOOD_BOOKSHELF.get(), JACARANDA_BOOKSHELF.get());
+        FlammabilityRegistry.register(30, 60, BEARD_MOSS_BLOCK.get(), BEARD_MOSS.get(), CYPRESS_LEAVES.get(), HANGING_CYPRESS_LEAVES.get(), REDWOOD_LEAVES.get(), JACARANDA_LEAVES.get(), FLOWERING_JACARANDA_LEAVES.get());
         FlammabilityRegistry.register(60, 100, BLUE_LILY.get(), LIGHT_GRAY_LILY.get(), CYAN_LILY.get(), LIGHT_BLUE_LILY.get(), MAGENTA_LILY.get(), PINK_LILY.get(), PURPLE_LILY.get(), WHITE_LILY.get(), FIDDLENECK.get(), AMARANTHUS.get(), MYOSOTIS.get(), HELICONIA.get());
     }
 
@@ -59,11 +67,14 @@ public final class HorizonsCompat {
         StrippingRegistry.register(CYPRESS_WOOD.get(), STRIPPED_CYPRESS_WOOD.get());
         StrippingRegistry.register(REDWOOD_LOG.get(), STRIPPED_REDWOOD_LOG.get());
         StrippingRegistry.register(REDWOOD.get(), STRIPPED_REDWOOD.get());
+        StrippingRegistry.register(JACARANDA_LOG.get(), STRIPPED_JACARANDA_LOG.get());
+        StrippingRegistry.register(JACARANDA_WOOD.get(), STRIPPED_JACARANDA_WOOD.get());
     }
 
     public static void registerFuel() {
         FuelRegistry.register(CYPRESS_BOOKSHELF.get(), 300);
         FuelRegistry.register(REDWOOD_BOOKSHELF.get(), 300);
+        FuelRegistry.register(JACARANDA_BOOKSHELF.get(), 300);
         FuelRegistry.register(BEARD_MOSS_BLOCK.get(), 800);
         FuelRegistry.register(BEARD_MOSS.get(), 800);
     }

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "horizons:cypress_stairs",
-    "horizons:redwood_stairs"
+    "horizons:redwood_stairs",
+    "horizons:jacaranda_stairs"
   ]
 }

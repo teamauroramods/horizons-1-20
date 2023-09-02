@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "horizons:cypress_chest"
+    "horizons:cypress_chest",
+    "horizons:redwood_chest",
+    "horizons:jacaranda_chest"
   ]
 }

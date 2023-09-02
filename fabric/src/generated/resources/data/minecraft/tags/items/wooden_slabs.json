@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "horizons:cypress_slab",
-    "horizons:redwood_slab"
+    "horizons:redwood_slab",
+    "horizons:jacaranda_slab"
   ]
 }

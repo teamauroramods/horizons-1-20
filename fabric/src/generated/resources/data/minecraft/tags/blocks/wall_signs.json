@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "horizons:cypress_wall_sign",
-    "horizons:redwood_wall_sign"
+    "horizons:redwood_wall_sign",
+    "horizons:jacaranda_wall_sign"
   ]
 }

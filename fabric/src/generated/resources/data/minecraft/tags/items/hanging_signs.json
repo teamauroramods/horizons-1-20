@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "horizons:cypress_hanging_sign",
-    "horizons:redwood_hanging_sign"
+    "horizons:redwood_hanging_sign",
+    "horizons:jacaranda_hanging_sign"
   ]
 }

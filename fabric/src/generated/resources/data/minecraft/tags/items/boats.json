@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "horizons:cypress_boat",
-    "horizons:redwood_boat"
+    "horizons:redwood_boat",
+    "horizons:jacaranda_boat"
   ]
 }

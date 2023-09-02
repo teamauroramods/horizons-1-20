@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "horizons:cypress_trapdoor",
-    "horizons:redwood_trapdoor"
+    "horizons:redwood_trapdoor",
+    "horizons:jacaranda_trapdoor"
   ]
 }

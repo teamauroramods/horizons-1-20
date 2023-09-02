@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#horizons:cypress_logs",
-    "#horizons:redwood_logs"
+    "#horizons:redwood_logs",
+    "#horizons:jacaranda_logs"
   ]
 }

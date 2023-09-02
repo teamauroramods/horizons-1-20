@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "horizons:block/jacaranda_cabinet_front_open",
+    "side": "horizons:block/jacaranda_cabinet_side",
+    "top": "horizons:block/jacaranda_cabinet_top"
+  }
+}
