@@ -34,7 +34,7 @@ public class WaterMegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
         BlockPos position = new BlockPos(origin.getX(), waterY, origin.getZ());
         BlockPos bottom = new BlockPos(origin.getX(), surfaceY, origin.getZ());
         for (BlockPos pos2 : BlockPos.betweenClosed(bottom, bottom.offset(1, 0, 1))) {
-            if (!FeatureHelper.isAirOrWaterOrLeaves(level.getBlockState(pos2)))
+            if (!WaterCypressTreeFeature.isAirOrWaterOrLeaves(level.getBlockState(pos2)))
                 return false;
         }
 
@@ -110,9 +110,9 @@ public class WaterMegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
 
     private void addBranch(BlockPos pos, Direction dir, TreeConfiguration config, RandomSource random) {
         this.addAxisLog(pos.relative(dir), dir, config, random);
-        this.addAxisLog(pos.relative(dir,2), dir, config, random);
-        this.disc2H(pos.relative(dir,2), random);
-        this.disc1(pos.relative(dir,2).above());
+        this.addAxisLog(pos.relative(dir, 2), dir, config, random);
+        this.disc2H(pos.relative(dir, 2), random);
+        this.disc1(pos.relative(dir, 2).above());
     }
 
     private void disc1(BlockPos origin) {

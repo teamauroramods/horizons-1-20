@@ -5,7 +5,6 @@ import com.teamaurora.borealib.api.config.v1.ConfigRegistry;
 import com.teamaurora.borealib.api.config.v1.ModConfig;
 import com.teamaurora.borealib.api.event.creativetabs.v1.CreativeTabEvents;
 import com.teamaurora.horizons.core.other.HorizonsCompat;
-import com.teamaurora.horizons.core.other.HorizonsFoods;
 import com.teamaurora.horizons.core.other.HorizonsSurfaceRuleData;
 import com.teamaurora.horizons.core.other.HorizonsTabPlacement;
 import com.teamaurora.horizons.core.other.region.HorizonsOverworldRegion;

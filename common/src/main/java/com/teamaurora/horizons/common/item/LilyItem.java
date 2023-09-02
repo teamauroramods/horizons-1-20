@@ -1,7 +1,6 @@
 package com.teamaurora.horizons.common.item;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;

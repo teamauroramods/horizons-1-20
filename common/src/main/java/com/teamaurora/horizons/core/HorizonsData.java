@@ -34,4 +34,5 @@ public final class HorizonsData {
                 .add(Registries.BIOME, HorizonsBiomes::bootstrap)
                 .add(BorealibRegistries.BIOME_MODIFIERS, HorizonsBiomeModifiers::bootstrap);
     }
+
 }

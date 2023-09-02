@@ -18,6 +18,6 @@ public class HorizonsOverworldRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        (new HorizonsOverworldBiomeBuilder()).addBiomes(mapper);
+        new HorizonsOverworldBiomeBuilder().addBiomes(mapper);
     }
 }

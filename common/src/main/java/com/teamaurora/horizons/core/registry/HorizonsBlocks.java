@@ -80,7 +80,7 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> ALGAE = PROVIDER.registerWithItem("algae", () -> new AlgaeBlock(HorizonsProperties.ALGAE), block -> new AlgaeBlockItem(block, new Item.Properties()));
     public static final RegistryReference<Block> ALGAE_THATCH = PROVIDER.registerWithItem("algae_thatch", () -> new ThatchBlock(HorizonsProperties.ALGAE_THATCH), new Item.Properties());
     public static final RegistryReference<Block> ALGAE_THATCH_SLAB = PROVIDER.registerWithItem("algae_thatch_slab", () -> new ThatchSlabBlock(HorizonsProperties.ALGAE_THATCH), new Item.Properties());
-    public static final RegistryReference<Block> ALGAE_THATCH_STAIRS = PROVIDER.registerWithItem("algae_thatch_stairs" ,() -> new ThatchStairBlock(ALGAE_THATCH.get().defaultBlockState(), HorizonsProperties.ALGAE_THATCH), new Item.Properties());
+    public static final RegistryReference<Block> ALGAE_THATCH_STAIRS = PROVIDER.registerWithItem("algae_thatch_stairs", () -> new ThatchStairBlock(ALGAE_THATCH.get().defaultBlockState(), HorizonsProperties.ALGAE_THATCH), new Item.Properties());
     //public static final RegistryReference<Block> ALGAE_THATCH_VERTICAL_SLAB = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "algae_thatch_vertical_slab", () -> new ThatchVerticalSlabBlock(HorizonsProperties.ALGAE_THATCH), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     // Lily Flowers //
@@ -94,7 +94,7 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> WHITE_LILY = PROVIDER.registerWithItem("white_lily", () -> new LilyFlowerBlock(HorizonsProperties.LILY), b -> new LilyItem(b, new Item.Properties()));
 
     public static final RegistryReference<Block> POTTED_BLUE_LILY = PROVIDER.register("potted_blue_lily", () -> new FlowerPotBlock(BLUE_LILY.get(), PropertiesHelper.flowerPot()));
-    public static final RegistryReference<Block> POTTED_LIGHT_GRAY_LILY= PROVIDER.register("potted_light_gray_lily", () -> new FlowerPotBlock(LIGHT_GRAY_LILY.get(), PropertiesHelper.flowerPot()));
+    public static final RegistryReference<Block> POTTED_LIGHT_GRAY_LILY = PROVIDER.register("potted_light_gray_lily", () -> new FlowerPotBlock(LIGHT_GRAY_LILY.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_CYAN_LILY = PROVIDER.register("potted_cyan_lily", () -> new FlowerPotBlock(CYAN_LILY.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_LIGHT_BLUE_LILY = PROVIDER.register("potted_light_blue_lily", () -> new FlowerPotBlock(LIGHT_BLUE_LILY.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_MAGENTA_LILY = PROVIDER.register("potted_magenta_lily", () -> new FlowerPotBlock(MAGENTA_LILY.get(), PropertiesHelper.flowerPot()));
@@ -118,7 +118,7 @@ public final class HorizonsBlocks {
 
     // Tall Flowers //
     public static final RegistryReference<Block> HELICONIA = PROVIDER.registerWithItem("heliconia", () -> new TallFlowerBlock(PropertiesHelper.flower()), new Item.Properties());
-    
+
     // Redwood //
     public static final RegistryReference<Block> STRIPPED_REDWOOD_LOG = PROVIDER.registerWithItem("stripped_redwood_log", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.strippedLogOrWood()), new Item.Properties());
     public static final RegistryReference<Block> STRIPPED_REDWOOD = PROVIDER.registerWithItem("stripped_redwood", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.strippedLogOrWood()), new Item.Properties());

@@ -77,9 +77,9 @@ public class MegaCypressTreeFeature extends AbstractHorizonsTreeFeature {
 
     private void addBranch(BlockPos pos, Direction dir, TreeConfiguration config, RandomSource random) {
         this.addAxisLog(pos.relative(dir), dir, config, random);
-        this.addAxisLog(pos.relative(dir,2), dir, config, random);
-        this.disc2H(pos.relative(dir,2), random);
-        this.disc1(pos.relative(dir,2).above());
+        this.addAxisLog(pos.relative(dir, 2), dir, config, random);
+        this.disc2H(pos.relative(dir, 2), random);
+        this.disc1(pos.relative(dir, 2).above());
     }
 
     private void disc1(BlockPos origin) {

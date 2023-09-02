@@ -7,36 +7,31 @@ import com.teamaurora.horizons.common.util.FeatureHelper;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
+/**
+ * @author ebo2022
+ */
 public class BeardMossTreeDecorator extends TreeDecorator {
-
-    public static final Codec<BeardMossTreeDecorator> CODEC;
     public static final BeardMossTreeDecorator INSTANCE = new BeardMossTreeDecorator();
-
-    @Override
-    protected TreeDecoratorType<BeardMossTreeDecorator> type() {
-        return HorizonsFeatures.BEARD_MOSS.get();
-    }
-
-    static {
-        CODEC = Codec.unit(() -> INSTANCE);
-    }
+    public static final Codec<BeardMossTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
 
     @Override
     public void place(Context context) {
         RandomSource random = context.random();
         LevelSimulatedReader level = context.level();
         for (BlockPos pos : context.logs()) {
-            if (level.isStateAtPosition(pos.below(), FeatureHelper::isAirOrLeaves)) {
+            if (level.isStateAtPosition(pos.below(), BeardMossTreeDecorator::isAirOrLeaves)) {
                 boolean flag = true;
                 int rand1 = random.nextInt(3) + 1;
                 for (int i = 0; i < rand1; i++) {
-                    if (!level.isStateAtPosition(pos.below(i + 1), FeatureHelper::isAirOrLeaves)) {
+                    if (!level.isStateAtPosition(pos.below(i + 1), BeardMossTreeDecorator::isAirOrLeaves)) {
                         flag = false;
                         break;
                     }
@@ -66,11 +61,11 @@ public class BeardMossTreeDecorator extends TreeDecorator {
         }
         for (BlockPos pos : context.leaves()) {
             if (random.nextInt(6) == 0) {
-                if (level.isStateAtPosition(pos.below(), FeatureHelper::isAirOrLeaves)) {
+                if (level.isStateAtPosition(pos.below(), BeardMossTreeDecorator::isAirOrLeaves)) {
                     boolean flag = true;
                     int rand1 = random.nextInt(2) + 1;
                     for (int i = 0; i < rand1; i++) {
-                        if (!level.isStateAtPosition(pos.below(i + 1), FeatureHelper::isAirOrLeaves)) {
+                        if (!level.isStateAtPosition(pos.below(i + 1), BeardMossTreeDecorator::isAirOrLeaves)) {
                             flag = false;
                             break;
                         }
@@ -100,4 +95,14 @@ public class BeardMossTreeDecorator extends TreeDecorator {
             }
         }
     }
+
+    @Override
+    protected TreeDecoratorType<BeardMossTreeDecorator> type() {
+        return HorizonsFeatures.BEARD_MOSS.get();
+    }
+
+    private static boolean isAirOrLeaves(BlockState state) {
+        return state.isAir() || state.is(BlockTags.LEAVES);
+    }
+
 }

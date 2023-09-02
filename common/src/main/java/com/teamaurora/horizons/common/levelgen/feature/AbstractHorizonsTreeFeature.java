@@ -28,7 +28,6 @@ import java.util.*;
 import java.util.function.BiConsumer;
 
 public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfiguration> {
-
     protected Set<BlockPos> logPositions;
     protected Set<BlockPos> foliagePositions;
     protected Map<BlockPos, BlockState> specialLogPositions;
@@ -109,11 +108,11 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
         int i = 7;
         List<Set<BlockPos>> list = Lists.newArrayList();
 
-        for(int j = 0; j < 7; ++j) {
+        for (int j = 0; j < 7; ++j) {
             list.add(Sets.newHashSet());
         }
 
-        for(BlockPos blockPos : Lists.newArrayList(Sets.union(set2, set3))) {
+        for (BlockPos blockPos : Lists.newArrayList(Sets.union(set2, set3))) {
             if (boundingBox.isInside(blockPos)) {
                 discreteVoxelShape.fill(blockPos.getX() - boundingBox.minX(), blockPos.getY() - boundingBox.minY(), blockPos.getZ() - boundingBox.minZ());
             }
@@ -123,8 +122,8 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
         int k = 0;
         list.get(0).addAll(set);
 
-        while(true) {
-            while(k >= 7 || !(list.get(k)).isEmpty()) {
+        while (true) {
+            while (k >= 7 || !(list.get(k)).isEmpty()) {
                 if (k >= 7) {
                     return discreteVoxelShape;
                 }
@@ -139,7 +138,7 @@ public abstract class AbstractHorizonsTreeFeature extends Feature<TreeConfigurat
 
                     discreteVoxelShape.fill(blockPos2.getX() - boundingBox.minX(), blockPos2.getY() - boundingBox.minY(), blockPos2.getZ() - boundingBox.minZ());
 
-                    for(Direction direction : Direction.values()) {
+                    for (Direction direction : Direction.values()) {
                         mutableBlockPos.setWithOffset(blockPos2, direction);
                         if (boundingBox.isInside(mutableBlockPos)) {
                             int l = mutableBlockPos.getX() - boundingBox.minX();

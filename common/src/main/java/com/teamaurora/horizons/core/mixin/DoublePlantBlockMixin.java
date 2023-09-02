@@ -32,6 +32,8 @@ public class DoublePlantBlockMixin implements BonemealableBlock {
     @Override
     public void performBonemeal(ServerLevel level, RandomSource rand, BlockPos pos, BlockState state) {
         boolean below = state.getValue(DoublePlantBlock.HALF) == DoubleBlockHalf.LOWER;
+        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
+        level.setBlock(below ? pos.above() : pos.below(), Blocks.AIR.defaultBlockState(), 2);
         DoublePlantBlock.placeAt(level, HorizonsBlocks.GIANT_FERN.get().defaultBlockState(), below ? pos : pos.below(), 2);
     }
 }

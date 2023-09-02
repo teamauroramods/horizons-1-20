@@ -38,7 +38,7 @@ public class AlgaePatchFeature extends Feature<NoneFeatureConfiguration> {
 
     private static boolean place(BlockState state, WorldGenLevel level, BlockPos pos) {
         if (level.isEmptyBlock(pos) && pos.getY() < level.getMaxBuildHeight() && state.canSurvive(level, pos)) {
-            level.setBlock(pos, state,2);
+            level.setBlock(pos, state, 2);
             return true;
         }
 

@@ -26,4 +26,5 @@ public class HorizonsCommonConfig {
         this.redwoodForest = builder.comment("Whether the Redwood Forest should generate naturally.").define("Enable Redwood Forest", true);
         builder.pop();
     }
+
 }

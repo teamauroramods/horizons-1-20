@@ -6,6 +6,7 @@ import com.teamaurora.borealib.api.biome.v1.modifier.BiomeSelector;
 import com.teamaurora.borealib.core.registry.BorealibRegistries;
 import com.teamaurora.horizons.core.Horizons;
 import com.teamaurora.horizons.core.other.tags.HorizonsBiomeTags;
+import com.teamaurora.horizons.core.other.tags.HorizonsPlacedFeatureTags;
 import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationPlacements;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -16,8 +17,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-
-import static com.teamaurora.horizons.core.other.tags.HorizonsPlacedFeatureTags.*;
 
 public final class HorizonsBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TROPICAL_GRASS = key("add_tropical_grass");
@@ -40,11 +39,11 @@ public final class HorizonsBiomeModifiers {
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
-        BiomeSelector tropicalGrassSelector = BiomeSelector.existingFeatures(GenerationStep.Decoration.VEGETAL_DECORATION, placedFeatures.getOrThrow(TROPICAL_GRASS_REPLACEABLE));
+        BiomeSelector tropicalGrassSelector = BiomeSelector.existingFeatures(GenerationStep.Decoration.VEGETAL_DECORATION, placedFeatures.getOrThrow(HorizonsPlacedFeatureTags.TROPICAL_GRASS_REPLACEABLE));
         BiomeModifier addTropicalGrass = BiomeModifier.Builder.selects(tropicalGrassSelector)
                 .withAction(BiomeModifierAction.replaceFeaturesNonlinear(
                         GenerationStep.Decoration.VEGETAL_DECORATION,
-                        placedFeatures.getOrThrow(TROPICAL_GRASS_REPLACEABLE),
+                        placedFeatures.getOrThrow(HorizonsPlacedFeatureTags.TROPICAL_GRASS_REPLACEABLE),
                         HolderSet.direct(placedFeatures.getOrThrow(HorizonsVegetationPlacements.PATCH_TROPICAL_GRASS))))
                 .build();
         context.register(ADD_TROPICAL_GRASS, addTropicalGrass);

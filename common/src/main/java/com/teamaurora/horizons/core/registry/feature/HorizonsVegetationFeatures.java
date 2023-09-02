@@ -35,7 +35,7 @@ import static com.teamaurora.horizons.core.registry.HorizonsConfiguredFeatures.k
  */
 public final class HorizonsVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TROPICAL_GRASS = key("patch_tropical_grass");
-    public static final ResourceKey<ConfiguredFeature<? ,?>> ALGAE = key("algae");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ALGAE = key("algae");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_FERN = key("giant_fern");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_LILY = key("blue_lily");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LIGHT_GRAY_LILY = key("light_gray_lily");
@@ -52,7 +52,7 @@ public final class HorizonsVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HELICONIA = key("heliconia");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_CYPRESS = key("trees_cypress");
-    public static final ResourceKey<ConfiguredFeature<? ,?>> TREES_WATER_CYPRESS = key("trees_water_cypress");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_WATER_CYPRESS = key("trees_water_cypress");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);

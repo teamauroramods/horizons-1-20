@@ -6,7 +6,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
 public final class HorizonsBiomeTags {
-
     public static final TagKey<Biome> HAS_ALGAE = biomeTag("has_feature/algae");
     public static final TagKey<Biome> HAS_GIANT_FERN = biomeTag("has_feature/giant_fern");
     public static final TagKey<Biome> HAS_BLUE_LILY = biomeTag("has_feature/blue_lily");

@@ -1,9 +1,10 @@
 package com.teamaurora.horizons.common.levelgen.feature;
 
-import com.teamaurora.horizons.common.util.FeatureHelper;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,7 +34,7 @@ public class WaterCypressTreeFeature extends AbstractHorizonsTreeFeature {
 
         BlockPos position = new BlockPos(origin.getX(), waterY, origin.getZ());
         BlockPos bottom = new BlockPos(origin.getX(), surfaceY, origin.getZ());
-        if (!FeatureHelper.isAirOrWaterOrLeaves(level.getBlockState(bottom))) return false;
+        if (!isAirOrWaterOrLeaves(level.getBlockState(bottom))) return false;
 
         // Underwater part of trunk
         for (int i = 0; i <= waterY - surfaceY; i++) {
@@ -134,5 +135,9 @@ public class WaterCypressTreeFeature extends AbstractHorizonsTreeFeature {
                 }
             }
         }
+    }
+
+    public static boolean isAirOrWaterOrLeaves(BlockState state) {
+        return state.isAir() || state.getFluidState().is(FluidTags.WATER) || state.is(BlockTags.LEAVES);
     }
 }

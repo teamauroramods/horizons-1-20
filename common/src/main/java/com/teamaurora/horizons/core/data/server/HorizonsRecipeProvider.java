@@ -65,10 +65,10 @@ public class HorizonsRecipeProvider extends BorealibRecipeProvider {
     }
 
     private void woodSet(TagKey<Item> logs, BlockFamily family, RegistryReference<Block> log, RegistryReference<Block> strippedLog,
-                                RegistryReference<Block> wood, RegistryReference<Block> strippedWood,
-                                RegistryReference<Block> cabinet, RegistryReference<Block> bookshelf,
-                                Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> hangingSigns,
-                                Pair<RegistryReference<Item>, RegistryReference<Item>> boats, Consumer<FinishedRecipe> consumer) {
+                         RegistryReference<Block> wood, RegistryReference<Block> strippedWood,
+                         RegistryReference<Block> cabinet, RegistryReference<Block> bookshelf,
+                         Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> hangingSigns,
+                         Pair<RegistryReference<Item>, RegistryReference<Item>> boats, Consumer<FinishedRecipe> consumer) {
         generateRecipes(consumer, family);
         hangingSign(consumer, hangingSigns.getFirst().get(), strippedLog.get());
         woodenBoat(consumer, boats.getFirst().get(), family.getBaseBlock());

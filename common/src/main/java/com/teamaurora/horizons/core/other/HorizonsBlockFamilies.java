@@ -1,6 +1,7 @@
 package com.teamaurora.horizons.core.other;
 
 import net.minecraft.data.BlockFamily;
+
 import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
 
 public final class HorizonsBlockFamilies {
