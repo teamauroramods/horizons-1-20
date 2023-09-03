@@ -16,11 +16,6 @@ public class HorizonsItemTagsProviderImpl {
         provider.tag(CompatItemTags.BOATABLE_CHESTS).add(CYPRESS_CHESTS.getFirst().get().asItem());
         provider.tag(CompatItemTags.REVERTABLE_CHESTS).add(CYPRESS_CHESTS.getFirst().get().asItem());
 
-        //forge
-        provider.tag(HorizonsItemTags.BERRIES).add(GOOSEBERRIES.get());
-        provider.tag(HorizonsItemTags.STRIPPED_LOGS).add(STRIPPED_CYPRESS_LOG.get().asItem());
-        provider.tag(HorizonsItemTags.STRIPPED_WOOD).add(STRIPPED_CYPRESS_WOOD.get().asItem());
-
         provider.copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
         provider.copy(Tags.Blocks.CHESTS_TRAPPED, Tags.Items.CHESTS_TRAPPED);
         provider.copy(Tags.Blocks.FENCE_GATES_WOODEN, Tags.Items.FENCE_GATES_WOODEN);

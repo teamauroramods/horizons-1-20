@@ -29,13 +29,14 @@ public class HorizonsBiomeTagsProviderImpl {
         provider.tag(Tags.Biomes.IS_DENSE_OVERWORLD).addOptional(HorizonsBiomes.BAYOU.location()).addOptional(HorizonsBiomes.REDWOOD_FOREST.location());
         provider.tag(Tags.Biomes.IS_CONIFEROUS).addOptional(HorizonsBiomes.REDWOOD_FOREST.location());
 
-        provider.tag(HorizonsBiomeTags.HAS_ALGAE).addOptional(HorizonsBiomes.BAYOU.location());
+        provider.tag(HorizonsBiomeTags.HAS_ALGAE).add(HorizonsBiomes.BAYOU);
 
-        provider.tag(BiomeTags.IS_FOREST).addOptional(HorizonsBiomes.BAYOU.location()).addOptional(HorizonsBiomes.REDWOOD_FOREST.location());
-        provider.tag(BiomeTags.HAS_MINESHAFT).addOptional(HorizonsBiomes.BAYOU.location()).addOptional(HorizonsBiomes.REDWOOD_FOREST.location());
-        provider.tag(BiomeTags.HAS_SWAMP_HUT).addOptional(HorizonsBiomes.BAYOU.location());
-        provider.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).addOptional(HorizonsBiomes.BAYOU.location());
-        provider.tag(BiomeTags.HAS_RUINED_PORTAL_SWAMP).addOptional(HorizonsBiomes.BAYOU.location());
-        provider.tag(BiomeTags.STRONGHOLD_BIASED_TO).addOptional(HorizonsBiomes.REDWOOD_FOREST.location());
+        provider.tag(BiomeTags.IS_FOREST).add(HorizonsBiomes.BAYOU).add(HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.IS_TAIGA).add(HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.HAS_MINESHAFT).add(HorizonsBiomes.BAYOU).add(HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.HAS_SWAMP_HUT).add(HorizonsBiomes.BAYOU);
+        provider.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).add(HorizonsBiomes.BAYOU);
+        provider.tag(BiomeTags.HAS_RUINED_PORTAL_SWAMP).add(HorizonsBiomes.BAYOU);
+        provider.tag(BiomeTags.STRONGHOLD_BIASED_TO).add(HorizonsBiomes.REDWOOD_FOREST);
     }
 }

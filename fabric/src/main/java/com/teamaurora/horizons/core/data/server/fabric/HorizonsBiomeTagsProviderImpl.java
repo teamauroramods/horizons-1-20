@@ -31,8 +31,9 @@ public class HorizonsBiomeTagsProviderImpl {
 
         provider.tag(HorizonsBiomeTags.HAS_ALGAE).add(HorizonsBiomes.BAYOU);
 
-        provider.tag(BiomeTags.IS_FOREST).add(HorizonsBiomes.BAYOU, HorizonsBiomes.REDWOOD_FOREST);
-        provider.tag(BiomeTags.HAS_MINESHAFT).add(HorizonsBiomes.BAYOU, HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.IS_FOREST).add(HorizonsBiomes.BAYOU).add(HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.IS_TAIGA).add(HorizonsBiomes.REDWOOD_FOREST);
+        provider.tag(BiomeTags.HAS_MINESHAFT).add(HorizonsBiomes.BAYOU).add(HorizonsBiomes.REDWOOD_FOREST);
         provider.tag(BiomeTags.HAS_SWAMP_HUT).add(HorizonsBiomes.BAYOU);
         provider.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).add(HorizonsBiomes.BAYOU);
         provider.tag(BiomeTags.HAS_RUINED_PORTAL_SWAMP).add(HorizonsBiomes.BAYOU);
