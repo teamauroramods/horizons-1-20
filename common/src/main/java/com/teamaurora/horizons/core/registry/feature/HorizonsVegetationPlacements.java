@@ -17,6 +17,7 @@ import static com.teamaurora.horizons.core.registry.HorizonsPlacedFeatures.key;
 /**
  * @author rose_
  * @author ebo2022
+ * @author JustoPlayzz
  */
 public final class HorizonsVegetationPlacements {
     public static final ResourceKey<PlacedFeature> PATCH_TROPICAL_GRASS = key("patch_tropical_grass");
@@ -38,6 +39,9 @@ public final class HorizonsVegetationPlacements {
 
     public static final ResourceKey<PlacedFeature> TREES_CYPRESS = key("trees_cypress");
     public static final ResourceKey<PlacedFeature> TREES_WATER_CYPRESS = key("trees_water_cypress");
+
+    public static final ResourceKey<PlacedFeature> LAVENDER = key("lavender");
+    public static final ResourceKey<PlacedFeature> JACARANDA_TREE = key("jacaranda_tree");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -61,6 +65,9 @@ public final class HorizonsVegetationPlacements {
         Holder<ConfiguredFeature<?, ?>> treesCypress = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.TREES_CYPRESS);
         Holder<ConfiguredFeature<?, ?>> treesWaterCypress = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.TREES_WATER_CYPRESS);
 
+        Holder<ConfiguredFeature<?, ?>> lavender = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.LAVENDER);
+        Holder<ConfiguredFeature<?, ?>> jacarandaTree = configuredFeatures.getOrThrow(HorizonsVegetationFeatures.JACARANDA_TREES);
+
         PlacementUtils.register(context, PATCH_TROPICAL_GRASS, patchTropicalGrass, VegetationPlacements.worldSurfaceSquaredWithCount(25));
         PlacementUtils.register(context, ALGAE, algae, createPatch(3));
         PlacementUtils.register(context, GIANT_FERN, giantFern, createPatch(5));
@@ -80,6 +87,9 @@ public final class HorizonsVegetationPlacements {
 
         PlacementUtils.register(context, TREES_CYPRESS, treesCypress, VegetationPlacements.treePlacement(PlacementUtils.countExtra(20, 0.1F, 1)));
         PlacementUtils.register(context, TREES_WATER_CYPRESS, treesWaterCypress, PlacementUtils.countExtra(9, 0.1F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+
+        PlacementUtils.register(context, LAVENDER, lavender, PlacementUtils.countExtra(3, 0.1F, 1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, JACARANDA_TREE, jacarandaTree, VegetationPlacements.treePlacement(PlacementUtils.countExtra(20, 0.1F, 1)));
     }
 
     private static List<PlacementModifier> createPatch(int onceEvery) {

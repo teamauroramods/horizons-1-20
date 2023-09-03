@@ -1,6 +1,5 @@
 package com.teamaurora.horizons.common.levelgen.feature;
 
-import com.teamaurora.horizons.common.util.FeatureHelper;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

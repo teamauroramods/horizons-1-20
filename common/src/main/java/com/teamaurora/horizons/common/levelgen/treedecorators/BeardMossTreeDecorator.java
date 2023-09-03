@@ -3,7 +3,6 @@ package com.teamaurora.horizons.common.levelgen.treedecorators;
 import com.mojang.serialization.Codec;
 import com.teamaurora.horizons.common.block.BeardMossBlock;
 import com.teamaurora.horizons.common.block.BeardMossBlockBlock;
-import com.teamaurora.horizons.common.util.FeatureHelper;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import net.minecraft.core.BlockPos;

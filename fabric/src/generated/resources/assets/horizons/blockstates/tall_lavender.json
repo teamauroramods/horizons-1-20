@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "horizons:block/tall_lavender_bottom"
+    },
+    "half=upper": {
+      "model": "horizons:block/tall_lavender_top"
+    }
+  }
+}
