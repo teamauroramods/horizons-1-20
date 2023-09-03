@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "horizons:water_cypress_checked",
+    "features": [
+      {
+        "chance": 0.33333334,
+        "feature": "horizons:jacaranda_tree_checked"
+      }
+    ]
+  }
+}

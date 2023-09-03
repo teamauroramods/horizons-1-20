@@ -1,5 +1,6 @@
 package com.teamaurora.horizons.core.other;
 
+import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationPlacements;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -98,6 +99,53 @@ public final class HorizonsOverworldBiomes {
         return biome(true, 0.75F, 0.9F, 4159204, 329011, 12638463, spawns, gen, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
     }
 
+    public static Biome lavenderField(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        MobSpawnSettings.Builder spawns = baseLavenderFieldSpawns();
+        BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+
+        globalOverworldGeneration(gen);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.LAVENDER);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.JACARANDA_TREE);
+        BiomeDefaultFeatures.addDefaultOres(gen);
+        BiomeDefaultFeatures.addDefaultSoftDisks(gen);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_PLAINS);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultMushrooms(gen);
+
+        return biome(true, 0.8F, 0.6F, 4159204, 329011, 12638463, spawns, gen, null);
+    }
+
+//    public static Biome lavenderFields() {
+//        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+//        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+//        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+//
+//        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+//        globalOverworldGeneration(biomeBuilder);
+//        lavenderFieldVegetation(biomeBuilder);
+//        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+//        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_PLAINS);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+//        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+//        return (new Biome.BiomeBuilder())
+//                .biomeCategory(Biome.BiomeCategory.PLAINS)
+//                .precipitation(Biome.Precipitation.RAIN)
+//                .temperature(0.8F)
+//                .downfall(0.6F)
+//                .specialEffects((new BiomeSpecialEffects.Builder())
+//                        .waterColor(4159204)
+//                        .waterFogColor(329011)
+//                        .fogColor(12638463)
+//                        .skyColor(calculateSkyColor(0.7F))
+//                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+//                        .grassColorOverride(0xA0E246)
+//                        .foliageColorOverride(0xA0E246).build())
+//                .mobSpawnSettings(spawnBuilder.build())
+//                .generationSettings(biomeBuilder.build())
+//                .build();
+//    }
+
     // Base Spawns //
 
     private static MobSpawnSettings.Builder baseBayouSpawns() {
@@ -120,6 +168,15 @@ public final class HorizonsOverworldBiomes {
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 8, 2, 4));
+
+        return spawns;
+    }
+
+    private static MobSpawnSettings.Builder baseLavenderFieldSpawns() {
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.commonSpawns(spawns);
+        BiomeDefaultFeatures.farmAnimals(spawns);
 
         return spawns;
     }

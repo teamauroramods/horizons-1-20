@@ -16,15 +16,19 @@ import com.teamaurora.borealib.api.registry.v1.RegistryWrapper;
 import com.teamaurora.borealib.api.registry.v1.util.PropertiesHelper;
 import com.teamaurora.horizons.common.block.*;
 import com.teamaurora.horizons.common.block.grower.CypressTreeGrower;
+import com.teamaurora.horizons.common.block.grower.JacarandaTreeGrower;
 import com.teamaurora.horizons.common.item.AlgaeBlockItem;
 import com.teamaurora.horizons.common.item.LilyItem;
 import com.teamaurora.horizons.core.other.HorizonsBlockSetTypes;
 import com.teamaurora.horizons.core.other.HorizonsProperties;
 import com.teamaurora.horizons.core.other.HorizonsWoodTypes;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+
+import java.util.function.Supplier;
 
 public final class HorizonsBlocks {
     public static final RegistryWrapper.BlockProvider PROVIDER = RegistryWrapper.blockProvider(HorizonsItems.PROVIDER);
@@ -119,6 +123,10 @@ public final class HorizonsBlocks {
     // Tall Flowers //
     public static final RegistryReference<Block> HELICONIA = PROVIDER.registerWithItem("heliconia", () -> new TallFlowerBlock(PropertiesHelper.flower()), new Item.Properties());
 
+    // Lavender //
+    public static final Supplier<Block> LAVENDER = PROVIDER.registerWithItem("lavender", () -> new LavenderBlock(BlockBehaviour.Properties.copy(Blocks.ALLIUM).sound(SoundType.CROP)), new Item.Properties());
+    public static final Supplier<Block> TALL_LAVENDER = PROVIDER.register("tall_lavender", () -> new TallLavenderBlock(BlockBehaviour.Properties.copy(Blocks.ALLIUM).sound(SoundType.CROP)));
+
     // Redwood //
     public static final RegistryReference<Block> STRIPPED_REDWOOD_LOG = PROVIDER.registerWithItem("stripped_redwood_log", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.strippedLogOrWood()), new Item.Properties());
     public static final RegistryReference<Block> STRIPPED_REDWOOD = PROVIDER.registerWithItem("stripped_redwood", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.strippedLogOrWood()), new Item.Properties());
@@ -169,8 +177,8 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> JACARANDA_BUTTON = PROVIDER.registerWithItem("jacaranda_button", () -> new ButtonBlock(HorizonsProperties.JACARANDA.button(), HorizonsBlockSetTypes.JACARANDA, 30, true), new Item.Properties());
     public static final Pair<RegistryReference<BorealibStandingSignBlock>, RegistryReference<BorealibWallSignBlock>> JACARANDA_SIGNS = PROVIDER.registerSign("jacaranda", HorizonsWoodTypes.JACARANDA, HorizonsProperties.JACARANDA_SIGN, new Item.Properties().stacksTo(16));
     public static final Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> JACARANDA_HANGING_SIGNS = PROVIDER.registerHangingSign("jacaranda", HorizonsWoodTypes.JACARANDA, HorizonsProperties.JACARANDA_SIGN, new Item.Properties().stacksTo(16));
-    public static final RegistryReference<Block> JACARANDA_SAPLING = PROVIDER.registerWithItem("jacaranda_sapling", () -> new SaplingBlock(new CypressTreeGrower(), HorizonsProperties.JACARANDA.sapling()), new Item.Properties());
-    public static final RegistryReference<Block> FLOWERING_JACARANDA_SAPLING = PROVIDER.registerWithItem("flowering_jacaranda_sapling", () -> new SaplingBlock(new CypressTreeGrower(), HorizonsProperties.JACARANDA.sapling()), new Item.Properties());
+    public static final RegistryReference<Block> JACARANDA_SAPLING = PROVIDER.registerWithItem("jacaranda_sapling", () -> new SaplingBlock(new JacarandaTreeGrower(), HorizonsProperties.JACARANDA.sapling()), new Item.Properties());
+    public static final RegistryReference<Block> FLOWERING_JACARANDA_SAPLING = PROVIDER.registerWithItem("flowering_jacaranda_sapling", () -> new SaplingBlock(new JacarandaTreeGrower(), HorizonsProperties.JACARANDA.sapling()), new Item.Properties());
     public static final RegistryReference<Block> POTTED_JACARANDA_SAPLING = PROVIDER.register("potted_jacaranda_sapling", () -> new FlowerPotBlock(JACARANDA_SAPLING.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_FLOWERING_JACARANDA_SAPLING = PROVIDER.register("potted_flowering_jacaranda_sapling", () -> new FlowerPotBlock(FLOWERING_JACARANDA_SAPLING.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> JACARANDA_LEAVES = PROVIDER.registerWithItem("jacaranda_leaves", () -> new LeavesBlock(HorizonsProperties.JACARANDA.leaves()), new Item.Properties());

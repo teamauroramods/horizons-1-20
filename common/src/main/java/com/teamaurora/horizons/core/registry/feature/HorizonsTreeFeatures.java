@@ -30,6 +30,7 @@ public final class HorizonsTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_CYPRESS = key("water_cypress");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_MEGA_CYPRESS = key("water_mega_cypress");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_BUSH = key("cypress_bush");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JACARANDA_TREE = key("jacaranda_tree");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         FeatureUtils.register(
@@ -37,6 +38,12 @@ public final class HorizonsTreeFeatures {
                 CYPRESS_GROWN,
                 HorizonsFeatures.CYPRESS_TREE.get(),
                 createGrownCypress().build()
+        );
+        FeatureUtils.register(
+                context,
+                JACARANDA_TREE,
+                HorizonsFeatures.JACARANDA_TREE.get(),
+                createJacarandaTree().build()
         );
         FeatureUtils.register(
                 context,
@@ -95,6 +102,17 @@ public final class HorizonsTreeFeatures {
                         HangingCypressLeavesTreeDecorator.INSTANCE,
                         CypressBranchTreeDecorator.INSTANCE
                 ));
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createJacarandaTree() {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(HorizonsBlocks.JACARANDA_LOG.get().defaultBlockState()),
+                new StraightTrunkPlacer(0, 0, 0),
+                BlockStateProvider.simple(HorizonsBlocks.JACARANDA_LEAVES.get().defaultBlockState()),
+                new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
+                new TwoLayersFeatureSize(0, 0, 0)
+        )
+                .ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createNaturalCypress(boolean sparseKnees) {

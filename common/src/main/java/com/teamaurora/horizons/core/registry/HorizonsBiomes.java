@@ -23,6 +23,7 @@ public final class HorizonsBiomes {
 
         context.register(BAYOU, HorizonsOverworldBiomes.bayou(featureGetter, carverGetter));
         context.register(REDWOOD_FOREST, HorizonsOverworldBiomes.redwoodForest(featureGetter, carverGetter));
+        context.register(LAVENDER_FIELD, HorizonsOverworldBiomes.lavenderField(featureGetter, carverGetter));
     }
 
     private static ResourceKey<Biome> biome(String path) {

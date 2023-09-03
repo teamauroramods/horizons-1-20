@@ -20,6 +20,7 @@ import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.StairsShape;
@@ -82,6 +83,9 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         createGiantFern(generator);
         generator.createCrossBlockWithDefaultItem(TROPICAL_GRASS.get(), BlockModelGenerators.TintState.TINTED);
         generator.createCrossBlockWithDefaultItem(TROPICAL_FERN.get(), BlockModelGenerators.TintState.TINTED);
+
+        createLavender(generator);
+        createTallLavender(generator);
 
         // Lily Flowers //
         createLily(generator, BLUE_LILY, POTTED_BLUE_LILY);
@@ -265,8 +269,31 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         ));
     }
 
+    private static void createLavender(BlockModelGenerators generator) {
+        Block block = LAVENDER.get();
+        generator.createSimpleFlatItemModel(block.asItem());
+        generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(PropertyDispatch.property(BlockStateProperties.AGE_2)
+                .select(0, Variant.variant().with(VariantProperties.MODEL, generator.createSuffixedVariant(block, "_0", ModelTemplates.CROSS, TextureMapping::cross)))
+                .select(1, Variant.variant().with(VariantProperties.MODEL, generator.createSuffixedVariant(block, "_1", ModelTemplates.CROSS, TextureMapping::cross)))
+                .select(2, Variant.variant().with(VariantProperties.MODEL, generator.createSuffixedVariant(block, "_2", ModelTemplates.CROSS, TextureMapping::cross)))));
+    }
+
+    private void createTallLavender(BlockModelGenerators generator) {
+        Block block = TALL_LAVENDER.get();
+        generator.createSimpleFlatItemModel(block.asItem());
+        ResourceLocation top = generator.createSuffixedVariant(block, "_top", ModelTemplates.CROSS, HorizonsModelProvider::crossMapping);
+        ResourceLocation bottom = generator.createSuffixedVariant(block, "_bottom", ModelTemplates.CROSS, HorizonsModelProvider::crossMapping);
+        ResourceLocation resourceLocation = ModelLocationUtils.getModelLocation(block, "_top");
+        ResourceLocation resourceLocation2 = ModelLocationUtils.getModelLocation(block, "_bottom");
+        generator.createDoubleBlock(block, resourceLocation, resourceLocation2);
+    }
+
     private static TextureMapping branchMapping(ResourceLocation texture) {
         return new TextureMapping().put(BRANCH_SLOT, texture);
+    }
+
+    private static TextureMapping crossMapping(ResourceLocation texture) {
+        return new TextureMapping().put(TextureSlot.CROSS, texture);
     }
 
     private static void createBeardMoss(BlockModelGenerators generator) {
