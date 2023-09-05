@@ -15,21 +15,22 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.blockstates.*;
+import net.minecraft.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.data.models.blockstates.PropertyDispatch;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
 import net.minecraft.data.models.model.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.StairsShape;
 
 import java.util.Objects;
 
+import static com.teamaurora.horizons.core.other.HorizonsBlockFamilies.*;
 import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
 import static com.teamaurora.horizons.core.registry.HorizonsItems.*;
-import static com.teamaurora.horizons.core.other.HorizonsBlockFamilies.*;
 
 /**
  * @author ebo2022
@@ -84,6 +85,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.createCrossBlockWithDefaultItem(TROPICAL_GRASS.get(), BlockModelGenerators.TintState.TINTED);
         generator.createCrossBlockWithDefaultItem(TROPICAL_FERN.get(), BlockModelGenerators.TintState.TINTED);
 
+        // Lavender //
         createLavender(generator);
         createTallLavender(generator);
 

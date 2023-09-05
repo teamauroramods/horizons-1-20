@@ -9,7 +9,7 @@ import net.minecraft.core.Direction;
  */
 
 @Deprecated
-public class DirectionalBlockPos {
+public class DirectionalBlockPos { //wtf is this
     public BlockPos pos;
     public Direction direction;
 

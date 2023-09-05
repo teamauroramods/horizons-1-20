@@ -1,6 +1,5 @@
 package com.teamaurora.horizons.common.levelgen.feature;
 
-import com.mojang.serialization.Codec;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -15,8 +14,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class LavenderFeature extends Feature<NoneFeatureConfiguration> {
 
-    public LavenderFeature(Codec<NoneFeatureConfiguration> codec) {
-        super(codec);
+    public LavenderFeature() {
+        super(NoneFeatureConfiguration.CODEC);
     }
 
     @Override
