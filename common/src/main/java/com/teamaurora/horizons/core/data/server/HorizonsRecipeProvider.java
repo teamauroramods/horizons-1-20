@@ -45,11 +45,14 @@ public class HorizonsRecipeProvider extends BorealibRecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GOOSEBERRY_JAM_COOKIE.get(), 8).requires(GOOSEBERRY_JAM.get()).requires(Items.WHEAT, 2).unlockedBy(getHasName(GOOSEBERRY_JAM.get()), has(GOOSEBERRY_JAM.get())).save(exporter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GOOSEBERRY_JAM.get(), 3).requires(HONEY_GLAZED_GOOSEBERRIES.get()).requires(Items.GLASS_BOTTLE, 3).unlockedBy(getHasName(HONEY_GLAZED_GOOSEBERRIES.get()), has(HONEY_GLAZED_GOOSEBERRIES.get())).save(exporter);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SUGAR, 3).requires(GOOSEBERRY_JAM.get()).unlockedBy(getHasName(GOOSEBERRY_JAM.get()), has(GOOSEBERRY_JAM.get())).save(exporter, Horizons.location("gooseberry_jam_to_sugar"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, LAVENDER_SALAD.get()).requires(LAVENDER.get(), 2).requires(Items.CARROT).requires(Items.BOWL).unlockedBy(getHasName(LAVENDER.get()), has(LAVENDER.get())).save(exporter);
+
         this.woodSet(HorizonsItemTags.CYPRESS_LOGS, HorizonsBlockFamilies.CYPRESS_PLANKS_FAMILY, CYPRESS_LOG, STRIPPED_CYPRESS_LOG, CYPRESS_WOOD, STRIPPED_CYPRESS_WOOD, CYPRESS_CABINET, CYPRESS_BOOKSHELF, CYPRESS_HANGING_SIGNS, CYPRESS_BOATS, exporter);
         this.woodSet(HorizonsItemTags.REDWOOD_LOGS, HorizonsBlockFamilies.REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, STRIPPED_REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD, REDWOOD_CABINET, REDWOOD_BOOKSHELF, REDWOOD_HANGING_SIGNS, REDWOOD_BOATS, exporter);
         this.woodSet(HorizonsItemTags.JACARANDA_LOGS, HorizonsBlockFamilies.JACARANDA_PLANKS_FAMILY, JACARANDA_LOG, STRIPPED_JACARANDA_LOG, JACARANDA_WOOD, STRIPPED_JACARANDA_WOOD, JACARANDA_CABINET, JACARANDA_BOOKSHELF, JACARANDA_HANGING_SIGNS, JACARANDA_BOATS, exporter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ALGAE_THATCH.get(), 4).define('#', ALGAE.get()).pattern("##").pattern("##").unlockedBy(getHasName(ALGAE.get()), has(ALGAE.get())).save(exporter);
         generateRecipes(exporter, HorizonsBlockFamilies.ALGAE_THATCH_FAMILY);
+
         oneToOneConversionRecipe(exporter, Items.BLUE_DYE, BLUE_LILY.get(), "blue_dye");
         oneToOneConversionRecipe(exporter, Items.LIGHT_GRAY_DYE, LIGHT_GRAY_LILY.get(), "light_gray_dye");
         oneToOneConversionRecipe(exporter, Items.CYAN_DYE, CYAN_LILY.get(), "cyan_dye");
