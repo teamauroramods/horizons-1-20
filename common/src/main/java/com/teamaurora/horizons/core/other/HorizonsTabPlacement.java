@@ -114,6 +114,7 @@ public final class HorizonsTabPlacement {
                     JACARANDA_LOG.get()
             ));
             output.acceptAfter(Items.FROGSPAWN, ALGAE.get());
+            output.acceptAfter(Items.SUGAR_CANE, LAVENDER.get());
             acceptAllAfter(output, Items.CACTUS, List.of(
                     CYPRESS_KNEE.get(),
                     LARGE_CYPRESS_KNEE.get(),
@@ -159,7 +160,6 @@ public final class HorizonsTabPlacement {
             output.acceptAfter(Items.RABBIT_STEW, LAVENDER_SALAD.get());
             output.acceptAfter(Items.COOKIE, GOOSEBERRY_JAM_COOKIE.get());
             output.acceptAfter(Items.PUMPKIN_PIE, GOOSEBERRY_PIE.get());
-            output.acceptAfter(Items.SUGAR_CANE, LAVENDER.get());
         }
     }
 
