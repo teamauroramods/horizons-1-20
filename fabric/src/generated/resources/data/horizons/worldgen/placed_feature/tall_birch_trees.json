@@ -1,5 +1,5 @@
 {
-  "feature": "horizons:jacaranda_trees",
+  "feature": "minecraft:birch_tall",
   "placement": [
     {
       "type": "minecraft:count",
@@ -7,11 +7,11 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "data": 0,
+            "data": 12,
             "weight": 9
           },
           {
-            "data": 1,
+            "data": 13,
             "weight": 1
           }
         ]

@@ -81,6 +81,7 @@ public final class HorizonsOverworldBiomes {
         } else {
             gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.JACARANDA_TREES);
             gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.FLOWERING_JACARANDA_TREES);
+            gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TALL_BIRCH_TREES);
         }
         BiomeDefaultFeatures.addDefaultOres(gen);
         BiomeDefaultFeatures.addDefaultSoftDisks(gen);
