@@ -57,12 +57,10 @@ public final class HorizonsTreeFeatures {
                 BlockStateProvider.simple(CYPRESS_LEAVES.get().defaultBlockState()),
                 new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
                 new TwoLayersFeatureSize(0, 0, 0)
-        )
-                .ignoreVines()
-                .decorators(List.of(
-                        HangingCypressLeavesTreeDecorator.INSTANCE,
-                        CypressBranchTreeDecorator.INSTANCE
-                ));
+        ).ignoreVines().decorators(List.of(
+                HangingCypressLeavesTreeDecorator.INSTANCE,
+                CypressBranchTreeDecorator.INSTANCE
+        ));
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createNaturalCypress(boolean sparseKnees) {
@@ -72,15 +70,13 @@ public final class HorizonsTreeFeatures {
                 BlockStateProvider.simple(CYPRESS_LEAVES.get().defaultBlockState()),
                 new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
                 new TwoLayersFeatureSize(0, 0, 0)
-        )
-                .ignoreVines()
-                .decorators(List.of(
-                        HangingCypressLeavesTreeDecorator.INSTANCE,
-                        CypressBranchTreeDecorator.INSTANCE,
-                        new LeaveVineDecorator(0.0625F),
-                        sparseKnees ? SparseCypressKneesTreeDecorator.INSTANCE : CypressKneesTreeDecorator.INSTANCE,
-                        BeardMossTreeDecorator.INSTANCE
-                ));
+        ).ignoreVines().decorators(List.of(
+                HangingCypressLeavesTreeDecorator.INSTANCE,
+                CypressBranchTreeDecorator.INSTANCE,
+                new LeaveVineDecorator(0.0625F),
+                sparseKnees ? SparseCypressKneesTreeDecorator.INSTANCE : CypressKneesTreeDecorator.INSTANCE,
+                BeardMossTreeDecorator.INSTANCE
+        ));
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createCypressBush() {
@@ -99,7 +95,6 @@ public final class HorizonsTreeFeatures {
                 BlockStateProvider.simple(leaves.defaultBlockState()),
                 new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
                 new TwoLayersFeatureSize(0, 0, 0)
-        )
-                .ignoreVines();
+        ).ignoreVines().decorators(List.of(new BranchTreeDecorator(BlockStateProvider.simple(JACARANDA_LOG.get()), 1)));
     }
 }

@@ -24,4 +24,6 @@ public final class HorizonsFeatures {
     public static final RegistryReference<LavenderFeature> LAVENDER = PROVIDER.register("lavender", LavenderFeature::new);
     public static final RegistryReference<JacarandaFeature> JACARANDA_TREE = PROVIDER.register("jacaranda_tree", JacarandaFeature::new);
     public static final RegistryReference<JacarandaFeature> FLOWERING_JACARANDA_TREE = PROVIDER.register("flowering_jacaranda_tree", JacarandaFeature::new);
+    public static final RegistryReference<TreeDecoratorType<BranchTreeDecorator>> BRANCH = PROVIDER.registerTreeDecoratorType("branch", BranchTreeDecorator.CODEC);
+
 }
