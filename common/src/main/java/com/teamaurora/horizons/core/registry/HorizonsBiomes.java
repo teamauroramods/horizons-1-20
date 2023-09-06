@@ -11,11 +11,10 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public final class HorizonsBiomes {
-    public static final ResourceKey<Biome> ATACAMA_DESERT = biome("atacama_desert");
     public static final ResourceKey<Biome> BAYOU = biome("bayou");
-    public static final ResourceKey<Biome> LAVENDER_FIELD = biome("lavender_field");
-    public static final ResourceKey<Biome> LAVENDER_FOREST = biome("lavender_forest");
     public static final ResourceKey<Biome> REDWOOD_FOREST = biome("redwood_forest");
+    public static final ResourceKey<Biome> LAVENDER_FOREST = biome("lavender_forest");
+    public static final ResourceKey<Biome> LAVENDER_FIELD = biome("lavender_field");
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> featureGetter = context.lookup(Registries.PLACED_FEATURE);
@@ -23,7 +22,8 @@ public final class HorizonsBiomes {
 
         context.register(BAYOU, HorizonsOverworldBiomes.bayou(featureGetter, carverGetter));
         context.register(REDWOOD_FOREST, HorizonsOverworldBiomes.redwoodForest(featureGetter, carverGetter));
-        context.register(LAVENDER_FIELD, HorizonsOverworldBiomes.lavenderField(featureGetter, carverGetter));
+        context.register(LAVENDER_FOREST, HorizonsOverworldBiomes.lavender(featureGetter, carverGetter, false));
+        context.register(LAVENDER_FIELD, HorizonsOverworldBiomes.lavender(featureGetter, carverGetter, true));
     }
 
     private static ResourceKey<Biome> biome(String path) {

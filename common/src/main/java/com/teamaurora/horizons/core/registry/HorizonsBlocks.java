@@ -183,7 +183,7 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> POTTED_JACARANDA_SAPLING = PROVIDER.register("potted_jacaranda_sapling", () -> new FlowerPotBlock(JACARANDA_SAPLING.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> POTTED_FLOWERING_JACARANDA_SAPLING = PROVIDER.register("potted_flowering_jacaranda_sapling", () -> new FlowerPotBlock(FLOWERING_JACARANDA_SAPLING.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> JACARANDA_LEAVES = PROVIDER.registerWithItem("jacaranda_leaves", () -> new LeavesBlock(HorizonsProperties.JACARANDA.leaves()), new Item.Properties());
-    public static final RegistryReference<Block> FLOWERING_JACARANDA_LEAVES = PROVIDER.registerWithItem("flowering_jacaranda_leaves", () -> new LeavesBlock(HorizonsProperties.JACARANDA.leaves()), new Item.Properties());
+    public static final RegistryReference<Block> FLOWERING_JACARANDA_LEAVES = PROVIDER.registerWithItem("flowering_jacaranda_leaves", () -> new FloweringJacarandaLeavesBlock(HorizonsProperties.JACARANDA.leaves()), new Item.Properties());
 
     //public static final RegistryReference<Block> VERTICAL_JACARANDA_PLANKS = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "vertical_jacaranda_planks", () -> new Block(HorizonsProperties.JACARANDA.planks()), new Item.Properties());
     //public static final RegistryReference<Block> JACARANDA_BEEHIVE = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "jacaranda_beehive", () -> new BlueprintBeehiveBlock(HorizonsProperties.JACARANDA.beehive()), CreativeModeTab.TAB_DECORATIONS);

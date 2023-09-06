@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "horizons:redwood_forest"
+    "horizons:redwood_forest",
+    "horizons:lavender_forest"
   ]
 }

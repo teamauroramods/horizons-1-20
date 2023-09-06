@@ -90,8 +90,8 @@ public class HorizonsOverworldBiomeBuilder {
             //-----------ARID, DRY, NEUTRAL, WET, HUMID
             /*ICY*/     {Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.TAIGA},
             /*COOL*/    {Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA},
-            /*NEUTRAL*/ {Biomes.FLOWER_FOREST, Biomes.PLAINS, Biomes.FOREST, Biomes.BIRCH_FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.DARK_FOREST)},
-            /*WARM*/    {Biomes.SAVANNA, Biomes.SAVANNA, Biomes.FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.JUNGLE), Biomes.JUNGLE},
+            /*NEUTRAL*/ {Biomes.FLOWER_FOREST, pick(HorizonsBiomes.LAVENDER_FIELD, Biomes.PLAINS), Biomes.FOREST, Biomes.BIRCH_FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.DARK_FOREST)},
+            /*WARM*/    {Biomes.SAVANNA, Biomes.SAVANNA, pick(HorizonsBiomes.LAVENDER_FOREST, Biomes.PLAINS), pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.JUNGLE), Biomes.JUNGLE},
             /*HOT*/     {Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT}
     };
     private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
@@ -99,7 +99,7 @@ public class HorizonsOverworldBiomeBuilder {
             /*ICY*/     {Biomes.ICE_SPIKES, null, Biomes.SNOWY_TAIGA, null, null},
             /*COOL*/    {null, null, null, null, Biomes.OLD_GROWTH_PINE_TAIGA},
             /*NEUTRAL*/ {Biomes.SUNFLOWER_PLAINS, null, null, Biomes.OLD_GROWTH_BIRCH_FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, null)},
-            /*WARM*/    {null, null, Biomes.PLAINS, Biomes.SPARSE_JUNGLE, Biomes.BAMBOO_JUNGLE},
+            /*WARM*/    {null, null, pick(HorizonsBiomes.LAVENDER_FIELD, Biomes.PLAINS), Biomes.SPARSE_JUNGLE, Biomes.BAMBOO_JUNGLE},
             /*HOT*/     {null, null, null, null, null}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
@@ -107,14 +107,14 @@ public class HorizonsOverworldBiomeBuilder {
             /*ICY*/     {Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA},
             /*COOL*/    {Biomes.MEADOW, Biomes.MEADOW, Biomes.FOREST, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA},
             /*NEUTRAL*/ {Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.DARK_FOREST)},
-            /*WARM*/    {Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, Biomes.FOREST, pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.FOREST), Biomes.JUNGLE},
+            /*WARM*/    {Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, pick(HorizonsBiomes.LAVENDER_FOREST, Biomes.PLAINS), pick(HorizonsBiomes.REDWOOD_FOREST, Biomes.FOREST), Biomes.JUNGLE},
             /*HOT*/     {Biomes.BADLANDS, Biomes.BADLANDS, Biomes.BADLANDS, Biomes.WOODED_BADLANDS, Biomes.WOODED_BADLANDS}
     };
     private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
             //-----------ARID, DRY, NEUTRAL, WET, HUMID
             /*ICY*/     {Biomes.ICE_SPIKES, null, null, null, null},
             /*COOL*/    {Biomes.CHERRY_GROVE, null, Biomes.MEADOW, Biomes.MEADOW, Biomes.OLD_GROWTH_PINE_TAIGA},
-            /*NEUTRAL*/ {Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.FOREST, Biomes.BIRCH_FOREST, null},
+            /*NEUTRAL*/ {Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, pick(HorizonsBiomes.LAVENDER_FOREST, Biomes.PLAINS), Biomes.BIRCH_FOREST, null},
             /*WARM*/    {null, null, null, null, pick(HorizonsBiomes.REDWOOD_FOREST, null)},
             /*HOT*/     {Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, null, null, null}
     };
@@ -129,7 +129,6 @@ public class HorizonsOverworldBiomeBuilder {
     };
 
     private static final Map<ResourceKey<Biome>, ConfigValue<Boolean>> BIOME_CONFIGS = ImmutableMap.<ResourceKey<Biome>, ConfigValue<Boolean>>builder()
-            .put(HorizonsBiomes.ATACAMA_DESERT, Horizons.CONFIG.atacamaDesert)
             .put(HorizonsBiomes.BAYOU, Horizons.CONFIG.bayou)
             .put(HorizonsBiomes.LAVENDER_FIELD, Horizons.CONFIG.lavenderField)
             .put(HorizonsBiomes.LAVENDER_FOREST, Horizons.CONFIG.lavenderForest)

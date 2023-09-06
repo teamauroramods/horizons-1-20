@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "#c:taiga",
-      "required": false
-    }
+    "#minecraft:is_taiga"
   ]
 }

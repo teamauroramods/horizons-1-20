@@ -134,8 +134,8 @@ public final class HorizonsTabPlacement {
             }
         } else if (tabKey.equals(CreativeModeTabs.REDSTONE_BLOCKS)) {
             if (Platform.anyModsLoaded(Mods.QUARK, Mods.WOODWORKS, Mods.CARPENTER)) {
-                output.acceptAfter(Items.CHEST, CYPRESS_CHESTS.getFirst().get());
-                output.acceptAfter(Items.TRAPPED_CHEST, CYPRESS_CHESTS.getSecond().get());
+                //output.acceptAfter(Items.CHEST, CYPRESS_CHESTS.getFirst().get());
+                //output.acceptAfter(Items.TRAPPED_CHEST, CYPRESS_CHESTS.getSecond().get());
             }
         } else if (tabKey.equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
             acceptAllAfter(output, Items.CHERRY_CHEST_BOAT, List.of(
@@ -165,8 +165,7 @@ public final class HorizonsTabPlacement {
 
     private static void acceptAllAfter(CreativeTabEvents.Output output, ItemLike after, List<ItemLike> items) {
         Preconditions.checkArgument(items.size() > 1, "At least 2 items needed to add in bulk");
-        // Reversed for proper ordering
-        List<ItemLike> reversed = Lists.reverse(items);
+        List<ItemLike> reversed = Lists.reverse(items); // Reversed for proper ordering
         output.acceptAllAfter(after, reversed.stream().map(ItemStack::new).toList());
     }
 }

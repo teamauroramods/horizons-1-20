@@ -1,6 +1,5 @@
 package com.teamaurora.horizons.core.other;
 
-import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import com.teamaurora.horizons.core.registry.feature.HorizonsVegetationPlacements;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -22,35 +21,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
  */
 public final class HorizonsOverworldBiomes {
 
-    // Util //
-
-    private static Biome biome(boolean hasPrecipitation, float temperature, float downfall, int waterColor, int waterFogColor, int fogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, Music music) {
-        return new Biome.BiomeBuilder()
-                .hasPrecipitation(hasPrecipitation)
-                .temperature(temperature)
-                .downfall(downfall)
-                .specialEffects(new BiomeSpecialEffects.Builder().waterColor(waterColor)
-                        .waterFogColor(waterFogColor).fogColor(fogColor)
-                        .skyColor(calculateSkyColor(temperature))
-                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                        .backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build())
-                .generationSettings(biomeBuilder.build()).build();
-    }
-
-    private static int calculateSkyColor(float temperature) {
-        float clampedTemp = Mth.clamp(temperature / 3.0F, -1.0F, 1.0F);
-        return Mth.hsvToRgb(0.62222224F - clampedTemp * 0.05F, 0.5F + clampedTemp * 0.1F, 1.0F);
-    }
-
-    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
-        BiomeDefaultFeatures.addDefaultSprings(builder);
-        BiomeDefaultFeatures.addSurfaceFreezing(builder);
-    }
-
     // Builders //
 
     public static Biome bayou(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
@@ -71,8 +41,8 @@ public final class HorizonsOverworldBiomes {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TREES_CYPRESS);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TREES_WATER_CYPRESS);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.CYPRESS_TREES);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.WATER_CYPRESS_TREES);
 
         BiomeDefaultFeatures.addDefaultMushrooms(gen);
         BiomeDefaultFeatures.addSwampExtraVegetation(gen);
@@ -99,52 +69,26 @@ public final class HorizonsOverworldBiomes {
         return biome(true, 0.75F, 0.9F, 4159204, 329011, 12638463, spawns, gen, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
     }
 
-    public static Biome lavenderField(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome lavender(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean sparse) {
         MobSpawnSettings.Builder spawns = baseLavenderFieldSpawns();
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
 
         globalOverworldGeneration(gen);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.LAVENDER);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.JACARANDA_TREE);
+        if (sparse) {
+            gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.SPARSE_JACARANDA_TREES);
+            gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.SPARSE_FLOWERING_JACARANDA_TREES);
+        } else {
+            gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.JACARANDA_TREES);
+            gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.FLOWERING_JACARANDA_TREES);
+        }
         BiomeDefaultFeatures.addDefaultOres(gen);
         BiomeDefaultFeatures.addDefaultSoftDisks(gen);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_PLAINS);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
         BiomeDefaultFeatures.addDefaultMushrooms(gen);
 
         return biome(true, 0.8F, 0.6F, 4159204, 329011, 12638463, spawns, gen, null);
     }
-
-//    public static Biome lavenderFields() {
-//        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-//        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
-//        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
-//
-//        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
-//        globalOverworldGeneration(biomeBuilder);
-//        lavenderFieldVegetation(biomeBuilder);
-//        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-//        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_PLAINS);
-//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
-//        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-//        return (new Biome.BiomeBuilder())
-//                .biomeCategory(Biome.BiomeCategory.PLAINS)
-//                .precipitation(Biome.Precipitation.RAIN)
-//                .temperature(0.8F)
-//                .downfall(0.6F)
-//                .specialEffects((new BiomeSpecialEffects.Builder())
-//                        .waterColor(4159204)
-//                        .waterFogColor(329011)
-//                        .fogColor(12638463)
-//                        .skyColor(calculateSkyColor(0.7F))
-//                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-//                        .grassColorOverride(0xA0E246)
-//                        .foliageColorOverride(0xA0E246).build())
-//                .mobSpawnSettings(spawnBuilder.build())
-//                .generationSettings(biomeBuilder.build())
-//                .build();
-//    }
 
     // Base Spawns //
 
@@ -177,7 +121,37 @@ public final class HorizonsOverworldBiomes {
 
         BiomeDefaultFeatures.commonSpawns(spawns);
         BiomeDefaultFeatures.farmAnimals(spawns);
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 3));
 
         return spawns;
+    }
+
+    // Util //
+
+    private static Biome biome(boolean hasPrecipitation, float temperature, float downfall, int waterColor, int waterFogColor, int fogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, Music music) {
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(hasPrecipitation)
+                .temperature(temperature)
+                .downfall(downfall)
+                .specialEffects(new BiomeSpecialEffects.Builder().waterColor(waterColor)
+                        .waterFogColor(waterFogColor).fogColor(fogColor)
+                        .skyColor(calculateSkyColor(temperature))
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build()).build();
+    }
+
+    private static int calculateSkyColor(float temperature) {
+        float clampedTemp = Mth.clamp(temperature / 3.0F, -1.0F, 1.0F);
+        return Mth.hsvToRgb(0.62222224F - clampedTemp * 0.05F, 0.5F + clampedTemp * 0.1F, 1.0F);
+    }
+
+    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 }

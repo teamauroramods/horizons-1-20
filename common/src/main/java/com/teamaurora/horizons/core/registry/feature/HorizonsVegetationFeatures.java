@@ -48,12 +48,13 @@ public final class HorizonsVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> AMARANTHUS = key("amaranthus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYOSOTIS = key("myosotis");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HELICONIA = key("heliconia");
-
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_CYPRESS = key("trees_cypress");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_WATER_CYPRESS = key("trees_water_cypress");
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> LAVENDER = key("lavender");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_TREES = key("cypress_trees");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_CYPRESS_TREES = key("water_cypress_trees");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> JACARANDA_TREES = key("jacaranda_trees");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_JACARANDA_TREES = key("flowering_jacaranda_trees");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -63,6 +64,7 @@ public final class HorizonsVegetationFeatures {
         Holder<PlacedFeature> waterMegaCypress = placedFeatures.getOrThrow(HorizonsTreePlacements.WATER_MEGA_CYPRESS_CHECKED);
         Holder<PlacedFeature> cypressBush = placedFeatures.getOrThrow(HorizonsTreePlacements.CYPRESS_BUSH);
         Holder<PlacedFeature> jacaranda = placedFeatures.getOrThrow(HorizonsTreePlacements.JACARANDA_TREE_CHECKED);
+        Holder<PlacedFeature> flowering_jacaranda = placedFeatures.getOrThrow(HorizonsTreePlacements.FLOWERING_JACARANDA_TREE_CHECKED);
 
         FeatureUtils.register(context, PATCH_TROPICAL_GRASS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 7, 3, PlacementUtils.filtered(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(HorizonsBlocks.TROPICAL_GRASS.get().defaultBlockState(), 3).add(HorizonsBlocks.TROPICAL_FERN.get().defaultBlockState(), 1))), BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.PODZOL))))));
 
@@ -82,12 +84,12 @@ public final class HorizonsVegetationFeatures {
         FeatureUtils.register(context, AMARANTHUS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.AMARANTHUS.get().defaultBlockState())))));
         FeatureUtils.register(context, MYOSOTIS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.MYOSOTIS.get().defaultBlockState())))));
         FeatureUtils.register(context, HELICONIA, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(HorizonsBlocks.HELICONIA.get().defaultBlockState())))));
-
-        FeatureUtils.register(context, TREES_CYPRESS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(cypressBush, 0.35f), new WeightedPlacedFeature(megaCypress, 0.333333334F)), cypress));
-        FeatureUtils.register(context, TREES_WATER_CYPRESS, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(waterMegaCypress, 0.333333334F)), waterCypress));
-
-        //public static final Supplier<ConfiguredFeature<NoneFeatureConfiguration, ?>> LAVENDER_BASE = CONFIGURED_FEATURES.register("lavender", () -> new ConfiguredFeature<>(LAVENDER.get(), FeatureConfiguration.NONE));
         FeatureUtils.register(context, LAVENDER, HorizonsFeatures.LAVENDER.get(), NoneFeatureConfiguration.INSTANCE);
-        FeatureUtils.register(context, JACARANDA_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(jacaranda, 0.333333334F)), waterCypress));
+
+        FeatureUtils.register(context, CYPRESS_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(cypressBush, 0.35f), new WeightedPlacedFeature(megaCypress, 0.333333334F)), cypress));
+        FeatureUtils.register(context, WATER_CYPRESS_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(waterMegaCypress, 0.333333334F)), waterCypress));
+
+        FeatureUtils.register(context, JACARANDA_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(jacaranda, 0.333333334F)), jacaranda));
+        FeatureUtils.register(context, FLOWERING_JACARANDA_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(jacaranda, 0.333333334F)), flowering_jacaranda));
     }
 }

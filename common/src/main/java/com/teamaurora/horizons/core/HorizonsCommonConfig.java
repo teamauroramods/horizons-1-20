@@ -6,7 +6,6 @@ import com.teamaurora.borealib.api.config.v1.ConfigValue;
 public class HorizonsCommonConfig {
     public final ConfigValue<Integer> regionWeight;
     public final ConfigValue<Float> cypressBranchOdds;
-    public final ConfigValue<Boolean> atacamaDesert;
     public final ConfigValue<Boolean> bayou;
     public final ConfigValue<Boolean> lavenderField;
     public final ConfigValue<Boolean> lavenderForest;
@@ -19,7 +18,6 @@ public class HorizonsCommonConfig {
         builder.pop();
 
         builder.push("Biomes");
-        this.atacamaDesert = builder.comment("Whether the Atacama Desert should generate naturally.").define("Enable Atacama Desert", true);
         this.bayou = builder.comment("Whether the Bayou should generate naturally.").define("Enable Bayou", true);
         this.lavenderField = builder.comment("Whether the Lavender Field should generate naturally.").define("Enable Lavender Field", true);
         this.lavenderForest = builder.comment("Whether the Lavender Forest should generate naturally.").define("Enable Lavender Forest", true);

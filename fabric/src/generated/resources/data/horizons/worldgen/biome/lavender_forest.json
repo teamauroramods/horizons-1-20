@@ -72,8 +72,8 @@
     [
       "minecraft:glow_lichen",
       "horizons:lavender",
-      "horizons:sparse_jacaranda_trees",
-      "horizons:sparse_flowering_jacaranda_trees",
+      "horizons:jacaranda_trees",
+      "horizons:flowering_jacaranda_trees",
       "minecraft:patch_grass_plain",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal"

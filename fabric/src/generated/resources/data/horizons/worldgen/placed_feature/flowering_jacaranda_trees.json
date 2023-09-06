@@ -1,5 +1,5 @@
 {
-  "feature": "horizons:trees_water_cypress",
+  "feature": "horizons:flowering_jacaranda_trees",
   "placement": [
     {
       "type": "minecraft:count",
@@ -7,11 +7,11 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "data": 9,
+            "data": 20,
             "weight": 9
           },
           {
-            "data": 10,
+            "data": 21,
             "weight": 1
           }
         ]
@@ -22,7 +22,7 @@
     },
     {
       "type": "minecraft:surface_water_depth_filter",
-      "max_water_depth": 3
+      "max_water_depth": 0
     },
     {
       "type": "minecraft:heightmap",
