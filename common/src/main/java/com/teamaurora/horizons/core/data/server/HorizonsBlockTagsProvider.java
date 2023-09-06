@@ -60,7 +60,7 @@ public class HorizonsBlockTagsProvider extends BorealibTagsProvider.BlockTagProv
         this.tag(BlockTags.WOODEN_FENCES).add(CYPRESS_FENCE.get(), REDWOOD_FENCE.get(), JACARANDA_FENCE.get());
         this.tag(BlockTags.LOGS_THAT_BURN).addTag(CYPRESS_LOGS).addTag(REDWOOD_LOGS).addTag(JACARANDA_LOGS);
         this.tag(BlockTags.LEAVES).add(CYPRESS_LEAVES.get(), REDWOOD_LEAVES.get(), JACARANDA_LEAVES.get(), FLOWERING_JACARANDA_LEAVES.get());
-        this.tag(BlockTags.CLIMBABLE).add(BEARD_MOSS.get());
+        this.tag(BlockTags.CLIMBABLE).add(BEARD_MOSS.get(), CYPRESS_LADDER.get(), REDWOOD_LADDER.get(), JACARANDA_LADDER.get());
         this.tag(BlockTags.FENCE_GATES).add(CYPRESS_FENCE_GATE.get(), REDWOOD_FENCE_GATE.get(), JACARANDA_FENCE_GATE.get());
         this.tag(BlockTags.SAPLINGS).add(CYPRESS_SAPLING.get(), REDWOOD_SAPLING.get(), JACARANDA_SAPLING.get(), FLOWERING_JACARANDA_SAPLING.get());
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(CYPRESS_LOG.get(), REDWOOD_LOG.get(), JACARANDA_LOG.get());
@@ -69,9 +69,9 @@ public class HorizonsBlockTagsProvider extends BorealibTagsProvider.BlockTagProv
         this.tag(BlockTags.FLOWER_POTS).add(POTTED_CYPRESS_SAPLING.get(), POTTED_BLUE_LILY.get(), POTTED_LIGHT_GRAY_LILY.get(), POTTED_CYAN_LILY.get(), POTTED_LIGHT_BLUE_LILY.get(), POTTED_MAGENTA_LILY.get(), POTTED_PINK_LILY.get(), POTTED_PURPLE_LILY.get(), POTTED_WHITE_LILY.get(), POTTED_FIDDLENECK.get(), POTTED_AMARANTHUS.get(), POTTED_MYOSOTIS.get(), POTTED_REDWOOD_SAPLING.get(), POTTED_JACARANDA_SAPLING.get(), POTTED_FLOWERING_JACARANDA_SAPLING.get());
         this.tag(BlockTags.SMALL_FLOWERS).add(BLUE_LILY.get(), LIGHT_GRAY_LILY.get(), CYAN_LILY.get(), LIGHT_BLUE_LILY.get(), MAGENTA_LILY.get(), PINK_LILY.get(), PURPLE_LILY.get(), WHITE_LILY.get(), FIDDLENECK.get(), AMARANTHUS.get(), MYOSOTIS.get());
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(ALGAE.get(), ALGAE_THATCH.get(), ALGAE_THATCH_SLAB.get(), ALGAE_THATCH_STAIRS.get(), CYPRESS_LEAVES.get(), HANGING_CYPRESS_LEAVES.get(), BEARD_MOSS_BLOCK.get(), BEARD_MOSS.get());
-        this.tag(BlockTags.MINEABLE_WITH_AXE).add(CYPRESS_BOOKSHELF.get(), CYPRESS_CHESTS.getFirst().get(), CYPRESS_CHESTS.getSecond().get(), CYPRESS_KNEE.get(), LARGE_CYPRESS_KNEE.get(), CYPRESS_BRANCH.get(), CYPRESS_CABINET.get(),
-                REDWOOD_BOOKSHELF.get(), REDWOOD_CHESTS.getFirst().get(), REDWOOD_CHESTS.getSecond().get(), REDWOOD_CABINET.get(),
-                JACARANDA_BOOKSHELF.get(), JACARANDA_CHESTS.getFirst().get(), JACARANDA_CHESTS.getSecond().get(), JACARANDA_CABINET.get());
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(CYPRESS_BOOKSHELF.get(), CYPRESS_CHESTS.getFirst().get(), CYPRESS_CHESTS.getSecond().get(), CYPRESS_KNEE.get(), LARGE_CYPRESS_KNEE.get(), CYPRESS_BRANCH.get(), CYPRESS_CABINET.get(), CYPRESS_LADDER.get(),
+                REDWOOD_BOOKSHELF.get(), REDWOOD_CHESTS.getFirst().get(), REDWOOD_CHESTS.getSecond().get(), REDWOOD_CABINET.get(), REDWOOD_LADDER.get(),
+                JACARANDA_BOOKSHELF.get(), JACARANDA_CHESTS.getFirst().get(), JACARANDA_CHESTS.getSecond().get(), JACARANDA_CABINET.get(), JACARANDA_LADDER.get());
     }
 
     @ExpectPlatform

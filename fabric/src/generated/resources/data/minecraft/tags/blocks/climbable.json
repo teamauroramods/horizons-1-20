@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "horizons:beard_moss"
+    "horizons:beard_moss",
+    "horizons:cypress_ladder",
+    "horizons:redwood_ladder",
+    "horizons:jacaranda_ladder"
   ]
 }

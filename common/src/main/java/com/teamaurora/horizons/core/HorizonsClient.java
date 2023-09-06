@@ -73,7 +73,10 @@ public final class HorizonsClient {
                 FLOWERING_JACARANDA_SAPLING.get(),
                 POTTED_FLOWERING_JACARANDA_SAPLING.get(),
                 LAVENDER.get(),
-                TALL_LAVENDER.get()
+                TALL_LAVENDER.get(),
+                CYPRESS_LADDER.get(),
+                REDWOOD_LADDER.get(),
+                JACARANDA_LADDER.get()
         );
     }
 }

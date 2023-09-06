@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "horizons:block/cypress_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "horizons:block/cypress_ladder"
+    },
+    "facing=south": {
+      "model": "horizons:block/cypress_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "horizons:block/cypress_ladder",
+      "y": 270
+    }
+  }
+}

@@ -55,7 +55,7 @@ public final class HorizonsBlocks {
 
     //public static final RegistryReference<Block> VERTICAL_CYPRESS_PLANKS = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "vertical_cypress_planks", () -> new Block(HorizonsProperties.CYPRESS.planks()), new Item.Properties());
     //public static final RegistryReference<Block> CYPRESS_BEEHIVE = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "cypress_beehive", () -> new BlueprintBeehiveBlock(HorizonsProperties.CYPRESS.beehive()), CreativeModeTab.TAB_DECORATIONS);
-    //public static final RegistryReference<Block> CYPRESS_LADDER = PROVIDER.createFuelBlock("cypress_ladder", () -> new BlueprintLadderBlock(HorizonsProperties.CYPRESS.ladder()), 300, ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryReference<Block> CYPRESS_LADDER = PROVIDER.registerWithItem("cypress_ladder", () -> new LadderBlock(HorizonsProperties.CYPRESS.ladder()), new Item.Properties());
     public static final RegistryReference<Block> CYPRESS_BOOKSHELF = PROVIDER.registerWithItem("cypress_bookshelf", () -> new Block(HorizonsProperties.CYPRESS.bookshelf()), new Item.Properties());
     //public static final RegistryReference<Block> CYPRESS_BOARDS = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "cypress_boards", () -> new RotatedPillarBlock(HorizonsProperties.CYPRESS.planks()), new Item.Properties());
     //public static final RegistryReference<Block> CYPRESS_VERTICAL_SLAB = PROVIDER.createCompatFuelBlock(HorizonsConstants.QUARK, "cypress_vertical_slab", () -> new VerticalSlabBlock(HorizonsProperties.CYPRESS.planks()), 150, new Item.Properties());
@@ -150,7 +150,7 @@ public final class HorizonsBlocks {
 
     //public static final RegistryReference<Block> VERTICAL_REDWOOD_PLANKS = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "vertical_redwood_planks", () -> new Block(HorizonsProperties.REDWOOD.planks()), new Item.Properties());
     //public static final RegistryReference<Block> REDWOOD_BEEHIVE = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "redwood_beehive", () -> new BlueprintBeehiveBlock(HorizonsProperties.REDWOOD.beehive()), CreativeModeTab.TAB_DECORATIONS);
-    //public static final RegistryReference<Block> REDWOOD_LADDER = PROVIDER.createFuelBlock("redwood_ladder", () -> new BlueprintLadderBlock(HorizonsProperties.REDWOOD.ladder()), 300, ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryReference<Block> REDWOOD_LADDER = PROVIDER.registerWithItem("redwood_ladder", () -> new LadderBlock(HorizonsProperties.REDWOOD.ladder()), new Item.Properties());
     public static final RegistryReference<Block> REDWOOD_BOOKSHELF = PROVIDER.registerWithItem("redwood_bookshelf", () -> new Block(HorizonsProperties.REDWOOD.bookshelf()), new Item.Properties());
     //public static final RegistryReference<Block> REDWOOD_BOARDS = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "redwood_boards", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.planks()), new Item.Properties());
     //public static final RegistryReference<Block> REDWOOD_VERTICAL_SLAB = PROVIDER.createCompatFuelBlock(HorizonsConstants.QUARK, "redwood_vertical_slab", () -> new VerticalSlabBlock(HorizonsProperties.REDWOOD.planks()), 150, new Item.Properties());
@@ -187,7 +187,7 @@ public final class HorizonsBlocks {
 
     //public static final RegistryReference<Block> VERTICAL_JACARANDA_PLANKS = PROVIDER.createCompatBlock(HorizonsConstants.QUARK, "vertical_jacaranda_planks", () -> new Block(HorizonsProperties.JACARANDA.planks()), new Item.Properties());
     //public static final RegistryReference<Block> JACARANDA_BEEHIVE = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "jacaranda_beehive", () -> new BlueprintBeehiveBlock(HorizonsProperties.JACARANDA.beehive()), CreativeModeTab.TAB_DECORATIONS);
-    //public static final RegistryReference<Block> JACARANDA_LADDER = PROVIDER.createFuelBlock("jacaranda_ladder", () -> new BlueprintLadderBlock(HorizonsProperties.JACARANDA.ladder()), 300, ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.QUARK) || ItemSubRegistryHelper.areModsLoaded(HorizonsConstants.WOODWORKS) ? CreativeModeTab.TAB_DECORATIONS : null);
+    public static final RegistryReference<Block> JACARANDA_LADDER = PROVIDER.registerWithItem("jacaranda_ladder", () -> new LadderBlock(HorizonsProperties.JACARANDA.ladder()), new Item.Properties());
     public static final RegistryReference<Block> JACARANDA_BOOKSHELF = PROVIDER.registerWithItem("jacaranda_bookshelf", () -> new Block(HorizonsProperties.JACARANDA.bookshelf()), new Item.Properties());
     //public static final RegistryReference<Block> JACARANDA_BOARDS = PROVIDER.createCompatBlock(HorizonsConstants.WOODWORKS, "jacaranda_boards", () -> new RotatedPillarBlock(HorizonsProperties.JACARANDA.planks()), new Item.Properties());
     //public static final RegistryReference<Block> JACARANDA_VERTICAL_SLAB = PROVIDER.createCompatFuelBlock(HorizonsConstants.QUARK, "jacaranda_vertical_slab", () -> new VerticalSlabBlock(HorizonsProperties.JACARANDA.planks()), 150, new Item.Properties());

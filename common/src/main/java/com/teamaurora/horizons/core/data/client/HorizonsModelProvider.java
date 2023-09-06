@@ -56,6 +56,8 @@ public class HorizonsModelProvider extends BorealibModelProvider {
     private static final TextureSlot BRANCH_SLOT = ModelGeneratorHelper.slot("branch");
     private static final ModelTemplate TEMPLATE_BRANCH = ModelGeneratorHelper.template(Horizons.location("block/template_branch"), BRANCH_SLOT);
 
+    private static final ModelTemplate LADDER = ModelGeneratorHelper.template(Horizons.location("minecraft:block/ladder"), TextureSlot.TEXTURE);
+
     public HorizonsModelProvider(BorealibPackOutput output) {
         super(output);
     }
@@ -64,7 +66,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
     public void generateBlockModels(BlockModelGenerators generator) {
 
         // Cypress //
-        createWoodFamily(generator, CYPRESS_PLANKS_FAMILY, CYPRESS_LOG, CYPRESS_WOOD, STRIPPED_CYPRESS_LOG, STRIPPED_CYPRESS_WOOD, CYPRESS_CHESTS, CYPRESS_BOOKSHELF, CYPRESS_CABINET, CYPRESS_HANGING_SIGNS);
+        createWoodFamily(generator, CYPRESS_PLANKS_FAMILY, CYPRESS_LOG, CYPRESS_WOOD, STRIPPED_CYPRESS_LOG, STRIPPED_CYPRESS_WOOD, CYPRESS_CHESTS, CYPRESS_BOOKSHELF, CYPRESS_CABINET, CYPRESS_LADDER, CYPRESS_HANGING_SIGNS);
         generator.createTrivialBlock(CYPRESS_LEAVES.get(), TexturedModel.LEAVES);
         generator.createCrossBlockWithDefaultItem(HANGING_CYPRESS_LEAVES.get(), BlockModelGenerators.TintState.TINTED);
         generator.createPlant(CYPRESS_SAPLING.get(), POTTED_CYPRESS_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
@@ -106,12 +108,12 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.createDoublePlant(HELICONIA.get(), BlockModelGenerators.TintState.NOT_TINTED);
 
         // Redwood //
-        createWoodFamily(generator, REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_CHESTS, REDWOOD_BOOKSHELF, REDWOOD_CABINET, REDWOOD_HANGING_SIGNS);
+        createWoodFamily(generator, REDWOOD_PLANKS_FAMILY, REDWOOD_LOG, REDWOOD, STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_CHESTS, REDWOOD_BOOKSHELF, REDWOOD_CABINET, REDWOOD_LADDER, REDWOOD_HANGING_SIGNS);
         generator.createTrivialBlock(REDWOOD_LEAVES.get(), TexturedModel.LEAVES);
         generator.createPlant(REDWOOD_SAPLING.get(), POTTED_REDWOOD_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
 
         // Jacaranda //
-        createWoodFamily(generator, JACARANDA_PLANKS_FAMILY, JACARANDA_LOG, JACARANDA_WOOD, STRIPPED_JACARANDA_LOG, STRIPPED_JACARANDA_WOOD, JACARANDA_CHESTS, JACARANDA_BOOKSHELF, JACARANDA_CABINET, JACARANDA_HANGING_SIGNS);
+        createWoodFamily(generator, JACARANDA_PLANKS_FAMILY, JACARANDA_LOG, JACARANDA_WOOD, STRIPPED_JACARANDA_LOG, STRIPPED_JACARANDA_WOOD, JACARANDA_CHESTS, JACARANDA_BOOKSHELF, JACARANDA_CABINET, JACARANDA_LADDER, JACARANDA_HANGING_SIGNS);
         generator.createTrivialBlock(JACARANDA_LEAVES.get(), TexturedModel.LEAVES);
         generator.createTrivialBlock(FLOWERING_JACARANDA_LEAVES.get(), TexturedModel.LEAVES);
         generator.createPlant(JACARANDA_SAPLING.get(), POTTED_JACARANDA_SAPLING.get(), BlockModelGenerators.TintState.NOT_TINTED);
@@ -128,6 +130,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.generateFlatItem(LAVENDER_TEA.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRY_JUICE.get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(GOOSEBERRIES.get(), ModelTemplates.FLAT_ITEM);
+
         generator.generateFlatItem(CYPRESS_BOATS.getFirst().get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(CYPRESS_BOATS.getSecond().get(), ModelTemplates.FLAT_ITEM);
         generator.generateFlatItem(JACARANDA_BOATS.getFirst().get(), ModelTemplates.FLAT_ITEM);
@@ -140,7 +143,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
                                          RegistryReference<Block> log, RegistryReference<Block> wood,
                                          RegistryReference<Block> strippedLog, RegistryReference<Block> strippedWood,
                                          Pair<RegistryReference<BorealibChestBlock>, RegistryReference<BorealibTrappedChestBlock>> chests,
-                                         RegistryReference<Block> bookshelf, RegistryReference<Block> cabinet,
+                                         RegistryReference<Block> bookshelf, RegistryReference<Block> cabinet, RegistryReference<Block> ladder,
                                          Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> hangingSigns) {
         generator.family(planksFamily.getBaseBlock()).generateFor(planksFamily);
         generator.woodProvider(log.get()).logWithHorizontal(log.get()).wood(wood.get());
@@ -148,7 +151,14 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.blockEntityModels(chests.getFirst().get(), planksFamily.getBaseBlock()).createWithCustomBlockItemModel(BorealibModelTemplates.CHEST_ITEM, chests.getFirst().get(), chests.getSecond().get());
         createBookshelf(generator, bookshelf.get(), planksFamily.getBaseBlock());
         createCabinet(generator, cabinet.get());
+        ladder(generator, ladder.get());
         generator.createHangingSign(planksFamily.getBaseBlock(), hangingSigns.getFirst().get(), hangingSigns.getSecond().get());
+    }
+
+    private static void ladder(BlockModelGenerators generator, Block ladder) {
+        LADDER.create(ladder, TextureMapping.defaultTexture(ladder), generator.modelOutput);
+        generator.createSimpleFlatItemModel(ladder);
+        generator.createNonTemplateHorizontalBlock(ladder);
     }
 
     private static void createBookshelf(BlockModelGenerators generator, Block shelf, Block planks) {
@@ -167,11 +177,10 @@ public class HorizonsModelProvider extends BorealibModelProvider {
     }
 
     private static void createGiantFern(BlockModelGenerators generator) {
-        RegistryReference<Block> block = GIANT_FERN;
-        generator.createSimpleFlatItemModel(block.get(), "_top");
-        ResourceLocation top = generator.createSuffixedVariant(block.get(), "_top", TRIPLE_PLANT_TOP, rl -> new TextureMapping().put(TextureSlot.CROSS, TextureMapping.getBlockTexture(block.get(), "_middle")).put(TextureSlot.TOP, rl));
-        ResourceLocation bottom = generator.createSuffixedVariant(block.get(), "_bottom", ModelTemplates.TINTED_CROSS, TextureMapping::cross);
-        generator.createDoubleBlock(block.get(), top, bottom);
+        generator.createSimpleFlatItemModel(GIANT_FERN.get(), "_top");
+        ResourceLocation top = generator.createSuffixedVariant(GIANT_FERN.get(), "_top", TRIPLE_PLANT_TOP, rl -> new TextureMapping().put(TextureSlot.CROSS, TextureMapping.getBlockTexture(GIANT_FERN.get(), "_middle")).put(TextureSlot.TOP, rl));
+        ResourceLocation bottom = generator.createSuffixedVariant(GIANT_FERN.get(), "_bottom", ModelTemplates.TINTED_CROSS, TextureMapping::cross);
+        generator.createDoubleBlock(GIANT_FERN.get(), top, bottom);
     }
 
     private static void createLily(BlockModelGenerators generator, RegistryReference<Block> block, RegistryReference<Block> potted) {

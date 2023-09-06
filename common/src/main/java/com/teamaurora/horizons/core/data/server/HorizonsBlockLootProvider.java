@@ -52,7 +52,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.woodDrops(STRIPPED_CYPRESS_LOG, STRIPPED_CYPRESS_WOOD, CYPRESS_LOG, CYPRESS_WOOD,
                 CYPRESS_PLANKS, CYPRESS_SLAB, CYPRESS_STAIRS, CYPRESS_FENCE, CYPRESS_FENCE_GATE,
                 CYPRESS_PRESSURE_PLATE, CYPRESS_DOOR, CYPRESS_TRAPDOOR, CYPRESS_BUTTON, CYPRESS_SIGNS,
-                CYPRESS_HANGING_SIGNS, CYPRESS_CABINET, CYPRESS_BOOKSHELF, CYPRESS_CHESTS);
+                CYPRESS_HANGING_SIGNS, CYPRESS_CABINET, CYPRESS_BOOKSHELF, CYPRESS_LADDER, CYPRESS_CHESTS);
         this.dropSelf(CYPRESS_SAPLING.get());
         this.dropPottedContents(POTTED_CYPRESS_SAPLING.get());
         this.normalLeaves(CYPRESS_LEAVES.get(), CYPRESS_SAPLING.get());
@@ -102,7 +102,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.woodDrops(STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_LOG, REDWOOD,
                 REDWOOD_PLANKS, REDWOOD_SLAB, REDWOOD_STAIRS, REDWOOD_FENCE, REDWOOD_FENCE_GATE,
                 REDWOOD_PRESSURE_PLATE, REDWOOD_DOOR, REDWOOD_TRAPDOOR, REDWOOD_BUTTON, REDWOOD_SIGNS,
-                REDWOOD_HANGING_SIGNS, REDWOOD_CABINET, REDWOOD_BOOKSHELF, REDWOOD_CHESTS);
+                REDWOOD_HANGING_SIGNS, REDWOOD_CABINET, REDWOOD_BOOKSHELF, REDWOOD_LADDER, REDWOOD_CHESTS);
         this.dropSelf(REDWOOD_SAPLING.get());
         this.dropPottedContents(POTTED_REDWOOD_SAPLING.get());
         this.normalLeaves(REDWOOD_LEAVES.get(), REDWOOD_SAPLING.get());
@@ -111,7 +111,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.woodDrops(STRIPPED_JACARANDA_LOG, STRIPPED_JACARANDA_WOOD, JACARANDA_LOG, JACARANDA_WOOD,
                 JACARANDA_PLANKS, JACARANDA_SLAB, JACARANDA_STAIRS, JACARANDA_FENCE, JACARANDA_FENCE_GATE,
                 JACARANDA_PRESSURE_PLATE, JACARANDA_DOOR, JACARANDA_TRAPDOOR, JACARANDA_BUTTON, JACARANDA_SIGNS,
-                JACARANDA_HANGING_SIGNS, JACARANDA_CABINET, JACARANDA_BOOKSHELF, JACARANDA_CHESTS);
+                JACARANDA_HANGING_SIGNS, JACARANDA_CABINET, JACARANDA_BOOKSHELF, JACARANDA_LADDER, JACARANDA_CHESTS);
         this.dropSelf(JACARANDA_SAPLING.get());
         this.dropSelf(FLOWERING_JACARANDA_SAPLING.get());
         this.dropPottedContents(POTTED_JACARANDA_SAPLING.get());
@@ -128,7 +128,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
                            RegistryReference<Block> door, RegistryReference<Block> trapdoor,
                            RegistryReference<Block> button, Pair<RegistryReference<BorealibStandingSignBlock>, RegistryReference<BorealibWallSignBlock>> signs,
                            Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> hangingSigns,
-                           RegistryReference<Block> cabinet, RegistryReference<Block> bookshelf,
+                           RegistryReference<Block> cabinet, RegistryReference<Block> bookshelf, RegistryReference<Block> ladder,
                            Pair<RegistryReference<BorealibChestBlock>, RegistryReference<BorealibTrappedChestBlock>> chests) {
         this.dropSelf(strippedLog.get());
         this.dropSelf(strippedWood.get());
@@ -147,6 +147,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.dropSelf(hangingSigns.getFirst().get());
         this.add(cabinet.get(), this::createNameableBlockEntityTable);
         this.add(bookshelf.get(), block -> this.createSingleItemTableWithSilkTouch(block, Items.BOOK, ConstantValue.exactly(3.0F)));
+        this.dropSelf(ladder.get());
         this.add(chests.getFirst().get(), this::createNameableBlockEntityTable);
         this.add(chests.getSecond().get(), this::createNameableBlockEntityTable);
     }
