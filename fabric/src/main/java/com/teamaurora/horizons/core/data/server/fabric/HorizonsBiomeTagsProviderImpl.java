@@ -5,8 +5,6 @@ import com.teamaurora.horizons.core.other.tags.HorizonsBiomeTags;
 import com.teamaurora.horizons.core.registry.HorizonsBiomes;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.level.biome.Biomes;
 
 public class HorizonsBiomeTagsProviderImpl {
     public static void handlePlatformTags(HorizonsBiomeTagsProvider provider, HolderLookup.Provider registries) {

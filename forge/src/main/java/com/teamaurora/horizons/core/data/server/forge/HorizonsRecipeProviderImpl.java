@@ -7,11 +7,9 @@ import com.teamaurora.borealib.api.block.v1.compat.BorealibTrappedChestBlock;
 import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.borealib.api.resource_condition.v1.DefaultResourceConditions;
 import com.teamaurora.borealib.api.resource_condition.v1.ResourceConditionProvider;
-import com.teamaurora.horizons.core.Horizons;
 import com.teamaurora.horizons.core.data.server.HorizonsRecipeProvider;
 import com.teamaurora.horizons.core.other.HorizonsBlockFamilies;
 import com.teamaurora.horizons.core.other.tags.HorizonsItemTags;
-import com.teamaurora.horizons.core.registry.HorizonsItems;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -29,8 +27,8 @@ import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
-import static com.teamaurora.horizons.core.registry.HorizonsItems.*;
 import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
+import static com.teamaurora.horizons.core.registry.HorizonsItems.*;
 
 public class HorizonsRecipeProviderImpl {
 

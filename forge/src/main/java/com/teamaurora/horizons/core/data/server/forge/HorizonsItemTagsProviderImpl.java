@@ -2,12 +2,10 @@ package com.teamaurora.horizons.core.data.server.forge;
 
 import com.teamaurora.borealib.api.base.v1.util.CompatItemTags;
 import com.teamaurora.horizons.core.data.server.HorizonsItemTagsProvider;
-import com.teamaurora.horizons.core.other.tags.HorizonsItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraftforge.common.Tags;
 
 import static com.teamaurora.horizons.core.registry.HorizonsBlocks.*;
-import static com.teamaurora.horizons.core.registry.HorizonsItems.GOOSEBERRIES;
 
 public class HorizonsItemTagsProviderImpl {
     public static void handlePlatformTags(HorizonsItemTagsProvider provider, HolderLookup.Provider lookup) {

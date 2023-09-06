@@ -4,8 +4,6 @@ import com.teamaurora.horizons.core.data.server.HorizonsBiomeTagsProvider;
 import com.teamaurora.horizons.core.other.tags.HorizonsBiomeTags;
 import com.teamaurora.horizons.core.registry.HorizonsBiomes;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.Tags;
 
 public class HorizonsBiomeTagsProviderImpl {
