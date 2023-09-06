@@ -139,6 +139,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.generateFlatItem(REDWOOD_BOATS.getSecond().get(), ModelTemplates.FLAT_ITEM);
     }
 
+    @Deprecated
     private static void createWoodFamily(BlockModelGenerators generator, BlockFamily planksFamily,
                                          RegistryReference<Block> log, RegistryReference<Block> wood,
                                          RegistryReference<Block> strippedLog, RegistryReference<Block> strippedWood,
@@ -155,18 +156,21 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.createHangingSign(planksFamily.getBaseBlock(), hangingSigns.getFirst().get(), hangingSigns.getSecond().get());
     }
 
+    @Deprecated
     private static void ladder(BlockModelGenerators generator, Block ladder) {
         LADDER.create(ladder, TextureMapping.defaultTexture(ladder), generator.modelOutput);
         generator.createSimpleFlatItemModel(ladder);
         generator.createNonTemplateHorizontalBlock(ladder);
     }
 
+    @Deprecated
     private static void createBookshelf(BlockModelGenerators generator, Block shelf, Block planks) {
         TextureMapping textureMapping = TextureMapping.column(TextureMapping.getBlockTexture(shelf), TextureMapping.getBlockTexture(planks));
         ResourceLocation modelLocation = ModelTemplates.CUBE_COLUMN.create(shelf, textureMapping, generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(shelf, modelLocation));
     }
 
+    @Deprecated
     private static void createCabinet(BlockModelGenerators generator, Block cabinet) {
         ResourceLocation resourceLocation = TexturedModel.ORIENTABLE_ONLY_TOP.create(cabinet, generator.modelOutput);
         ResourceLocation openTexture = TextureMapping.getBlockTexture(cabinet, "_front_open");
@@ -191,6 +195,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));
     }
 
+    @Deprecated
     private static void createThatchFamily(BlockModelGenerators generator, BlockFamily family) {
         TextureMapping mapping = new TextureMapping().put(THATCH_SLOT, TextureMapping.getBlockTexture(family.getBaseBlock())).put(EXTRUDES_SLOT, TextureMapping.getBlockTexture(family.getBaseBlock(), "_extrudes"));
         ResourceLocation fullBlock = THATCH.create(family.getBaseBlock(), mapping, generator.modelOutput);

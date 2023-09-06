@@ -5,7 +5,8 @@ import net.minecraft.world.level.block.SoundType;
 
 import java.util.function.Supplier;
 
-public class DeferredSoundType extends SoundType {
+@Deprecated
+public class DeferredSoundType extends SoundType { // moved to borealib
     private final Supplier<SoundEvent> breakSound;
     private final Supplier<SoundEvent> stepSound;
     private final Supplier<SoundEvent> placeSound;
