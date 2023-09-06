@@ -134,12 +134,6 @@
         "maxCount": 4,
         "minCount": 2,
         "weight": 5
-      },
-      {
-        "type": "minecraft:bee",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 2
       }
     ],
     "misc": [],
@@ -207,7 +201,14 @@
         "weight": 10
       }
     ],
-    "water_ambient": [],
+    "water_ambient": [
+      {
+        "type": "minecraft:tropical_fish",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 2
+      }
+    ],
     "water_creature": []
   },
   "temperature": 0.75

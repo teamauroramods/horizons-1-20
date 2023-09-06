@@ -125,6 +125,12 @@
         "maxCount": 3,
         "minCount": 2,
         "weight": 4
+      },
+      {
+        "type": "minecraft:donkey",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 8
       }
     ],
     "misc": [],
