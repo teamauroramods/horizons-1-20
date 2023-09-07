@@ -12,6 +12,8 @@ import com.teamaurora.borealib.api.datagen.v1.BorealibPackOutput;
 import com.teamaurora.borealib.api.datagen.v1.providers.loot.BorealibBlockLootProvider;
 import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.borealib.api.resource_condition.v1.ResourceConditionProvider;
+import com.teamaurora.horizons.common.block.lavender.LavenderBlock;
+import com.teamaurora.horizons.common.block.lavender.TallLavenderBlock;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -96,7 +98,11 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
 
         this.tallFlower(HELICONIA.get());
 
-        this.add(GIANT_FERN.get(), block -> this.createTriplePlantWithSeedDrops(block, Items.FERN));
+        this.lavender(LAVENDER.get());
+        this.tallLavender(TALL_LAVENDER.get(), LAVENDER.get());
+        this.dropPottedContents(POTTED_LAVENDER.get());
+
+        this.add(GIANT_FERN.get(), this.createTriplePlantWithSeedDrops(GIANT_FERN.get(), Items.FERN));
         
         // Redwood //
         this.woodDrops(STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_LOG, REDWOOD,
@@ -173,13 +179,28 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
     private void largeCypressKnee(Block knee, Block log) {
         LootPoolEntryContainer.Builder<?> builder = createCypressKneeLootItemBuilder(knee, log, UniformGenerator.between(2, 4));
 
-        this.add(knee, b -> LootTable.lootTable()
-                .withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(b)
+        this.add(knee, LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(knee)
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(knee)
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).build()).build()), new BlockPos(0, 1, 0))))
-                .withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(b)
+                .withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(knee)
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(knee)
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).build()).build()), new BlockPos(0, -1, 0)))));
+    }
+
+    private void lavender(Block block) {
+        this.add(block, LootTable.lootTable()
+                .withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(block).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(LavenderBlock.AGE, 2))))))
+                .withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(LavenderBlock.AGE, 1))))))
+                .withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(block).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(LavenderBlock.AGE, 0)))))));
+    }
+
+    private void tallLavender(Block block, Block drop) {
+        this.add(block, LootTable.lootTable().apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F))).withPool(this.applyExplosionCondition(block, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                .add(LootItem.lootTableItem(drop).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TallLavenderBlock.HALF, DoubleBlockHalf.UPPER)))))));
     }
 
     private LootTable.Builder createTriplePlantWithSeedDrops(Block block, ItemLike drop) {

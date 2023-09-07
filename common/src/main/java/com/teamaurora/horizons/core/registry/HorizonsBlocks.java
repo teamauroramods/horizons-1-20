@@ -15,9 +15,13 @@ import com.teamaurora.borealib.api.registry.v1.RegistryReference;
 import com.teamaurora.borealib.api.registry.v1.RegistryWrapper;
 import com.teamaurora.borealib.api.registry.v1.util.PropertiesHelper;
 import com.teamaurora.horizons.common.block.*;
+import com.teamaurora.horizons.common.block.beard_moss.BeardMossBlock;
+import com.teamaurora.horizons.common.block.beard_moss.BeardMossBlockBlock;
 import com.teamaurora.horizons.common.block.grower.CypressTreeGrower;
 import com.teamaurora.horizons.common.block.grower.FloweringJacarandaTreeGrower;
 import com.teamaurora.horizons.common.block.grower.JacarandaTreeGrower;
+import com.teamaurora.horizons.common.block.lavender.LavenderBlock;
+import com.teamaurora.horizons.common.block.lavender.TallLavenderBlock;
 import com.teamaurora.horizons.common.item.AlgaeBlockItem;
 import com.teamaurora.horizons.common.item.LilyItem;
 import com.teamaurora.horizons.core.other.HorizonsBlockSetTypes;
@@ -27,8 +31,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-
-import java.util.function.Supplier;
 
 public final class HorizonsBlocks {
     public static final RegistryWrapper.BlockProvider PROVIDER = RegistryWrapper.blockProvider(HorizonsItems.PROVIDER);

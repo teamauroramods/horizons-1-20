@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "add": false,
+      "count": 3.0,
+      "function": "minecraft:set_count"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "horizons:tall_lavender",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "upper"
+              }
+            }
+          ],
+          "name": "horizons:lavender"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
