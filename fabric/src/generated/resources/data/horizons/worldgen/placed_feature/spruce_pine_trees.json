@@ -1,5 +1,5 @@
 {
-  "feature": "horizons:flowering_jacaranda_trees",
+  "feature": "minecraft:trees_old_growth_pine_taiga",
   "placement": [
     {
       "type": "minecraft:count",
@@ -7,11 +7,11 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "data": 18,
+            "data": 2,
             "weight": 9
           },
           {
-            "data": 19,
+            "data": 3,
             "weight": 1
           }
         ]

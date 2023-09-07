@@ -4,8 +4,8 @@
     "default": "horizons:jacaranda_tree_checked",
     "features": [
       {
-        "chance": 0.33333334,
-        "feature": "horizons:jacaranda_tree_checked"
+        "chance": 0.2,
+        "feature": "horizons:flowering_jacaranda_tree_checked"
       }
     ]
   }

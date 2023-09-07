@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
@@ -36,6 +37,7 @@ public final class HorizonsTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_JACARANDA_TREE = key("flowering_jacaranda_tree");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = key("redwood_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_REDWOOD_TREE = key("mega_redwood_tree");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -54,6 +56,7 @@ public final class HorizonsTreeFeatures {
 
         // Redwood //
         FeatureUtils.register(context, REDWOOD_TREE, HorizonsFeatures.REDWOOD_TREE.get(), createRedwoodTree().build());
+        FeatureUtils.register(context, MEGA_REDWOOD_TREE, HorizonsFeatures.MEGA_REDWOOD_TREE.get(), createRedwoodTree().build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createGrownCypress() {
@@ -81,7 +84,8 @@ public final class HorizonsTreeFeatures {
                 CypressBranchTreeDecorator.INSTANCE,
                 new LeaveVineDecorator(0.0625F),
                 sparseKnees ? SparseCypressKneesTreeDecorator.INSTANCE : CypressKneesTreeDecorator.INSTANCE,
-                BeardMossTreeDecorator.INSTANCE
+                BeardMossTreeDecorator.INSTANCE,
+                new BeehiveDecorator(.005f)
         ));
     }
 
@@ -101,7 +105,10 @@ public final class HorizonsTreeFeatures {
                 BlockStateProvider.simple(leaves.defaultBlockState()),
                 new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
                 new TwoLayersFeatureSize(0, 0, 0)
-        ).ignoreVines().decorators(List.of(new BranchTreeDecorator(BlockStateProvider.simple(JACARANDA_LOG.get()), 1)));
+        ).ignoreVines().decorators(List.of(
+                new BranchTreeDecorator(BlockStateProvider.simple(JACARANDA_LOG.get()), 1),
+                new BeehiveDecorator(.0075f)
+        ));
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createRedwoodTree() {
@@ -111,7 +118,10 @@ public final class HorizonsTreeFeatures {
                 BlockStateProvider.simple(REDWOOD_LEAVES.get().defaultBlockState()),
                 new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
                 new TwoLayersFeatureSize(0, 0, 0)
-        ).ignoreVines().decorators(List.of(new BranchTreeDecorator(BlockStateProvider.simple(REDWOOD_LOG.get()), 3)));
+        ).ignoreVines().decorators(List.of(
+                new BranchTreeDecorator(BlockStateProvider.simple(REDWOOD_LOG.get()), 3),
+                new BeehiveDecorator(.005f)
+        ));
     }
 
 }

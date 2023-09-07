@@ -26,6 +26,10 @@ public final class HorizonsTreePlacements {
     public static final ResourceKey<PlacedFeature> JACARANDA_TREE_CHECKED = key("jacaranda_tree_checked");
     public static final ResourceKey<PlacedFeature> FLOWERING_JACARANDA_TREE_CHECKED = key("flowering_jacaranda_tree_checked");
 
+    public static final ResourceKey<PlacedFeature> REDWOOD_TREE_CHECKED = key("redwood_tree_checked");
+    public static final ResourceKey<PlacedFeature> MEGA_REDWOOD_TREE_CHECKED = key("mega_redwood_tree_checked");
+
+
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> cypress = configuredFeatures.getOrThrow(HorizonsTreeFeatures.CYPRESS);
@@ -35,7 +39,10 @@ public final class HorizonsTreePlacements {
         Holder<ConfiguredFeature<?, ?>> cypressBush = configuredFeatures.getOrThrow(HorizonsTreeFeatures.CYPRESS_BUSH);
 
         Holder<ConfiguredFeature<?, ?>> jacaranda = configuredFeatures.getOrThrow(HorizonsTreeFeatures.JACARANDA_TREE);
-        Holder<ConfiguredFeature<?, ?>> flowering_jacaranda = configuredFeatures.getOrThrow(HorizonsTreeFeatures.FLOWERING_JACARANDA_TREE);
+        Holder<ConfiguredFeature<?, ?>> floweringJacaranda = configuredFeatures.getOrThrow(HorizonsTreeFeatures.FLOWERING_JACARANDA_TREE);
+
+        Holder<ConfiguredFeature<?, ?>> redwood = configuredFeatures.getOrThrow(HorizonsTreeFeatures.REDWOOD_TREE);
+        Holder<ConfiguredFeature<?, ?>> megaRedwood = configuredFeatures.getOrThrow(HorizonsTreeFeatures.MEGA_REDWOOD_TREE);
 
         PlacementUtils.register(context, CYPRESS_CHECKED, cypress, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));
         PlacementUtils.register(context, MEGA_CYPRESS_CHECKED, megaCypress, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));
@@ -44,6 +51,9 @@ public final class HorizonsTreePlacements {
         PlacementUtils.register(context, CYPRESS_BUSH, cypressBush, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));
 
         PlacementUtils.register(context, JACARANDA_TREE_CHECKED, jacaranda, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.JACARANDA_SAPLING.get()));
-        PlacementUtils.register(context, FLOWERING_JACARANDA_TREE_CHECKED, flowering_jacaranda, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.FLOWERING_JACARANDA_SAPLING.get()));
+        PlacementUtils.register(context, FLOWERING_JACARANDA_TREE_CHECKED, floweringJacaranda, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.FLOWERING_JACARANDA_SAPLING.get()));
+
+        PlacementUtils.register(context, REDWOOD_TREE_CHECKED, redwood, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.REDWOOD_SAPLING.get()));
+        PlacementUtils.register(context, MEGA_REDWOOD_TREE_CHECKED, megaRedwood, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.REDWOOD_SAPLING.get()));
     }
 }

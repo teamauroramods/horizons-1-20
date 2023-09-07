@@ -29,6 +29,7 @@ public final class HorizonsFeatures {
 
     // Redwood //
     public static final RegistryReference<RedwoodTreeFeature> REDWOOD_TREE = PROVIDER.register("redwood_tree", RedwoodTreeFeature::new);
+    public static final RegistryReference<MegaRedwoodTreeFeature> MEGA_REDWOOD_TREE = PROVIDER.register("mega_redwood_tree", MegaRedwoodTreeFeature::new);
 
     // Misc //
     public static final RegistryReference<TreeDecoratorType<BranchTreeDecorator>> BRANCH = PROVIDER.registerTreeDecoratorType("branch", BranchTreeDecorator.CODEC);

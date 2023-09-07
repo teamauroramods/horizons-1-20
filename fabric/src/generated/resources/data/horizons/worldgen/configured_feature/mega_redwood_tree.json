@@ -1,22 +1,18 @@
 {
-  "type": "horizons:cypress_tree",
+  "type": "horizons:mega_redwood_tree",
   "config": {
     "decorators": [
       {
-        "type": "horizons:hanging_cypress_leaves"
-      },
-      {
-        "type": "horizons:cypress_branch"
-      },
-      {
-        "type": "minecraft:leave_vine",
-        "probability": 0.0625
-      },
-      {
-        "type": "horizons:cypress_knees_sparse"
-      },
-      {
-        "type": "horizons:beard_moss"
+        "type": "horizons:branch",
+        "minHeight": 3,
+        "state": {
+          "state": {
+            "Name": "horizons:redwood_log",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        }
       },
       {
         "type": "minecraft:beehive",
@@ -50,7 +46,7 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "horizons:cypress_leaves",
+        "Name": "horizons:redwood_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -75,7 +71,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "horizons:cypress_log",
+        "Name": "horizons:redwood_log",
         "Properties": {
           "axis": "y"
         }

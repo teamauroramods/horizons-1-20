@@ -18,6 +18,6 @@ public class RedwoodTreeGrower extends AbstractMegaTreeGrower {
     @Nullable
     @Override
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource randomSource) {
-        return HorizonsTreeFeatures.MEGA_CYPRESS_GROWN;
+        return HorizonsTreeFeatures.MEGA_REDWOOD_TREE;
     }
 }

@@ -35,9 +35,7 @@ public final class HorizonsOverworldBiomes {
         BiomeDefaultFeatures.addSwampClayDisk(gen);
 
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_TAIGA_2);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
@@ -57,6 +55,8 @@ public final class HorizonsOverworldBiomes {
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
 
         globalOverworldGeneration(gen);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.REDWOOD_TREES);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.SPRUCE_PINE_TREES);
         BiomeDefaultFeatures.addFerns(gen);
         BiomeDefaultFeatures.addDefaultOres(gen);
         BiomeDefaultFeatures.addDefaultSoftDisks(gen);
@@ -65,6 +65,7 @@ public final class HorizonsOverworldBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(gen);
         BiomeDefaultFeatures.addDefaultExtraVegetation(gen);
         BiomeDefaultFeatures.addMossyStoneBlock(gen);
+        BiomeDefaultFeatures.addRareBerryBushes(gen);
 
         return biome(true, 0.75F, 0.9F, 4159204, 329011, 12638463, spawns, gen, Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
     }
@@ -75,12 +76,10 @@ public final class HorizonsOverworldBiomes {
 
         globalOverworldGeneration(gen);
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.LAVENDER);
-        if (sparse) {
+        if (sparse)
             gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.SPARSE_JACARANDA_TREES);
-            gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.SPARSE_FLOWERING_JACARANDA_TREES);
-        } else {
+        else {
             gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.JACARANDA_TREES);
-            gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.FLOWERING_JACARANDA_TREES);
             gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, HorizonsVegetationPlacements.TALL_BIRCH_TREES);
         }
         BiomeDefaultFeatures.addDefaultOres(gen);
