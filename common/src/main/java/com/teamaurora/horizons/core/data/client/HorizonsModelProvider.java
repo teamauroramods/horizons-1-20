@@ -90,6 +90,7 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         // Lavender //
         createLavender(generator);
         createTallLavender(generator);
+        createPottedLavender(generator);
 
         // Lily Flowers //
         createLily(generator, BLUE_LILY, POTTED_BLUE_LILY);
@@ -193,6 +194,11 @@ public class HorizonsModelProvider extends BorealibModelProvider {
         ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(potted.get(), TextureMapping.plant(block.get()), generator.modelOutput);
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block.get(), model));
         generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(potted.get(), pottedModel));
+    }
+
+    private static void createPottedLavender(BlockModelGenerators generator) {
+        ResourceLocation pottedModel = BlockModelGenerators.TintState.NOT_TINTED.getCrossPot().create(POTTED_LAVENDER.get(), TextureMapping.plant(Horizons.location("block/tall_lavender_top")), generator.modelOutput);
+        generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(POTTED_LAVENDER.get(), pottedModel));
     }
 
     @Deprecated

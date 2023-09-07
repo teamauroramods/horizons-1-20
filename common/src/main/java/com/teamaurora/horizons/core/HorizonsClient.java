@@ -76,7 +76,8 @@ public final class HorizonsClient {
                 TALL_LAVENDER.get(),
                 CYPRESS_LADDER.get(),
                 REDWOOD_LADDER.get(),
-                JACARANDA_LADDER.get()
+                JACARANDA_LADDER.get(),
+                POTTED_LAVENDER.get()
         );
     }
 }
