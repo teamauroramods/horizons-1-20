@@ -1,4 +1,4 @@
-package com.teamaurora.horizons.common.block;
+package com.teamaurora.horizons.common.block.beard_moss;
 
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;

@@ -1,4 +1,4 @@
-package com.teamaurora.horizons.common.block;
+package com.teamaurora.horizons.common.block.cypress;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

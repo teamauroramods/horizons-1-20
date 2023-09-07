@@ -1,9 +1,8 @@
 package com.teamaurora.horizons.common.levelgen.treedecorators;
 
-import com.mojang.datafixers.types.Func;
 import com.mojang.serialization.Codec;
-import com.teamaurora.horizons.common.block.CypressKneeBlock;
-import com.teamaurora.horizons.common.block.DoubleCypressKneeBlock;
+import com.teamaurora.horizons.common.block.cypress.CypressKneeBlock;
+import com.teamaurora.horizons.common.block.cypress.DoubleCypressKneeBlock;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import net.minecraft.core.BlockPos;

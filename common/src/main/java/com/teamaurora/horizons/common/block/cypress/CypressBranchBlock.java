@@ -1,4 +1,4 @@
-package com.teamaurora.horizons.common.block;
+package com.teamaurora.horizons.common.block.cypress;
 
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsItems;

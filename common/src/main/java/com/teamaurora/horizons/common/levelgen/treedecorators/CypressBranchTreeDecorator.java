@@ -1,7 +1,7 @@
 package com.teamaurora.horizons.common.levelgen.treedecorators;
 
 import com.mojang.serialization.Codec;
-import com.teamaurora.horizons.common.block.CypressBranchBlock;
+import com.teamaurora.horizons.common.block.cypress.CypressBranchBlock;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import com.teamaurora.horizons.core.registry.HorizonsFeatures;
 import net.minecraft.core.BlockPos;

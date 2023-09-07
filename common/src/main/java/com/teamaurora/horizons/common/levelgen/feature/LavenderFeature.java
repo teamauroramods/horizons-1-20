@@ -1,6 +1,6 @@
 package com.teamaurora.horizons.common.levelgen.feature;
 
-import com.teamaurora.horizons.common.block.LavenderBlock;
+import com.teamaurora.horizons.common.block.lavender.LavenderBlock;
 import com.teamaurora.horizons.core.registry.HorizonsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
