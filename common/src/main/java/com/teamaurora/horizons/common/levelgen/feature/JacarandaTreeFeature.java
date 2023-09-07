@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-public class JacarandaFeature extends AbstractHorizonsTreeFeature {
+public class JacarandaTreeFeature extends AbstractHorizonsTreeFeature {
 
     @Override
     public BlockState getSapling() {

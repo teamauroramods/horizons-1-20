@@ -10,6 +10,7 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorTy
 public final class HorizonsFeatures {
     public static final RegistryWrapper.FeatureProvider PROVIDER = RegistryWrapper.featureProvider(Horizons.MOD_ID);
 
+    // Cypress //
     public static final RegistryReference<CypressTreeFeature> CYPRESS_TREE = PROVIDER.register("cypress_tree", CypressTreeFeature::new);
     public static final RegistryReference<MegaCypressTreeFeature> MEGA_CYPRESS_TREE = PROVIDER.register("mega_cypress_tree", MegaCypressTreeFeature::new);
     public static final RegistryReference<WaterCypressTreeFeature> WATER_CYPRESS_TREE = PROVIDER.register("water_cypress_tree", WaterCypressTreeFeature::new);
@@ -21,9 +22,15 @@ public final class HorizonsFeatures {
     public static final RegistryReference<TreeDecoratorType<CypressKneesTreeDecorator>> CYPRESS_KNEES = PROVIDER.registerTreeDecoratorType("cypress_knees", CypressKneesTreeDecorator.CODEC);
     public static final RegistryReference<TreeDecoratorType<SparseCypressKneesTreeDecorator>> CYPRESS_KNEES_SPARSE = PROVIDER.registerTreeDecoratorType("cypress_knees_sparse", SparseCypressKneesTreeDecorator.CODEC);
 
+    // Jacaranda & Lavender //
+    public static final RegistryReference<JacarandaTreeFeature> JACARANDA_TREE = PROVIDER.register("jacaranda_tree", JacarandaTreeFeature::new);
     public static final RegistryReference<LavenderFeature> LAVENDER = PROVIDER.register("lavender", LavenderFeature::new);
-    public static final RegistryReference<JacarandaFeature> JACARANDA_TREE = PROVIDER.register("jacaranda_tree", JacarandaFeature::new);
-    public static final RegistryReference<JacarandaFeature> FLOWERING_JACARANDA_TREE = PROVIDER.register("flowering_jacaranda_tree", JacarandaFeature::new);
+
+
+    // Redwood //
+    public static final RegistryReference<RedwoodTreeFeature> REDWOOD_TREE = PROVIDER.register("redwood_tree", RedwoodTreeFeature::new);
+
+    // Misc //
     public static final RegistryReference<TreeDecoratorType<BranchTreeDecorator>> BRANCH = PROVIDER.registerTreeDecoratorType("branch", BranchTreeDecorator.CODEC);
 
 }

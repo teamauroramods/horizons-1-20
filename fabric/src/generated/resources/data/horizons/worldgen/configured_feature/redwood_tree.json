@@ -1,13 +1,13 @@
 {
-  "type": "horizons:jacaranda_tree",
+  "type": "horizons:redwood_tree",
   "config": {
     "decorators": [
       {
         "type": "horizons:branch",
-        "minHeight": 1,
+        "minHeight": 3,
         "state": {
           "state": {
-            "Name": "horizons:jacaranda_log",
+            "Name": "horizons:redwood_log",
             "Properties": {
               "axis": "y"
             }
@@ -42,7 +42,7 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "horizons:flowering_jacaranda_leaves",
+        "Name": "horizons:redwood_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -67,7 +67,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "horizons:jacaranda_log",
+        "Name": "horizons:redwood_log",
         "Properties": {
           "axis": "y"
         }

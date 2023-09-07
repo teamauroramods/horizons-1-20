@@ -35,6 +35,9 @@ public final class HorizonsTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> JACARANDA_TREE = key("jacaranda_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_JACARANDA_TREE = key("flowering_jacaranda_tree");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = key("redwood_tree");
+
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         // Cypress //
         FeatureUtils.register(context, CYPRESS_GROWN, HorizonsFeatures.CYPRESS_TREE.get(), createGrownCypress().build());
@@ -47,7 +50,10 @@ public final class HorizonsTreeFeatures {
 
         // Jacaranda //
         FeatureUtils.register(context, JACARANDA_TREE, HorizonsFeatures.JACARANDA_TREE.get(), createJacarandaTree(JACARANDA_LEAVES.get()).build());
-        FeatureUtils.register(context, FLOWERING_JACARANDA_TREE, HorizonsFeatures.FLOWERING_JACARANDA_TREE.get(), createJacarandaTree(FLOWERING_JACARANDA_LEAVES.get()).build());
+        FeatureUtils.register(context, FLOWERING_JACARANDA_TREE, HorizonsFeatures.JACARANDA_TREE.get(), createJacarandaTree(FLOWERING_JACARANDA_LEAVES.get()).build());
+
+        // Redwood //
+        FeatureUtils.register(context, REDWOOD_TREE, HorizonsFeatures.REDWOOD_TREE.get(), createRedwoodTree().build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createGrownCypress() {
@@ -97,4 +103,15 @@ public final class HorizonsTreeFeatures {
                 new TwoLayersFeatureSize(0, 0, 0)
         ).ignoreVines().decorators(List.of(new BranchTreeDecorator(BlockStateProvider.simple(JACARANDA_LOG.get()), 1)));
     }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createRedwoodTree() {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(REDWOOD_LOG.get().defaultBlockState()),
+                new StraightTrunkPlacer(0, 0, 0),
+                BlockStateProvider.simple(REDWOOD_LEAVES.get().defaultBlockState()),
+                new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
+                new TwoLayersFeatureSize(0, 0, 0)
+        ).ignoreVines().decorators(List.of(new BranchTreeDecorator(BlockStateProvider.simple(REDWOOD_LOG.get()), 3)));
+    }
+
 }

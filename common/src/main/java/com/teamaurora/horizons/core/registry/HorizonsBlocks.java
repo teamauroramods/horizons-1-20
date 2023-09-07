@@ -24,6 +24,7 @@ import com.teamaurora.horizons.common.block.cypress.HangingCypressLeavesBlock;
 import com.teamaurora.horizons.common.block.grower.CypressTreeGrower;
 import com.teamaurora.horizons.common.block.grower.FloweringJacarandaTreeGrower;
 import com.teamaurora.horizons.common.block.grower.JacarandaTreeGrower;
+import com.teamaurora.horizons.common.block.grower.RedwoodTreeGrower;
 import com.teamaurora.horizons.common.block.lavender.LavenderBlock;
 import com.teamaurora.horizons.common.block.lavender.TallLavenderBlock;
 import com.teamaurora.horizons.common.item.AlgaeBlockItem;
@@ -151,7 +152,7 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> REDWOOD_BUTTON = PROVIDER.registerWithItem("redwood_button", () -> new ButtonBlock(HorizonsProperties.REDWOOD.button(), HorizonsBlockSetTypes.REDWOOD, 30, true), new Item.Properties());
     public static final Pair<RegistryReference<BorealibStandingSignBlock>, RegistryReference<BorealibWallSignBlock>> REDWOOD_SIGNS = PROVIDER.registerSign("redwood", HorizonsWoodTypes.REDWOOD, HorizonsProperties.REDWOOD_SIGN, new Item.Properties().stacksTo(16));
     public static final Pair<RegistryReference<BorealibCeilingHangingSignBlock>, RegistryReference<BorealibWallHangingSignBlock>> REDWOOD_HANGING_SIGNS = PROVIDER.registerHangingSign("redwood", HorizonsWoodTypes.REDWOOD, HorizonsProperties.REDWOOD_SIGN, new Item.Properties().stacksTo(16));
-    public static final RegistryReference<Block> REDWOOD_SAPLING = PROVIDER.registerWithItem("redwood_sapling", () -> new SaplingBlock(new CypressTreeGrower(), HorizonsProperties.REDWOOD.sapling()), new Item.Properties());
+    public static final RegistryReference<Block> REDWOOD_SAPLING = PROVIDER.registerWithItem("redwood_sapling", () -> new SaplingBlock(new RedwoodTreeGrower(), HorizonsProperties.REDWOOD.sapling()), new Item.Properties());
     public static final RegistryReference<Block> POTTED_REDWOOD_SAPLING = PROVIDER.register("potted_redwood_sapling", () -> new FlowerPotBlock(REDWOOD_SAPLING.get(), PropertiesHelper.flowerPot()));
     public static final RegistryReference<Block> REDWOOD_LEAVES = PROVIDER.registerWithItem("redwood_leaves", () -> new LeavesBlock(HorizonsProperties.REDWOOD.leaves()), new Item.Properties());
 
