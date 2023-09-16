@@ -28,6 +28,7 @@ public final class HorizonsTreePlacements {
 
     public static final ResourceKey<PlacedFeature> REDWOOD_TREE_CHECKED = key("redwood_tree_checked");
     public static final ResourceKey<PlacedFeature> MEGA_REDWOOD_TREE_CHECKED = key("mega_redwood_tree_checked");
+    public static final ResourceKey<PlacedFeature> GIANT_REDWOOD_TREE_CHECKED = key("giant_redwood_tree_checked");
 
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -43,6 +44,7 @@ public final class HorizonsTreePlacements {
 
         Holder<ConfiguredFeature<?, ?>> redwood = configuredFeatures.getOrThrow(HorizonsTreeFeatures.REDWOOD_TREE);
         Holder<ConfiguredFeature<?, ?>> megaRedwood = configuredFeatures.getOrThrow(HorizonsTreeFeatures.MEGA_REDWOOD_TREE);
+        Holder<ConfiguredFeature<?, ?>> giantRedwood = configuredFeatures.getOrThrow(HorizonsTreeFeatures.GIANT_REDWOOD_TREE);
 
         PlacementUtils.register(context, CYPRESS_CHECKED, cypress, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));
         PlacementUtils.register(context, MEGA_CYPRESS_CHECKED, megaCypress, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.CYPRESS_SAPLING.get()));
@@ -55,5 +57,6 @@ public final class HorizonsTreePlacements {
 
         PlacementUtils.register(context, REDWOOD_TREE_CHECKED, redwood, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.REDWOOD_SAPLING.get()));
         PlacementUtils.register(context, MEGA_REDWOOD_TREE_CHECKED, megaRedwood, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.REDWOOD_SAPLING.get()));
+        PlacementUtils.register(context, GIANT_REDWOOD_TREE_CHECKED, giantRedwood, PlacementUtils.filteredByBlockSurvival(HorizonsBlocks.REDWOOD_SAPLING.get()));
     }
 }

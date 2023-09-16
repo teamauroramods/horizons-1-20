@@ -38,6 +38,7 @@ public final class HorizonsTreeFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = key("redwood_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEGA_REDWOOD_TREE = key("mega_redwood_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_REDWOOD_TREE = key("giant_redwood_tree");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -57,6 +58,7 @@ public final class HorizonsTreeFeatures {
         // Redwood //
         FeatureUtils.register(context, REDWOOD_TREE, HorizonsFeatures.REDWOOD_TREE.get(), createRedwoodTree().build());
         FeatureUtils.register(context, MEGA_REDWOOD_TREE, HorizonsFeatures.MEGA_REDWOOD_TREE.get(), createRedwoodTree().build());
+        FeatureUtils.register(context, GIANT_REDWOOD_TREE, HorizonsFeatures.GIANT_REDWOOD_TREE.get(), createRedwoodTree().build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createGrownCypress() {

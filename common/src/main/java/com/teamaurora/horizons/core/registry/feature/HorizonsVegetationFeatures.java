@@ -66,6 +66,7 @@ public final class HorizonsVegetationFeatures {
         Holder<PlacedFeature> floweringJacaranda = placedFeatures.getOrThrow(HorizonsTreePlacements.FLOWERING_JACARANDA_TREE_CHECKED);
         Holder<PlacedFeature> redwood = placedFeatures.getOrThrow(HorizonsTreePlacements.REDWOOD_TREE_CHECKED);
         Holder<PlacedFeature> megaRedwood = placedFeatures.getOrThrow(HorizonsTreePlacements.MEGA_REDWOOD_TREE_CHECKED);
+        Holder<PlacedFeature> giantRedwood = placedFeatures.getOrThrow(HorizonsTreePlacements.GIANT_REDWOOD_TREE_CHECKED);
 
         FeatureUtils.register(context, PATCH_TROPICAL_GRASS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 7, 3, PlacementUtils.filtered(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(HorizonsBlocks.TROPICAL_GRASS.get().defaultBlockState(), 3).add(HorizonsBlocks.TROPICAL_FERN.get().defaultBlockState(), 1))), BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.PODZOL))))));
 
@@ -90,6 +91,6 @@ public final class HorizonsVegetationFeatures {
         FeatureUtils.register(context, CYPRESS_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(cypressBush, 0.35f), new WeightedPlacedFeature(megaCypress, 0.333333334F)), cypress));
         FeatureUtils.register(context, WATER_CYPRESS_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(waterMegaCypress, 0.333333334F)), waterCypress));
         FeatureUtils.register(context, JACARANDA_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(floweringJacaranda, 0.2F)), jacaranda));
-        FeatureUtils.register(context, REDWOOD_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(megaRedwood, 0.333333334F)), redwood));
+        FeatureUtils.register(context, REDWOOD_TREES, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(megaRedwood, 0.333333334F), new WeightedPlacedFeature(giantRedwood, 0.333333334F)), redwood));
     }
 }

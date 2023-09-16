@@ -6,6 +6,10 @@
       {
         "chance": 0.33333334,
         "feature": "horizons:mega_redwood_tree_checked"
+      },
+      {
+        "chance": 0.33333334,
+        "feature": "horizons:giant_redwood_tree_checked"
       }
     ]
   }

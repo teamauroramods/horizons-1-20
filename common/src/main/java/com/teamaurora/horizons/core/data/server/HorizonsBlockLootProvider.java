@@ -103,7 +103,7 @@ public class HorizonsBlockLootProvider extends BorealibBlockLootProvider {
         this.dropPottedContents(POTTED_LAVENDER.get());
 
         this.add(GIANT_FERN.get(), this.createTriplePlantWithSeedDrops(GIANT_FERN.get(), Items.FERN));
-        
+
         // Redwood //
         this.woodDrops(STRIPPED_REDWOOD_LOG, STRIPPED_REDWOOD, REDWOOD_LOG, REDWOOD,
                 REDWOOD_PLANKS, REDWOOD_SLAB, REDWOOD_STAIRS, REDWOOD_FENCE, REDWOOD_FENCE_GATE,

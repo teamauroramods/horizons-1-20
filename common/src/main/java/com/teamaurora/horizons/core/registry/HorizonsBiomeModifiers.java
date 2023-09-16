@@ -67,10 +67,7 @@ public final class HorizonsBiomeModifiers {
     }
 
     private static void tagBasedFeatureAdder(BootstapContext<BiomeModifier> context, ResourceKey<BiomeModifier> key, HolderSet<Biome> biomes, Holder<PlacedFeature> feature, GenerationStep.Decoration step) {
-        context.register(
-                key,
-                BiomeModifier.Builder.selects(BiomeSelector.isBiome(biomes)).withAction(BiomeModifierAction.addFeatures(step, HolderSet.direct(feature))).build()
-        );
+        context.register(key, BiomeModifier.Builder.selects(BiomeSelector.isBiome(biomes)).withAction(BiomeModifierAction.addFeatures(step, HolderSet.direct(feature))).build());
     }
 
     private static ResourceKey<BiomeModifier> key(String path) {

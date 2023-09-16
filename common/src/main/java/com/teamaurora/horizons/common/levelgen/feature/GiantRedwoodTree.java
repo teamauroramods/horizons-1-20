@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-public class MegaRedwoodTreeFeature extends AbstractHorizonsTreeFeature {
+public class GiantRedwoodTree extends AbstractHorizonsTreeFeature {
     @Override
     public BlockState getSapling() {
         return HorizonsBlocks.REDWOOD_SAPLING.get().defaultBlockState();
@@ -24,6 +24,11 @@ public class MegaRedwoodTreeFeature extends AbstractHorizonsTreeFeature {
             this.addLog(origin.offset(1, i, 0));
             this.addLog(origin.offset(0, i, 1));
             this.addLog(origin.offset(1, i, 1));
+            this.addLog(origin.offset(-1, i, 0));
+            this.addLog(origin.offset(0, i, -1));
+            this.addLog(origin.offset(-1, i, -1));
+            this.addLog(origin.offset(1, i, -1));
+            this.addLog(origin.offset(-1, i, 1));
         }
 
         return true;
