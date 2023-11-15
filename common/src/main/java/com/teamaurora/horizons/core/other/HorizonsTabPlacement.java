@@ -130,13 +130,29 @@ public final class HorizonsTabPlacement {
                     JACARANDA_HANGING_SIGNS.getFirst().get()
             ));
             if (Platform.anyModsLoaded(Mods.QUARK, Mods.WOODWORKS, Mods.CARPENTER)) {
-                //output.acceptAfter(Items.BOOKSHELF, CYPRESS_BOOKSHELF.get());
-                //output.acceptAfter(Items.CHEST, CYPRESS_CHESTS.getFirst().get());
+                acceptAllAfter(output, Items.BOOKSHELF, List.of(
+                        CYPRESS_BOOKSHELF.get(),
+                        REDWOOD_BOOKSHELF.get(),
+                        JACARANDA_BOOKSHELF.get()
+                ));
+                acceptAllAfter(output, Items.CHEST, List.of(
+                        CYPRESS_CHESTS.getFirst().get(),
+                        REDWOOD_CHESTS.getFirst().get(),
+                        JACARANDA_CHESTS.getFirst().get()
+                ));
             }
         } else if (tabKey.equals(CreativeModeTabs.REDSTONE_BLOCKS)) {
             if (Platform.anyModsLoaded(Mods.QUARK, Mods.WOODWORKS, Mods.CARPENTER)) {
-                //output.acceptAfter(Items.CHEST, CYPRESS_CHESTS.getFirst().get());
-                //output.acceptAfter(Items.TRAPPED_CHEST, CYPRESS_CHESTS.getSecond().get());
+                acceptAllAfter(output, Items.CHEST, List.of(
+                        CYPRESS_CHESTS.getFirst().get(),
+                        REDWOOD_CHESTS.getFirst().get(),
+                        JACARANDA_CHESTS.getFirst().get()
+                ));
+                acceptAllAfter(output, Items.TRAPPED_CHEST, List.of(
+                        CYPRESS_CHESTS.getSecond().get(),
+                        REDWOOD_CHESTS.getSecond().get(),
+                        JACARANDA_CHESTS.getSecond().get()
+                ));
             }
         } else if (tabKey.equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
             acceptAllAfter(output, Items.CHERRY_CHEST_BOAT, List.of(
