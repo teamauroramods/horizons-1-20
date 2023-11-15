@@ -134,7 +134,7 @@ public final class HorizonsBlocks {
     public static final RegistryReference<Block> LAVENDER = PROVIDER.registerWithItem("lavender", () -> new LavenderBlock(HorizonsProperties.LAVENDER), new Item.Properties());
     public static final RegistryReference<Block> TALL_LAVENDER = PROVIDER.register("tall_lavender", () -> new TallLavenderBlock(HorizonsProperties.LAVENDER));
     public static final RegistryReference<Block> POTTED_LAVENDER = PROVIDER.register("potted_lavender", () -> new FlowerPotBlock(LAVENDER.get(), PropertiesHelper.flowerPot()));
-    // public static final RegistryReference<Block> LAVENDER_BASKET
+    // public static final RegistryReference<Block> LAVENDER_BASKET 
 
     // Redwood //
     public static final RegistryReference<Block> STRIPPED_REDWOOD_LOG = PROVIDER.registerWithItem("stripped_redwood_log", () -> new RotatedPillarBlock(HorizonsProperties.REDWOOD.strippedLogOrWood()), new Item.Properties());
